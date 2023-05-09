@@ -16,6 +16,24 @@
         <action
             android:id="@+id/action_mainFragment_to_whistleblowerFormFragment"
             app:destination="@id/whistleblowerFormFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_fineAppealFragment"
+            app:destination="@id/fineAppealFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_payTicketFragment"
+            app:destination="@id/payTicketFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_forumFragment"
+            app:destination="@id/forumFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_chatRoomFragment"
+            app:destination="@id/chatRoomFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_recordClipFragment"
+            app:destination="@id/recordClipFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_mapFragment"
+            app:destination="@id/mapFragment" />
     </fragment>
     <fragment
         android:id="@+id/loginFragment"
@@ -114,4 +132,187 @@
         android:name="com.example.android_traffic.WhistleblowerForm5Fragment"
         android:label="fragment_whistleblower_form5"
         tools:layout="@layout/fragment_whistleblower_form5" />
+    <fragment
+        android:id="@+id/fineAppealFragment"
+        android:name="com.example.android_traffic.FineAppealFragment"
+        android:label="fragment_fine_appeal"
+        tools:layout="@layout/fragment_fine_appeal" >
+        <action
+            android:id="@+id/action_fineAppealFragment_to_fineAppeal2Fragment"
+            app:destination="@id/fineAppeal2Fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/fineAppeal2Fragment"
+        android:name="com.example.android_traffic.FineAppeal2Fragment"
+        android:label="fragment_fine_appeal2"
+        tools:layout="@layout/fragment_fine_appeal2" >
+        <action
+            android:id="@+id/action_fineAppeal2Fragment_to_fineAppeal3Fragment"
+            app:destination="@id/fineAppeal3Fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/fineAppeal3Fragment"
+        android:name="com.example.android_traffic.FineAppeal3Fragment"
+        android:label="fragment_fine_appeal3"
+        tools:layout="@layout/fragment_fine_appeal3" >
+        <action
+            android:id="@+id/action_fineAppeal3Fragment_to_fineAppeal4Fragment"
+            app:destination="@id/fineAppeal4Fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/fineAppeal4Fragment"
+        android:name="com.example.android_traffic.FineAppeal4Fragment"
+        android:label="fragment_fine_appeal4"
+        tools:layout="@layout/fragment_fine_appeal4" >
+        <action
+            android:id="@+id/action_fineAppeal4Fragment_to_fineAppeal5Fragment"
+            app:destination="@id/fineAppeal5Fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/fineAppeal5Fragment"
+        android:name="com.example.android_traffic.FineAppeal5Fragment"
+        android:label="fragment_fine_appeal5"
+        tools:layout="@layout/fragment_fine_appeal5" />
+    <fragment
+        android:id="@+id/payTicketFragment"
+        android:name="com.example.android_traffic.PayTicketFragment"
+        android:label="fragment_pay_ticket"
+        tools:layout="@layout/fragment_pay_ticket" >
+        <action
+            android:id="@+id/action_payTicketFragment_to_payTicket2Fragment"
+            app:destination="@id/payTicket2Fragment" />
+        <action
+            android:id="@+id/action_payTicketFragment_to_addCreditCardFragment"
+            app:destination="@id/addCreditCardFragment" />
+        <action
+            android:id="@+id/action_payTicketFragment_to_searchTicketFragment"
+            app:destination="@id/searchTicketFragment" />
+        <action
+            android:id="@+id/action_payTicketFragment_to_payTicketHistoryFragment"
+            app:destination="@id/payTicketHistoryFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/payTicket2Fragment"
+        android:name="com.example.android_traffic.PayTicket2Fragment"
+        android:label="fragment_pay_ticket2"
+        tools:layout="@layout/fragment_pay_ticket2" >
+        <action
+            android:id="@+id/action_payTicket2Fragment_to_payTicket3Fragment"
+            app:destination="@id/payTicket3Fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/payTicket3Fragment"
+        android:name="com.example.android_traffic.PayTicket3Fragment"
+        android:label="fragment_pay_ticket3"
+        tools:layout="@layout/fragment_pay_ticket3" >
+        <action
+            android:id="@+id/action_payTicket3Fragment_to_payTicket4Fragment"
+            app:destination="@id/payTicket4Fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addCreditCardFragment"
+        android:name="com.example.android_traffic.AddCreditCardFragment"
+        android:label="fragment_add_credit_card"
+        tools:layout="@layout/fragment_add_credit_card" />
+    <fragment
+        android:id="@+id/searchTicketFragment"
+        android:name="com.example.android_traffic.SearchTicketFragment"
+        android:label="fragment_search_ticket"
+        tools:layout="@layout/fragment_search_ticket" />
+    <fragment
+        android:id="@+id/payTicketHistoryFragment"
+        android:name="com.example.android_traffic.PayTicketHistoryFragment"
+        android:label="fragment_pay_ticket_history"
+        tools:layout="@layout/fragment_pay_ticket_history" />
+    <fragment
+        android:id="@+id/payTicket4Fragment"
+        android:name="com.example.android_traffic.PayTicket4Fragment"
+        android:label="fragment_pay_ticket4"
+        tools:layout="@layout/fragment_pay_ticket4" >
+        <action
+            android:id="@+id/action_payTicket4Fragment_to_addCreditCardFragment"
+            app:destination="@id/addCreditCardFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/forumFragment"
+        android:name="com.example.android_traffic.ForumFragment"
+        android:label="fragment_forum"
+        tools:layout="@layout/fragment_forum" >
+        <action
+            android:id="@+id/action_forumFragment_to_forum2Fragment"
+            app:destination="@id/forum2Fragment" />
+        <action
+            android:id="@+id/action_forumFragment_to_addArticleFragment"
+            app:destination="@id/addArticleFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/forum2Fragment"
+        android:name="com.example.android_traffic.Forum2Fragment"
+        android:label="fragment_forum2"
+        tools:layout="@layout/fragment_forum2" >
+        <action
+            android:id="@+id/action_forum2Fragment_to_addMessageFragment"
+            app:destination="@id/addMessageFragment" />
+        <action
+            android:id="@+id/action_forum2Fragment_to_chatRoomFragment"
+            app:destination="@id/chatRoomFragment" />
+        <action
+            android:id="@+id/action_forum2Fragment_to_forumReportFragment"
+            app:destination="@id/forumReportFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addArticleFragment"
+        android:name="com.example.android_traffic.AddArticleFragment"
+        android:label="fragment_add_article"
+        tools:layout="@layout/fragment_add_article" />
+    <fragment
+        android:id="@+id/addMessageFragment"
+        android:name="com.example.android_traffic.AddMessageFragment"
+        android:label="fragment_add_message"
+        tools:layout="@layout/fragment_add_message" />
+    <fragment
+        android:id="@+id/chatRoomFragment"
+        android:name="com.example.android_traffic.ChatRoomFragment"
+        android:label="fragment_chat_room"
+        tools:layout="@layout/fragment_chat_room" />
+    <fragment
+        android:id="@+id/forumReportFragment"
+        android:name="com.example.android_traffic.ForumReportFragment"
+        android:label="fragment_forum_report"
+        tools:layout="@layout/fragment_forum_report" />
+    <fragment
+        android:id="@+id/recordClipFragment"
+        android:name="com.example.android_traffic.RecordClipFragment"
+        android:label="fragment_record_clip"
+        tools:layout="@layout/fragment_record_clip" >
+        <action
+            android:id="@+id/action_recordClipFragment_to_recordClip2Fragment"
+            app:destination="@id/recordClip2Fragment" />
+        <action
+            android:id="@+id/action_recordClipFragment_to_chooseFileFragment"
+            app:destination="@id/chooseFileFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/recordClip2Fragment"
+        android:name="com.example.android_traffic.RecordClip2Fragment"
+        android:label="fragment_record_clip2"
+        tools:layout="@layout/fragment_record_clip2" >
+        <action
+            android:id="@+id/action_recordClip2Fragment_to_whistleblowerFormFragment"
+            app:destination="@id/whistleblowerFormFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/chooseFileFragment"
+        android:name="com.example.android_traffic.ChooseFileFragment"
+        android:label="fragment_choose_file"
+        tools:layout="@layout/fragment_choose_file" >
+        <action
+            android:id="@+id/action_chooseFileFragment_to_recordClip2Fragment"
+            app:destination="@id/recordClip2Fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/mapFragment"
+        android:name="com.example.android_traffic.MapFragment"
+        android:label="fragment_map"
+        tools:layout="@layout/fragment_map" />
 </navigation>
