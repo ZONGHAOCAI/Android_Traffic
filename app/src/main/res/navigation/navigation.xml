@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/mainFragment">
+
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.example.android_traffic.MainFragment"
+        android:label="fragment_main"
+        tools:layout="@layout/fragment_main" >
+        <action
+            android:id="@+id/action_mainFragment_to_memberCenterFragment"
+            app:destination="@id/memberCenterFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_whistleblowerFormFragment"
+            app:destination="@id/whistleblowerFormFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.example.android_traffic.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_loginFragment_to_mainFragment"
+            app:destination="@id/mainFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_forgetPasswordFragment"
+            app:destination="@id/forgetPasswordFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_registerFragment"
+            app:destination="@id/registerFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/forgetPasswordFragment"
+        android:name="com.example.android_traffic.ForgetPasswordFragment"
+        android:label="fragment_forget_password"
+        tools:layout="@layout/fragment_forget_password" />
+    <fragment
+        android:id="@+id/registerFragment"
+        android:name="com.example.android_traffic.RegisterFragment"
+        android:label="fragment_register"
+        tools:layout="@layout/fragment_register" />
+    <fragment
+        android:id="@+id/memberCenterFragment"
+        android:name="com.example.android_traffic.MemberCenterFragment"
+        android:label="fragment_member_center"
+        tools:layout="@layout/fragment_member_center" >
+        <action
+            android:id="@+id/action_memberCenterFragment_to_memberDataFragment"
+            app:destination="@id/memberDataFragment" />
+        <action
+            android:id="@+id/action_memberCenterFragment_to_relatedPersonFragment"
+            app:destination="@id/relatedPersonFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/whistleblowerFormFragment"
+        android:name="com.example.android_traffic.WhistleblowerFormFragment"
+        android:label="fragment_whistleblower_form"
+        tools:layout="@layout/fragment_whistleblower_form" >
+        <action
+            android:id="@+id/action_whistleblowerFormFragment_to_whistleblowerForm2Fragment"
+            app:destination="@id/whistleblowerForm2Fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/memberDataFragment"
+        android:name="com.example.android_traffic.MemberDataFragment"
+        android:label="fragment_member_data"
+        tools:layout="@layout/fragment_member_data" />
+    <fragment
+        android:id="@+id/relatedPersonDataFragment"
+        android:name="com.example.android_traffic.RelatedPersonDataFragment"
+        android:label="fragment_related_person_data"
+        tools:layout="@layout/fragment_related_person_data" />
+    <fragment
+        android:id="@+id/relatedPersonFragment"
+        android:name="com.example.android_traffic.RelatedPersonFragment"
+        android:label="fragment_related_person"
+        tools:layout="@layout/fragment_related_person" >
+        <action
+            android:id="@+id/action_relatedPersonFragment_to_relatedPersonDataFragment"
+            app:destination="@id/relatedPersonDataFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/whistleblowerForm2Fragment"
+        android:name="com.example.android_traffic.WhistleblowerForm2Fragment"
+        android:label="fragment_whistleblower_form2"
+        tools:layout="@layout/fragment_whistleblower_form2" >
+        <action
+            android:id="@+id/action_whistleblowerForm2Fragment_to_whistleblowerForm3Fragment"
+            app:destination="@id/whistleblowerForm3Fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/whistleblowerForm3Fragment"
+        android:name="com.example.android_traffic.WhistleblowerForm3Fragment"
+        android:label="fragment_whistleblower_form3"
+        tools:layout="@layout/fragment_whistleblower_form3" >
+        <action
+            android:id="@+id/action_whistleblowerForm3Fragment_to_whistleblowerForm4Fragment"
+            app:destination="@id/whistleblowerForm4Fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/whistleblowerForm4Fragment"
+        android:name="com.example.android_traffic.WhistleblowerForm4Fragment"
+        android:label="fragment_whistleblower_form4"
+        tools:layout="@layout/fragment_whistleblower_form4" >
+        <action
+            android:id="@+id/action_whistleblowerForm4Fragment_to_whistleblowerForm5Fragment"
+            app:destination="@id/whistleblowerForm5Fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/whistleblowerForm5Fragment"
+        android:name="com.example.android_traffic.WhistleblowerForm5Fragment"
+        android:label="fragment_whistleblower_form5"
+        tools:layout="@layout/fragment_whistleblower_form5" />
+</navigation>
