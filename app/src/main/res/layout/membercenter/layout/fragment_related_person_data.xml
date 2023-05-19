@@ -6,70 +6,132 @@
     <data>
         <variable
             name="viewModel"
-            type="com.example.android_traffic.membercenter.viewmodel.RelatedPersonViewModel" />
+            type="com.example.android_traffic.membercenter.viewmodel.RelatedPersonDataViewModel" />
     </data>
 
-    <LinearLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/linearLayout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:padding="16dp">
+        android:layout_height="match_parent">
 
         <ImageView
-            android:id="@+id/imageView"
+            android:id="@+id/img_Avatar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="50dp"
-            android:src="@drawable/ivy" />
+            app:imageResource="@{viewModel.relatedPerson.imageId}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/textView8"
-            android:layout_width="wrap_content"
+            android:id="@+id/tv_Name_Title"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:text="TextView" />
+            android:layout_marginStart="30dp"
+
+            android:layout_marginEnd="20dp"
+            android:background="@drawable/membercenter_txt_relatebackground"
+            android:text="@string/txt_RelatedPersonData_NameTitle"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/img_Avatar" />
 
         <TextView
-            android:id="@+id/textView3"
+            android:id="@+id/tv_Name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:text="TextView" />
+            android:layout_marginEnd="50dp"
+
+            android:text="@{viewModel.relatedPerson.name}"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/img_Avatar" />
 
         <TextView
-            android:id="@+id/textView4"
+            android:id="@+id/tv_RelatedShipData"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:text="TextView" />
+            android:text="@{viewModel.relatedPerson.membersRelationship}"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="30dp"
+            app:layout_constraintTop_toBottomOf="@+id/tv_Name_Title" />
 
         <TextView
-            android:id="@+id/textView5"
+            android:id="@+id/tv_RelatedShip_Title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:text="TextView" />
+            android:text="@string/txt_RelatedPersonData_RelatedShip_Title"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="30dp"
+            app:layout_constraintTop_toBottomOf="@+id/tv_Name_Title" />
 
         <TextView
-            android:id="@+id/textView6"
+            android:id="@+id/tv_IdentityNo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:text="TextView" />
+            android:text="@{viewModel.relatedPerson.identityNumber}"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="30dp"
+            app:layout_constraintTop_toBottomOf="@+id/tv_RelatedShip_Title" />
 
         <TextView
-            android:id="@+id/textView7"
+            android:id="@+id/tv_Identity_Title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:text="TextView" />
+            android:text="@string/txt_RelatedPersonData_IdentityNumberTitle"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="30dp"
+            app:layout_constraintTop_toBottomOf="@+id/tv_RelatedShip_Title" />
 
         <TextView
-            android:id="@+id/textView9"
+            android:id="@+id/tv_Birthday"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:text="TextView" />
+            android:text="@{viewModel.relatedPerson.birthday}"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="30dp"
+            app:layout_constraintTop_toBottomOf="@+id/tv_Identity_Title" />
 
-    </LinearLayout>
+        <TextView
+            android:id="@+id/tv_Birthday_Title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/txt_RelatedPersonData_BirthdayTitle"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="30dp"
+            app:layout_constraintTop_toBottomOf="@+id/tv_Identity_Title" />
+
+        <TextView
+            android:id="@+id/tv_VehicleData"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="11dp"
+            android:text="@string/txt_MemberCenter_VehicleData"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="30dp"
+            app:layout_constraintTop_toBottomOf="@+id/tv_Birthday_Title" />
+
+        <TextView
+            android:id="@+id/tv_Delete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="9dp"
+            android:paddingStart="20dp"
+            android:text="刪除資料"
+
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginBottom="30dp"
+
+ />
+
+
+
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

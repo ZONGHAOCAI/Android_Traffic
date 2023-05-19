@@ -54,8 +54,7 @@ class RelatedPersonListAdapter(private var relatedPerson: List<RelatedPerson>) :
             itemView.setOnClickListener {
                 Navigation.findNavController(it)
                     .navigate(
-                        R.id.action_relatedPersonFragment_to_relatedPersonDataFragment,
-                        bundle)
+                        R.id.action_relatedPersonFragment_to_relatedPersonDataFragment, bundle)
             }
         }
     }

@@ -1,19 +1,19 @@
 package com.example.android_traffic.membercenter.controller
 
-import androidx.lifecycle.ViewModelProvider
+
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
-import com.example.android_traffic.R
 import com.example.android_traffic.databinding.FragmentRelatedPersonBinding
 import com.example.android_traffic.membercenter.viewmodel.RelatedPersonViewModel
+import androidx.recyclerview.widget.LinearLayoutManager
 
 class RelatedPersonFragment : Fragment() {
     private lateinit var binding: FragmentRelatedPersonBinding
-    private lateinit var viewModel: RelatedPersonViewModel
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -27,8 +27,21 @@ class RelatedPersonFragment : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
+        with(binding){
+
+//          recyclerView一定要設定 LinearLayoutManager 不然不會顯示東西
+            recyclerView.layoutManager = LinearLayoutManager(requireContext())
+            viewModel?.relatedPerson?.observe(viewLifecycleOwner) { relatedPerson ->
+                // adapter為null要建立新的adapter；之後只要呼叫updateFriends(friends)即可
+                if (recyclerView.adapter == null) {
+                    recyclerView.adapter = RelatedPersonListAdapter(relatedPerson)
+                } else {
+                    (recyclerView.adapter as RelatedPersonListAdapter).updateRelatedPerson(relatedPerson)
+                }
+            }
+        }
     }
+
 
 
 

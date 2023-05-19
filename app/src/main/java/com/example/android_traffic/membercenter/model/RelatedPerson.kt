@@ -13,7 +13,7 @@ import java.util.Date
  * @param VehideType 車種
  * @param VehideNumber 車牌號碼
  */
-class RelatedPerson(var imageId: Int, var name: String, var identityNumber: String, var birthday: Date,
-                    var MembersRelationship: String, var VehideType: String, var VehideNumber:String) :
+class RelatedPerson(var imageId: Int, var name: String, var identityNumber: String, var birthday: String,
+                    var MembersRelationship: String) :
     Serializable {
 }

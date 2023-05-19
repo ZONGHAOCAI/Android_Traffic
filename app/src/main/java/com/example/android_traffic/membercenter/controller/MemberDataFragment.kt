@@ -6,28 +6,31 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.viewModels
 import com.example.android_traffic.membercenter.viewmodel.MemberDataViewModel
 import com.example.android_traffic.R
+import com.example.android_traffic.databinding.FragmentMemberDataBinding
+import com.example.android_traffic.databinding.FragmentRelatedPersonDataBinding
+import com.example.android_traffic.membercenter.viewmodel.RelatedPersonDataViewModel
 
 class MemberDataFragment : Fragment() {
-
-    companion object {
-        fun newInstance() = MemberDataFragment()
-    }
-
-    private lateinit var viewModel: MemberDataViewModel
-
+    private lateinit var binding: FragmentMemberDataBinding
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_member_data, container, false)
+        val viewModel: MemberDataViewModel by viewModels()
+        binding = FragmentMemberDataBinding.inflate(inflater, container, false)
+        binding.viewModel = viewModel
+        binding.lifecycleOwner = this
+        return binding.root
     }
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProvider(this).get(MemberDataViewModel::class.java)
-        // TODO: Use the ViewModel
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        with(binding){
+
+        }
     }
+
 
 }

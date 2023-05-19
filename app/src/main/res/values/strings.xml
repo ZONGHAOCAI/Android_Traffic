@@ -1,3 +1,5 @@
 <resources>
-    <string name="app_name">Android_Traffic</string>
+    <string name="app_name">交通檢舉</string>
+    <string name="hello_blank_fragment">Android_Traffic</string>
+
 </resources>
