@@ -7,16 +7,18 @@
     <string name="txt_MemberCenter_Logout2" translatable="false">Logout</string>
     <string name="txt_MemberCenter_DeleteAccount" translatable="false">DeleteAccount</string>
     <string name="txt_MemberCenter_Language" translatable="false">English</string>
-    <string name="txt_MemberCenter_VehicleData">VehicleData</string>
+    <string name="txt_MemberData_VehicleData">VehicleData</string>
     <string name="txt_MemberCenter_CreditCard">CreditCard</string>
-    <string name="txt_MemberCenterData_Nickname">Nickname</string>
-    <string name="txt_MemberCenterData_Email">Email</string>
-    <string name="txt_MemberCenterData_Address">Address</string>
-    <string name="txt_MemberCenterData_EditPassword">EditPassword</string>
-    <string name="txt_MemberCenterData_ChatSetting">ChatSetting</string>
+    <string name="txt_MemberData_Nickname">Nickname</string>
+    <string name="txt_MemberData_Email">Email</string>
+    <string name="txt_MemberData_Address">Address</string>
+    <string name="txt_MemberData_EditPassword">EditPassword</string>
+    <string name="txt_MemberData_ChatSetting">ChatSetting</string>
+    <string name="txt_MemberData_Avatar">Avatar</string>
+    <string name="txt_MemberData_BirthdayTitle">Birthday</string>
     <string name="txt_RelatedPersonData_NameTitle">Name</string>
     <string name="txt_RelatedPersonData_RelatedShip_Title">RelatedShip</string>
     <string name="txt_RelatedPersonData_IdentityNumberTitle">Identity</string>
     <string name="txt_RelatedPersonData_BirthdayTitle">Birthday</string>
-    <string name="txt_MemberData_Avatar">Avatar</string>
+    <string name="txt_RelatedPersonData_Delete">DeleteData</string>
 </resources>

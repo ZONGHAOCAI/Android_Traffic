@@ -20,9 +20,9 @@ class RelatedPersonViewModel : ViewModel() {
     /** 模擬取得遠端資料 */
     private fun loadRelatedPerson() {
         val relatedPersonList = mutableListOf<RelatedPerson>()
-        relatedPersonList.add(RelatedPerson(R.drawable.ivy, "Ivy", "H123456789", "109-01-02", "父女"))
-        relatedPersonList.add(RelatedPerson(R.drawable.mary, "Mary", "A123456789","107-02-03", "母女2"))
-        relatedPersonList.add(RelatedPerson(R.drawable.sue, "Sue", "B123456789", "101-05-04", "母女ˇ"))
+        relatedPersonList.add(RelatedPerson(R.drawable.ivy, "海豹", "H123456789", "109-01-02", "老爸"))
+        relatedPersonList.add(RelatedPerson(R.drawable.mary, "狗狗", "A123456789","107-02-03", "老媽"))
+        relatedPersonList.add(RelatedPerson(R.drawable.sue, "兔兔", "B123456789", "101-05-04", "不認識的人"))
         this.relatedPersonList = relatedPersonList
         this.relatedPerson.value = this.relatedPersonList
     }
