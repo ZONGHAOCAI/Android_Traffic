@@ -1,13 +1,54 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".WhistleblowerForm4Fragment">
+    tools:context=".WhistleblowerForm4Fragment" >
 
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Hello" />
+        android:id="@+id/tvCaseNumber"
+        android:layout_width="251dp"
+        android:layout_height="38dp"
+        android:layout_marginTop="100dp"
+        android:text="@string/txtCaseNumberConfirm"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="@+id/tvSendComplete"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="@+id/tvSendComplete"
+        app:layout_constraintTop_toBottomOf="@+id/tvSendComplete" />
 
-</FrameLayout>
+    <Button
+        android:id="@+id/btnCheckTask2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:text="@string/txtCheckTask"
+        app:layout_constraintEnd_toEndOf="@+id/tvSendComplete"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/tvSendComplete"
+        app:layout_constraintTop_toBottomOf="@+id/btnNextCase" />
+
+    <Button
+        android:id="@+id/btnNextCase"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="284dp"
+        android:text="@string/txtNextCase"
+        app:layout_constraintEnd_toEndOf="@+id/tvSendComplete"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/tvSendComplete"
+        app:layout_constraintTop_toBottomOf="@+id/tvSendComplete" />
+
+    <TextView
+        android:id="@+id/tvSendComplete"
+        android:layout_width="wrap_content"
+        android:layout_height="35dp"
+        android:layout_marginTop="72dp"
+        android:text="@string/txtSendComplete"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>
