@@ -19,6 +19,6 @@
     <string name="txt_RelatedPersonData_NameTitle">Name</string>
     <string name="txt_RelatedPersonData_RelatedShip_Title">RelatedShip</string>
     <string name="txt_RelatedPersonData_IdentityNumberTitle">Identity</string>
-    <string name="txt_RelatedPersonData_BirthdayTitle">Birthday</string>
+    <string name="txt_RelatedPersonData_Birthday_Title">Birthday</string>
     <string name="txt_RelatedPersonData_Delete">DeleteData</string>
 </resources>
