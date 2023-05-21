@@ -1,4 +1,4 @@
-package com.example.android_traffic
+package com.example.android_traffic.whistleblowerform
 
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
@@ -6,25 +6,26 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.example.android_traffic.R
 
-class WhistleblowerForm3Fragment : Fragment() {
+class WhistleblowerFormFragment : Fragment() {
 
     companion object {
-        fun newInstance() = WhistleblowerForm3Fragment()
+        fun newInstance() = WhistleblowerFormFragment()
     }
 
-    private lateinit var viewModel: WhistleblowerForm3ViewModel
+    private lateinit var viewModel: WhistleblowerFormViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_whistleblower_form3, container, false)
+        return inflater.inflate(R.layout.fragment_whistleblower_form, container, false)
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProvider(this).get(WhistleblowerForm3ViewModel::class.java)
+        viewModel = ViewModelProvider(this).get(WhistleblowerFormViewModel::class.java)
         // TODO: Use the ViewModel
     }
 

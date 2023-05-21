@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".WhistleblowerForm5Fragment" >
+    tools:context=".whistleblowerform.WhistleblowerForm5Fragment" >
 
     <EditText
         android:id="@+id/edtTxtCaseNumber"
@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="80dp"
         android:ems="10"
-        android:hint="@string/txtCaseNumber"
+        android:hint="@string/txt_WhistleblowerForm_CaseNumber"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="@+id/tvCheckTask"
         app:layout_constraintStart_toStartOf="@+id/tvCheckTask"
@@ -23,7 +23,7 @@
         android:layout_width="wrap_content"
         android:layout_height="35dp"
         android:layout_marginTop="72dp"
-        android:text="@string/txtCheckTask"
+        android:text="@string/txt_WhistleblowerForm_CheckTask"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
@@ -35,7 +35,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="384dp"
-        android:text="@string/txtCheckTask"
+        android:text="@string/txt_WhistleblowerForm_CheckTask"
         app:layout_constraintEnd_toEndOf="@+id/tvCheckTask"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="@+id/tvCheckTask"

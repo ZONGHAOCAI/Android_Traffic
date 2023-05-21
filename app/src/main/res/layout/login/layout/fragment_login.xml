@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".LoginFragment" >
+    tools:context=".Login_Login_Fragment" >
 
     <EditText
         android:id="@+id/edtTxtLoginUsername"
@@ -12,7 +12,7 @@
         android:layout_height="48dp"
         android:layout_marginTop="40dp"
         android:ems="10"
-        android:hint="@string/txtUsername"
+        android:hint="@string/txt_Login_Username"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="@+id/imageView"
         app:layout_constraintHorizontal_bias="0.6"
@@ -25,7 +25,7 @@
         android:layout_height="48dp"
         android:layout_marginTop="30dp"
         android:ems="10"
-        android:hint="@string/txtPassword"
+        android:hint="@string/txt_Login_Password"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="@+id/edtTxtLoginUsername"
         app:layout_constraintStart_toStartOf="@+id/edtTxtLoginUsername"
@@ -36,7 +36,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="60dp"
-        android:text="@string/txtLogin"
+        android:text="@string/txt_Login_Login"
         app:layout_constraintEnd_toEndOf="@+id/edtTxtLoginPassword"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/edtTxtLoginPassword"
@@ -47,7 +47,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="60dp"
-        android:text="@string/txtRegister"
+        android:text="@string/txt_Login_Register"
         app:layout_constraintEnd_toEndOf="@+id/edtTxtLoginPassword"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="@+id/edtTxtLoginPassword"
@@ -58,7 +58,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:text="@string/txtForgetPassword"
+        android:text="@string/txt_Login_ForgetPassword"
         app:layout_constraintEnd_toEndOf="@+id/edtTxtLoginPassword"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="@+id/edtTxtLoginPassword"
