@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="txt_WhistleblowerForm_Name">姓名</string>
+    <string name="txt_WhistleblowerForm_ID">身分證字號</string>
+    <string name="txt_WhistleblowerForm_Phone">手機號碼</string>
+    <string name="txt_WhistleblowerForm_Next">下一步</string>
+    <string name="txt_WhistleblowerForm_Confirm">驗證</string>
+    <string name="txt_WhistleblowerForm_ConfirmCode">驗證碼</string>
+    <string name="txt_WhistleblowerForm_SendPhoneMsg">送出驗證簡訊</string>
+    <string name="txt_WhistleblowerForm_Send">送出</string>
+    <string name="txt_WhistleblowerForm_WhistleblowerInfo">檢舉人資料</string>
+    <string name="txt_WhistleblowerForm_UploadDoc">檔案上傳</string>
+    <string name="txt_WhistleblowerForm_WhistleblowerContent">檢舉內容</string>
+    <string name="txt_WhistleblowerForm_SendComplete">送出完成</string>
+    <string name="txt_WhistleblowerForm_CheckTask">查詢案件</string>
+    <string name="txt_WhistleblowerForm_CaseNumber">案件編號</string>
+    <string name="txt_WhistleblowerForm_NextCase">繼續檢舉</string>
+    <string name="txt_WhistleblowerForm_CaseNumberConfirm">案件編號:</string>
+    <string name="txt_WhistleblowerForm_Previous">上一步</string>
+    <string name="txt_WhistleblowerForm_UploadFile">上傳檔案</string>
+    <string name="txt_WhistleblowerForm_Address">地址</string>
+    <string name="txt_WhistleblowerForm_Email">電子郵件</string>
+    <string name="txt_WhistleblowerForm_Content">每案上傳總容量限制為 80MB 【至多可上傳 5 個檔案】 如您係以影片檢舉交通違規 請您擷取檢舉之違規片段即可 以避免影片大小過大無法上傳 支援檔案類型： 圖片 jpg,png,bmp,tiff 影片 mov,wmv,avi,mp4,3gp 建議您採用 jpg 與 mp4</string>
+    <string name="txt_WhistleblowerForm_ViolationFactDetails">違規事實說明</string>
+    <string name="txt_WhistleblowerForm_ViolationFact">違規事實</string>
+    <string name="txt_WhistleblowerForm_LocationNote">地點備註</string>
+    <string name="txt_WhistleblowerForm_ViolationTime">違規時間</string>
+    <string name="txt_WhistleblowerForm_ViolationCar">違規車號</string>
+    <string name="txt_WhistleblowerForm_ViolationLocation">違規地點</string>
+    <string name="txt_WhistleblowerForm_Intersection">交叉路口</string>
+</resources>
