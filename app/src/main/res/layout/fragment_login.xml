@@ -24,7 +24,7 @@
             android:layout_marginTop="40dp"
             android:ems="10"
             android:hint="@string/txtUsername"
-            android:text="@={viewModel.username}"
+            android:text="@={viewModel.login.username}"
             android:inputType="textPersonName"
             app:layout_constraintEnd_toEndOf="@+id/imageView"
             app:layout_constraintHorizontal_bias="0.6"
@@ -38,7 +38,7 @@
             android:layout_marginTop="30dp"
             android:ems="10"
             android:hint="@string/txtPassword"
-            android:text="@={viewModel.password}"
+            android:text="@={viewModel.login.password}"
             android:inputType="textPersonName"
             app:layout_constraintEnd_toEndOf="@+id/edtTxtLoginUsername"
             app:layout_constraintStart_toStartOf="@+id/edtTxtLoginUsername"
@@ -63,6 +63,17 @@
             android:text="@string/txtRegister"
             app:layout_constraintEnd_toEndOf="@+id/edtTxtLoginPassword"
             app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="@+id/edtTxtLoginPassword"
+            app:layout_constraintTop_toBottomOf="@+id/edtTxtLoginPassword" />
+
+        <TextView
+            android:id="@+id/tvLoginAdministrator"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/txtLoginAdministrator"
+            app:layout_constraintEnd_toEndOf="@+id/edtTxtLoginPassword"
+            app:layout_constraintHorizontal_bias="0"
             app:layout_constraintStart_toStartOf="@+id/edtTxtLoginPassword"
             app:layout_constraintTop_toBottomOf="@+id/edtTxtLoginPassword" />
 

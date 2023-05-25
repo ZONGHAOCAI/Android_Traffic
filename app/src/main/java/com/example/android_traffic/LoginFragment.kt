@@ -28,15 +28,15 @@ class LoginFragment : Fragment() {
 
             btnLoginLogin.setOnClickListener {
                 viewModel?.run {
-                    if (username.value!!.isEmpty()) {
+                    if (login.value!!.username.isEmpty()) {
                         edtTxtLoginUsername.error = getString(R.string.errUsernameEmpty)
                         return@run
                     }
-                    if (username.value!!.isNotEmpty()) {
-                        username.value!!.matches(regex = Regex("[A-Z]\\d{9}"))
+                    if (login.value!!.username.isNotEmpty()) {
+                        login.value!!.username.matches(regex = Regex("[A-Z]\\d{9}"))
                     }
 
-                    if (password.value!!.isEmpty()) {
+                    if (login.value!!.password.isEmpty()) {
                         edtTxtLoginPassword.error = getString(R.string.errPasswordEmpty)
                         return@run
                     } else {
@@ -47,6 +47,17 @@ class LoginFragment : Fragment() {
             btnLoginRegister.setOnClickListener {
                 Navigation.findNavController(it).navigate(R.id.registerFragment)
             }
+
+            tvLoginForgetPassword.setOnClickListener {
+                Navigation.findNavController(it).navigate(R.id.forgetPasswordFragment)
+            }
+
+            tvLoginAdministrator.setOnClickListener {
+
+                //TODO navigate destination location (wait for fragment to build)
+//                Navigation.findNavController(it).navigate(R.id.)
+            }
+
         }
 
     }

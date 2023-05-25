@@ -14,7 +14,7 @@
     <string name="txtConfrimPassword">確認密碼</string>
     <string name="txtRegisterMember">註冊會員</string>
     <string name="txtName">姓名</string>
-    <string name="txtID">身分證字號</string>
+    <string name="txtID">身分證字號(帳號)</string>
     <string name="txtBirthday">出生年月日</string>
     <string name="txtWhistleblowerInfo">檢舉人資料</string>
     <string name="txtUploadDoc">檔案上傳</string>
@@ -47,5 +47,7 @@
     <string name="txtRegisterConfirmCode">驗證碼</string>
     <string name="txtRegisterConfirmMsg">送出驗證簡訊</string>
     <string name="txtRegisterSendConfirmCode">送出驗證碼</string>
+    <string name="txtLoginAdministrator">我是管理員</string>
+    <string name="txtRegisterResult">註冊資料錯誤提示</string>
 
 </resources>
