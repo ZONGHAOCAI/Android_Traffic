@@ -6,26 +6,28 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.viewModels
+import com.example.android_traffic.databinding.FragmentWhistleblowerFormBinding
 
 class WhistleblowerFormFragment : Fragment() {
-
-    companion object {
-        fun newInstance() = WhistleblowerFormFragment()
-    }
-
-    private lateinit var viewModel: WhistleblowerFormViewModel
-
+    private lateinit var binding: FragmentWhistleblowerFormBinding
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        return inflater.inflate(R.layout.fragment_whistleblower_form, container, false)
+    ): View {
+        binding = FragmentWhistleblowerFormBinding.inflate(inflater, container, false)
+        val viewModel : WhistleblowerFormViewModel by viewModels()
+        binding.viewModel = viewModel
+        binding.lifecycleOwner = this
+        return binding.root
     }
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProvider(this).get(WhistleblowerFormViewModel::class.java)
-        // TODO: Use the ViewModel
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+
+
+
     }
 
 }

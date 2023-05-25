@@ -14,7 +14,8 @@
     <androidx.constraintlayout.widget.ConstraintLayout
 
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="@color/pink">
 
         <EditText
             android:id="@+id/edtTxtLoginUsername"
@@ -23,6 +24,7 @@
             android:layout_marginTop="40dp"
             android:ems="10"
             android:hint="@string/txtUsername"
+            android:text="@={viewModel.username}"
             android:inputType="textPersonName"
             app:layout_constraintEnd_toEndOf="@+id/imageView"
             app:layout_constraintHorizontal_bias="0.6"
@@ -36,6 +38,7 @@
             android:layout_marginTop="30dp"
             android:ems="10"
             android:hint="@string/txtPassword"
+            android:text="@={viewModel.password}"
             android:inputType="textPersonName"
             app:layout_constraintEnd_toEndOf="@+id/edtTxtLoginUsername"
             app:layout_constraintStart_toStartOf="@+id/edtTxtLoginUsername"

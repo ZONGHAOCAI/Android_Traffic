@@ -37,4 +37,15 @@
     <string name="txtViolationLocation">違規地點</string>
     <string name="txtIntersection">交叉路口</string>
     <string name="txtResetPassword">重設密碼</string>
+    <string name="txtBackToMainPage">回首頁</string>
+    <string name="errUsernameEmpty">帳號不可空白</string>
+    <string name="errPasswordEmpty">密碼不可空白</string>
+    <string name="txtNickname">暱稱</string>
+    <string name="txtRegisterAddress">地址</string>
+    <string name="txtRegisterEmail">Email</string>
+    <string name="txtRegisterPhone">手機</string>
+    <string name="txtRegisterConfirmCode">驗證碼</string>
+    <string name="txtRegisterConfirmMsg">送出驗證簡訊</string>
+    <string name="txtRegisterSendConfirmCode">送出驗證碼</string>
+
 </resources>
