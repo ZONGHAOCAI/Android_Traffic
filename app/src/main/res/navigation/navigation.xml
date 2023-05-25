@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/navigation"
-    app:startDestination="@id/mainFragment">
+    app:startDestination="@id/ticketFragment">
 
     <fragment
         android:id="@+id/mainFragment"
@@ -32,8 +32,8 @@
             android:id="@+id/action_mainFragment_to_recordClipFragment"
             app:destination="@id/recordClipFragment" />
         <action
-            android:id="@+id/action_mainFragment_to_mapFragment"
-            app:destination="@id/mapFragment" />
+            android:id="@+id/action_mainFragment_to_ticketFragment"
+            app:destination="@id/ticketFragment" />
     </fragment>
     <fragment
         android:id="@+id/loginFragment"
@@ -271,11 +271,11 @@
             android:id="@+id/action_forum2Fragment_to_addMessageFragment"
             app:destination="@id/addMessageFragment" />
         <action
-            android:id="@+id/action_forum2Fragment_to_chatRoomFragment"
-            app:destination="@id/chatRoomFragment" />
-        <action
             android:id="@+id/action_forum2Fragment_to_forumReportFragment"
             app:destination="@id/forumReportFragment" />
+        <action
+            android:id="@+id/action_forum2Fragment_to_chatFragment"
+            app:destination="@id/chatFragment" />
     </fragment>
     <fragment
         android:id="@+id/addArticleFragment"
@@ -289,9 +289,13 @@
         tools:layout="@layout/fragment_add_message" />
     <fragment
         android:id="@+id/chatRoomFragment"
-        android:name="com.example.android_traffic.ChatRoomFragment"
+        android:name="com.example.android_traffic.chat.ChatRoomFragment"
         android:label="fragment_chat_room"
-        tools:layout="@layout/fragment_chat_room" />
+        tools:layout="@layout/fragment_chat_room" >
+        <action
+            android:id="@+id/action_chatRoomFragment_to_chatFragment"
+            app:destination="@id/chatFragment" />
+    </fragment>
     <fragment
         android:id="@+id/forumReportFragment"
         android:name="com.example.android_traffic.ForumReportFragment"
@@ -357,4 +361,59 @@
         android:name="com.example.android_traffic.RelatedPersonDataVehideDataFragment"
         android:label="fragment_related_person_data_vehide_data"
         tools:layout="@layout/fragment_related_person_data_vehide_data" />
+    <fragment
+        android:id="@+id/chatFragment"
+        android:name="com.example.android_traffic.chat.ChatFragment"
+        android:label="fragment_chat"
+        tools:layout="@layout/fragment_chat" />
+    <fragment
+        android:id="@+id/ticketFragment"
+        android:name="com.example.android_traffic.ticket.controller.TicketFragment"
+        android:label="fragment_ticket"
+        tools:layout="@layout/fragment_ticket" >
+        <action
+            android:id="@+id/action_ticketFragment_to_ticketUnpaidListFragment"
+            app:destination="@id/ticketUnpaidListFragment" />
+        <action
+            android:id="@+id/action_ticketFragment_to_ticketHistoryListFragment"
+            app:destination="@id/ticketHistoryListFragment" />
+        <action
+            android:id="@+id/action_ticketFragment_to_ticketAppealListFragment"
+            app:destination="@id/ticketAppealListFragment" />
+        <action
+            android:id="@+id/action_ticketFragment_to_ticketContentFragment"
+            app:destination="@id/ticketContentFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/ticketUnpaidListFragment"
+        android:name="com.example.android_traffic.ticket.controller.TicketUnpaidListFragment"
+        android:label="fragment_ticket_unpaid_list"
+        tools:layout="@layout/fragment_ticket_unpaid_list" >
+        <action
+            android:id="@+id/action_ticketUnpaidListFragment_to_ticketContentFragment"
+            app:destination="@id/ticketContentFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/ticketHistoryListFragment"
+        android:name="com.example.android_traffic.ticket.controller.TicketHistoryListFragment"
+        android:label="fragment_ticket_history_list"
+        tools:layout="@layout/fragment_ticket_history_list" >
+        <action
+            android:id="@+id/action_ticketHistoryListFragment_to_ticketContentFragment"
+            app:destination="@id/ticketContentFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/ticketAppealListFragment"
+        android:name="com.example.android_traffic.ticket.controller.TicketAppealListFragment"
+        android:label="fragment_ticket_appeal_list"
+        tools:layout="@layout/fragment_ticket_appeal_list" >
+        <action
+            android:id="@+id/action_ticketAppealListFragment_to_ticketContentFragment"
+            app:destination="@id/ticketContentFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/ticketContentFragment"
+        android:name="com.example.android_traffic.ticket.controller.TicketContentFragment"
+        android:label="fragment_ticket_content"
+        tools:layout="@layout/fragment_ticket_content" />
 </navigation>

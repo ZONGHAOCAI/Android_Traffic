@@ -1,4 +1,4 @@
-package com.example.android_traffic
+package com.example.android_traffic.chat
 
 import androidx.lifecycle.ViewModel
 
