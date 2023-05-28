@@ -1,7 +1,78 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".MainFragment" />
+    tools:context=".MainFragment">
+
+    <data>
+        <variable
+            name="viewmodel"
+            type="com.example.android_traffic.MainViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageButton
+            android:id="@+id/imgBtn_Main_AppealHistory"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/icon_appealhistory"
+            app:layout_constraintBottom_toBottomOf="@+id/imgBtn_Main_Photo"
+            app:layout_constraintStart_toStartOf="@+id/imgBtn_Main_Ticket" />
+
+        <ImageButton
+            android:id="@+id/imgBtn_Main_Ticket"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/icon_ticket"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/imgBtn_Main_Appeal"
+            app:layout_constraintTop_toTopOf="@+id/imgBtn_Main_Appeal" />
+
+        <ImageButton
+            android:id="@+id/imgBtn_Main_Forum"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:src="@drawable/icon_forum"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/imgBtn_Main_Photo"
+            app:layout_constraintTop_toBottomOf="@+id/imgBtn_Main_Photo"
+            app:layout_constraintVertical_bias="0.5" />
+
+        <ImageButton
+            android:id="@+id/imgBtn_Main_Chat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/icon_chat"
+            app:layout_constraintStart_toStartOf="@+id/imgBtn_Main_AppealHistory"
+            app:layout_constraintTop_toTopOf="@+id/imgBtn_Main_Forum" />
+
+        <ImageButton
+            android:id="@+id/imgBtn_Main_Photo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:src="@drawable/icon_photo"
+            app:layout_constraintBottom_toTopOf="@+id/imgBtn_Main_Forum"
+            app:layout_constraintStart_toStartOf="@+id/imgBtn_Main_Appeal"
+            app:layout_constraintTop_toBottomOf="@+id/imgBtn_Main_Appeal"
+            app:layout_constraintVertical_bias="0.5" />
+
+        <ImageButton
+            android:id="@+id/imgBtn_Main_Appeal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/icon_appeal"
+            app:layout_constraintBottom_toTopOf="@+id/imgBtn_Main_Photo"
+            app:layout_constraintEnd_toStartOf="@+id/imgBtn_Main_Ticket"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.5" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

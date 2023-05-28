@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="txt_MemberCenter_MeInfo" translatable="false">個人資料</string>
+    <string name="txt_MemberCenter_RelatedPersonInfo" translatable="false">關係人資料</string>
+    <string name="txt_MemberCenter_ChangeLanguage" translatable="false">語言</string>
+    <string name="txt_MemberCenter_Update2" translatable="false">檢查更新</string>
+    <string name="txt_MemberCenter_CreditCard">信用卡資料</string>
+    <string name="txt_MemberCenter_Logout2" translatable="false">登出</string>
+    <string name="txt_MemberCenter_DeleteAccount" translatable="false">刪除帳號</string>
+    <string name="txt_MemberCenter_Language" translatable="false">中文</string>
+    <string name="txt_MemberData_VehicleData">車輛資料</string>
+    <string name="txt_MemberData_Nickname">暱稱</string>
+    <string name="txt_MemberData_Email">信箱</string>
+    <string name="txt_MemberData_Address">地址</string>
+    <string name="txt_MemberData_EditPassword">修改密碼</string>
+    <string name="txt_MemberData_ChatSetting">私訊</string>
+    <string name="txt_MemberData_Avatar">頭像</string>
+    <string name="txt_MemberData_BirthdayTitle">生日</string>
+    <string name="txt_RelatedPersonData_NameTitle">名稱</string>
+    <string name="txt_RelatedPersonData_RelatedShip_Title">關係</string>
+    <string name="txt_RelatedPersonData_IdentityNumberTitle">身分證</string>
+    <string name="txt_RelatedPersonData_BirthdayTitle">生日</string>
+
+
+    <string name="txt_RelatedPersonData_Delete">刪除資料</string>
+
+</resources>

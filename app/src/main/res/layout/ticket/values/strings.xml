@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="txt_Ticket_SearchHint">請輸入欲查詢的單號</string>
+    <string name="txt_Ticket_Number">罰單單號：</string>
+    <string name="txt_Ticket_Violation">違規事項：</string>
+    <string name="txt_Ticket_Amount">應繳罰款：</string>
+    <string name="txt_Ticket_Appeal">申訴</string>
+    <string name="txt_Ticket_PayTicket">繳納罰款</string>
+</resources>
