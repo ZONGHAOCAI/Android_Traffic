@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.example.android_traffic.membercenter.viewmodel.RelatedPersonDataViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!-- 頭像 -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_RelatedPersonData_Avatar"
+            android:layout_width="0dp"
+            android:layout_height="62dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginEnd="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/tv_RelatedPersonData_Avatar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/txt_MemberData_Avatar"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/img_RelatedPersonData_Avatar"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginEnd="28dp"
+                app:imageResource="@{viewModel.relatedPerson.imageId}"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:layout_width="19dp"
+                android:layout_height="29dp"
+                android:src="@drawable/membercenter_txt_edit"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:layout_width="367dp"
+                android:layout_height="0dp"
+                android:layout_marginEnd="4dp"
+                android:src="@drawable/membercenter_txt_bottomline"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+        <!-- 關係 -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_RelatedPersonData_RelatedShip"
+            android:layout_width="0dp"
+            android:layout_height="62dp"
+            android:layout_marginTop="20dp"
+            app:layout_constraintEnd_toEndOf="@+id/cl_RelatedPersonData_Avatar"
+            app:layout_constraintStart_toStartOf="@+id/cl_RelatedPersonData_Avatar"
+            app:layout_constraintTop_toBottomOf="@+id/cl_RelatedPersonData_Avatar">
+
+            <TextView
+                android:id="@+id/tv_RelatedPersonData_RelatedShip_Title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/txt_RelatedPersonData_RelatedShip_Title"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_RelatedPersonData_RelatedShip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="28dp"
+                android:text="@{viewModel.relatedPerson.membersRelationship}"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:layout_width="19dp"
+                android:layout_height="29dp"
+                android:src="@drawable/membercenter_txt_edit"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:layout_width="367dp"
+                android:layout_height="0dp"
+                android:layout_marginEnd="4dp"
+                android:src="@drawable/membercenter_txt_bottomline"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+        <!-- 身分證號碼 -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_RelatedPersonData_IdentityNumber"
+            android:layout_width="0dp"
+            android:layout_height="62dp"
+
+            android:layout_marginTop="20dp"
+            app:layout_constraintEnd_toEndOf="@+id/cl_RelatedPersonData_RelatedShip"
+            app:layout_constraintStart_toStartOf="@+id/cl_RelatedPersonData_RelatedShip"
+            app:layout_constraintTop_toBottomOf="@+id/cl_RelatedPersonData_RelatedShip">
+
+            <TextView
+                android:id="@+id/tv_RelatedPersonData_IdentityNumber_Title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/txt_RelatedPersonData_IdentityNumberTitle"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_RelatedPersonData_IdentityNo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="28dp"
+                android:text="@{viewModel.relatedPerson.identityNumber}"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:layout_width="19dp"
+                android:layout_height="29dp"
+                android:src="@drawable/membercenter_txt_edit"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:layout_width="367dp"
+                android:layout_height="0dp"
+                android:layout_marginEnd="4dp"
+                android:src="@drawable/membercenter_txt_bottomline"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+        <!-- 生日 -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_RelatedPersonData_Birthday"
+            android:layout_width="0dp"
+            android:layout_height="62dp"
+
+            android:layout_marginTop="20dp"
+            app:layout_constraintEnd_toEndOf="@+id/cl_RelatedPersonData_IdentityNumber"
+            app:layout_constraintStart_toStartOf="@+id/cl_RelatedPersonData_IdentityNumber"
+            app:layout_constraintTop_toBottomOf="@+id/cl_RelatedPersonData_IdentityNumber">
+
+            <TextView
+                android:id="@+id/tv_RelatedPersonData_Birthday_Title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/txt_RelatedPersonData_BirthdayTitle"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_RelatedPersonData_Birthday"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="28dp"
+                android:text="@{viewModel.relatedPerson.birthday}"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:layout_width="19dp"
+                android:layout_height="29dp"
+                android:src="@drawable/membercenter_txt_edit"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:layout_width="367dp"
+                android:layout_height="0dp"
+                android:layout_marginEnd="4dp"
+                android:src="@drawable/membercenter_txt_bottomline"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+        <!-- 車輛資料 -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_RelatedPersonData_VehicleData"
+            android:layout_width="0dp"
+            android:layout_height="62dp"
+
+            android:layout_marginTop="20dp"
+            app:layout_constraintEnd_toEndOf="@+id/cl_RelatedPersonData_Birthday"
+            app:layout_constraintStart_toStartOf="@+id/cl_RelatedPersonData_Birthday"
+            app:layout_constraintTop_toBottomOf="@+id/cl_RelatedPersonData_Birthday">
+
+            <TextView
+                android:id="@+id/tv_RelatedPersonData_VehicleData_Title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/txt_MemberData_VehicleData"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <ImageView
+                android:layout_width="19dp"
+                android:layout_height="29dp"
+                android:src="@drawable/membercenter_txt_edit"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:layout_width="367dp"
+                android:layout_height="0dp"
+                android:layout_marginEnd="4dp"
+                android:src="@drawable/membercenter_txt_bottomline"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:id="@+id/tv_RelatedPersonData_Delete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/txt_RelatedPersonData_Delete"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

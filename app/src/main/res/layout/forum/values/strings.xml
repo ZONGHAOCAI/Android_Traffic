@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="txt_Forum_ArticleAdd">新增文章</string>
+    <string name="txt_Forum_ArtcleTitle">文章標題</string>
+    <string name="txt_Forum_ArtcleContent">文章內容預覽</string>
+    <string name="txt_Forum_AnnArtcle">公告、文章或規範</string>
+    <string name="txt_Forum_NickName">我是暱稱</string>
+    <string name="txt_Forum_Follow">追蹤</string>
+    <string name="txt_Forum_DetailArtcleContent">文章內容</string>
+    <string name="txt_Forum_Next">下一步</string>
+    <string name="txt_Forum_ContentAdd">新增文章內容</string>
+    <string name="txt_Forum_Comment">留言...</string>
+</resources>

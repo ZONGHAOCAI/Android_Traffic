@@ -28,7 +28,7 @@
             android:layout_width="20dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:src="@drawable/creditcardicon" />
+            android:src="@drawable/avatar3" />
 
         <TextView
             android:id="@+id/textView14"
@@ -61,7 +61,7 @@
             android:layout_width="20dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:src="@drawable/accountbalanceicon" />
+            android:src="@drawable/avatar3" />
 
         <TextView
             android:id="@+id/textView15"
