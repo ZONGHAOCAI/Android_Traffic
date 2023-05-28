@@ -2,7 +2,7 @@ package com.example.android_traffic
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.example.android_traffic.modelLogin.Whistleblower
+import com.example.android_traffic.login.Whistleblower
 
 class WhistleblowerFormViewModel : ViewModel() {
     val whistleblower: MutableLiveData<Whistleblower> by lazy { MutableLiveData<Whistleblower>() }

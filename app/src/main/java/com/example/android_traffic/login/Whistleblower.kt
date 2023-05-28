@@ -1,4 +1,4 @@
-package com.example.android_traffic.modelLogin
+package com.example.android_traffic.login
 
 data class Whistleblower(
     var violationTime: String = "",
