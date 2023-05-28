@@ -1,65 +1,66 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".whistleblowerform.WhistleblowerForm2Fragment" >
+    tools:context=".whistleblowerform.WhistleblowerForm2Fragment">
 
-    <Button
-        android:id="@+id/btnNextWhistleblower2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="120dp"
-        android:text="@string/txt_WhistleblowerForm_Next"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.578"
-        app:layout_constraintStart_toStartOf="@+id/btnUploadDocWhistleblower2"
-        app:layout_constraintTop_toBottomOf="@+id/btnUploadDocWhistleblower2" />
+    <data>
 
-    <Button
-        android:id="@+id/btnUploadDocWhistleblower2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="232dp"
-        android:text="@string/txt_WhistleblowerForm_UploadFile"
-        app:layout_constraintEnd_toEndOf="@+id/tvUploadDocWhistleblower2"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/tvUploadDocWhistleblower2"
-        app:layout_constraintTop_toBottomOf="@+id/tvUploadDocWhistleblower2" />
+        <variable
+            name="viewModel"
+            type="com.example.android_traffic.whistleblowerform.WhistleblowerForm2ViewModel" />
+    </data>
 
-    <Button
-        android:id="@+id/btnPreviousWhistleblower2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="120dp"
-        android:text="@string/txt_WhistleblowerForm_Previous"
-        app:layout_constraintEnd_toEndOf="@+id/btnUploadDocWhistleblower2"
-        app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnUploadDocWhistleblower2" />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/tvUploadDocWhistleblower2"
-        android:layout_width="wrap_content"
-        android:layout_height="35dp"
-        android:layout_marginTop="72dp"
-        android:text="@string/txt_WhistleblowerForm_UploadDoc"
-        android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/tvContentWhistleblower2"
-        android:layout_width="230dp"
-        android:layout_height="171dp"
-        android:layout_marginTop="148dp"
-        android:text="@string/txt_WhistleblowerForm_Content"
-        android:textSize="14sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <Button
+            android:id="@+id/btnNextWhistleblower2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/txtSend"
+            app:layout_constraintEnd_toEndOf="@+id/textView2"
+            app:layout_constraintHorizontal_bias="0.86"
+            app:layout_constraintStart_toStartOf="@+id/textView2"
+            app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+        <Button
+            android:id="@+id/btnPreviousWhistleblower2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="28dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/txtPrevious"
+            app:layout_constraintEnd_toEndOf="@+id/textView2"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/textView2"
+            app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+        <TextView
+            android:id="@+id/tvUploadDocWhistleblower2"
+            android:layout_width="wrap_content"
+            android:layout_height="35dp"
+            android:layout_marginTop="72dp"
+            android:text="@string/txtWhistleblowerContent"
+            android:textSize="24sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="322dp"
+            android:layout_height="394dp"
+            android:layout_marginTop="84dp"
+            android:text="TextView"
+            app:layout_constraintEnd_toEndOf="@+id/tvUploadDocWhistleblower2"
+            app:layout_constraintStart_toStartOf="@+id/tvUploadDocWhistleblower2"
+            app:layout_constraintTop_toBottomOf="@+id/tvUploadDocWhistleblower2" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
