@@ -379,8 +379,8 @@
                       <LayoutPositions>
                         <option name="myPosition">
                           <Point>
-                            <option name="x" value="988" />
-                            <option name="y" value="2932" />
+                            <option name="x" value="938" />
+                            <option name="y" value="2814" />
                           </Point>
                         </option>
                       </LayoutPositions>
@@ -765,6 +765,11 @@
                         <option name="myPositions">
                           <map>
                             <entry key="action_ticketFragment_to_ticketAppealListFragment">
+                              <value>
+                                <LayoutPositions />
+                              </value>
+                            </entry>
+                            <entry key="action_ticketFragment_to_ticketContentFragment">
                               <value>
                                 <LayoutPositions />
                               </value>

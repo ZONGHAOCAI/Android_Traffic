@@ -6,4 +6,12 @@ import com.example.android_traffic.ticket.model.Content
 
 class TicketContentViewModel : ViewModel() {
     val content : MutableLiveData<Content> by lazy { MutableLiveData<Content>() }
+
+    fun btnappeal () {
+        var a = TicketHistoryListViewModel()
+        a.loadTicketList()
+        when (a.loadTicketList()[1].status){
+            "已繳納" -> "1"
+        }
+    }
 }

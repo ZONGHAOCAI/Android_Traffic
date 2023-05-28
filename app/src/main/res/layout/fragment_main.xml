@@ -18,7 +18,7 @@
             android:id="@+id/imgBtn_Main_AppealHistory"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/list_alt_fill0_wght400_grad0_opsz48"
+            android:src="@drawable/icon_appealhistory"
             app:layout_constraintBottom_toBottomOf="@+id/imgBtn_Main_Photo"
             app:layout_constraintStart_toStartOf="@+id/imgBtn_Main_Ticket" />
 
@@ -26,7 +26,7 @@
             android:id="@+id/imgBtn_Main_Ticket"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/description_fill0_wght400_grad0_opsz48"
+            android:src="@drawable/icon_ticket"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toEndOf="@+id/imgBtn_Main_Appeal"
@@ -37,7 +37,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="50dp"
-            android:src="@drawable/diversity_3_fill0_wght400_grad0_opsz48"
+            android:src="@drawable/icon_forum"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="@+id/imgBtn_Main_Photo"
             app:layout_constraintTop_toBottomOf="@+id/imgBtn_Main_Photo"
@@ -47,7 +47,7 @@
             android:id="@+id/imgBtn_Main_Chat"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/forum_fill0_wght400_grad0_opsz48"
+            android:src="@drawable/icon_chat"
             app:layout_constraintStart_toStartOf="@+id/imgBtn_Main_AppealHistory"
             app:layout_constraintTop_toTopOf="@+id/imgBtn_Main_Forum" />
 
@@ -56,7 +56,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="50dp"
-            android:src="@drawable/photo_camera_fill0_wght400_grad0_opsz48"
+            android:src="@drawable/icon_photo"
             app:layout_constraintBottom_toTopOf="@+id/imgBtn_Main_Forum"
             app:layout_constraintStart_toStartOf="@+id/imgBtn_Main_Appeal"
             app:layout_constraintTop_toBottomOf="@+id/imgBtn_Main_Appeal"
@@ -66,7 +66,7 @@
             android:id="@+id/imgBtn_Main_Appeal"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/report_fill0_wght400_grad0_opsz48"
+            android:src="@drawable/icon_appeal"
             app:layout_constraintBottom_toTopOf="@+id/imgBtn_Main_Photo"
             app:layout_constraintEnd_toStartOf="@+id/imgBtn_Main_Ticket"
             app:layout_constraintHorizontal_bias="0.5"

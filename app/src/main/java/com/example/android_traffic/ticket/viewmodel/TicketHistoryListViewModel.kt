@@ -26,8 +26,8 @@ class TicketHistoryListViewModel : ViewModel() {
         }
     }
 
-    private fun loadTicketList() {
-        var appeallist = mutableListOf<Content>()
+    fun loadTicketList(): MutableList<Content> {
+        var historylist = mutableListOf<Content>()
         historylist.add(Content("H123","已繳納"))
         historylist.add(Content("H143","申訴成功"))
         historylist.add(Content("H133","已繳納"))
@@ -43,5 +43,6 @@ class TicketHistoryListViewModel : ViewModel() {
         historylist.add(Content("H303","已繳納"))
         this.historylist = historylist
         this.content.value = this.historylist
+        return historylist
     }
 }

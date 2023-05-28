@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/navigation"
-    app:startDestination="@id/ticketFragment">
+    app:startDestination="@id/mainFragment">
 
     <fragment
         android:id="@+id/mainFragment"
@@ -289,7 +289,7 @@
         tools:layout="@layout/fragment_add_message" />
     <fragment
         android:id="@+id/chatRoomFragment"
-        android:name="com.example.android_traffic.chat.ChatRoomFragment"
+        android:name="com.example.android_traffic.chat.controller.ChatRoomFragment"
         android:label="fragment_chat_room"
         tools:layout="@layout/fragment_chat_room" >
         <action
@@ -363,7 +363,7 @@
         tools:layout="@layout/fragment_related_person_data_vehide_data" />
     <fragment
         android:id="@+id/chatFragment"
-        android:name="com.example.android_traffic.chat.ChatFragment"
+        android:name="com.example.android_traffic.chat.controller.ChatFragment"
         android:label="fragment_chat"
         tools:layout="@layout/fragment_chat" />
     <fragment

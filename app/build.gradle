@@ -43,6 +43,8 @@ android {
                             'src/main/res/layout/whistleblowerform',
                             'src/main/res/layout/chat',
                             'src/main/res/layout/ticket',
+                            'src/main/res/layout/payticket',
+                            'src/main/res/layout/forum',
                             'src/main/res/layout',
                             'src/main/res'
                     ]
