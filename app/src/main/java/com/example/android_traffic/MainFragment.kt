@@ -31,7 +31,12 @@ class MainFragment : Fragment() {
             }
             imgBtnMainChat.setOnClickListener {
                 Navigation.findNavController(it)
-                .navigate(R.id.action_mainFragment_to_chatRoomFragment) }
+                .navigate(R.id.action_mainFragment_to_chatRoomFragment)
+            }
+            imgBtnMainForum.setOnClickListener {
+                Navigation.findNavController(it)
+                    .navigate(R.id.action_mainFragment_to_forumFragment)
+            }
         }
     }
 }

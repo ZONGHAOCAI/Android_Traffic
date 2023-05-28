@@ -13,9 +13,9 @@
         android:layout_height="wrap_content"
         android:layout_gravity="end|bottom"
         android:layout_marginBottom="20dp"
-        android:contentDescription="@string/articleAdd"
-        android:src="@drawable/addicon"
-        app:backgroundTint="@color/pink"
+        android:contentDescription="@string/txt_Forum_ArticleAdd"
+        android:src="@drawable/avatar3"
+        app:backgroundTint="@color/pink_style_dark"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -37,7 +37,7 @@
             android:layout_height="20dp"
             android:layout_gravity="end|center"
             android:layout_marginEnd="10dp"
-            android:src="@drawable/favoriteicon" />
+            android:src="@drawable/avatar3" />
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -49,14 +49,14 @@
                 android:id="@+id/tvArtcleTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/tvArtcleTitle"
+                android:text="@string/txt_Forum_ArtcleTitle"
                 android:textSize="34sp" />
 
             <TextView
                 android:id="@+id/tvArtcleContent"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/tvArtcleContent" />
+                android:text="@string/txt_Forum_ArtcleContent" />
 
         </LinearLayout>
 
@@ -79,7 +79,7 @@
             android:layout_height="20dp"
             android:layout_gravity="end|center"
             android:layout_marginEnd="10dp"
-            android:src="@drawable/favoriteicon" />
+            android:src="@drawable/avatar3" />
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -91,14 +91,14 @@
                 android:id="@+id/tvArtcleTitle2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/tvArtcleTitle"
+                android:text="@string/txt_Forum_ArtcleTitle"
                 android:textSize="34sp" />
 
             <TextView
                 android:id="@+id/tvArtcleContent2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/tvArtcleContent" />
+                android:text="@string/txt_Forum_ArtcleContent" />
 
         </LinearLayout>
 
@@ -121,7 +121,7 @@
             android:layout_height="20dp"
             android:layout_gravity="end|center"
             android:layout_marginEnd="10dp"
-            android:src="@drawable/favoriteicon" />
+            android:src="@drawable/avatar3" />
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -133,14 +133,14 @@
                 android:id="@+id/tvArtcleTitle3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/tvArtcleTitle"
+                android:text="@string/txt_Forum_ArtcleTitle"
                 android:textSize="34sp" />
 
             <TextView
                 android:id="@+id/tvArtcleContent3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/tvArtcleContent" />
+                android:text="@string/txt_Forum_ArtcleContent" />
 
         </LinearLayout>
 
@@ -166,7 +166,7 @@
                 android:layout_marginLeft="10dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/campaignicon" />
+                android:src="@drawable/avatar3" />
 
             <TextView
                 android:id="@+id/tvAnnArtcle"
@@ -174,7 +174,7 @@
                 android:layout_marginLeft="20dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/tvAnnArtcle"
+                android:text="@string/txt_Forum_AnnArtcle"
                 android:textSize="20sp" />
         </LinearLayout>
 
