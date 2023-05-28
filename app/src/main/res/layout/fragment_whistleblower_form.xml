@@ -39,6 +39,7 @@
                 android:layout_marginTop="20dp"
                 android:ems="10"
                 android:hint="@string/txtViolationTime"
+                android:text="@={viewModel.whistleblower.violationTime}"
                 android:inputType="textPersonName"
                 app:layout_constraintEnd_toEndOf="@+id/tvWhistleblowerContent"
                 app:layout_constraintStart_toStartOf="@+id/tvWhistleblowerContent"
@@ -51,6 +52,7 @@
                 android:layout_marginTop="76dp"
                 android:ems="10"
                 android:hint="@string/txtViolationCar"
+                android:text="@={viewModel.whistleblower.violationCar}"
                 android:inputType="textPersonName"
                 app:layout_constraintEnd_toEndOf="@+id/tvWhistleblowerContent"
                 app:layout_constraintStart_toStartOf="@+id/tvWhistleblowerContent"
@@ -63,6 +65,7 @@
                 android:layout_marginTop="136dp"
                 android:ems="10"
                 android:hint="@string/txtViolationLocation"
+                android:text="@={viewModel.whistleblower.violationLocation}"
                 android:inputType="textPersonName"
                 app:layout_constraintEnd_toEndOf="@+id/tvWhistleblowerContent"
                 app:layout_constraintStart_toStartOf="@+id/tvWhistleblowerContent"
@@ -75,6 +78,7 @@
                 android:layout_marginTop="196dp"
                 android:ems="10"
                 android:hint="@string/txtIntersection"
+                android:text="@={viewModel.whistleblower.violationIntersection}"
                 android:inputType="textPersonName"
                 app:layout_constraintEnd_toEndOf="@+id/tvWhistleblowerContent"
                 app:layout_constraintStart_toStartOf="@+id/tvWhistleblowerContent"
@@ -87,6 +91,7 @@
                 android:layout_marginTop="256dp"
                 android:ems="10"
                 android:hint="@string/txtLocationNote"
+                android:text="@={viewModel.whistleblower.violationLocationNote}"
                 android:inputType="textPersonName"
                 app:layout_constraintEnd_toEndOf="@+id/tvWhistleblowerContent"
                 app:layout_constraintStart_toStartOf="@+id/tvWhistleblowerContent"
@@ -99,6 +104,7 @@
                 android:layout_marginTop="316dp"
                 android:ems="10"
                 android:hint="@string/ViolationFact"
+                android:text="@={viewModel.whistleblower.violationFact}"
                 android:inputType="textPersonName"
                 app:layout_constraintEnd_toEndOf="@+id/tvWhistleblowerContent"
                 app:layout_constraintStart_toStartOf="@+id/tvWhistleblowerContent"
@@ -111,6 +117,7 @@
                 android:layout_marginTop="368dp"
                 android:ems="10"
                 android:hint="@string/ViolationFactDetails"
+                android:text="@={viewModel.whistleblower.violationFactDetails}"
                 android:inputType="textPersonName"
                 app:layout_constraintEnd_toEndOf="@+id/tvWhistleblowerContent"
                 app:layout_constraintStart_toStartOf="@+id/tvWhistleblowerContent"
@@ -118,26 +125,25 @@
 
 
             <Button
-                android:id="@+id/btnNext7"
+                android:id="@+id/btnWhistleblowerNext"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="30dp"
+                android:layout_marginTop="4dp"
                 android:text="@string/txtSend"
                 app:layout_constraintEnd_toEndOf="@+id/tvContentWhistleblower2"
-                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintHorizontal_bias="0.482"
                 app:layout_constraintStart_toStartOf="@+id/tvContentWhistleblower2"
                 app:layout_constraintTop_toBottomOf="@+id/btnUploadDocWhistleblower2" />
 
-            <Button
-                android:id="@+id/btnNext6"
+            <TextView
+                android:id="@+id/tvWhistleblowerResult"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="30dp"
-                android:text="@string/txtPrevious"
-                app:layout_constraintEnd_toEndOf="@+id/tvContentWhistleblower2"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="@+id/tvContentWhistleblower2"
-                app:layout_constraintTop_toBottomOf="@+id/btnUploadDocWhistleblower2" />
+                android:layout_marginTop="800dp"
+                android:text="@{viewModel.whistleblowerResult}"
+                app:layout_constraintEnd_toEndOf="@+id/edtTxtViolationFactDetailsWhistleblower"
+                app:layout_constraintStart_toStartOf="@+id/edtTxtViolationFactDetailsWhistleblower"
+                app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/tvContentWhistleblower2"

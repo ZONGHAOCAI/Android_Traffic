@@ -6,4 +6,5 @@ import com.example.android_traffic.modelLogin.Login
 
 class LoginViewModel : ViewModel() {
    val login: MutableLiveData<Login> by lazy { MutableLiveData<Login>() }
+   val loginResult: MutableLiveData<String> by lazy {MutableLiveData<String>()}
 }

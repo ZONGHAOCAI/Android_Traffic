@@ -27,7 +27,7 @@ class RegisterFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         with(binding) {
             btRegisterSend.setOnClickListener {
-                viewModel.run {
+                viewModel?.run {
                     if (login.value!!.username.matches(regex = Regex("[A-Z]\\d{9}"))) {
                         result.value = "使⽤者名稱:須為身分證字號,且第一個英文字母為大寫"
                         return@run

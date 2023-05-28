@@ -9,6 +9,7 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.Navigation
 import com.example.android_traffic.databinding.FragmentLoginBinding
 
+
 class LoginFragment : Fragment() {
     private lateinit var binding: FragmentLoginBinding
 
@@ -21,6 +22,7 @@ class LoginFragment : Fragment() {
         binding.viewModel = viewModel
         binding.lifecycleOwner = this
         return binding.root
+
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -29,7 +31,7 @@ class LoginFragment : Fragment() {
             btnLoginLogin.setOnClickListener {
                 viewModel?.run {
                     if (login.value!!.username.isEmpty()) {
-                        edtTxtLoginUsername.error = getString(R.string.errUsernameEmpty)
+                        loginResult.value = getString(R.string.errUsernameEmpty)
                         return@run
                     }
                     if (login.value!!.username.isNotEmpty()) {
@@ -43,6 +45,7 @@ class LoginFragment : Fragment() {
                         Navigation.findNavController(it).navigate(R.id.mainFragment)
                     }
                 }
+
             }
             btnLoginRegister.setOnClickListener {
                 Navigation.findNavController(it).navigate(R.id.registerFragment)
@@ -55,7 +58,7 @@ class LoginFragment : Fragment() {
             tvLoginAdministrator.setOnClickListener {
 
                 //TODO navigate destination location (wait for fragment to build)
-//                Navigation.findNavController(it).navigate(R.id.)
+                Navigation.findNavController(it).navigate(R.id.mainFragment)
             }
 
         }
