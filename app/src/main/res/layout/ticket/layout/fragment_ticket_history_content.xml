@@ -1,18 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".ticket.controller.TicketUnpaidContentFragment">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ticket.controller.TicketHistoryContentFragment">
 
     <data>
         <variable
             name="viewmodel"
-            type="com.example.android_traffic.ticket.viewmodel.TicketContentViewModel" />
+            type="com.example.android_traffic.ticket.viewmodel.TicketHistoryContentViewModel" />
+
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent" >
 
         <ScrollView
             android:layout_width="fill_parent"
@@ -93,27 +94,6 @@
                         android:textColor="@color/red"
                         android:textSize="24sp" />
                 </LinearLayout>
-
-                <Button
-                    android:id="@+id/bt_TicketContent_Appeal"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="100dp"
-                    android:layout_marginTop="100dp"
-                    android:layout_marginEnd="100dp"
-                    android:text="@string/txt_Ticket_Appeal"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent" />
-
-                <Button
-                    android:id="@+id/bt_TicketContent_PayTicket"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="100dp"
-                    android:layout_marginEnd="100dp"
-                    android:layout_marginBottom="50dp"
-                    android:text="@string/txt_Ticket_PayTicket" />
-
             </LinearLayout>
         </ScrollView>
 

@@ -10,6 +10,7 @@ import com.example.android_traffic.R
 import com.example.android_traffic.databinding.FragmentTicketUnpaidBinding
 import com.example.android_traffic.ticket.model.Content
 import com.example.android_traffic.ticket.viewmodel.TicketContentViewModel
+import com.example.android_traffic.ticket.viewmodel.TicketUnpaidContentViewModel
 
 class TicketUnpaidAdapter (private var unpaidcontent: List<Content>) :
     RecyclerView.Adapter<TicketUnpaidAdapter.Holder>() {
@@ -24,7 +25,7 @@ class TicketUnpaidAdapter (private var unpaidcontent: List<Content>) :
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): Holder {
         val TicketUnpaidFragmentBinding =
             FragmentTicketUnpaidBinding.inflate(LayoutInflater.from(parent.context), parent, false)
-        TicketUnpaidFragmentBinding.viewmodel = TicketContentViewModel()
+        TicketUnpaidFragmentBinding.viewmodel = TicketUnpaidContentViewModel()
         // 設定lifecycleOwner方能監控LiveData資料變化，layout檔案的view才會更新顯示
         TicketUnpaidFragmentBinding.lifecycleOwner = parent.findViewTreeLifecycleOwner()
         return Holder(TicketUnpaidFragmentBinding)
@@ -42,7 +43,7 @@ class TicketUnpaidAdapter (private var unpaidcontent: List<Content>) :
             itemView.setOnClickListener {
                 Navigation.findNavController(it)
 //                    .navigate(R.id.action_ticketListFragment_to_ticketContentFragment, bundle)
-                    .navigate(R.id.action_ticketFragment_to_ticketContentFragment, bundle)
+                    .navigate(R.id.action_ticketFragment_to_ticketUnpaidContentFragment, bundle)
             }
         }
     }

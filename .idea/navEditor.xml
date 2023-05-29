@@ -720,6 +720,18 @@
                       </LayoutPositions>
                     </value>
                   </entry>
+                  <entry key="ticketAppealContentFragment">
+                    <value>
+                      <LayoutPositions>
+                        <option name="myPosition">
+                          <Point>
+                            <option name="x" value="1525" />
+                            <option name="y" value="589" />
+                          </Point>
+                        </option>
+                      </LayoutPositions>
+                    </value>
+                  </entry>
                   <entry key="ticketAppealListFragment">
                     <value>
                       <LayoutPositions>
@@ -789,6 +801,18 @@
                       </LayoutPositions>
                     </value>
                   </entry>
+                  <entry key="ticketHistoryContentFragment">
+                    <value>
+                      <LayoutPositions>
+                        <option name="myPosition">
+                          <Point>
+                            <option name="x" value="1560" />
+                            <option name="y" value="277" />
+                          </Point>
+                        </option>
+                      </LayoutPositions>
+                    </value>
+                  </entry>
                   <entry key="ticketHistoryListFragment">
                     <value>
                       <LayoutPositions>
@@ -806,6 +830,18 @@
                               </value>
                             </entry>
                           </map>
+                        </option>
+                      </LayoutPositions>
+                    </value>
+                  </entry>
+                  <entry key="ticketUnpaidContentFragment">
+                    <value>
+                      <LayoutPositions>
+                        <option name="myPosition">
+                          <Point>
+                            <option name="x" value="1373" />
+                            <option name="y" value="284" />
+                          </Point>
                         </option>
                       </LayoutPositions>
                     </value>

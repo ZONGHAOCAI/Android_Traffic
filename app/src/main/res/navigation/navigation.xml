@@ -383,6 +383,15 @@
         <action
             android:id="@+id/action_ticketFragment_to_ticketContentFragment"
             app:destination="@id/ticketContentFragment" />
+        <action
+            android:id="@+id/action_ticketFragment_to_ticketUnpaidContentFragment"
+            app:destination="@id/ticketUnpaidContentFragment" />
+        <action
+            android:id="@+id/action_ticketFragment_to_ticketHistoryContentFragment"
+            app:destination="@id/ticketHistoryContentFragment" />
+        <action
+            android:id="@+id/action_ticketFragment_to_ticketAppealContentFragment"
+            app:destination="@id/ticketAppealContentFragment" />
     </fragment>
     <fragment
         android:id="@+id/ticketUnpaidListFragment"
@@ -416,4 +425,19 @@
         android:name="com.example.android_traffic.ticket.controller.TicketContentFragment"
         android:label="fragment_ticket_content"
         tools:layout="@layout/fragment_ticket_content" />
+    <fragment
+        android:id="@+id/ticketUnpaidContentFragment"
+        android:name="com.example.android_traffic.ticket.controller.TicketUnpaidContentFragment"
+        android:label="fragment_ticket_unpaid_content"
+        tools:layout="@layout/fragment_ticket_unpaid_content" />
+    <fragment
+        android:id="@+id/ticketHistoryContentFragment"
+        android:name="com.example.android_traffic.ticket.controller.TicketHistoryContentFragment"
+        android:label="fragment_ticket_history_content"
+        tools:layout="@layout/fragment_ticket_history_content" />
+    <fragment
+        android:id="@+id/ticketAppealContentFragment"
+        android:name="com.example.android_traffic.ticket.controller.TicketAppealContentFragment"
+        android:label="fragment_ticket_appeal_content"
+        tools:layout="@layout/fragment_ticket_appeal_content" />
 </navigation>
