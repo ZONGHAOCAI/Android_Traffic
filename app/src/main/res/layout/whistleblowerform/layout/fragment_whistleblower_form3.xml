@@ -1,126 +1,67 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".whistleblowerform.WhistleblowerForm3Fragment" >
+    tools:context=".whistleblowerform.WhistleblowerForm3Fragment">
 
-    <Button
-        android:id="@+id/btnNext7"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="@string/txt_WhistleblowerForm_Send"
-        app:layout_constraintEnd_toEndOf="@+id/edtTxtViolationFactDetailsWhistleblower"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="@+id/edtTxtViolationFactDetailsWhistleblower"
-        app:layout_constraintTop_toBottomOf="@+id/edtTxtViolationFactDetailsWhistleblower" />
+    <data>
 
-    <Button
-        android:id="@+id/btnNext6"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="@string/txt_WhistleblowerForm_Previous"
-        app:layout_constraintEnd_toEndOf="@+id/edtTxtViolationFactDetailsWhistleblower"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/edtTxtViolationFactDetailsWhistleblower"
-        app:layout_constraintTop_toBottomOf="@+id/edtTxtViolationFactDetailsWhistleblower" />
+        <variable
+            name="viewModel"
+            type="com.example.android_traffic.whistleblowerform.WhistleblowerForm3ViewModel" />
+    </data>
 
-    <EditText
-        android:id="@+id/edtTxtViolationTimeWhistleblower"
-        android:layout_width="wrap_content"
-        android:layout_height="48dp"
-        android:layout_marginTop="20dp"
-        android:ems="10"
-        android:hint="@string/txt_WhistleblowerForm_ViolationTime"
-        android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="@+id/tvWhistleblowerContent"
-        app:layout_constraintStart_toStartOf="@+id/tvWhistleblowerContent"
-        app:layout_constraintTop_toBottomOf="@+id/tvWhistleblowerContent" />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-    <EditText
-        android:id="@+id/edtTxtViolationCarWhistleblower"
-        android:layout_width="wrap_content"
-        android:layout_height="48dp"
-        android:layout_marginTop="76dp"
-        android:ems="10"
-        android:hint="@string/txt_WhistleblowerForm_ViolationCar"
-        android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="@+id/tvWhistleblowerContent"
-        app:layout_constraintStart_toStartOf="@+id/tvWhistleblowerContent"
-        app:layout_constraintTop_toBottomOf="@+id/tvWhistleblowerContent" />
+        <TextView
+            android:id="@+id/tvSendComplete"
+            android:layout_width="wrap_content"
+            android:layout_height="35dp"
+            android:layout_marginTop="72dp"
+            android:text="@string/txtSendComplete"
+            android:textSize="24sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <EditText
-        android:id="@+id/edtTxtViolationLocationWhistleblower"
-        android:layout_width="wrap_content"
-        android:layout_height="48dp"
-        android:layout_marginTop="136dp"
-        android:ems="10"
-        android:hint="@string/txt_WhistleblowerForm_ViolationLocation"
-        android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="@+id/tvWhistleblowerContent"
-        app:layout_constraintStart_toStartOf="@+id/tvWhistleblowerContent"
-        app:layout_constraintTop_toBottomOf="@+id/tvWhistleblowerContent" />
+        <TextView
+            android:id="@+id/tvCaseNumber"
+            android:layout_width="251dp"
+            android:layout_height="38dp"
+            android:layout_marginTop="100dp"
+            android:text="@string/txtCaseNumberConfirm"
+            android:textSize="24sp"
+            app:layout_constraintEnd_toEndOf="@+id/tvSendComplete"
+            app:layout_constraintHorizontal_bias="0.496"
+            app:layout_constraintStart_toStartOf="@+id/tvSendComplete"
+            app:layout_constraintTop_toBottomOf="@+id/tvSendComplete" />
 
-    <EditText
-        android:id="@+id/edtTxtIntersectionWhistleblower"
-        android:layout_width="wrap_content"
-        android:layout_height="48dp"
-        android:layout_marginTop="196dp"
-        android:ems="10"
-        android:hint="@string/txt_WhistleblowerForm_Intersection"
-        android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="@+id/tvWhistleblowerContent"
-        app:layout_constraintStart_toStartOf="@+id/tvWhistleblowerContent"
-        app:layout_constraintTop_toBottomOf="@+id/tvWhistleblowerContent" />
 
-    <EditText
-        android:id="@+id/edtTxtLocationNoteWhistleblower"
-        android:layout_width="wrap_content"
-        android:layout_height="48dp"
-        android:layout_marginTop="256dp"
-        android:ems="10"
-        android:hint="@string/txt_WhistleblowerForm_LocationNote"
-        android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="@+id/tvWhistleblowerContent"
-        app:layout_constraintStart_toStartOf="@+id/tvWhistleblowerContent"
-        app:layout_constraintTop_toBottomOf="@+id/tvWhistleblowerContent" />
+        <Button
+            android:id="@+id/btnNextCase"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="284dp"
+            android:text="@string/txtNextCase"
+            app:layout_constraintEnd_toEndOf="@+id/tvSendComplete"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="@+id/tvSendComplete"
+            app:layout_constraintTop_toBottomOf="@+id/tvSendComplete" />
 
-    <EditText
-        android:id="@+id/edtTxtViolationFactWhistleblower"
-        android:layout_width="wrap_content"
-        android:layout_height="48dp"
-        android:layout_marginTop="316dp"
-        android:ems="10"
-        android:hint="@string/txt_WhistleblowerForm_ViolationFact"
-        android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="@+id/tvWhistleblowerContent"
-        app:layout_constraintStart_toStartOf="@+id/tvWhistleblowerContent"
-        app:layout_constraintTop_toBottomOf="@+id/tvWhistleblowerContent" />
+        <Button
+            android:id="@+id/btnCheckTask2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="60dp"
+            android:text="@string/txtBackToMainPage"
+            app:layout_constraintEnd_toEndOf="@+id/tvSendComplete"
+            app:layout_constraintHorizontal_bias="0.25"
+            app:layout_constraintStart_toStartOf="@+id/tvSendComplete"
+            app:layout_constraintTop_toBottomOf="@+id/btnNextCase" />
 
-    <EditText
-        android:id="@+id/edtTxtViolationFactDetailsWhistleblower"
-        android:layout_width="wrap_content"
-        android:layout_height="48dp"
-        android:layout_marginTop="372dp"
-        android:ems="10"
-        android:hint="@string/txt_WhistleblowerForm_ViolationFactDetails"
-        android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="@+id/tvWhistleblowerContent"
-        app:layout_constraintStart_toStartOf="@+id/tvWhistleblowerContent"
-        app:layout_constraintTop_toBottomOf="@+id/tvWhistleblowerContent" />
 
-    <TextView
-        android:id="@+id/tvWhistleblowerContent"
-        android:layout_width="wrap_content"
-        android:layout_height="35dp"
-        android:layout_marginTop="72dp"
-        android:text="@string/txt_WhistleblowerForm_WhistleblowerContent"
-        android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
