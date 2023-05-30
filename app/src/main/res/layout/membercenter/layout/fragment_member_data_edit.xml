@@ -1,13 +1,71 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
     tools:context=".membercenter.controller.MemberDataEditFragment">
 
-    <TextView
+    <data>
+        <variable
+            name="viewModel"
+            type="com.example.android_traffic.membercenter.viewmodel.MemberDataEditViewModel" />
+    </data>
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="Hello" />
+        android:orientation="vertical">
 
-</FrameLayout>
+        <!--第一個輸入框-->
+        <EditText
+            android:id="@+id/et_MemberData_Edit_One"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:background="@drawable/member_data_edit"
+            android:inputType="textPersonName"
+            android:text="@={viewModel.memberData}"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="16dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"/>
+        <!--第二個輸入框 新密碼用-->
+        <EditText
+            android:id="@+id/et_MemberData_Edit_Two"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:background="@drawable/member_data_edit"
+            android:inputType="textPassword"
+            android:hint="@string/txt_MemberData_Edit_NewPassword"
+            android:maxLength="100"
+            android:text="@={viewModel.pass}"
+            android:layout_marginBottom="16dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:visibility="gone"/>
+        <!--第三個輸入框 重複新密碼用-->
+        <EditText
+            android:id="@+id/et_MemberData_Edit_Three"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/member_data_edit"
+            android:ems="10"
+            android:hint="@string/txt_MemberData_Edit_CNewPassword"
+            android:inputType="textPassword"
+            android:maxLength="100"
+            android:text="@={viewModel.cPass}"
+            android:visibility="gone" />
+        <!--修改用按鈕-->
+        <Button
+            android:id="@+id/bt_MemberData_Edit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/txt_MemberData_Bt_Edit"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"/>
+
+    </LinearLayout>
+</layout>

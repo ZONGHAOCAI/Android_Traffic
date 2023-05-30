@@ -13,6 +13,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+        <!--下面每個ConstraintLayout 第一個是個人資料的標題 第二個是個人資料的data 第三個是右箭頭 第四個是底線-->
         <!-- 頭像 -->
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/cl_RelatedPersonData_Avatar"
@@ -112,7 +113,6 @@
             android:id="@+id/cl_RelatedPersonData_IdentityNumber"
             android:layout_width="0dp"
             android:layout_height="62dp"
-
             android:layout_marginTop="20dp"
             app:layout_constraintEnd_toEndOf="@+id/cl_RelatedPersonData_RelatedShip"
             app:layout_constraintStart_toStartOf="@+id/cl_RelatedPersonData_RelatedShip"
@@ -159,7 +159,6 @@
             android:id="@+id/cl_RelatedPersonData_Birthday"
             android:layout_width="0dp"
             android:layout_height="62dp"
-
             android:layout_marginTop="20dp"
             app:layout_constraintEnd_toEndOf="@+id/cl_RelatedPersonData_IdentityNumber"
             app:layout_constraintStart_toStartOf="@+id/cl_RelatedPersonData_IdentityNumber"
@@ -169,7 +168,7 @@
                 android:id="@+id/tv_RelatedPersonData_Birthday_Title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/txt_RelatedPersonData_BirthdayTitle"
+                android:text="@string/txt_RelatedPersonData_Birthday_Title"
                 android:textSize="20sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -222,7 +221,6 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
-
             <ImageView
                 android:layout_width="19dp"
                 android:layout_height="29dp"
@@ -239,7 +237,7 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent" />
         </androidx.constraintlayout.widget.ConstraintLayout>
-
+        <!--刪除資料-->
         <TextView
             android:id="@+id/tv_RelatedPersonData_Delete"
             android:layout_width="wrap_content"

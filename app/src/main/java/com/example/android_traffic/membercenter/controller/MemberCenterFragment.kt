@@ -34,7 +34,7 @@ class MemberCenterFragment : Fragment() {
 //    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-
+        activity?.title = getString(R.string.txt_MemberCenter_Title)
         with(binding) {
             tvMeInfo.setOnClickListener {
                 Navigation.findNavController(view).navigate(R.id.memberDataFragment)

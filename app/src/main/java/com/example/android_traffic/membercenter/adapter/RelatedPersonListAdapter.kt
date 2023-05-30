@@ -1,4 +1,4 @@
-package com.example.android_traffic.membercenter.controller
+package com.example.android_traffic.membercenter.adapter
 
 import android.os.Bundle
 import android.view.LayoutInflater
