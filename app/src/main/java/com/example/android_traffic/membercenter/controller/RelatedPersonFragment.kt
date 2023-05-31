@@ -10,6 +10,7 @@ import androidx.fragment.app.viewModels
 import com.example.android_traffic.databinding.FragmentRelatedPersonBinding
 import com.example.android_traffic.membercenter.viewmodel.RelatedPersonViewModel
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.android_traffic.membercenter.adapter.RelatedPersonListAdapter
 
 class RelatedPersonFragment : Fragment() {
     private lateinit var binding: FragmentRelatedPersonBinding

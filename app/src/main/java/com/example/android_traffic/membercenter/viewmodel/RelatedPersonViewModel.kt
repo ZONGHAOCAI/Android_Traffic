@@ -3,8 +3,7 @@ package com.example.android_traffic.membercenter.viewmodel
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.android_traffic.R
-import com.example.android_traffic.membercenter.model.RelatedPerson
-import java.util.*
+import com.example.android_traffic.core.model.RelatedPerson
 
 class RelatedPersonViewModel : ViewModel() {
     // 原始關係人列表

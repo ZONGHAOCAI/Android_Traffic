@@ -9,7 +9,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 
 import com.example.android_traffic.databinding.FragmentRelatedPersonDataBinding
-import com.example.android_traffic.membercenter.model.RelatedPerson
+import com.example.android_traffic.core.model.RelatedPerson
 import com.example.android_traffic.membercenter.viewmodel.RelatedPersonDataViewModel
 
 class RelatedPersonDataFragment : Fragment() {

@@ -15,7 +15,7 @@
         android:layout_height="match_parent"
         >
 
-
+        <!-- 個人資料 -->
         <TextView
             android:id="@+id/tv_MeInfo"
             android:layout_width="match_parent"
@@ -31,6 +31,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
+        <!-- 關係人資料 -->
         <TextView
             android:id="@+id/tv_RelatedPersonInfo"
             android:layout_width="0dp"
@@ -43,6 +44,7 @@
             app:layout_constraintStart_toStartOf="@+id/tv_MeInfo"
             app:layout_constraintTop_toBottomOf="@+id/tv_MeInfo" />
 
+        <!-- 檢查更新 -->
         <TextView
             android:id="@+id/tv_Update"
             android:layout_width="0dp"
@@ -55,6 +57,7 @@
             app:layout_constraintStart_toStartOf="@+id/cl_Language"
             app:layout_constraintTop_toBottomOf="@+id/cl_Language" />
 
+        <!-- 信用卡資料 -->
         <TextView
             android:id="@+id/tv_Creditcard"
             android:layout_width="0dp"
@@ -63,10 +66,11 @@
             android:background="@drawable/membercenter_txt_background"
             android:text="@string/txt_MemberCenter_CreditCard"
             android:textSize="20sp"
-            app:layout_constraintEnd_toEndOf="@+id/tv_Update"
-            app:layout_constraintStart_toStartOf="@+id/tv_Update"
-            app:layout_constraintTop_toBottomOf="@+id/tv_Update" />
+            app:layout_constraintEnd_toEndOf="@+id/tv_RelatedPersonInfo"
+            app:layout_constraintStart_toStartOf="@+id/tv_RelatedPersonInfo"
+            app:layout_constraintTop_toBottomOf="@+id/tv_RelatedPersonInfo" />
 
+        <!-- 登出 -->
         <TextView
             android:id="@+id/tv_Logout"
             android:layout_width="0dp"
@@ -75,10 +79,11 @@
             android:background="@drawable/membercenter_txt_background"
             android:text="@string/txt_MemberCenter_Logout2"
             android:textSize="20sp"
-            app:layout_constraintEnd_toEndOf="@+id/tv_Creditcard"
-            app:layout_constraintStart_toStartOf="@+id/tv_Creditcard"
-            app:layout_constraintTop_toBottomOf="@+id/tv_Creditcard" />
+            app:layout_constraintEnd_toEndOf="@+id/tv_Update"
+            app:layout_constraintStart_toStartOf="@+id/tv_Update"
+            app:layout_constraintTop_toBottomOf="@+id/tv_Update" />
 
+        <!-- 刪除帳號 -->
         <TextView
             android:id="@+id/tv_DeleteAccount"
             android:layout_width="wrap_content"
@@ -89,6 +94,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent" />
 
+        <!-- 語言 -->
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/cl_Language"
             android:layout_width="0dp"
@@ -99,8 +105,9 @@
             android:background="@drawable/membercenter_txt_background"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tv_RelatedPersonInfo">
+            app:layout_constraintTop_toBottomOf="@+id/tv_Creditcard">
 
+            <!-- 語言的標題 -->
             <TextView
                 android:id="@+id/tv_Language"
                 android:layout_width="0dp"
@@ -110,6 +117,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
+            <!-- 語言 -->
             <TextView
                 android:id="@+id/tv_lang"
                 android:layout_width="wrap_content"
