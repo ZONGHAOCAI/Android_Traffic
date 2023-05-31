@@ -35,5 +35,22 @@ class TicketAppealContentFragment : Fragment() {
                 binding.viewmodel?.content?.value = it as Content
             }
         }
+        with(binding) {
+            ivTicketAppealContentThumbnail1.setOnClickListener {
+                ivTicketAppealContentPicture.setImageDrawable(ivTicketAppealContentThumbnail1.drawable)
+            }
+            ivTicketAppealContentThumbnail2.setOnClickListener {
+                ivTicketAppealContentPicture.setImageDrawable(ivTicketAppealContentThumbnail2.drawable)
+            }
+            ivTicketAppealContentThumbnail3.setOnClickListener {
+                ivTicketAppealContentPicture.setImageDrawable(ivTicketAppealContentThumbnail3.drawable)
+            }
+            ivTicketAppealContentThumbnail4.setOnClickListener {
+                ivTicketAppealContentPicture.setImageDrawable(ivTicketAppealContentThumbnail4.drawable)
+            }
+            ivTicketAppealContentThumbnail5.setOnClickListener {
+                ivTicketAppealContentPicture.setImageDrawable(ivTicketAppealContentThumbnail5.drawable)
+            }
+        }
     }
 }

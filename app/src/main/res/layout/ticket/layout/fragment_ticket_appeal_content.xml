@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     tools:context=".ticket.controller.TicketAppealContentFragment">
 
     <data>
+        <import type="android.view.View"/>
         <variable
             name="viewmodel"
             type="com.example.android_traffic.ticket.viewmodel.TicketAppealContentViewModel" />
@@ -12,7 +13,7 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent" >
+        android:layout_height="match_parent">
 
         <ScrollView
             android:layout_width="fill_parent"
@@ -36,7 +37,7 @@
                     android:orientation="horizontal">
 
                     <TextView
-                        android:id="@+id/tv_TicketContent_ViolationTh"
+                        android:id="@+id/tv_TicketAppealContent_ViolationTh"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:paddingLeft="30dp"
@@ -44,7 +45,7 @@
                         android:textSize="24sp" />
 
                     <TextView
-                        android:id="@+id/tv_TicketContent_Violation"
+                        android:id="@+id/tv_TicketAppealContent_Violation"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="TextView"
@@ -57,7 +58,7 @@
                     android:orientation="horizontal">
 
                     <TextView
-                        android:id="@+id/tv_TicketContent_NumberTh"
+                        android:id="@+id/tv_TicketAppealContent_NumberTh"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:paddingLeft="30dp"
@@ -65,7 +66,7 @@
                         android:textSize="24sp" />
 
                     <TextView
-                        android:id="@+id/tv_TicketContent_Number"
+                        android:id="@+id/tv_TicketAppealContent_Number"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="@{viewmodel.content.number}"
@@ -78,7 +79,7 @@
                     android:orientation="horizontal">
 
                     <TextView
-                        android:id="@+id/tv_TicketContent_AmountTh"
+                        android:id="@+id/tv_TicketAppealContent_AmountTh"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:paddingLeft="30dp"
@@ -86,7 +87,7 @@
                         android:textSize="24sp" />
 
                     <TextView
-                        android:id="@+id/tv_TicketContent_Amount"
+                        android:id="@+id/tv_TicketAppealContent_Amount"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="TextView"
@@ -94,12 +95,80 @@
                         android:textSize="24sp" />
                 </LinearLayout>
 
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/iv_TicketAppealContent_Thumbnail1"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:layout_weight="1"
+                        android:visibility="@{viewmodel.content.photo[0] != null ? View.VISIBLE : View.GONE }"
+                        app:imageResource="@{viewmodel.content.photo[0]}"
+                        tools:srcCompat="@drawable/avatar1" />
+
+                    <ImageView
+                        android:id="@+id/iv_TicketAppealContent_Thumbnail2"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:layout_weight="1"
+                        android:visibility="@{viewmodel.content.photo[1] != null ? View.VISIBLE : View.GONE }"
+                        app:imageResource="@{viewmodel.content.photo[1]}"
+                        tools:srcCompat="@drawable/avatar1" />
+
+                    <ImageView
+                        android:id="@+id/iv_TicketAppealContent_Thumbnail3"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:layout_weight="1"
+                        android:visibility="@{viewmodel.content.photo[2] != null ? View.VISIBLE : View.GONE }"
+                        app:imageResource="@{viewmodel.content.photo[2]}"
+                        tools:srcCompat="@drawable/avatar1" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/iv_TicketAppealContent_Thumbnail4"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:layout_weight="1"
+                        android:visibility="@{viewmodel.content.photo[3] != null ? View.VISIBLE : View.GONE }"
+                        app:imageResource="@{viewmodel.content.photo[3]}"
+                        tools:srcCompat="@drawable/avatar1" />
+
+                    <ImageView
+                        android:id="@+id/iv_TicketAppealContent_Thumbnail5"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:layout_weight="1"
+                        android:visibility="@{viewmodel.content.photo[4] != null ? View.VISIBLE : View.GONE }"
+                        app:imageResource="@{viewmodel.content.photo[4]}"
+                        app:srcCompat="@drawable/avatar1" />
+
+                </LinearLayout>
+
+                <ImageView
+                    android:id="@+id/iv_TicketAppealContent_Picture"
+                    android:layout_width="300dp"
+                    android:layout_height="300dp"
+                    android:layout_gravity="center_horizontal"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+                    tools:srcCompat="@drawable/avatar3" />
+
                 <Button
-                    android:id="@+id/bt_TicketContent_PayTicket"
+                    android:id="@+id/bt_TicketAppealContent_PayTicket"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="100dp"
-                    android:layout_marginTop="100dp"
+                    android:layout_marginTop="10dp"
                     android:layout_marginEnd="100dp"
                     android:text="@string/txt_Ticket_PayTicket"
                     app:layout_constraintEnd_toEndOf="parent"
