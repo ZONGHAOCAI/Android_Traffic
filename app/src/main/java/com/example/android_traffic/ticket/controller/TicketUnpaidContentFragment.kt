@@ -31,5 +31,22 @@ class TicketUnpaidContentFragment : Fragment() {
                 binding.viewmodel?.content?.value = it as Content
             }
         }
+        with(binding) {
+            ivTicketUnpaidContentThumbnail1.setOnClickListener {
+                ivTicketUnpaidContentPicture.setImageDrawable(ivTicketUnpaidContentThumbnail1.drawable)
+            }
+            ivTicketUnpaidContentThumbnail2.setOnClickListener {
+                ivTicketUnpaidContentPicture.setImageDrawable(ivTicketUnpaidContentThumbnail2.drawable)
+            }
+            ivTicketUnpaidContentThumbnail3.setOnClickListener {
+                ivTicketUnpaidContentPicture.setImageDrawable(ivTicketUnpaidContentThumbnail3.drawable)
+            }
+            ivTicketUnpaidContentThumbnail4.setOnClickListener {
+                ivTicketUnpaidContentPicture.setImageDrawable(ivTicketUnpaidContentThumbnail4.drawable)
+            }
+            ivTicketUnpaidContentThumbnail5.setOnClickListener {
+                ivTicketUnpaidContentPicture.setImageDrawable(ivTicketUnpaidContentThumbnail5.drawable)
+            }
+        }
     }
 }
