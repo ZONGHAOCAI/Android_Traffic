@@ -1,15 +1,14 @@
 package com.example.android_traffic.whistleblowerform
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.Navigation
 import com.example.android_traffic.R
 import com.example.android_traffic.databinding.FragmentWhistleblowerFormBinding
-import com.example.android_traffic.login.Whistleblower
 
 class WhistleblowerFormFragment : Fragment() {
     private lateinit var binding: FragmentWhistleblowerFormBinding
@@ -57,21 +56,14 @@ class WhistleblowerFormFragment : Fragment() {
                     if (whistleblower.value!!.violationFactDetails.isEmpty()) {
                         whistleblowerResult.value = "請輸入違規事實說明"
                     }
-                    //TODO 影片
+                    //TODO 剪影片
 
                 }
 
                 val bundle = Bundle()
-                val whistleblower = Whistleblower(
-                    violationTime = "",
-                    violationCar = "",
-                    violationLocation = "",
-                    violationIntersection = "",
-                    violationLocationNote = "",
-                    violationFact = "",
-                    violationFactDetails = ""
-                )
-                Navigation.findNavController(it).navigate(R.id.whistleblowerForm2Fragment)
+                val whistleblower = viewModel?.whistleblower?.value
+                bundle.putSerializable("whistleblower", whistleblower)
+                Navigation.findNavController(it).navigate(R.id.whistleblowerForm2Fragment, bundle)
             }
         }
 

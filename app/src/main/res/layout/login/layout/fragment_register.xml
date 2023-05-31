@@ -162,31 +162,34 @@
                 app:layout_constraintStart_toStartOf="@+id/tvRegister"
                 app:layout_constraintTop_toBottomOf="@+id/tvRegister" />
 
-            <Button
+            <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btRegisterConfirmMsg"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:background="@color/sub_style"
                 android:text="@string/txtRegisterConfirmMsg"
                 app:layout_constraintEnd_toEndOf="@+id/edtTxtRegisterPhone"
                 app:layout_constraintHorizontal_bias="1.0"
                 app:layout_constraintStart_toStartOf="@+id/edtTxtRegisterPhone"
                 app:layout_constraintTop_toBottomOf="@+id/edtTxtRegisterPhone" />
 
-            <Button
+            <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btRegisterSendConfirmCode"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:background="@color/sub_style"
                 android:text="@string/txtRegisterSendConfirmCode"
                 app:layout_constraintEnd_toEndOf="@+id/edtTxtRegisterConfirmCode"
                 app:layout_constraintHorizontal_bias="1.0"
                 app:layout_constraintStart_toStartOf="@+id/edtTxtRegisterConfirmCode"
                 app:layout_constraintTop_toBottomOf="@+id/edtTxtRegisterConfirmCode" />
 
-            <Button
+            <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btRegisterSend"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="1000dp"
+                android:background="@color/sub_style"
                 android:text="@string/txtSend"
                 app:layout_constraintEnd_toEndOf="@+id/tvRegister"
                 app:layout_constraintHorizontal_bias="1.0"

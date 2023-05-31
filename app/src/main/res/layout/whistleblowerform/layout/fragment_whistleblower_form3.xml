@@ -40,22 +40,24 @@
             app:layout_constraintTop_toBottomOf="@+id/tvSendComplete" />
 
 
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btnNextCase"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="284dp"
+            android:background="@color/pink_style"
             android:text="@string/txtNextCase"
             app:layout_constraintEnd_toEndOf="@+id/tvSendComplete"
             app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="@+id/tvSendComplete"
             app:layout_constraintTop_toBottomOf="@+id/tvSendComplete" />
 
-        <Button
-            android:id="@+id/btnCheckTask2"
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnWhistleblower3BacktoMainPage"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="60dp"
+            android:background="@color/pink_style"
             android:text="@string/txtBackToMainPage"
             app:layout_constraintEnd_toEndOf="@+id/tvSendComplete"
             app:layout_constraintHorizontal_bias="0.25"

@@ -124,11 +124,12 @@
                 app:layout_constraintTop_toBottomOf="@+id/tvWhistleblowerContent" />
 
 
-            <Button
+            <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btnWhistleblowerNext"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
+                android:background="@color/pink_style"
                 android:text="@string/txtSend"
                 app:layout_constraintEnd_toEndOf="@+id/tvContentWhistleblower2"
                 app:layout_constraintHorizontal_bias="0.482"
@@ -156,11 +157,12 @@
                 app:layout_constraintStart_toStartOf="@+id/edtTxtViolationFactDetailsWhistleblower"
                 app:layout_constraintTop_toTopOf="parent" />
 
-            <Button
+            <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btnUploadDocWhistleblower2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
+                android:background="@color/pink_style"
                 android:text="@string/txtUploadFile"
                 app:layout_constraintEnd_toEndOf="@+id/tvContentWhistleblower2"
                 app:layout_constraintHorizontal_bias="0.503"

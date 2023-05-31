@@ -1,5 +1,7 @@
 package com.example.android_traffic.login
 
+import java.io.Serializable
+
 data class Whistleblower(
     var violationTime: String = "",
     var violationCar: String = "",
@@ -10,4 +12,4 @@ data class Whistleblower(
     var violationFactDetails: String = "",
 
 
-)
+): Serializable
