@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 
 import com.example.android_traffic.R
 import com.example.android_traffic.databinding.ItemMemberDataBinding
-import com.example.android_traffic.Member
+import com.example.android_traffic.core.model.Member
 import com.example.android_traffic.membercenter.viewmodel.MemberDataEditViewModel
 
 /**

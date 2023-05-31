@@ -10,13 +10,11 @@ import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import androidx.navigation.Navigation
 import com.example.android_traffic.R
-
 import com.example.android_traffic.databinding.FragmentMemberDataEditBinding
-import com.example.android_traffic.Member
-import com.example.android_traffic.Server.Companion.url
-import com.example.android_traffic.editMemberData
+import com.example.android_traffic.core.model.Member
+import com.example.android_traffic.core.service.Server
+import com.example.android_traffic.core.service.requestTask
 import com.example.android_traffic.membercenter.viewmodel.MemberDataEditViewModel
-import com.example.android_traffic.service.requestTask
 import com.google.gson.JsonObject
 
 
@@ -66,7 +64,7 @@ class MemberDataEditFragment : Fragment() {
             }
             btMemberDataEdit.setOnClickListener {
                 if (onePass && twoPass && threePass) {
-                    val respBody = editMemberData(editData)
+                    val respBody = requestTask<JsonObject>(Server.url, "PUT", editData)
                     respBody?.run {
                         if (get("successful").asBoolean) {
                             Navigation.findNavController(it).popBackStack()

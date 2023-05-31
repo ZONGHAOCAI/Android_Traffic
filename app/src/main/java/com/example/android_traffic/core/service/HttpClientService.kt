@@ -1,4 +1,4 @@
-package com.example.android_traffic.service
+package com.example.android_traffic.core.service
 
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder

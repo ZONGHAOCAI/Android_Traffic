@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 
 import com.example.android_traffic.R
 import com.example.android_traffic.databinding.ItemRelatedPersonBinding
-import com.example.android_traffic.membercenter.model.RelatedPerson
+import com.example.android_traffic.core.model.RelatedPerson
 import com.example.android_traffic.membercenter.viewmodel.RelatedPersonDataViewModel
 
 /**

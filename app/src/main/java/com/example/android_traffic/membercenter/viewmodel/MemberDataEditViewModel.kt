@@ -2,8 +2,8 @@ package com.example.android_traffic.membercenter.viewmodel
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.example.android_traffic.Server.Companion.url
-import com.example.android_traffic.service.requestTask
+import com.example.android_traffic.core.service.Server.Companion.url
+import com.example.android_traffic.core.service.requestTask
 
 class MemberDataEditViewModel : ViewModel() {
     val memberData: MutableLiveData<String> by lazy { MutableLiveData("") }
