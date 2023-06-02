@@ -32,6 +32,7 @@ class WhistleblowerForm2Fragment : Fragment() {
         with(binding){
             arguments?.let {
                 viewModel?.whistleblower?.value = it.getSerializable("whistleblower") as Whistleblower?
+                println(it)
             }
 
             //回上一頁
