@@ -434,4 +434,8 @@
         android:name="com.example.android_traffic.ticket.controller.TicketAppealContentFragment"
         android:label="fragment_ticket_appeal_content"
         tools:layout="@layout/fragment_ticket_appeal_content" />
+    <fragment
+        android:id="@+id/resetPasswordFragment"
+        android:name="com.example.android_traffic.ResetPasswordFragment"
+        android:label="ResetPasswordFragment" />
 </navigation>

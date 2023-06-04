@@ -52,6 +52,10 @@ class TicketUnpaidContentFragment : Fragment() {
                 ivTicketUnpaidContentPicture.setImageDrawable(ivTicketUnpaidContentThumbnail5.drawable)
                 ivTicketUnpaidContentPicture.visibility = View.VISIBLE
             }
+            ivTicketUnpaidContentPicture.setOnLongClickListener {
+                ivTicketUnpaidContentPicture.visibility = View.GONE
+                true
+            }
         }
     }
 }

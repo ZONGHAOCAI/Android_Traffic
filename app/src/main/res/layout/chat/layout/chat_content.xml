@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <import type="android.view.View"/>
+        <variable
+            name="viewmodel"
+            type="com.example.android_traffic.chat.viewmodel.ChatViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            tools:ignore="MissingConstraints">
+
+            <RelativeLayout
+                android:id="@+id/rl_ChatContent_Right"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/tv_ChatContent_UserTime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@id/rl_ChatContent_User"
+                    android:layout_marginRight="6dp"
+                    android:layout_toLeftOf="@id/rl_ChatContent_User"
+                    android:hint="time"
+                    android:text="@{viewmodel.chatext.time}" />
+
+                <RelativeLayout
+                    android:id="@+id/rl_ChatContent_User"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true">
+
+                    <TextView
+                        android:id="@+id/tv_ChatContent_UserText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="6dp"
+                        android:background="@drawable/msg_right_layout"
+                        android:hint="123測試"
+                        android:paddingStart="12dp"
+                        android:paddingTop="10dp"
+                        android:paddingEnd="12dp"
+                        android:paddingBottom="10dp"
+                        android:text="@{viewmodel.chatext.chatcon}"
+                        android:textSize="16dp" />
+
+                    <ImageView
+                        android:id="@+id/iv_ChatContent_UserImg"
+                        android:layout_width="90dp"
+                        android:layout_height="120dp"
+                        android:layout_marginRight="6dp"
+                        android:scaleType="fitCenter"
+                        android:visibility="gone"
+                        app:imageResource="@{viewmodel.chatext.photo}"
+                        tools:srcCompat="@drawable/avatar2" />
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rl_ChatContent_Left"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="visible">
+
+                <LinearLayout
+                    android:id="@+id/ll_ChatContent_Left"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="6dp"
+                    android:orientation="horizontal">
+
+                    <RelativeLayout
+                        android:id="@+id/rl_ChatContent_Other"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+<!--                        app:imageResource="@drawable/avatar3"-->
+                        <ImageView
+                            android:id="@+id/iv_ChatContent_UserAvatar"
+                            android:layout_width="45dp"
+                            android:layout_height="45dp"
+                            app:srcCompat="@drawable/avatar3"
+                            tools:srcCompat="@drawable/avatar3" />
+
+<!--                        android:text="@{viewmodel.chatext.chatcon}"-->
+                        <TextView
+                            android:id="@+id/tv_ChatContent_OtherName"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="6dp"
+                            android:layout_toRightOf="@id/iv_ChatContent_UserAvatar"
+                            android:hint="name"
+                            android:textStyle="normal|bold" />
+
+                        <TextView
+                            android:id="@+id/tv_ChatContent_OtherText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/tv_ChatContent_OtherName"
+                            android:layout_marginLeft="6dp"
+                            android:layout_toRightOf="@id/iv_ChatContent_UserAvatar"
+                            android:background="@drawable/msg_left_layout"
+                            android:gravity="center|left"
+                            android:hint="message"
+                            android:paddingStart="12dp"
+                            android:paddingTop="10dp"
+                            android:paddingEnd="12dp"
+                            android:paddingBottom="10dp"
+                            android:text="@{viewmodel.chatext.chatcon}"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                            android:textSize="16sp"
+                            android:visibility="visible" />
+
+                        <ImageView
+                            android:id="@+id/iv_ChatContent_OtherImg"
+                            android:layout_width="90dp"
+                            android:layout_height="120dp"
+                            android:layout_below="@id/tv_ChatContent_OtherName"
+                            android:layout_marginLeft="6dp"
+                            android:layout_marginTop="1dp"
+                            android:layout_toRightOf="@id/iv_ChatContent_UserAvatar"
+                            android:scaleType="fitCenter"
+                            android:visibility="gone"
+                            app:imageResource="@{viewmodel.chatext.photo}"
+                            tools:srcCompat="@drawable/avatar1" />
+                    </RelativeLayout>
+
+                    <TextView
+                        android:id="@+id/tv_ChatContent_OtherTime"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="bottom|left"
+                        android:layout_marginLeft="5dp"
+                        android:gravity="right"
+                        android:hint="@{viewmodel.chatext.time}"
+                        android:text="TextView" />
+                </LinearLayout>
+            </RelativeLayout>
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
