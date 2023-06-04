@@ -5,7 +5,7 @@ import androidx.lifecycle.ViewModel
 import com.example.android_traffic.login.Login
 
 class RegisterViewModel : ViewModel() {
-    val login: MutableLiveData<Login> by lazy { MutableLiveData<Login>() }
+    val login: MutableLiveData<Login> by lazy { MutableLiveData<Login>(Login()) }
     val name: MutableLiveData<String> by lazy { MutableLiveData<String>() }
     val birthday: MutableLiveData<String> by lazy { MutableLiveData<String>() }
     val nickname: MutableLiveData<String> by lazy { MutableLiveData<String>() }

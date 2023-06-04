@@ -7,6 +7,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
+import androidx.navigation.Navigation
+import com.example.android_traffic.R
 import com.example.android_traffic.databinding.FragmentWhistleblowerForm3Binding
 import com.example.android_traffic.whistleblowerform.WhistleblowerForm3ViewModel
 
@@ -23,6 +25,20 @@ class WhistleblowerForm3Fragment : Fragment() {
         return binding.root
     }
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
+        with(binding){
+
+            //todo 顯示案件編號 後端資料庫自動編號？
+
+
+            //繼續檢舉
+            btnNextCase.setOnClickListener {
+                Navigation.findNavController(it).navigate(R.id.whistleblowerFormFragment)
+            }
+
+            //回首頁
+            btnWhistleblower3BacktoMainPage.setOnClickListener {
+                Navigation.findNavController(it).navigate(R.id.mainFragment)
+            }
+        }
     }
 }
