@@ -159,6 +159,7 @@
                     android:layout_height="300dp"
                     android:layout_gravity="center_horizontal"
                     app:layout_constraintEnd_toEndOf="parent"
+                    android:visibility="gone"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/linearLayout"
                     tools:srcCompat="@drawable/avatar3" />
@@ -176,6 +177,5 @@
 
             </LinearLayout>
         </ScrollView>
-
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

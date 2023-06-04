@@ -25,6 +25,9 @@ class MainFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         with(binding) {
+            if (viewmodel?.memberId == null){
+                Navigation.findNavController(view).navigate(R.id.loginFragment)
+            }
             imgBtnMainTicket.setOnClickListener {
                 Navigation.findNavController(it)
                     .navigate(R.id.action_mainFragment_to_ticketFragment)

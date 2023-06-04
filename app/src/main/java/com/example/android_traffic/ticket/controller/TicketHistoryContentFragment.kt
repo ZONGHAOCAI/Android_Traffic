@@ -34,18 +34,23 @@ class TicketHistoryContentFragment : Fragment() {
         with(binding) {
             ivTicketHistoryContentThumbnail1.setOnClickListener {
                 ivTicketHistoryContentPicture.setImageDrawable(ivTicketHistoryContentThumbnail1.drawable)
+                ivTicketHistoryContentPicture.visibility = View.VISIBLE
             }
             ivTicketHistoryContentThumbnail2.setOnClickListener {
                 ivTicketHistoryContentPicture.setImageDrawable(ivTicketHistoryContentThumbnail2.drawable)
+                ivTicketHistoryContentPicture.visibility = View.VISIBLE
             }
             ivTicketHistoryContentThumbnail3.setOnClickListener {
                 ivTicketHistoryContentPicture.setImageDrawable(ivTicketHistoryContentThumbnail3.drawable)
+                ivTicketHistoryContentPicture.visibility = View.VISIBLE
             }
             ivTicketHistoryContentThumbnail4.setOnClickListener {
                 ivTicketHistoryContentPicture.setImageDrawable(ivTicketHistoryContentThumbnail4.drawable)
+                ivTicketHistoryContentPicture.visibility = View.VISIBLE
             }
             ivTicketHistoryContentThumbnail5.setOnClickListener {
                 ivTicketHistoryContentPicture.setImageDrawable(ivTicketHistoryContentThumbnail5.drawable)
+                ivTicketHistoryContentPicture.visibility = View.VISIBLE
             }
         }
     }

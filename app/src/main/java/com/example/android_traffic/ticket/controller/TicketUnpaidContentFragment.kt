@@ -18,7 +18,7 @@ class TicketUnpaidContentFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val viewmodel : TicketUnpaidContentViewModel by viewModels()
+        val viewmodel: TicketUnpaidContentViewModel by viewModels()
         binding = FragmentTicketUnpaidContentBinding.inflate(inflater, container, false)
         binding.viewmodel = viewmodel
         binding.lifecycleOwner = this
@@ -34,18 +34,23 @@ class TicketUnpaidContentFragment : Fragment() {
         with(binding) {
             ivTicketUnpaidContentThumbnail1.setOnClickListener {
                 ivTicketUnpaidContentPicture.setImageDrawable(ivTicketUnpaidContentThumbnail1.drawable)
+                ivTicketUnpaidContentPicture.visibility = View.VISIBLE
             }
             ivTicketUnpaidContentThumbnail2.setOnClickListener {
                 ivTicketUnpaidContentPicture.setImageDrawable(ivTicketUnpaidContentThumbnail2.drawable)
+                ivTicketUnpaidContentPicture.visibility = View.VISIBLE
             }
             ivTicketUnpaidContentThumbnail3.setOnClickListener {
                 ivTicketUnpaidContentPicture.setImageDrawable(ivTicketUnpaidContentThumbnail3.drawable)
+                ivTicketUnpaidContentPicture.visibility = View.VISIBLE
             }
             ivTicketUnpaidContentThumbnail4.setOnClickListener {
                 ivTicketUnpaidContentPicture.setImageDrawable(ivTicketUnpaidContentThumbnail4.drawable)
+                ivTicketUnpaidContentPicture.visibility = View.VISIBLE
             }
             ivTicketUnpaidContentThumbnail5.setOnClickListener {
                 ivTicketUnpaidContentPicture.setImageDrawable(ivTicketUnpaidContentThumbnail5.drawable)
+                ivTicketUnpaidContentPicture.visibility = View.VISIBLE
             }
         }
     }

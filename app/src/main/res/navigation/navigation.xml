@@ -62,7 +62,7 @@
         tools:layout="@layout/fragment_register" />
     <fragment
         android:id="@+id/memberCenterFragment"
-        android:name="com.example.android_traffic.MemberCenterFragment"
+        android:name="com.example.android_traffic.membercenter.controller.MemberCenterFragment"
         android:label="fragment_member_center"
         tools:layout="@layout/fragment_member_center" >
         <action
@@ -86,7 +86,7 @@
     </fragment>
     <fragment
         android:id="@+id/memberDataFragment"
-        android:name="com.example.android_traffic.MemberDataFragment"
+        android:name="com.example.android_traffic.membercenter.controller.MemberDataFragment"
         android:label="fragment_member_data"
         tools:layout="@layout/fragment_member_data" >
         <action
@@ -98,7 +98,7 @@
     </fragment>
     <fragment
         android:id="@+id/relatedPersonDataFragment"
-        android:name="com.example.android_traffic.RelatedPersonDataFragment"
+        android:name="com.example.android_traffic.membercenter.controller.RelatedPersonDataFragment"
         android:label="fragment_related_person_data"
         tools:layout="@layout/fragment_related_person_data" >
         <action
@@ -110,7 +110,7 @@
     </fragment>
     <fragment
         android:id="@+id/relatedPersonFragment"
-        android:name="com.example.android_traffic.RelatedPersonFragment"
+        android:name="com.example.android_traffic.membercenter.controller.RelatedPersonFragment"
         android:label="fragment_related_person"
         tools:layout="@layout/fragment_related_person" >
         <action
@@ -141,14 +141,8 @@
         android:label="fragment_whistleblower_form4"
         tools:layout="@layout/fragment_whistleblower_form4" >
         <action
-            android:id="@+id/action_whistleblowerForm4Fragment_to_whistleblowerForm5Fragment"
-            app:destination="@id/whistleblowerForm5Fragment" />
+            android:id="@+id/action_whistleblowerForm4Fragment_to_whistleblowerForm5Fragment" />
     </fragment>
-    <fragment
-        android:id="@+id/whistleblowerForm5Fragment"
-        android:name="com.example.android_traffic.whistleblowerform.WhistleblowerForm5Fragment"
-        android:label="fragment_whistleblower_form5"
-        tools:layout="@layout/fragment_whistleblower_form5" />
     <fragment
         android:id="@+id/fineAppealFragment"
         android:name="com.example.android_traffic.FineAppealFragment"
@@ -338,27 +332,27 @@
         tools:layout="@layout/fragment_map" />
     <fragment
         android:id="@+id/memberDataEditFragment"
-        android:name="com.example.android_traffic.MemberDataEditFragment"
+        android:name="com.example.android_traffic.membercenter.controller.MemberDataEditFragment"
         android:label="fragment_member_data_edit"
         tools:layout="@layout/fragment_member_data_edit" />
     <fragment
         android:id="@+id/memberCenterCreditCardFragment"
-        android:name="com.example.android_traffic.MemberCenterCreditCardFragment"
+        android:name="com.example.android_traffic.membercenter.controller.MemberCenterCreditCardFragment"
         android:label="fragment_member_center_credit_card"
         tools:layout="@layout/fragment_member_center_credit_card" />
     <fragment
         android:id="@+id/relatedPersonDataEditFragment"
-        android:name="com.example.android_traffic.RelatedPersonDataEditFragment"
+        android:name="com.example.android_traffic.membercenter.controller.RelatedPersonDataEditFragment"
         android:label="fragment_related_person_data_edit"
         tools:layout="@layout/fragment_related_person_data_edit" />
     <fragment
         android:id="@+id/memberDataVehideDataFragment"
-        android:name="com.example.android_traffic.MemberDataVehideDataFragment"
+        android:name="com.example.android_traffic.membercenter.controller.MemberDataVehideDataFragment"
         android:label="fragment_member_data_vehide_data"
         tools:layout="@layout/fragment_member_data_vehide_data" />
     <fragment
         android:id="@+id/relatedPersonDataVehideDataFragment"
-        android:name="com.example.android_traffic.RelatedPersonDataVehideDataFragment"
+        android:name="com.example.android_traffic.membercenter.controller.RelatedPersonDataVehideDataFragment"
         android:label="fragment_related_person_data_vehide_data"
         tools:layout="@layout/fragment_related_person_data_vehide_data" />
     <fragment

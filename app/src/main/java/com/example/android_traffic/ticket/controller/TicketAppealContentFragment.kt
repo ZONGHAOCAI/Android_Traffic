@@ -22,7 +22,7 @@ class TicketAppealContentFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val viewmodel : TicketAppealContentViewModel by viewModels()
+        val viewmodel: TicketAppealContentViewModel by viewModels()
         binding = FragmentTicketAppealContentBinding.inflate(inflater, container, false)
         binding.viewmodel = viewmodel
         binding.lifecycleOwner = this
@@ -38,18 +38,23 @@ class TicketAppealContentFragment : Fragment() {
         with(binding) {
             ivTicketAppealContentThumbnail1.setOnClickListener {
                 ivTicketAppealContentPicture.setImageDrawable(ivTicketAppealContentThumbnail1.drawable)
+                ivTicketAppealContentPicture.visibility = View.VISIBLE
             }
             ivTicketAppealContentThumbnail2.setOnClickListener {
                 ivTicketAppealContentPicture.setImageDrawable(ivTicketAppealContentThumbnail2.drawable)
+                ivTicketAppealContentPicture.visibility = View.VISIBLE
             }
             ivTicketAppealContentThumbnail3.setOnClickListener {
                 ivTicketAppealContentPicture.setImageDrawable(ivTicketAppealContentThumbnail3.drawable)
+                ivTicketAppealContentPicture.visibility = View.VISIBLE
             }
             ivTicketAppealContentThumbnail4.setOnClickListener {
                 ivTicketAppealContentPicture.setImageDrawable(ivTicketAppealContentThumbnail4.drawable)
+                ivTicketAppealContentPicture.visibility = View.VISIBLE
             }
             ivTicketAppealContentThumbnail5.setOnClickListener {
                 ivTicketAppealContentPicture.setImageDrawable(ivTicketAppealContentThumbnail5.drawable)
+                ivTicketAppealContentPicture.visibility = View.VISIBLE
             }
         }
     }
