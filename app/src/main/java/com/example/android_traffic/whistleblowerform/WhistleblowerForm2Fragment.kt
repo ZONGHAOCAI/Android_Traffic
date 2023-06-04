@@ -42,7 +42,7 @@ class WhistleblowerForm2Fragment : Fragment() {
 
             //送出
             btnNextWhistleblower2.setOnClickListener {
-                binding.viewModel.addWhistleblower()
+                binding.viewModel?.addWhistleblower()
                 Navigation.findNavController(it).navigate(R.id.whistleblowerForm3Fragment)
             }
         }
