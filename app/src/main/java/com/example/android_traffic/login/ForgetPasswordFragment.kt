@@ -11,6 +11,7 @@ import com.example.android_traffic.ForgetPasswordViewModel
 import com.example.android_traffic.R
 import com.example.android_traffic.databinding.FragmentForgetPasswordBinding
 
+
 class ForgetPasswordFragment : Fragment() {
     private lateinit var binding: FragmentForgetPasswordBinding
 
@@ -31,13 +32,14 @@ class ForgetPasswordFragment : Fragment() {
             btnNext.setOnClickListener {
                 viewModel?.run {
                     //帳號
+
                     if (login.value!!.username.isEmpty()) {
                         edtTxtForgetUsername.error = getString(R.string.errUsernameEmpty)
                         return@run
                     }
-                    if (login.value!!.username.isNotEmpty()) {
-                        login.value!!.username.matches(regex = Regex("[A-Z]\\d{9}"))
-                    }
+//                    if (login.value!!.username.isNotEmpty()) {
+//                        login.value!!.username.matches(regex = Regex("[A-Z]\\d{9}"))
+//                    }
 
                     //手機
                     if (login.value!!.phone.isEmpty()) {
@@ -53,6 +55,7 @@ class ForgetPasswordFragment : Fragment() {
                         return@run
                     }
 
+
                     //TODO 送出簡訊按鈕
                     //TODO 送出驗證碼按鈕
                     //TODO 下一步
@@ -66,5 +69,6 @@ class ForgetPasswordFragment : Fragment() {
 
 
     }
+
 
 }

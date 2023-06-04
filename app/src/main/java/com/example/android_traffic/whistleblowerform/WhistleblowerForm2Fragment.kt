@@ -37,11 +37,12 @@ class WhistleblowerForm2Fragment : Fragment() {
 
             //回上一頁
             btnPreviousWhistleblower2.setOnClickListener {
-                Navigation.findNavController(it).navigate(R.id.whistleblowerFormFragment)
+                Navigation.findNavController(it).popBackStack()
             }
 
             //送出
             btnNextWhistleblower2.setOnClickListener {
+                binding.viewModel.addWhistleblower()
                 Navigation.findNavController(it).navigate(R.id.whistleblowerForm3Fragment)
             }
         }

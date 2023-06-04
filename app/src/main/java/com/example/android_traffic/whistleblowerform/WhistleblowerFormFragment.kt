@@ -28,64 +28,53 @@ class WhistleblowerFormFragment : Fragment() {
         with(binding) {
             btnWhistleblowerNext.setOnClickListener {
                 viewModel?.run {
-
+                    var whistleblowerFormAreFilled = true
                     //違規時間
                     if (whistleblower.value?.violationTime.isNullOrEmpty()) {
                         edtTxtViolationTimeWhistleblower.error = "請輸入違規時間"
-                        return@run
-                    }else {
-                        whistleblower.value?.violationTime
+                        whistleblowerFormAreFilled = false
                     }
                     //違規車號
                     if (whistleblower.value?.violationCar.isNullOrEmpty()) {
                         edtTxtViolationCarWhistleblower.error = "請輸入違規車號"
-                        return@run
-                    }else{
-                        whistleblower.value?.violationCar
+                        whistleblowerFormAreFilled = false
                     }
                     //違規地點
                     if (whistleblower.value?.violationLocation.isNullOrEmpty()) {
                         edtTxtViolationLocationWhistleblower.error = "請輸入違規地點"
-                        return@run
-                    }else{
-                        whistleblower.value?.violationLocation
+                        whistleblowerFormAreFilled = false
                     }
                     //交叉入口
                     if (whistleblower.value?.violationIntersection.isNullOrEmpty()) {
                         edtTxtIntersectionWhistleblower.error = "請輸入交叉入口"
-                        return@run
-                    }else{
-                        whistleblower.value?.violationIntersection
+                        whistleblowerFormAreFilled = false
                     }
                     //地點備註
                     if (whistleblower.value?.violationLocationNote.isNullOrEmpty()) {
                         edtTxtLocationNoteWhistleblower.error = "請輸入地點備註"
-                        return@run
-                    }else{
-                        whistleblower.value?.violationLocationNote
+                        whistleblowerFormAreFilled = false
                     }
                     //違規事實
                     if (whistleblower.value?.violationFact.isNullOrEmpty()) {
                         edtTxtViolationFactWhistleblower.error = "請輸入違規事實"
-                        return@run
-                    }else{
-                        whistleblower.value?.violationFact
+                        whistleblowerFormAreFilled = false
                     }
                     //違規事實說明
                     if (whistleblower.value?.violationFactDetails.isNullOrEmpty()) {
                         edtTxtViolationFactDetailsWhistleblower.error = "請輸入違規事實說明"
-                        return@run
-                    }else{
-                        whistleblower.value?.violationFactDetails
+                        whistleblowerFormAreFilled = false
                     }
-                    //TODO 剪影片
-
+                    if(whistleblowerFormAreFilled){
+                        //TODO 剪影片
+                        val bundle = Bundle()
+                        val whistleblower = viewModel?.whistleblower?.value
+                        bundle.putSerializable("whistleblower", whistleblower)
+                        Navigation.findNavController(it)
+                            .navigate(R.id.whistleblowerForm2Fragment, bundle)
+                        println(bundle)
+                    }
                 }
-                val bundle = Bundle()
-                val whistleblower = viewModel?.whistleblower?.value
-                bundle.putSerializable("whistleblower", whistleblower)
-                Navigation.findNavController(it).navigate(R.id.whistleblowerForm2Fragment, bundle)
-                println(bundle)
+
             }
 
         }
