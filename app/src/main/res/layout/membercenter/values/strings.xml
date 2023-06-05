@@ -2,7 +2,7 @@
 <resources>
     <string name="txt_MemberCenter_MeInfo">個人資料</string>
     <string name="txt_MemberCenter_RelatedPersonInfo">關係人資料</string>
-    <string name="txt_MemberCenter_ChangeLanguage">語言</string>
+    <string name="txt_MemberCenter_ChangeLanguage">私訊</string>
     <string name="txt_MemberCenter_Update2">檢查更新</string>
     <string name="txt_MemberCenter_CreditCard">信用卡資料</string>
     <string name="txt_MemberCenter_Logout2">登出</string>
