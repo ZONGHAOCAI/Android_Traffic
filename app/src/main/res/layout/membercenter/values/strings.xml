@@ -1,15 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="txt_MemberCenter_MeInfo" translatable="false">個人資料</string>
-    <string name="txt_MemberCenter_RelatedPersonInfo" translatable="false">關係人資料</string>
-    <string name="txt_MemberCenter_ChangeLanguage" translatable="false">語言</string>
-    <string name="txt_MemberCenter_Update2" translatable="false">檢查更新</string>
+    <string name="txt_MemberCenter_MeInfo">個人資料</string>
+    <string name="txt_MemberCenter_RelatedPersonInfo">關係人資料</string>
+    <string name="txt_MemberCenter_ChangeLanguage">語言</string>
+    <string name="txt_MemberCenter_Update2">檢查更新</string>
     <string name="txt_MemberCenter_CreditCard">信用卡資料</string>
-    <string name="txt_MemberCenter_Logout2" translatable="false">登出</string>
-    <string name="txt_MemberCenter_DeleteAccount" translatable="false">刪除帳號</string>
-    <string name="txt_MemberCenter_Language" translatable="false">中文</string>
+    <string name="txt_MemberCenter_Logout2">登出</string>
+    <string name="txt_MemberCenter_DeleteAccount">刪除帳號</string>
+    <string name="txt_MemberCenter_VehideType_Title">車種</string>
+    <string name="txt_MemberCenter_VehideData_Title">車牌號碼</string>
+    <string name="txt_MemberCenter_Language">中文</string>
+    <string name="txt_MemberCenter_Title">會員中心</string>
     <string name="txt_MemberData_VehicleData">車輛資料</string>
     <string name="txt_MemberData_Nickname">暱稱</string>
+    <string name="txt_MemberData_Edit_OldPassword">請輸入舊密碼</string>
+    <string name="txt_MemberData_Edit_NewPassword">請輸入新密碼</string>
+    <string name="txt_MemberData_Edit_CNewPassword">再輸入一次新密碼</string>
+    <string name="txt_MemberData_Edit_Avatar">頭像</string>
+    <string name="txt_MemberData_Edit_Name">名子</string>
+    <string name="txt_MemberData_Edit_Nickname">暱稱</string>
+    <string name="txt_MemberData_Edit_IdentityNumber">身分證</string>
+    <string name="txt_MemberData_Edit_Birthday">生日</string>
+    <string name="txt_MemberData_Edit_PhoneNo">手機</string>
+    <string name="txt_MemberData_Edit_Email">信箱</string>
+    <string name="txt_MemberData_Edit_Address">地址</string>
+    <string name="txt_MemberData_Edit_Password">密碼</string>
+    <string name="txt_MemberData_Edit_VehideData">車輛資料</string>
+    <string name="txt_MemberData_Edit_Error">不可為空</string>
+    <string name="txt_MemberData_Edit_passwordError">密碼不一致</string>
+    <string name="txt_MemberData_Bt_Edit">修改</string>
+    <string name="txt_MemberData_Title">個人資料</string>
     <string name="txt_MemberData_Email">信箱</string>
     <string name="txt_MemberData_Address">地址</string>
     <string name="txt_MemberData_EditPassword">修改密碼</string>
@@ -19,9 +39,7 @@
     <string name="txt_RelatedPersonData_NameTitle">名稱</string>
     <string name="txt_RelatedPersonData_RelatedShip_Title">關係</string>
     <string name="txt_RelatedPersonData_IdentityNumberTitle">身分證</string>
-    <string name="txt_RelatedPersonData_BirthdayTitle">生日</string>
-
-
+    <string name="txt_RelatedPersonData_Birthday_Title">生日</string>
     <string name="txt_RelatedPersonData_Delete">刪除資料</string>
 
 </resources>

@@ -1,15 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="txt_MemberCenter_MeInfo" translatable="false">PersonalInformation</string>
-    <string name="txt_MemberCenter_RelatedPersonInfo" translatable="false">RelatedPersonInfo</string>
-    <string name="txt_MemberCenter_ChangeLanguage" translatable="false">Language</string>
-    <string name="txt_MemberCenter_Update2" translatable="false">Update</string>
-    <string name="txt_MemberCenter_Logout2" translatable="false">Logout</string>
-    <string name="txt_MemberCenter_DeleteAccount" translatable="false">DeleteAccount</string>
-    <string name="txt_MemberCenter_Language" translatable="false">English</string>
+    <string name="txt_MemberCenter_MeInfo">PersonalInformation</string>
+    <string name="txt_MemberCenter_RelatedPersonInfo">RelatedPersonInfo</string>
+    <string name="txt_MemberCenter_ChangeLanguage">Language</string>
+    <string name="txt_MemberCenter_Update2">Update</string>
+    <string name="txt_MemberCenter_Logout2">Logout</string>
+    <string name="txt_MemberCenter_DeleteAccount">DeleteAccount</string>
+    <string name="txt_MemberCenter_Language">English</string>
+    <string name="txt_MemberCenter_VehideType_Title">VehideType</string>
+    <string name="txt_MemberCenter_VehideData_Title">Vehide Number</string>
     <string name="txt_MemberData_VehicleData">VehicleData</string>
     <string name="txt_MemberCenter_CreditCard">CreditCard</string>
+    <string name="txt_MemberCenter_Title">MemberCenter</string>
     <string name="txt_MemberData_Nickname">Nickname</string>
+    <string name="txt_MemberData_Edit_OldPassword">Please enter old password</string>
+    <string name="txt_MemberData_Edit_NewPassword">Please enter new password</string>
+    <string name="txt_MemberData_Edit_CNewPassword">Please enter new password once</string>
+    <string name="txt_MemberData_Edit_Avatar">Avatar</string>
+    <string name="txt_MemberData_Edit_Name">name</string>
+    <string name="txt_MemberData_Edit_Nickname">Nickname</string>
+    <string name="txt_MemberData_Edit_IdentityNumber">IdentityNumber</string>
+    <string name="txt_MemberData_Edit_Birthday">Birthday</string>
+    <string name="txt_MemberData_Edit_PhoneNo">PhoneNo</string>
+    <string name="txt_MemberData_Edit_Email">Email</string>
+    <string name="txt_MemberData_Edit_Address">Address</string>
+    <string name="txt_MemberData_Edit_Password">Password</string>
+    <string name="txt_MemberData_Edit_VehideData">Vehide Data</string>
+    <string name="txt_MemberData_Edit_Error">Cannot Be Empty</string>
+    <string name="txt_MemberData_Edit_passwordError">Passwords do not match</string>
+    <string name="txt_MemberData_Bt_Edit">Edit</string>
+    <string name="txt_MemberData_Title">MemberData</string>
     <string name="txt_MemberData_Email">Email</string>
     <string name="txt_MemberData_Address">Address</string>
     <string name="txt_MemberData_EditPassword">EditPassword</string>

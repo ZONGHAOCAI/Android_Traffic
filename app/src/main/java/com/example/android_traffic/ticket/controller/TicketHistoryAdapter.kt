@@ -11,6 +11,7 @@ import com.example.android_traffic.databinding.FragmentTicketAppealBinding
 import com.example.android_traffic.databinding.FragmentTicketHistoryBinding
 import com.example.android_traffic.ticket.model.Content
 import com.example.android_traffic.ticket.viewmodel.TicketContentViewModel
+import com.example.android_traffic.ticket.viewmodel.TicketHistoryContentViewModel
 
 class TicketHistoryAdapter (private var historycontent: List<Content>) :
     RecyclerView.Adapter<TicketHistoryAdapter.Holder>() {
@@ -25,7 +26,7 @@ class TicketHistoryAdapter (private var historycontent: List<Content>) :
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): Holder {
         val TicketHistoryFragmentBinding =
             FragmentTicketHistoryBinding.inflate(LayoutInflater.from(parent.context), parent, false)
-        TicketHistoryFragmentBinding.viewmodel = TicketContentViewModel()
+        TicketHistoryFragmentBinding.viewmodel = TicketHistoryContentViewModel()
         // 設定lifecycleOwner方能監控LiveData資料變化，layout檔案的view才會更新顯示
         TicketHistoryFragmentBinding.lifecycleOwner = parent.findViewTreeLifecycleOwner()
         return Holder(TicketHistoryFragmentBinding)
@@ -42,8 +43,8 @@ class TicketHistoryAdapter (private var historycontent: List<Content>) :
             bundle.putSerializable("number", historycontent[position])
             itemView.setOnClickListener {
                 Navigation.findNavController(it)
-                    .navigate(R.id.action_ticketFragment_to_ticketAppealListFragment, bundle)
-//                    .navigate(R.id.action_TicketAppealListFragment_to_ticketContentFragment, bundle)
+//                    .navigate(R.id.action_ticketFragment_to_ticketAppealListFragment, bundle)
+                    .navigate(R.id.action_ticketFragment_to_ticketHistoryContentFragment, bundle)
             }
         }
     }

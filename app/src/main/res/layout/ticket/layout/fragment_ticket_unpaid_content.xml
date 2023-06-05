@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ticket.controller.TicketUnpaidContentFragment">
+
+    <data>
+        <import type="android.view.View"/>
+        <variable
+            name="viewmodel"
+            type="com.example.android_traffic.ticket.viewmodel.TicketUnpaidContentViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <ScrollView
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="57dp"
+            tools:layout_editor_absoluteY="-319dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tv_TicketUnpaidContent_ViolationTh"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="30dp"
+                        android:text="@string/txt_Ticket_Violation"
+                        android:textSize="24sp" />
+
+                    <TextView
+                        android:id="@+id/tv_TicketUnpaidContent_Violation"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="TextView"
+                        android:textSize="24sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tv_TicketUnpaidContent_NumberTh"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="30dp"
+                        android:text="@string/txt_Ticket_Number"
+                        android:textSize="24sp" />
+
+                    <TextView
+                        android:id="@+id/tv_TicketUnpaidContent_Number"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@{viewmodel.content.number}"
+                        android:textSize="24sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tv_TicketUnpaidContent_AmountTh"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="30dp"
+                        android:text="@string/txt_Ticket_Amount"
+                        android:textSize="24sp" />
+
+                    <TextView
+                        android:id="@+id/tv_TicketUnpaidContent_Amount"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="TextView"
+                        android:textColor="@color/red"
+                        android:textSize="24sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/iv_TicketUnpaidContent_Thumbnail1"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:layout_weight="1"
+                        android:visibility="@{viewmodel.content.photo[0] != null ? View.VISIBLE : View.GONE }"
+                        app:imageResource="@{viewmodel.content.photo[0]}"
+                        tools:srcCompat="@drawable/avatar1" />
+
+                    <ImageView
+                        android:id="@+id/iv_TicketUnpaidContent_Thumbnail2"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:layout_weight="1"
+                        android:visibility="@{viewmodel.content.photo[1] != null ? View.VISIBLE : View.GONE }"
+                        app:imageResource="@{viewmodel.content.photo[1]}"
+                        tools:srcCompat="@drawable/avatar1" />
+
+                    <ImageView
+                        android:id="@+id/iv_TicketUnpaidContent_Thumbnail3"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:layout_weight="1"
+                        android:visibility="@{viewmodel.content.photo[2] != null ? View.VISIBLE : View.GONE }"
+                        app:imageResource="@{viewmodel.content.photo[2]}"
+                        tools:srcCompat="@drawable/avatar1" />                    
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/iv_TicketUnpaidContent_Thumbnail4"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:layout_weight="1"
+                        android:visibility="@{viewmodel.content.photo[3] != null ? View.VISIBLE : View.GONE }"
+                        app:imageResource="@{viewmodel.content.photo[3]}"
+                        tools:srcCompat="@drawable/avatar1" />
+
+                    <ImageView
+                        android:id="@+id/iv_TicketUnpaidContent_Thumbnail5"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:layout_weight="1"
+                        android:visibility="@{viewmodel.content.photo[4] != null ? View.VISIBLE : View.GONE }"
+                        app:imageResource="@{viewmodel.content.photo[4]}"
+                        app:srcCompat="@drawable/avatar1" />
+
+                </LinearLayout>
+
+                <ImageView
+                    android:id="@+id/iv_TicketUnpaidContent_Picture"
+                    android:layout_width="300dp"
+                    android:layout_height="300dp"
+                    android:layout_gravity="center_horizontal"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+                    android:visibility="gone"
+                    tools:srcCompat="@drawable/avatar3" />
+
+                <Button
+                    android:id="@+id/bt_TicketUnpaidContent_Appeal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="100dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="100dp"
+                    android:text="@string/txt_Ticket_Appeal"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <Button
+                    android:id="@+id/bt_TicketUnpaidContent_PayTicket"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="100dp"
+                    android:layout_marginEnd="100dp"
+                    android:layout_marginBottom="50dp"
+                    android:text="@string/txt_Ticket_PayTicket" />
+
+            </LinearLayout>
+        </ScrollView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,13 +1,13 @@
 package com.example.android_traffic.login
 
+import java.io.Serializable
+
 data class Whistleblower(
-    var violationTime: String = "",
-    var violationCar: String = "",
-    var violationLocation: String = "",
-    var violationIntersection: String = "",
-    var violationLocationNote: String = "",
-    var violationFact: String = "",
-    var violationFactDetails: String = "",
-
-
-)
+    var violationTime: String? = null,
+    var violationCar: String? = null,
+    var violationLocation: String? = null,
+    var violationIntersection: String? = null,
+    var violationLocationNote: String? = null,
+    var violationFact: String? = null,
+    var violationFactDetails: String? = null,
+): Serializable

@@ -8,6 +8,9 @@ import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import androidx.navigation.Navigation
 import com.example.android_traffic.R
+import com.example.android_traffic.core.model.Member
+import com.example.android_traffic.core.service.Server
+import com.example.android_traffic.core.service.requestTask
 import com.example.android_traffic.databinding.FragmentLoginBinding
 
 
@@ -28,23 +31,31 @@ class LoginFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         with(binding) {
-
+            viewModel?.init()
             btnLoginLogin.setOnClickListener {
                 viewModel?.run {
-                    if (login.value!!.username.isEmpty()) {
-                        loginResult.value = getString(R.string.errUsernameEmpty)
+                    if (member.value!!.phoneNo.isEmpty()) {
+                        edtTxtLoginUsername.error= getString(R.string.errUsernameEmpty)
                         return@run
                     }
-                    if (login.value!!.username.isNotEmpty()) {
-                        login.value!!.username.matches(regex = Regex("[A-Z]\\d{9}"))
-                    }
+//                    if ( !login.value?.phone?.matches(regex = Regex("[A-Z]\\d{9}"))!!) {
+//                        loginResult.value = "帳號為手機號碼"
+//                        return@run
+//                    }
 
-                    if (login.value!!.password.isEmpty()) {
+                    if (member.value!!.password.isEmpty()) {
                         edtTxtLoginPassword.error = getString(R.string.errPasswordEmpty)
                         return@run
-                    } else {
+                    }
+                    if (login()){
                         Navigation.findNavController(it).navigate(R.id.mainFragment)
                     }
+                    //move to VM?
+//                    val respBody = requestTask<Member>("${Server.url}/${member.value!!.phoneNo}/${member.value!!.password}")
+//                    if (respBody?.id != null){
+//                        Navigation.findNavController(it).navigate(R.id.mainFragment)
+//                    }
+
                 }
 
             }

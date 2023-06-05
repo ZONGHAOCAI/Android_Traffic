@@ -1,4 +1,4 @@
-package com.example.android_traffic.membercenter.model
+package com.example.android_traffic.core.model
 
 import java.io.Serializable
 import java.util.Date

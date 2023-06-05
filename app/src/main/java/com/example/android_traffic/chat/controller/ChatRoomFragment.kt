@@ -1,6 +1,5 @@
 package com.example.android_traffic.chat.controller
 
-import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -8,7 +7,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.android_traffic.R
 import com.example.android_traffic.chat.viewmodel.ChatRoomViewModel
 import com.example.android_traffic.databinding.FragmentChatRoomBinding
 
@@ -33,9 +31,9 @@ class ChatRoomFragment : Fragment() {
             viewmodel?.content?.observe(viewLifecycleOwner) {
 
                 if (rvChatRoomChat.adapter == null) {
-                    rvChatRoomChat.adapter = ChatAdapter(it)
+                    rvChatRoomChat.adapter = ChatRoomAdapter(it)
                 } else {
-                    (rvChatRoomChat.adapter as ChatAdapter).updateChatList(it)
+                    (rvChatRoomChat.adapter as ChatRoomAdapter).updateChatList(it)
                 }
             }
         }

@@ -7,7 +7,7 @@
     <data>
         <variable
             name="viewmodel"
-            type="com.example.android_traffic.ticket.viewmodel.TicketContentViewModel" />
+            type="com.example.android_traffic.ticket.viewmodel.TicketUnpaidContentViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

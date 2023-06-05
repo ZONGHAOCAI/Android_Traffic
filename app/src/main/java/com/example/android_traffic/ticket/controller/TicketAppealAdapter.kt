@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.android_traffic.R
 import com.example.android_traffic.databinding.FragmentTicketAppealBinding
 import com.example.android_traffic.ticket.model.Content
+import com.example.android_traffic.ticket.viewmodel.TicketAppealContentViewModel
 import com.example.android_traffic.ticket.viewmodel.TicketContentViewModel
 
 class TicketAppealAdapter (private var appealcontent: List<Content>) :
@@ -24,7 +25,7 @@ class TicketAppealAdapter (private var appealcontent: List<Content>) :
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): Holder {
         val TicketAppealFragmentBinding =
             FragmentTicketAppealBinding.inflate(LayoutInflater.from(parent.context), parent, false)
-        TicketAppealFragmentBinding.viewmodel = TicketContentViewModel()
+        TicketAppealFragmentBinding.viewmodel = TicketAppealContentViewModel()
         // 設定lifecycleOwner方能監控LiveData資料變化，layout檔案的view才會更新顯示
         TicketAppealFragmentBinding.lifecycleOwner = parent.findViewTreeLifecycleOwner()
         return Holder(TicketAppealFragmentBinding)
@@ -41,7 +42,7 @@ class TicketAppealAdapter (private var appealcontent: List<Content>) :
             bundle.putSerializable("number", appealcontent[position])
             itemView.setOnClickListener {
                 Navigation.findNavController(it)
-                    .navigate(R.id.action_ticketFragment_to_ticketContentFragment, bundle)
+                    .navigate(R.id.action_ticketFragment_to_ticketAppealContentFragment, bundle)
 //                    .navigate(R.id.action_TicketAppealListFragment_to_ticketContentFragment, bundle)
             }
         }

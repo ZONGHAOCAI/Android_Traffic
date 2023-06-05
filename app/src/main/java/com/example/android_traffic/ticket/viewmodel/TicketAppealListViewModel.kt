@@ -2,6 +2,7 @@ package com.example.android_traffic.ticket.viewmodel
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.example.android_traffic.R
 import com.example.android_traffic.ticket.model.Content
 
 class TicketAppealListViewModel : ViewModel() {
@@ -28,19 +29,19 @@ class TicketAppealListViewModel : ViewModel() {
 
     private fun loadTicketList() {
         var appeallist = mutableListOf<Content>()
-        appeallist.add(Content("C123","申訴中"))
-        appeallist.add(Content("C143","申訴中"))
-        appeallist.add(Content("C133","申訴中"))
-        appeallist.add(Content("C163","申訴中"))
-        appeallist.add(Content("C173","申訴中"))
-        appeallist.add(Content("C183","申訴中"))
-        appeallist.add(Content("C193","申訴中"))
-        appeallist.add(Content("C103","申訴中"))
-        appeallist.add(Content("C263","申訴中"))
-        appeallist.add(Content("C273","申訴中"))
-        appeallist.add(Content("C283","申訴中"))
-        appeallist.add(Content("C293","申訴中"))
-        appeallist.add(Content("C303","申訴中"))
+        appeallist.add(Content("C123","申訴中", listOf(R.drawable.avatar3)))
+        appeallist.add(Content("C143","申訴中", null))
+        appeallist.add(Content("C133","申訴中", null))
+        appeallist.add(Content("C163","申訴中", null))
+        appeallist.add(Content("C173","申訴中", null))
+        appeallist.add(Content("C183","申訴中", null))
+        appeallist.add(Content("C193","申訴中", null))
+        appeallist.add(Content("C103","申訴中", null))
+        appeallist.add(Content("C263","申訴中", null))
+        appeallist.add(Content("C273","申訴中", null))
+        appeallist.add(Content("C283","申訴中", null))
+        appeallist.add(Content("C293","申訴中", null))
+        appeallist.add(Content("C303","申訴中", null))
         this.appeallist = appeallist
         this.content.value = this.appeallist
     }
