@@ -1,0 +1,403 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".ticketappealtext.controller.TicketAppealtext3Fragment">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.example.android_traffic.ticketappealtext.viewmodel.TicketAppealtext3ViewModel" />
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/frameLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:textAlignment="center">
+
+        <TextView
+            android:id="@+id/ttterrocon"
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:layout_marginBottom="60dp"
+            android:textAlignment="center"
+            android:textColor="#FF0000"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tttconfirm2" />
+
+        <CheckBox
+            android:id="@+id/tttconfirm2"
+            android:layout_width="119dp"
+            android:layout_height="46dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginBottom="90dp"
+            android:text="確認"
+            android:textAlignment="gravity"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <Button
+            android:id="@+id/goback2"
+            android:layout_width="137dp"
+            android:layout_height="46dp"
+            android:layout_marginStart="40dp"
+            android:layout_marginBottom="10dp"
+            android:layout_weight="1"
+            android:backgroundTint="#EC8787"
+            android:paddingLeft="16dp"
+            android:text="@string/goback"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <Button
+            android:id="@+id/gonext2"
+            android:layout_width="137dp"
+            android:layout_height="46dp"
+            android:layout_marginEnd="40dp"
+            android:layout_marginBottom="10dp"
+
+            android:backgroundTint="#EC8787"
+            android:text="送出"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <TextView
+            android:id="@+id/ttt"
+            android:layout_width="228dp"
+            android:layout_height="51dp"
+            android:layout_marginTop="2dp"
+            android:hint="@string/tttnew"
+            android:textAlignment="center"
+            android:textColor="#040303"
+            android:textColorHint="#040303"
+            android:textColorLink="#190606"
+            android:textSize="34sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView14" />
+
+        <ScrollView
+            android:id="@+id/scrollView2"
+            android:layout_width="399dp"
+            android:layout_height="340dp"
+            app:layout_constraintBottom_toTopOf="@+id/tttconfirm2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ttt">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/textView23"
+                    android:layout_width="138dp"
+                    android:layout_height="37dp"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginTop="30dp"
+                    android:hint="@string/tttID"
+                    android:textAlignment="center"
+                    android:textColorHint="#000000"
+                    android:textSize="20sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView22" />
+
+                <TextView
+                    android:id="@+id/tvid2"
+                    android:layout_width="205dp"
+                    android:layout_height="41dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:ems="10"
+                    android:inputType="textPersonName"
+                    android:textColor="#000000"
+                    android:textSize="24sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvusername2" />
+
+                <TextView
+                    android:id="@+id/tvusername2"
+                    android:layout_width="197dp"
+                    android:layout_height="49dp"
+                    android:layout_marginTop="14dp"
+                    android:layout_marginEnd="12dp"
+                    android:ems="10"
+                    android:inputType="textPersonName"
+                    android:textColor="#000000"
+                    android:textSize="24sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.666"
+                    app:layout_constraintStart_toEndOf="@+id/textView22"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/textView22"
+                    android:layout_width="142dp"
+                    android:layout_height="29dp"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginTop="15dp"
+                    android:hint="@string/tttusername"
+                    android:textAlignment="center"
+                    android:textColorHint="#000000"
+                    android:textSize="20sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tttphone"
+                    android:layout_width="138dp"
+                    android:layout_height="37dp"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginTop="30dp"
+                    android:hint="@string/tttPhone"
+                    android:textAlignment="center"
+                    android:textColor="#000000"
+                    android:textColorHint="#0B0A0A"
+                    android:textSize="20sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView23" />
+
+                <TextView
+                    android:id="@+id/fafafafa"
+                    android:layout_width="138dp"
+                    android:layout_height="37dp"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginTop="30dp"
+                    android:hint="@string/tttEmail"
+                    android:textAlignment="center"
+                    android:textColorHint="#000000"
+                    android:textSize="20sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tttphone" />
+
+                <TextView
+                    android:id="@+id/textView26"
+                    android:layout_width="138dp"
+                    android:layout_height="37dp"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginTop="30dp"
+                    android:hint="@string/tttaddress"
+                    android:textAlignment="center"
+                    android:textColorHint="#000000"
+                    android:textSize="20sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/fafafafa" />
+
+                <TextView
+                    android:id="@+id/textView27"
+                    android:layout_width="138dp"
+                    android:layout_height="37dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="30dp"
+                    android:hint="@string/tttproject"
+                    android:textAlignment="center"
+                    android:textColorHint="#000000"
+                    android:textSize="20sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView26" />
+
+                <TextView
+                    android:id="@+id/textView28"
+                    android:layout_width="171dp"
+                    android:layout_height="36dp"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginTop="30dp"
+                    android:hint="@string/tttoffender"
+                    android:textAlignment="center"
+                    android:textColorHint="#000000"
+                    android:textSize="20sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView27" />
+
+                <TextView
+                    android:id="@+id/textView29"
+                    android:layout_width="138dp"
+                    android:layout_height="37dp"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginTop="30dp"
+                    android:hint="@string/tttlicense"
+                    android:textAlignment="center"
+                    android:textColorHint="#000000"
+                    android:textSize="20sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView28" />
+
+                <TextView
+                    android:id="@+id/tttoddd"
+                    android:layout_width="149dp"
+                    android:layout_height="37dp"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginTop="30dp"
+                    android:hint="@string/tttoddd"
+                    android:textAlignment="center"
+                    android:textColorHint="#000000"
+                    android:textSize="20sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView29" />
+
+                <TextView
+                    android:id="@+id/tttcontent"
+                    android:layout_width="138dp"
+                    android:layout_height="37dp"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginTop="30dp"
+                    android:hint="@string/tttcontent"
+                    android:textAlignment="center"
+                    android:textColorHint="#000000"
+                    android:textSize="20sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tttoddd" />
+
+                <TextView
+                    android:id="@+id/textView35"
+                    android:layout_width="138dp"
+                    android:layout_height="37dp"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginTop="80dp"
+                    android:layout_marginBottom="40dp"
+                    android:hint="@string/tttfile"
+                    android:textAlignment="center"
+                    android:textColorHint="#000000"
+                    android:textSize="20sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tttcontent" />
+
+                <TextView
+                    android:id="@+id/tvphone2"
+                    android:layout_width="202dp"
+                    android:layout_height="42dp"
+                    android:layout_marginTop="25dp"
+                    android:layout_marginEnd="25dp"
+                    android:ems="10"
+                    android:inputType="number"
+                    android:textColor="#000000"
+                    android:textSize="24sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvid2" />
+
+                <TextView
+                    android:id="@+id/tvemail2"
+                    android:layout_width="226dp"
+                    android:layout_height="44dp"
+                    android:layout_marginTop="22dp"
+                    android:layout_marginEnd="14dp"
+                    android:ems="10"
+                    android:inputType="textPersonName"
+                    android:textColor="#000000"
+                    android:textSize="24sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvphone2" />
+
+                <TextView
+                    android:id="@+id/tttaddress2"
+                    android:layout_width="225dp"
+                    android:layout_height="45dp"
+                    android:layout_marginTop="25dp"
+                    android:layout_marginEnd="10dp"
+                    android:ems="10"
+                    android:inputType="textPersonName"
+                    android:textColor="#000000"
+                    android:textSize="24sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvemail2" />
+
+                <TextView
+                    android:id="@+id/tttmenu2"
+                    android:layout_width="226dp"
+                    android:layout_height="45dp"
+                    android:layout_marginTop="25dp"
+                    android:layout_marginEnd="16dp"
+                    android:entries="@array/txtArray"
+
+                    android:textColor="#000000"
+                    android:textSize="20sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tttaddress2" />
+
+                <TextView
+                    android:id="@+id/tttoddname2"
+                    android:layout_width="179dp"
+                    android:layout_height="43dp"
+                    android:layout_marginTop="23dp"
+                    android:layout_marginEnd="10dp"
+                    android:ems="10"
+                    android:inputType="textPersonName"
+                    android:textColor="#000000"
+                    android:textSize="24sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tttmenu2" />
+
+                <TextView
+                    android:id="@+id/tttcarnamber2"
+                    android:layout_width="225dp"
+                    android:layout_height="51dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginEnd="10dp"
+                    android:ems="10"
+                    android:inputType="numberSigned"
+                    android:textColor="#000000"
+                    android:textSize="24sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tttoddname2" />
+
+                <TextView
+                    android:id="@+id/tttupnumber2"
+                    android:layout_width="200dp"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginEnd="10dp"
+                    android:ems="10"
+                    android:inputType="number"
+                    android:textColor="#000000"
+                    android:textSize="24sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tttcarnamber2" />
+
+                <TextView
+                    android:id="@+id/tttcon2"
+                    android:layout_width="218dp"
+                    android:layout_height="44dp"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginEnd="12dp"
+                    android:ems="10"
+                    android:inputType="textPersonName"
+                    android:textColor="#000000"
+                    android:textSize="20sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tttupnumber2" />
+
+                <TextView
+                    android:id="@+id/tttcontwo2"
+                    android:layout_width="385dp"
+                    android:layout_height="51dp"
+                    android:layout_marginTop="10dp"
+                    android:ems="10"
+                    android:inputType="textPersonName"
+                    android:textColor="#000000"
+                    android:textSize="20sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tttcon2" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </ScrollView>
+
+        <ImageView
+            android:id="@+id/imageView14"
+            android:layout_width="0dp"
+            android:layout_height="65dp"
+            android:src="@drawable/no3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
