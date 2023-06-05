@@ -52,7 +52,7 @@
                 android:background="@android:color/transparent"
                 android:src="@android:drawable/ic_menu_gallery" />
 
-            <TextView
+            <EditText
                 android:id="@+id/tv_Chat_Text"
                 android:layout_width="265dp"
                 android:layout_height="50dp"
@@ -61,7 +61,6 @@
                 android:hint="輸入訊息"
                 android:inputType="textPersonName"
                 android:paddingLeft="10dp"
-                android:text="@{viewmodel.avatar.nickname}"
                 android:textSize="16dp" />
 
             <ImageButton
@@ -72,6 +71,5 @@
                 android:src="@android:drawable/ic_menu_send" />
 
         </LinearLayout>
-
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

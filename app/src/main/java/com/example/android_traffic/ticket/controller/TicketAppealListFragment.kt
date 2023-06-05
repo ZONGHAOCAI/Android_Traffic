@@ -12,7 +12,6 @@ import com.example.android_traffic.databinding.FragmentTicketAppealListBinding
 import com.example.android_traffic.ticket.viewmodel.TicketAppealListViewModel
 
 class TicketAppealListFragment : Fragment() {
-
     private lateinit var binding: FragmentTicketAppealListBinding
 
     override fun onCreateView(

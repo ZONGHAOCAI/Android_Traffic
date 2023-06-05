@@ -114,7 +114,6 @@
                             android:layout_toRightOf="@id/iv_ChatContent_UserAvatar"
                             android:background="@drawable/msg_left_layout"
                             android:gravity="center|left"
-                            android:hint="message"
                             android:paddingStart="12dp"
                             android:paddingTop="10dp"
                             android:paddingEnd="12dp"
@@ -145,8 +144,8 @@
                         android:layout_gravity="bottom|left"
                         android:layout_marginLeft="5dp"
                         android:gravity="right"
-                        android:hint="@{viewmodel.chatext.time}"
-                        android:text="TextView" />
+                        android:hint="時間"
+                        android:text="@{viewmodel.chatext.time}" />
                 </LinearLayout>
             </RelativeLayout>
 
