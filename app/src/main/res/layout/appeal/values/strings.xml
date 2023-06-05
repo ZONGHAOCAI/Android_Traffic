@@ -1,21 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="txt_Login_Username">帳號</string>
-    <string name="txt_Login_Password">密碼</string>
-    <string name="txt_Login_Login">登入</string>
-    <string name="txt_Login_Register">註冊</string>
-    <string name="txt_Login_ForgetPassword"><u>忘記密碼</u></string>
-    <string name="txt_Login_SendPhoneMsg">送出驗證簡訊</string>
-    <string name="txt_Login_Send">送出</string>
-    <string name="txt_Login_Confirm">驗證</string>
-    <string name="txt_Login_Phone">手機號碼</string>
-    <string name="txt_Login_ConfirmCode">驗證碼</string>
-    <string name="txt_Login_Next">下一步</string>
-    <string name="txt_Login_ConfrimPassword">確認密碼</string>
-    <string name="txt_Login_RegisterMember">註冊會員</string>
-    <string name="txt_Login_Name">姓名</string>
-    <string name="txt_Login_ID">身分證字號</string>
-    <string name="txt_Login_Birthday">出生年月日</string>
     <string name="goup">上傳檔案</string>
     <string name="gonext">下一頁</string>
     <string name="goback">上一頁</string>
