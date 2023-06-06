@@ -49,10 +49,11 @@
                 app:layout_constraintTop_toTopOf="parent" />
             <!--yo箭頭-->
             <ImageView
+                android:id="@+id/iv_MemberCenter_Right"
                 android:layout_width="19dp"
                 android:layout_height="29dp"
                 android:layout_marginEnd="10dp"
-                android:src="@drawable/membercenter_txt_edit"
+                android:src="@drawable/pic_membercenter_edit"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -60,7 +61,7 @@
             <ImageView
                 android:layout_width="367dp"
                 android:layout_height="0dp"
-                android:src="@drawable/membercenter_txt_bottomline"
+                android:src="@drawable/pic_membercenter_bottomline"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent" />

@@ -44,10 +44,6 @@ class MemberCenterFragment : Fragment() {
             tvRelatedPersonInfo.setOnClickListener {
                 Navigation.findNavController(view).navigate(R.id.relatedPersonFragment)
             }
-            //私訊權限
-//            clChatPermissions.setOnClickListener {
-//                viewModel?.chatPerminssionsS()
-//            }
             //檢查更新
             tvUpdate.setOnClickListener {
 

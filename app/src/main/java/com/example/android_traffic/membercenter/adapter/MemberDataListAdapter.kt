@@ -1,8 +1,13 @@
 package com.example.android_traffic.membercenter.adapter
 
+import android.app.AlertDialog
+import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import android.widget.TextView
 import androidx.lifecycle.findViewTreeLifecycleOwner
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
@@ -59,7 +64,10 @@ class MemberDataListAdapter(private var memberData: Member) : //memberData在Vie
             if (position == 0) { //頭像
                 itemViewBinding.viewModel?.memberData?.value = memberData.avatar
                 itemViewBinding.viewModel?.memberData?.value = null
-            } else { //頭像以外
+            } else if (position == 5){ //手機
+                itemViewBinding.ivMemberCenterRight.visibility = View.INVISIBLE
+                itemViewBinding.viewModel?.memberData?.value = memberData.phoneNo
+            }else { //頭像以外
                 when (position) {  //8車輛資料 9修改密碼
                     1 -> {
                         itemViewBinding.viewModel?.memberData?.value = memberData.name
@@ -76,10 +84,6 @@ class MemberDataListAdapter(private var memberData: Member) : //memberData在Vie
                     4 -> {
                         itemViewBinding.viewModel?.memberData?.value = memberData.birthday
                         tempMember.birthday = memberData.birthday
-                    }
-                    5 -> {
-                        itemViewBinding.viewModel?.memberData?.value = memberData.phoneNo.toString()
-                        tempMember.phoneNo = memberData.phoneNo
                     }
                     6 -> {
                         itemViewBinding.viewModel?.memberData?.value = memberData.email
@@ -105,8 +109,7 @@ class MemberDataListAdapter(private var memberData: Member) : //memberData在Vie
             }
 
             val bundle = Bundle()
-            //如果是8車輛資料 改進車輛資料頁 8以外的進修改資料
-            if (position == 8) {
+            if (position == 8) {    //如果是8車輛資料 改進車輛資料頁 8以外的進修改資料
                 bundle.putSerializable("memberID", memberData.id)
                 itemView.setOnClickListener {
                     Navigation.findNavController(it)
@@ -114,7 +117,14 @@ class MemberDataListAdapter(private var memberData: Member) : //memberData在Vie
                             R.id.action_memberDataFragment_to_memberDataVehideDataFragment, bundle
                         )
                 }
-            } else {
+            } else if (position == 5) { //取消手機的監聽
+                itemView.setOnClickListener(null)
+            } else if (position == 0) { //上傳頭像的監聽
+                itemView.setOnClickListener {
+                    alertDialogPicture(itemView.context)
+                }
+            }
+            else {
                 bundle.putSerializable("memberDataTitle", title)
                 bundle.putSerializable("memberData", tempMember)
                 itemView.setOnClickListener {
@@ -125,5 +135,30 @@ class MemberDataListAdapter(private var memberData: Member) : //memberData在Vie
                 }
             }
         }
+    }
+
+    fun alertDialogPicture(context: Context) {
+
+        val dialogView = LayoutInflater.from(context).inflate(R.layout.membercent_memeberdata_picture_alertdialog, null)
+        val alertDialogBuilder = AlertDialog.Builder(context)
+        alertDialogBuilder.setView(dialogView)
+        val alertDialog = alertDialogBuilder.create()
+
+        // 自訂布局李的按鈕監聽
+        val takePictureButton = dialogView.findViewById<TextView>(R.id.tv_MemberData_TakePictrue)
+        val pickPictureButton = dialogView.findViewById<TextView>(R.id.tv_MemberData_PickPictrue)
+        takePictureButton.setOnClickListener {//拍照按鈕的監聽
+            // 按下拍照按鈕的監聽事件
+            println("ㄆ拍")
+            // 在這裡處理拍照的操作
+            alertDialog.dismiss()
+        }
+        pickPictureButton.setOnClickListener {//相簿按鈕的監聽
+            // 按下挑選圖片按鈕的監聽事件
+            // 在這裡處理挑選圖片的操作
+            println("挑挑")
+            alertDialog.dismiss()
+        }
+        alertDialog.show()
     }
 }

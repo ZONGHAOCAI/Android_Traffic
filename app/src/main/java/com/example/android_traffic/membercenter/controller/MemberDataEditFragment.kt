@@ -26,6 +26,7 @@ class MemberDataEditFragment : Fragment() {
     private var onePass: Boolean = true
     private var twoPass: Boolean = true
     private var threePass: Boolean = true
+    private var passError: Boolean = false
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -63,6 +64,10 @@ class MemberDataEditFragment : Fragment() {
                 }
             }
             btMemberDataEdit.setOnClickListener {
+                if (passError == true) {
+                    etMemberDataEditOne.error = "密碼錯誤"
+                    return@setOnClickListener
+                }
                 if (onePass && twoPass && threePass) {
                     val respBody = requestTask<JsonObject>(Server.url, "PUT", editData)
                     respBody?.run {
@@ -124,7 +129,10 @@ class MemberDataEditFragment : Fragment() {
                 if (it.isEmpty()) {
                     etMemberDataEditOne.error = getString(R.string.txt_MemberData_Edit_Error)
                     onePass = false
-                } else onePass = true
+                } else {
+                    editData.identityNumber = viewModel?.memberData?.value.toString()
+                    onePass = true
+                }
             }
         }
     }
@@ -138,7 +146,10 @@ class MemberDataEditFragment : Fragment() {
                 if (it.isEmpty()) {
                     etMemberDataEditOne.error = getString(R.string.txt_MemberData_Edit_Error)
                     onePass = false
-                } else onePass = true
+                } else {
+                    editData.birthday = viewModel?.memberData?.value.toString()
+                    onePass = true
+                }
             }
         }
     }
@@ -152,7 +163,10 @@ class MemberDataEditFragment : Fragment() {
                 if (it.isEmpty()) {
                     etMemberDataEditOne.error = getString(R.string.txt_MemberData_Edit_Error)
                     onePass = false
-                } else onePass = true
+                } else {
+                    editData.phoneNo = viewModel?.memberData?.value.toString()
+                    onePass = true
+                }
             }
         }
     }
@@ -166,7 +180,10 @@ class MemberDataEditFragment : Fragment() {
                 if (it.isEmpty()) {
                     etMemberDataEditOne.error = getString(R.string.txt_MemberData_Edit_Error)
                     onePass = false
-                } else onePass = true
+                } else {
+                    editData.email = viewModel?.memberData?.value.toString()
+                    onePass = true
+                }
             }
         }
     }
@@ -179,7 +196,10 @@ class MemberDataEditFragment : Fragment() {
                 if (it.isEmpty()) {
                     etMemberDataEditOne.error = getString(R.string.txt_MemberData_Edit_Error)
                     onePass = false
-                } else onePass = true
+                } else {
+                    editData.address = viewModel?.memberData?.value.toString()
+                    onePass = true
+                }
             }
         }
     }
@@ -189,7 +209,7 @@ class MemberDataEditFragment : Fragment() {
             maxLen(100)
             etMemberDataEditOne.hint =
                 resources.getString(R.string.txt_MemberData_Edit_OldPassword)
-            etMemberDataEditOne.inputType = InputType.TYPE_TEXT_VARIATION_PASSWORD
+            etMemberDataEditOne.inputType = InputType.TYPE_TEXT_VARIATION_PASSWORD //輸入框改成密碼模式
             etMemberDataEditTwo.visibility = View.VISIBLE
             etMemberDataEditThree.visibility = View.VISIBLE
             //監控舊密碼
@@ -197,14 +217,22 @@ class MemberDataEditFragment : Fragment() {
                 if (it.isEmpty()) {
                     etMemberDataEditOne.error = getString(R.string.txt_MemberData_Edit_Error)
                     onePass = false
-                } else onePass = true
+                } else if (password != etMemberDataEditOne.text.toString()){
+                    passError = true
+                } else {
+                    onePass = true
+                    passError = false
+                }
             }
             //監控新密碼
             viewModel?.pass?.observe(viewLifecycleOwner) {
                 if (it.isEmpty()) {
                     etMemberDataEditTwo.error = getString(R.string.txt_MemberData_Edit_Error)
                     twoPass = false
-                } else twoPass = true
+                } else {
+                    editData.password = etMemberDataEditTwo.text.toString()
+                    twoPass = true
+                }
             }
             //監控確認新密碼
             viewModel?.cPass?.observe(viewLifecycleOwner) {
