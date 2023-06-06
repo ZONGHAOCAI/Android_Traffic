@@ -9,18 +9,488 @@
             name="viewModel"
             type="com.example.android_traffic.membercenter.viewmodel.MemberDataViewModel" />
     </data>
-    <androidx.constraintlayout.widget.ConstraintLayout
+
+    <ScrollView
+
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerView"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_margin="6dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <!--頭像-->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/cl_MemberData_Avatar"
+                android:layout_width="match_parent"
+                android:layout_height="62dp"
+                android:layout_marginTop="20dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+                <!--左邊的標題-->
+                <TextView
+                    android:id="@+id/tv_MemberData_AvatarTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:text="@string/txt_MemberData_Avatar"
+                    android:textSize="20sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+                <!--頭像用
+                                    app:imgBase64="@={viewModel.member.avatarBase64}"-->
+                <ImageView
+                    android:id="@+id/tv_MemberData_Avatar"
+                    android:layout_width="19dp"
+                    android:layout_height="29dp"
+                    android:layout_marginEnd="48dp"
+                    android:text=""
+
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+                <!--yo箭頭-->
+                <ImageView
+                    android:layout_width="19dp"
+                    android:layout_height="29dp"
+                    android:layout_marginEnd="10dp"
+                    android:src="@drawable/pic_membercenter_edit"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+                <!--底線-->
+                <ImageView
+                    android:layout_width="367dp"
+                    android:layout_height="0dp"
+                    android:src="@drawable/pic_membercenter_bottomline"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+            <!--姓名-->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/cl_MemberData_Name"
+                android:layout_width="match_parent"
+                android:layout_height="62dp"
+                android:layout_marginTop="20dp"
+                android:onClick="@{viewModel::editName}"
+                app:layout_constraintEnd_toEndOf="@+id/cl_MemberData_Avatar"
+                app:layout_constraintStart_toStartOf="@+id/cl_MemberData_Avatar"
+                app:layout_constraintTop_toBottomOf="@+id/cl_MemberData_Avatar">
+                <!--左邊的標題-->
+                <TextView
+                    android:id="@+id/tv_MemberData_NameTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/txt_MemberData_Edit_Name"
+                    android:textSize="20sp"
+                    android:layout_marginStart="20dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+                <!--姓名-->
+                <TextView
+                    android:id="@+id/tv_MemberData_Name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="40dp"
+                    android:text="@={viewModel.member.name}"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+                <!--yo箭頭-->
+                <ImageView
+                    android:layout_width="19dp"
+                    android:layout_height="29dp"
+                    android:layout_marginEnd="10dp"
+                    android:src="@drawable/pic_membercenter_edit"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+                <!--底線-->
+                <ImageView
+                    android:layout_width="367dp"
+                    android:layout_height="0dp"
+                    android:src="@drawable/pic_membercenter_bottomline"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+            <!--暱稱-->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/cl_MemberData_Nickname"
+                android:layout_width="match_parent"
+                android:layout_height="62dp"
+                android:layout_marginTop="20dp"
+                android:onClick="@{viewModel::editNickname}"
+                app:layout_constraintEnd_toEndOf="@+id/cl_MemberData_Name"
+                app:layout_constraintStart_toStartOf="@+id/cl_MemberData_Name"
+                app:layout_constraintTop_toBottomOf="@+id/cl_MemberData_Name">
+                <!--左邊的標題-->
+                <TextView
+                    android:id="@+id/tv_MemberData_NicknameTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/txt_MemberData_Nickname"
+                    android:textSize="20sp"
+                    android:layout_marginStart="20dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+                <!--暱稱-->
+                <TextView
+                    android:id="@+id/tv_MemberData_Nickname"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="40dp"
+                    android:text="@={viewModel.member.nickname}"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+                <!--yo箭頭-->
+                <ImageView
+                    android:layout_width="19dp"
+                    android:layout_height="29dp"
+                    android:layout_marginEnd="10dp"
+                    android:src="@drawable/pic_membercenter_edit"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+                <!--底線-->
+                <ImageView
+                    android:layout_width="367dp"
+                    android:layout_height="0dp"
+                    android:src="@drawable/pic_membercenter_bottomline"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+            <!--身分證-->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/cl_MemberData_IdentityNumber"
+                android:layout_width="match_parent"
+                android:layout_height="62dp"
+                android:layout_marginTop="20dp"
+                android:onClick="@{viewModel::editIdentityNumber}"
+                app:layout_constraintEnd_toEndOf="@+id/cl_MemberData_Nickname"
+                app:layout_constraintStart_toStartOf="@+id/cl_MemberData_Nickname"
+                app:layout_constraintTop_toBottomOf="@+id/cl_MemberData_Nickname">
+                <!--左邊的標題-->
+                <TextView
+                    android:id="@+id/tv_MemberData_IdentityNumberTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/txt_MemberData_Edit_IdentityNumber"
+                    android:textSize="20sp"
+                    android:layout_marginStart="20dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+                <!--身分證-->
+                <TextView
+                    android:id="@+id/tv_MemberData_Data"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="40dp"
+                    android:text="@={viewModel.member.identityNumber}"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+                <!--yo箭頭-->
+                <ImageView
+                    android:id="@+id/iv_MemberCenter_Right"
+                    android:layout_width="19dp"
+                    android:layout_height="29dp"
+                    android:layout_marginEnd="10dp"
+                    android:src="@drawable/pic_membercenter_edit"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+                <!--底線-->
+                <ImageView
+                    android:layout_width="367dp"
+                    android:layout_height="0dp"
+                    android:src="@drawable/pic_membercenter_bottomline"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+            <!--生日-->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/cl_MemberData_Birthday"
+                android:layout_width="match_parent"
+                android:layout_height="62dp"
+                android:layout_marginTop="20dp"
+                android:onClick="@{viewModel::editBirthday}"
+                app:layout_constraintEnd_toEndOf="@+id/cl_MemberData_IdentityNumber"
+                app:layout_constraintStart_toStartOf="@+id/cl_MemberData_IdentityNumber"
+                app:layout_constraintTop_toBottomOf="@+id/cl_MemberData_IdentityNumber">
+                <!--左邊的標題-->
+                <TextView
+                    android:id="@+id/tv_MemberData_BirthdayTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/txt_MemberData_Edit_Birthday"
+                    android:textSize="20sp"
+                    android:layout_marginStart="20dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+                <!--生日-->
+                <TextView
+                    android:id="@+id/tv_MemberData_Birthday"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="40dp"
+                    android:text="@={viewModel.member.birthday}"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+                <!--yo箭頭-->
+                <ImageView
+                    android:layout_width="19dp"
+                    android:layout_height="29dp"
+                    android:layout_marginEnd="10dp"
+                    android:src="@drawable/pic_membercenter_edit"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+                <!--底線-->
+                <ImageView
+                    android:layout_width="367dp"
+                    android:layout_height="0dp"
+                    android:src="@drawable/pic_membercenter_bottomline"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+            <!--手機-->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/cl_MemberData_PhoneNo"
+                android:layout_width="match_parent"
+                android:layout_height="62dp"
+                android:layout_marginTop="20dp"
+                app:layout_constraintEnd_toEndOf="@+id/cl_MemberData_Birthday"
+                app:layout_constraintStart_toStartOf="@+id/cl_MemberData_Birthday"
+                app:layout_constraintTop_toBottomOf="@+id/cl_MemberData_Birthday">
+                <!--左邊的標題-->
+                <TextView
+                    android:id="@+id/tv_MemberData_PhoneNoTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/txt_MemberData_Edit_PhoneNo"
+                    android:textSize="20sp"
+                    android:layout_marginStart="20dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+                <!--手機-->
+                <TextView
+                    android:id="@+id/tv_MemberData_PhoneNo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="40dp"
+                    android:text="@={viewModel.member.phoneNo}"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+                <!--底線-->
+                <ImageView
+                    android:layout_width="367dp"
+                    android:layout_height="0dp"
+                    android:src="@drawable/pic_membercenter_bottomline"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+            <!--信箱-->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/cl_MemberData_Email"
+                android:layout_width="match_parent"
+                android:layout_height="62dp"
+                android:layout_marginTop="20dp"
+                android:onClick="@{viewModel::editEmail}"
+                app:layout_constraintEnd_toEndOf="@+id/cl_MemberData_PhoneNo"
+                app:layout_constraintStart_toStartOf="@+id/cl_MemberData_PhoneNo"
+                app:layout_constraintTop_toBottomOf="@+id/cl_MemberData_PhoneNo">
+                <!--左邊的標題-->
+                <TextView
+                    android:id="@+id/tv_MemberData_EmailTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/txt_MemberData_Edit_Email"
+                    android:textSize="20sp"
+                    android:layout_marginStart="20dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+                <!--信箱-->
+                <TextView
+                    android:id="@+id/tv_MemberData_Email"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="40dp"
+                    android:text="@={viewModel.member.email}"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+                <!--yo箭頭-->
+                <ImageView
+                    android:layout_width="19dp"
+                    android:layout_height="29dp"
+                    android:layout_marginEnd="10dp"
+                    android:src="@drawable/pic_membercenter_edit"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+                <!--底線-->
+                <ImageView
+                    android:layout_width="367dp"
+                    android:layout_height="0dp"
+                    android:src="@drawable/pic_membercenter_bottomline"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+            <!--地址-->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/cl_MemberData_Address"
+                android:layout_width="match_parent"
+                android:layout_height="62dp"
+                android:layout_marginTop="20dp"
+                android:onClick="@{viewModel::editAddress}"
+                app:layout_constraintEnd_toEndOf="@+id/cl_MemberData_Email"
+                app:layout_constraintStart_toStartOf="@+id/cl_MemberData_Email"
+                app:layout_constraintTop_toBottomOf="@+id/cl_MemberData_Email">
+                <!--左邊的標題-->
+                <TextView
+                    android:id="@+id/tv_MemberData_AdressTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/txt_MemberData_Edit_Address"
+                    android:textSize="20sp"
+                    android:layout_marginStart="20dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+                <!--地址-->
+                <TextView
+                    android:id="@+id/tv_MemberData_Address"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="40dp"
+                    android:text="@={viewModel.member.address}"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+                <!--yo箭頭-->
+                <ImageView
+                    android:layout_width="19dp"
+                    android:layout_height="29dp"
+                    android:layout_marginEnd="10dp"
+                    android:src="@drawable/pic_membercenter_edit"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+                <!--底線-->
+                <ImageView
+                    android:layout_width="367dp"
+                    android:layout_height="0dp"
+                    android:src="@drawable/pic_membercenter_bottomline"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+            <!--車輛資料-->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/cl_MemberData_Vehidedata"
+                android:layout_width="match_parent"
+                android:layout_height="62dp"
+                android:layout_marginTop="20dp"
+                app:layout_constraintEnd_toEndOf="@+id/cl_MemberData_Address"
+                app:layout_constraintStart_toStartOf="@+id/cl_MemberData_Address"
+                app:layout_constraintTop_toBottomOf="@+id/cl_MemberData_Address">
+                <!--左邊的標題-->
+                <TextView
+                    android:id="@+id/tv_MemberData_VehideTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/txt_MemberData_Edit_VehideData"
+                    android:textSize="20sp"
+                    android:layout_marginStart="20dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+                <!--yo箭頭-->
+                <ImageView
+                    android:layout_width="19dp"
+                    android:layout_height="29dp"
+                    android:layout_marginEnd="10dp"
+                    android:src="@drawable/pic_membercenter_edit"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+                <!--底線-->
+                <ImageView
+                    android:layout_width="367dp"
+                    android:layout_height="0dp"
+                    android:src="@drawable/pic_membercenter_bottomline"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+            <!--修改密碼-->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/cl_MemberData_Password"
+                android:layout_width="match_parent"
+                android:layout_height="62dp"
+                android:layout_marginTop="20dp"
+                android:onClick="@{viewModel::editPassword}"
+                app:layout_constraintEnd_toEndOf="@+id/cl_MemberData_Vehidedata"
+                app:layout_constraintStart_toStartOf="@+id/cl_MemberData_Vehidedata"
+                app:layout_constraintTop_toBottomOf="@+id/cl_MemberData_Vehidedata">
+                <!--左邊的標題-->
+                <TextView
+                    android:id="@+id/tv_MemberData_PasswordTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/txt_MemberData_EditPassword"
+                    android:textSize="20sp"
+                    android:layout_marginStart="20dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+                <!--yo箭頭-->
+                <ImageView
+                    android:layout_width="19dp"
+                    android:layout_height="29dp"
+                    android:layout_marginEnd="10dp"
+                    android:src="@drawable/pic_membercenter_edit"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+                <!--底線-->
+                <ImageView
+                    android:layout_width="367dp"
+                    android:layout_height="0dp"
+                    android:src="@drawable/pic_membercenter_bottomline"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+            <!--底下空格用-->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                app:layout_constraintEnd_toEndOf="@+id/cl_MemberData_Password"
+                app:layout_constraintStart_toStartOf="@+id/cl_MemberData_Password"
+                app:layout_constraintTop_toBottomOf="@+id/cl_MemberData_Password"
+                android:text="TextView" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
 </layout>

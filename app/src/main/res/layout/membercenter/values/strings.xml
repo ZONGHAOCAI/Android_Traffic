@@ -17,7 +17,7 @@
     <string name="txt_MemberData_Edit_NewPassword">請輸入新密碼</string>
     <string name="txt_MemberData_Edit_CNewPassword">再輸入一次新密碼</string>
     <string name="txt_MemberData_Edit_Avatar">頭像</string>
-    <string name="txt_MemberData_Edit_Name">名子</string>
+    <string name="txt_MemberData_Edit_Name">姓名</string>
     <string name="txt_MemberData_Edit_Nickname">暱稱</string>
     <string name="txt_MemberData_Edit_IdentityNumber">身分證</string>
     <string name="txt_MemberData_Edit_Birthday">生日</string>

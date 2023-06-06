@@ -62,7 +62,7 @@ class MemberDataListAdapter(private var memberData: Member) : //memberData在Vie
         with(holder) {
             var tempMember: Member = Member()
             if (position == 0) { //頭像
-                itemViewBinding.viewModel?.memberData?.value = memberData.avatar
+                itemViewBinding.viewModel?.memberData?.value = memberData.avatarBase64
                 itemViewBinding.viewModel?.memberData?.value = null
             } else if (position == 5){ //手機
                 itemViewBinding.ivMemberCenterRight.visibility = View.INVISIBLE
@@ -148,15 +148,11 @@ class MemberDataListAdapter(private var memberData: Member) : //memberData在Vie
         val takePictureButton = dialogView.findViewById<TextView>(R.id.tv_MemberData_TakePictrue)
         val pickPictureButton = dialogView.findViewById<TextView>(R.id.tv_MemberData_PickPictrue)
         takePictureButton.setOnClickListener {//拍照按鈕的監聽
-            // 按下拍照按鈕的監聽事件
-            println("ㄆ拍")
-            // 在這裡處理拍照的操作
+
             alertDialog.dismiss()
         }
         pickPictureButton.setOnClickListener {//相簿按鈕的監聽
-            // 按下挑選圖片按鈕的監聽事件
-            // 在這裡處理挑選圖片的操作
-            println("挑挑")
+
             alertDialog.dismiss()
         }
         alertDialog.show()

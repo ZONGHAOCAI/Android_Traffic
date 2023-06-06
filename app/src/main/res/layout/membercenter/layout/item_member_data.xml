@@ -13,9 +13,7 @@
             android:layout_width="match_parent"
             android:layout_height="62dp"
             android:layout_marginTop="20dp"
-            app:layout_constraintEnd_toEndOf="@+id/cl_Avatar"
-            app:layout_constraintStart_toStartOf="@+id/cl_Avatar"
-            app:layout_constraintTop_toBottomOf="@+id/cl_Avatar">
+>
             <!--左邊的標題-->
             <TextView
                 android:id="@+id/tv_MemberData_Title"
@@ -44,6 +42,7 @@
                 android:layout_height="29dp"
                 android:layout_marginEnd="48dp"
                 android:text=""
+                app:imgBase64="@={viewModel.memberImg.avatarBase64}"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />

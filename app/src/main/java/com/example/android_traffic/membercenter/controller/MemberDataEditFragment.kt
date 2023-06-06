@@ -40,26 +40,47 @@ class MemberDataEditFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         with(binding) {
+            var title:String = ""
             arguments?.let { bundle ->
-                bundle.getSerializable("memberDataTitle")?.let { title ->
+                bundle.getSerializable("type")?.let { type ->
                     bundle.getSerializable("memberData")?.let { data ->
-                        val tempTitle = title.toString().toInt()
+//                        val tempTitle = title.toString()
                         memberData = data as Member
-                        activity?.title = getString(tempTitle) //設定標題
-                        when (tempTitle) { //判斷修改項目是什麼
-                            R.string.txt_MemberData_Edit_Avatar -> {}//待用
-                            R.string.txt_MemberData_Edit_Name -> editName(memberData.name)
-                            R.string.txt_MemberData_Edit_Nickname -> editNickname(memberData.nickname)
-                            R.string.txt_MemberData_Edit_IdentityNumber -> editIdentityNumber(
-                                memberData.identityNumber
-                            )
-                            R.string.txt_MemberData_Edit_Birthday -> editBirthday(memberData.birthday)
-                            R.string.txt_MemberData_Edit_PhoneNo -> editPhoneNo(memberData.phoneNo)
-                            R.string.txt_MemberData_Edit_Email -> editEmail(memberData.email)
-                            R.string.txt_MemberData_Address -> editAddress(memberData.address)
-                            R.string.txt_MemberData_Edit_Password -> editPassword(memberData.password)
-                            else -> {}
+                        when (type) { //判斷修改項目是什麼
+//                            "R.string.txt_MemberData_Edit_Avatar" -> {}//待用
+                            "Name"-> {
+                                title = getString(R.string.txt_MemberData_Edit_Name)
+                                editName(memberData.name)
+                            }
+
+                            "NickName"-> {
+                                title = getString(R.string.txt_MemberData_Edit_Nickname)
+                                editNickname(memberData.nickname)
+                            }
+                            "IdentityNumber" -> {
+                                title = getString(R.string.txt_MemberData_Edit_IdentityNumber)
+                                editIdentityNumber(memberData.identityNumber)
+                            }
+                            "Birthday" -> {
+                                title = getString(R.string.txt_MemberData_Edit_Birthday)
+                                editBirthday(memberData.birthday)
+                            }
+                            "Email" -> {
+                                title = getString(R.string.txt_MemberData_Edit_Email)
+                                editEmail(memberData.email)
+                            }
+                            "Address" -> {
+                                title = getString(R.string.txt_MemberData_Edit_Address)
+                                editAddress(memberData.address)
+                            }
+                            "Password" -> {
+                                title = getString(R.string.txt_MemberData_EditPassword)
+                                editPassword(memberData.password)
+                            }
+                            else -> {
+                            }
                         }
+                        activity?.title = title //設定標題
                     }
                 }
             }
@@ -148,23 +169,6 @@ class MemberDataEditFragment : Fragment() {
                     onePass = false
                 } else {
                     editData.birthday = viewModel?.memberData?.value.toString()
-                    onePass = true
-                }
-            }
-        }
-    }
-
-    private fun editPhoneNo(phoneNo: String) {
-        with(binding) {
-            maxLen(10)
-            etMemberDataEditOne.inputType = InputType.TYPE_CLASS_PHONE
-            viewModel?.memberData?.value = phoneNo
-            viewModel?.memberData?.observe(viewLifecycleOwner) {
-                if (it.isEmpty()) {
-                    etMemberDataEditOne.error = getString(R.string.txt_MemberData_Edit_Error)
-                    onePass = false
-                } else {
-                    editData.phoneNo = viewModel?.memberData?.value.toString()
                     onePass = true
                 }
             }
