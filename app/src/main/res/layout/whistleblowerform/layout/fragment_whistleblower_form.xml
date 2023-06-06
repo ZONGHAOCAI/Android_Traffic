@@ -2,13 +2,13 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".whistleblowerform.WhistleblowerFormFragment">
+    tools:context=".whistleblowerform.controller.WhistleblowerFormFragment">
 
     <data>
 
         <variable
             name="viewModel"
-            type="com.example.android_traffic.whistleblowerform.WhistleblowerFormViewModel" />
+            type="com.example.android_traffic.whistleblowerform.viewModel.WhistleblowerFormViewModel" />
     </data>
 
     <ScrollView

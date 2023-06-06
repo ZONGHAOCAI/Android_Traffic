@@ -1,4 +1,4 @@
-package com.example.android_traffic.login
+package com.example.android_traffic.login.controller
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -8,10 +8,8 @@ import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import androidx.navigation.Navigation
 import com.example.android_traffic.R
-import com.example.android_traffic.core.model.Member
-import com.example.android_traffic.core.service.Server
-import com.example.android_traffic.core.service.requestTask
 import com.example.android_traffic.databinding.FragmentLoginBinding
+import com.example.android_traffic.login.viewModel.LoginViewModel
 
 
 class LoginFragment : Fragment() {
@@ -38,6 +36,8 @@ class LoginFragment : Fragment() {
                         edtTxtLoginUsername.error= getString(R.string.errUsernameEmpty)
                         return@run
                     }
+
+                    //TODO 登入改用手機號碼 (Regex)
 //                    if ( !login.value?.phone?.matches(regex = Regex("[A-Z]\\d{9}"))!!) {
 //                        loginResult.value = "帳號為手機號碼"
 //                        return@run
@@ -64,7 +64,7 @@ class LoginFragment : Fragment() {
             }
 
             tvLoginForgetPassword.setOnClickListener {
-                Navigation.findNavController(it).navigate(R.id.forgetPasswordFragment)
+                Navigation.findNavController(it).navigate(R.id.newForgetPasswordFragment)
             }
 
             tvLoginAdministrator.setOnClickListener {

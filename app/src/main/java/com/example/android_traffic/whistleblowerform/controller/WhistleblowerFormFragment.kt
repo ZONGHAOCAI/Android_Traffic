@@ -1,4 +1,4 @@
-package com.example.android_traffic.whistleblowerform
+package com.example.android_traffic.whistleblowerform.controller
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -9,7 +9,7 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.Navigation
 import com.example.android_traffic.R
 import com.example.android_traffic.databinding.FragmentWhistleblowerFormBinding
-import com.example.android_traffic.login.Whistleblower
+import com.example.android_traffic.whistleblowerform.viewModel.WhistleblowerFormViewModel
 
 class WhistleblowerFormFragment : Fragment() {
     private lateinit var binding: FragmentWhistleblowerFormBinding

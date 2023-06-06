@@ -1,4 +1,4 @@
-package com.example.android_traffic.login
+package com.example.android_traffic.login.controller
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -6,9 +6,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
-import androidx.lifecycle.ViewModelProvider
-import com.example.android_traffic.R
 import com.example.android_traffic.databinding.FragmentRegisterBinding
+import com.example.android_traffic.login.viewModel.RegisterViewModel
 
 class RegisterFragment : Fragment() {
 

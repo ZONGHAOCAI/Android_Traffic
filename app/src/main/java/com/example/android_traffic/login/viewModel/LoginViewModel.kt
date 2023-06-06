@@ -1,13 +1,11 @@
-package com.example.android_traffic.login
+package com.example.android_traffic.login.viewModel
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import androidx.navigation.Navigation
-import com.example.android_traffic.R
 import com.example.android_traffic.core.model.Member
 import com.example.android_traffic.core.service.Server
 import com.example.android_traffic.core.service.requestTask
-import com.example.android_traffic.login.Login
+import com.example.android_traffic.login.model.Login
 
 class LoginViewModel : ViewModel() {
    val login: MutableLiveData<Login> by lazy { MutableLiveData<Login>(Login()) }

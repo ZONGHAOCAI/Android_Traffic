@@ -2,13 +2,13 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".login.RegisterFragment">
+    tools:context=".login.controller.RegisterFragment">
 
     <data>
 
         <variable
             name="viewModel"
-            type="com.example.android_traffic.login.RegisterViewModel" />
+            type="com.example.android_traffic.login.viewModel.RegisterViewModel" />
     </data>
     <ScrollView
 

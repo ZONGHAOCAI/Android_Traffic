@@ -1,4 +1,4 @@
-package com.example.android_traffic.login
+package com.example.android_traffic.whistleblowerform.model
 
 import java.io.Serializable
 
