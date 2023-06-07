@@ -44,19 +44,6 @@
             app:layout_constraintStart_toStartOf="@+id/tv_MeInfo"
             app:layout_constraintTop_toBottomOf="@+id/tv_MeInfo" />
 
-        <!-- 檢查更新 -->
-        <TextView
-            android:id="@+id/tv_Update"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
-            android:background="@drawable/pic_membercenter_background"
-            android:text="@string/txt_MemberCenter_Update2"
-            android:textSize="20sp"
-            app:layout_constraintEnd_toEndOf="@+id/cl_ChatPermissions"
-            app:layout_constraintStart_toStartOf="@+id/cl_ChatPermissions"
-            app:layout_constraintTop_toBottomOf="@+id/cl_ChatPermissions" />
-
         <!-- 信用卡資料 -->
         <TextView
             android:id="@+id/tv_Creditcard"
@@ -69,31 +56,6 @@
             app:layout_constraintEnd_toEndOf="@+id/tv_RelatedPersonInfo"
             app:layout_constraintStart_toStartOf="@+id/tv_RelatedPersonInfo"
             app:layout_constraintTop_toBottomOf="@+id/tv_RelatedPersonInfo" />
-
-        <!-- 登出 -->
-        <TextView
-            android:id="@+id/tv_Logout"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
-            android:background="@drawable/pic_membercenter_background"
-            android:text="@string/txt_MemberCenter_Logout2"
-            android:textSize="20sp"
-            android:onClick="@{viewModel::logout}"
-            app:layout_constraintEnd_toEndOf="@+id/tv_Update"
-            app:layout_constraintStart_toStartOf="@+id/tv_Update"
-            app:layout_constraintTop_toBottomOf="@+id/tv_Update" />
-
-        <!-- 刪除帳號 -->
-        <TextView
-            android:id="@+id/tv_DeleteAccount"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="28dp"
-            android:layout_marginBottom="28dp"
-            android:text="@string/txt_MemberCenter_DeleteAccount"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" />
 
         <!-- 私訊切換 -->
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -130,6 +92,46 @@
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <!-- 檢查更新 -->
+        <TextView
+            android:id="@+id/tv_Update"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/pic_membercenter_background"
+            android:text="@string/txt_MemberCenter_Update2"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="@+id/cl_ChatPermissions"
+            app:layout_constraintStart_toStartOf="@+id/cl_ChatPermissions"
+            app:layout_constraintTop_toBottomOf="@+id/cl_ChatPermissions" />
+
+        <!-- 登出 -->
+        <TextView
+            android:id="@+id/tv_Logout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/pic_membercenter_background"
+            android:text="@string/txt_MemberCenter_Logout2"
+            android:textSize="20sp"
+            android:onClick="@{viewModel::logout}"
+            app:layout_constraintEnd_toEndOf="@+id/tv_Update"
+            app:layout_constraintStart_toStartOf="@+id/tv_Update"
+            app:layout_constraintTop_toBottomOf="@+id/tv_Update" />
+
+        <!-- 刪除帳號 -->
+        <TextView
+            android:id="@+id/tv_DeleteAccount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="28dp"
+            android:layout_marginBottom="28dp"
+            android:text="@string/txt_MemberCenter_DeleteAccount"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

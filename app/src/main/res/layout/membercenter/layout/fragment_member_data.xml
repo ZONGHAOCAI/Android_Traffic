@@ -23,51 +23,28 @@
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/cl_MemberData_Avatar"
                 android:layout_width="match_parent"
-                android:layout_height="62dp"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent">
-                <!--左邊的標題-->
-                <TextView
-                    android:id="@+id/tv_MemberData_AvatarTitle"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="20dp"
-                    android:text="@string/txt_MemberData_Avatar"
-                    android:textSize="20sp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-                <!--頭像用
-                                    app:imgBase64="@={viewModel.member.avatarBase64}"-->
-                <ImageView
-                    android:id="@+id/tv_MemberData_Avatar"
-                    android:layout_width="19dp"
-                    android:layout_height="29dp"
-                    android:layout_marginEnd="48dp"
-                    android:text=""
 
+                <!--頭像用-->
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/iv_MemberData_Avatar"
+                    android:layout_width="170dp"
+                    android:layout_height="170dp"
+                    android:src="@drawable/pic_membercenter_memberdata_avatar"
+                    app:imgBase64="@={viewModel.member.avatarBase64}"
+                    android:elevation="4dp"
+                    app:shapeAppearanceOverlay="@style/circleImageStyle"
+                    app:strokeColor="#FFFFFF"
+                    app:strokeWidth="5dp"
+                    android:scaleType="centerCrop"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-                <!--yo箭頭-->
-                <ImageView
-                    android:layout_width="19dp"
-                    android:layout_height="29dp"
-                    android:layout_marginEnd="10dp"
-                    android:src="@drawable/pic_membercenter_edit"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-                <!--底線-->
-                <ImageView
-                    android:layout_width="367dp"
-                    android:layout_height="0dp"
-                    android:src="@drawable/pic_membercenter_bottomline"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent" />
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"/>
             </androidx.constraintlayout.widget.ConstraintLayout>
             <!--姓名-->
             <androidx.constraintlayout.widget.ConstraintLayout

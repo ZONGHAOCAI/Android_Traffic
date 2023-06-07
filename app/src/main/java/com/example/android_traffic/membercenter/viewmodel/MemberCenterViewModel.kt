@@ -1,6 +1,7 @@
 package com.example.android_traffic.membercenter.viewmodel
 
 import android.app.AlertDialog
+import android.os.CountDownTimer
 import android.os.Handler
 import android.os.Looper
 import android.view.View
@@ -40,9 +41,11 @@ class MemberCenterViewModel : ViewModel() {
 
     /** 登出 消除server的session     */
     fun logout(view: View){
+
+        //創建alertDialog的訊息
         val alertDialog = AlertDialog.Builder(view.context)
             .setMessage("確認登出?")
-            .setPositiveButton("是"){ _, _ ->
+            .setPositiveButton("是") { _, _ ->
                 requestTask<JsonObject>(url, "DELETE")
                 Navigation.findNavController(view).popBackStack()
                 Navigation.findNavController(view).navigate(R.id.loginFragment)
@@ -50,12 +53,21 @@ class MemberCenterViewModel : ViewModel() {
             .setNegativeButton("否", null)
             .setCancelable(true)
             .show()
-        //設定確定登出選項  3秒後才可以按
-        val positiveButtion = alertDialog.getButton(AlertDialog.BUTTON_POSITIVE)
-        positiveButtion.isEnabled = false
-        Handler(Looper.getMainLooper()).postDelayed({
-            positiveButtion.isEnabled = true
-        }, 3000)
+
+        //設定alertDialog的是 過3秒才可以按
+        val countDownTimer = object : CountDownTimer(4000, 1000) {
+            override fun onTick(millisUntilFinished: Long) {
+                val seconds = millisUntilFinished / 1000
+                alertDialog.getButton(AlertDialog.BUTTON_POSITIVE).text = "是($seconds)"
+                alertDialog.getButton(AlertDialog.BUTTON_POSITIVE).isEnabled = false
+            }
+            override fun onFinish() {
+                alertDialog.getButton(AlertDialog.BUTTON_POSITIVE).text = "是"
+                alertDialog.getButton(AlertDialog.BUTTON_POSITIVE).isEnabled = true
+            }
+        }
+
+        countDownTimer.start()
 
     }
 }

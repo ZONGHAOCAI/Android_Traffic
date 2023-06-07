@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--輸入外框橢圓+顏色-->
 <shape
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:shape="rectangle"><!--指定形狀類型，默認為rectangle-->
