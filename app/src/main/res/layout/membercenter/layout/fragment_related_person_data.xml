@@ -15,33 +15,52 @@
 
         <!--下面每個ConstraintLayout 第一個是個人資料的標題 第二個是個人資料的data 第三個是右箭頭 第四個是底線-->
         <!-- 頭像 -->
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/img_RelatedPersonData_Avatar"
+            android:layout_width="170dp"
+            android:layout_height="170dp"
+            android:layout_marginTop="20dp"
+            android:elevation="4dp"
+            android:padding="8dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/pic_membercenter_memberdata_avatar"
+            app:imgBase64="@={viewModel.relatedPerson.avatarBase64}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:shapeAppearanceOverlay="@style/circleImageStyle"
+            app:strokeColor="#FFFFFF"
+            app:strokeWidth="5dp" />
+
+        <!-- 姓名 -->
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/cl_RelatedPersonData_Avatar"
+            android:id="@+id/cl_RelatedPersonData_Name"
             android:layout_width="0dp"
             android:layout_height="62dp"
             android:layout_marginStart="20dp"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="20dp"
             android:layout_marginEnd="20dp"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            app:layout_constraintTop_toBottomOf="@+id/img_RelatedPersonData_Avatar">
 
             <TextView
-                android:id="@+id/tv_RelatedPersonData_Avatar"
+                android:id="@+id/tv_RelatedPersonData_Name_Title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/txt_MemberData_Avatar"
+                android:text="@string/txtName"
                 android:textSize="20sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
-            <ImageView
-                android:id="@+id/img_RelatedPersonData_Avatar"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
+            <TextView
+                android:id="@+id/tv_RelatedPersonData_Name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_marginEnd="28dp"
-                app:imageResource="@{viewModel.relatedPerson.imageId}"
+                android:text="@{viewModel.relatedPerson.name}"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -54,23 +73,27 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
-            <ImageView
-                android:layout_width="367dp"
-                android:layout_height="0dp"
-                android:layout_marginEnd="4dp"
-                android:src="@drawable/pic_membercenter_bottomline"
+            <!--底線-->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@android:color/black"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent" />
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
         </androidx.constraintlayout.widget.ConstraintLayout>
+
         <!-- 關係 -->
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/cl_RelatedPersonData_RelatedShip"
             android:layout_width="0dp"
             android:layout_height="62dp"
+            android:layout_marginStart="20dp"
             android:layout_marginTop="20dp"
-            app:layout_constraintEnd_toEndOf="@+id/cl_RelatedPersonData_Avatar"
-            app:layout_constraintStart_toStartOf="@+id/cl_RelatedPersonData_Avatar"
-            app:layout_constraintTop_toBottomOf="@+id/cl_RelatedPersonData_Avatar">
+            android:layout_marginEnd="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cl_RelatedPersonData_Name">
 
             <TextView
                 android:id="@+id/tv_RelatedPersonData_RelatedShip_Title"
@@ -87,7 +110,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="28dp"
-                android:text="@{viewModel.relatedPerson.membersRelationship}"
+                android:text="@{viewModel.relatedPerson.memberRelationship}"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -100,13 +123,14 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
-            <ImageView
-                android:layout_width="367dp"
-                android:layout_height="0dp"
-                android:layout_marginEnd="4dp"
-                android:src="@drawable/pic_membercenter_bottomline"
+            <!--底線-->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@android:color/black"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent" />
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
         </androidx.constraintlayout.widget.ConstraintLayout>
         <!-- 身分證號碼 -->
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -146,21 +170,24 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
-            <ImageView
-                android:layout_width="367dp"
-                android:layout_height="0dp"
-                android:layout_marginEnd="4dp"
-                android:src="@drawable/pic_membercenter_bottomline"
+            <!--底線-->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@android:color/black"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent" />
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
         </androidx.constraintlayout.widget.ConstraintLayout>
         <!-- 生日 -->
+        <!-- 車輛資料 -->
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/cl_RelatedPersonData_Birthday"
             android:layout_width="0dp"
             android:layout_height="62dp"
             android:layout_marginTop="20dp"
             app:layout_constraintEnd_toEndOf="@+id/cl_RelatedPersonData_IdentityNumber"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="@+id/cl_RelatedPersonData_IdentityNumber"
             app:layout_constraintTop_toBottomOf="@+id/cl_RelatedPersonData_IdentityNumber">
 
@@ -192,15 +219,16 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
-            <ImageView
-                android:layout_width="367dp"
-                android:layout_height="0dp"
-                android:layout_marginEnd="4dp"
-                android:src="@drawable/pic_membercenter_bottomline"
+            <!--底線-->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@android:color/black"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent" />
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
         </androidx.constraintlayout.widget.ConstraintLayout>
-        <!-- 車輛資料 -->
+
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/cl_RelatedPersonData_VehicleData"
             android:layout_width="0dp"
@@ -221,31 +249,24 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
-            <ImageView
-                android:layout_width="19dp"
-                android:layout_height="29dp"
-                android:src="@drawable/pic_membercenter_edit"
+<!--            <ImageView-->
+<!--                android:layout_width="19dp"-->
+<!--                android:layout_height="29dp"-->
+<!--                android:src="@drawable/pic_membercenter_edit"-->
+<!--                app:layout_constraintBottom_toBottomOf="parent"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintTop_toTopOf="parent" />-->
+
+            <!--底線-->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@android:color/black"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <ImageView
-                android:layout_width="367dp"
-                android:layout_height="0dp"
-                android:layout_marginEnd="4dp"
-                android:src="@drawable/pic_membercenter_bottomline"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent" />
+                app:layout_constraintStart_toStartOf="parent" />
         </androidx.constraintlayout.widget.ConstraintLayout>
         <!--刪除資料-->
-        <TextView
-            android:id="@+id/tv_RelatedPersonData_Delete"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/txt_RelatedPersonData_Delete"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

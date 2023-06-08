@@ -67,6 +67,7 @@ class MemberDataFragment : Fragment() {
                         R.id.action_memberDataFragment_to_memberDataVehideDataFragment
                     )
             }
+            //生日 跳出選日期視窗 並轉成民國
             clMemberDataBirthday.setOnClickListener {
                 showDatePickerDialog(it)
 //                editBirthday(it, pickDate)
@@ -83,6 +84,7 @@ class MemberDataFragment : Fragment() {
         }
         editData.birthday = ""
     }
+
     /** 跳出選日期的視窗 */
     private fun showDatePickerDialog(view: View){
         val calendar = Calendar.getInstance()
@@ -104,14 +106,14 @@ class MemberDataFragment : Fragment() {
 
             rocDate = "${yy}-${formattedMonth}-${formattedDay}"
             // 執行相應的操作，如顯示選擇的日期
-            println("===================")
-            println(binding.viewModel?.member?.value?.birthday)
-            binding.viewModel?.member?.value?.birthday = rocDate
-            println(binding.viewModel?.member?.value?.birthday)
+
+//            binding.viewModel?.member?.value?.birthday = rocDate
+
             editBirthday(view, rocDate)
         }, year, month, day)
 
         datePickerDialog.show()
+        binding.viewModel?.member?.value?.birthday = rocDate
     }
         private fun alertDialogPicture(context: Context) {
             //alertDialog
@@ -181,7 +183,7 @@ class MemberDataFragment : Fragment() {
                 destinationUri
             )
                 .withAspectRatio(1F, 1F) // 設定裁減比例
-//            .withMaxResultSize(500, 500) // 設定結果尺寸不可超過指定寬高
+            .withMaxResultSize(200, 200) // 設定結果尺寸不可超過指定寬高
                 .withOptions(options)
                 .getIntent(requireContext())
             cropPictureLauncher.launch(cropIntent)

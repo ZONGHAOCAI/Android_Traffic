@@ -7,9 +7,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
+import androidx.navigation.Navigation
 import com.example.android_traffic.databinding.FragmentRelatedPersonBinding
 import com.example.android_traffic.membercenter.viewmodel.RelatedPersonViewModel
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.android_traffic.R
 import com.example.android_traffic.membercenter.adapter.RelatedPersonListAdapter
 
 class RelatedPersonFragment : Fragment() {
@@ -39,6 +41,11 @@ class RelatedPersonFragment : Fragment() {
                 } else {
                     (recyclerView.adapter as RelatedPersonListAdapter).updateRelatedPerson(relatedPerson)
                 }
+            }
+
+            //新增關係人的浮動按鈕監聽
+            fabMemberCenterRelatedPersonAdd.setOnClickListener {
+                Navigation.findNavController(it).navigate(R.id.action_relatedPersonFragment_to_relatedPersonAddFragment)
             }
         }
     }

@@ -41,5 +41,9 @@
     <string name="txt_RelatedPersonData_IdentityNumberTitle">身分證</string>
     <string name="txt_RelatedPersonData_Birthday_Title">生日</string>
     <string name="txt_RelatedPersonData_Delete">刪除資料</string>
+    <string name="txt_Membercenter_RelatedPerson_Add_Name">請輸入姓名</string>
+    <string name="txt_Membercenter_RelatedPerson_Add_MembersRelationship">請輸入關係</string>
+    <string name="txt_Membercenter_RelatedPerson_Add_IdentityNumber">請輸入身分證</string>
+    <string name="txt_Membercenter_RelatedPerson_Add_Birthday" translatable="false">點擊右邊按鈕新增生日</string>
 
 </resources>
