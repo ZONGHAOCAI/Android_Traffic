@@ -37,6 +37,7 @@
                     android:src="@drawable/pic_membercenter_memberdata_avatar"
                     app:imgBase64="@={viewModel.member.avatarBase64}"
                     android:elevation="4dp"
+                    android:padding="8dp"
                     app:shapeAppearanceOverlay="@style/circleImageStyle"
                     app:strokeColor="#FFFFFF"
                     app:strokeWidth="5dp"
@@ -200,7 +201,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="62dp"
                 android:layout_marginTop="20dp"
-                android:onClick="@{viewModel::editBirthday}"
+
                 app:layout_constraintEnd_toEndOf="@+id/cl_MemberData_IdentityNumber"
                 app:layout_constraintStart_toStartOf="@+id/cl_MemberData_IdentityNumber"
                 app:layout_constraintTop_toBottomOf="@+id/cl_MemberData_IdentityNumber">
