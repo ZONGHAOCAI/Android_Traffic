@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.android_traffic.databinding.FragmentForumBinding
 
@@ -31,6 +32,9 @@ class ForumFragment : Fragment() {
             viewModel?.rvArticleList?.observe(viewLifecycleOwner){
                 if (rvForumArticleList.adapter == null)
                     rvForumArticleList.adapter = ForumAdapter(it)
+            }
+            fabAddArticle.setOnClickListener {
+                findNavController().navigate(R.id.action_forumFragment_to_addArticleFragment)
             }
         }
     }
