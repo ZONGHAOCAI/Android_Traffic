@@ -68,7 +68,21 @@ class RelatedPersonDataFragment : Fragment() {
             //修改頭像
             imgRelatedPersonDataAvatar.setOnClickListener {
                 alertDialogPicture(requireContext())
+            }
 
+            //修改姓名
+            clRelatedPersonDataName.setOnClickListener {
+                viewModel?.relatedPerson?.value?.let { it1 -> sendBundle("Name", it) }
+            }
+
+            //修改關係
+            clRelatedPersonDataRelatedShip.setOnClickListener {
+                viewModel?.relatedPerson?.value?.let { it1 -> sendBundle("Relationship", it) }
+            }
+
+            //修改身分證
+            clRelatedPersonDataIdentityNumber.setOnClickListener {
+                viewModel?.relatedPerson?.value?.let { it1 -> sendBundle("IdentityNumber", it) }
             }
 
             //生日 跳出選日期視窗 並轉成民國
@@ -76,8 +90,23 @@ class RelatedPersonDataFragment : Fragment() {
                 showDatePickerDialog(it)
 //                editBirthday(it, pickDate)
             }
+            //進車輛資料
+            clRelatedPersonDataVehicleData.setOnClickListener {
+                val bundle = Bundle()
+                bundle.putSerializable("ID", viewModel?.relatedPerson?.value?.id)
+                Navigation.findNavController(it).navigate(R.id.action_relatedPersonDataFragment_to_relatedPersonDataVehideDataFragment, bundle)
+            }
         }
     }
+
+    private fun sendBundle(type: String, view: View) {
+        val bundle = Bundle()
+        bundle.putSerializable("type", type)
+        bundle.putSerializable("relatedPersonData", binding.viewModel?.relatedPerson?.value)
+        Navigation.findNavController(view).navigate(
+            R.id.action_relatedPersonDataFragment_to_relatedPersonDataEditFragment, bundle)
+    }
+
     private fun editBirthday(pickDate: String) {
         editData.birthday = pickDate
         val respBody = requestTask<JsonObject>(Server.urlFindRelatedperson, "PUT", editData)

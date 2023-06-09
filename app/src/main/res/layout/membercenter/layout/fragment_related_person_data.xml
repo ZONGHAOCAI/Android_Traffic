@@ -13,7 +13,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <!--下面每個ConstraintLayout 第一個是個人資料的標題 第二個是個人資料的data 第三個是右箭頭 第四個是底線-->
+
         <!-- 頭像 -->
         <com.google.android.material.imageview.ShapeableImageView
             android:id="@+id/img_RelatedPersonData_Avatar"
@@ -31,7 +31,6 @@
             app:shapeAppearanceOverlay="@style/circleImageStyle"
             app:strokeColor="#FFFFFF"
             app:strokeWidth="5dp" />
-
         <!-- 姓名 -->
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/cl_RelatedPersonData_Name"
@@ -82,7 +81,6 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent" />
         </androidx.constraintlayout.widget.ConstraintLayout>
-
         <!-- 關係 -->
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/cl_RelatedPersonData_RelatedShip"
@@ -180,7 +178,6 @@
                 app:layout_constraintStart_toStartOf="parent" />
         </androidx.constraintlayout.widget.ConstraintLayout>
         <!-- 生日 -->
-        <!-- 車輛資料 -->
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/cl_RelatedPersonData_Birthday"
             android:layout_width="0dp"
@@ -228,7 +225,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent" />
         </androidx.constraintlayout.widget.ConstraintLayout>
-
+        <!-- 車輛資料 -->
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/cl_RelatedPersonData_VehicleData"
             android:layout_width="0dp"

@@ -15,15 +15,15 @@ class MemberDataEditViewModel : ViewModel() {
 
 //    val memberData: MutableLiveData<String> by lazy { MutableLiveData() }
 
-    var memberID = 0
+//    var memberID = 0
 
-    fun init() {
-        val memberId: Int? = requestTask<Int>(url, "OPTIONS") //取得登入的session記的memberID
-        if (memberId != null) {
-            this.memberID = memberId
-            println("memberDataEdit拿到ID了${memberID}")
-        }
-    }
+//    fun init() {
+//        val memberId: Int? = requestTask<Int>(url, "OPTIONS") //取得登入的session記的memberID
+//        if (memberId != null) {
+//            this.memberID = memberId
+//            println("memberDataEdit拿到ID了${memberID}")
+//        }
+//    }
 
 
 }
