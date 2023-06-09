@@ -1,7 +1,8 @@
 package com.example.android_traffic
 
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
 class Forum2ViewModel : ViewModel() {
-    // TODO: Implement the ViewModel
+    val articleContent : MutableLiveData<ArticleContent> by lazy { MutableLiveData() }
 }
