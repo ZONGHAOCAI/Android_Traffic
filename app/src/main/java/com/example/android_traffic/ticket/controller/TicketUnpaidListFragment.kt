@@ -1,6 +1,7 @@
 package com.example.android_traffic.ticket.controller
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -9,6 +10,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.android_traffic.databinding.FragmentTicketUnpaidListBinding
+import com.example.android_traffic.ticket.model.Token
 import com.example.android_traffic.ticket.viewmodel.TicketUnpaidListViewModel
 
 class TicketUnpaidListFragment : Fragment() {
@@ -32,18 +34,23 @@ class TicketUnpaidListFragment : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
         with(binding) {
 //            (requireActivity() as MainActivity).setSupportActionBar(toolbar)
 //            toolbar.setTitle("未繳費")
+            loadPreferences()
             rvTicketUnpaidListTicket.layoutManager = LinearLayoutManager(requireContext())
-            viewmodel?.content?.observe(viewLifecycleOwner) {
+            viewmodel?.init()
+            viewmodel?.list?.observe(viewLifecycleOwner) {
+                rvTicketUnpaidListTicket.adapter = TicketUnpaidAdapter(it)
                 // adapter為null要建立新的adapter
-                if (rvTicketUnpaidListTicket.adapter == null) {
-                    rvTicketUnpaidListTicket.adapter = TicketUnpaidAdapter(it)
-                } else {
-                    (rvTicketUnpaidListTicket.adapter as TicketUnpaidAdapter).updateTicketUnpaidList(it)
-                }
+//                if (rvTicketUnpaidListTicket.adapter == null) {
+//                    rvTicketUnpaidListTicket.adapter = TicketUnpaidAdapter(it)
+//                } else {
+//                    (rvTicketUnpaidListTicket.adapter as TicketUnpaidAdapter).updateTicketUnpaidList(it)
+//                }
             }
+
 
             svTicketUnpaidListSearch.setOnQueryTextListener(object :
                 SearchView.OnQueryTextListener {
@@ -58,6 +65,15 @@ class TicketUnpaidListFragment : Fragment() {
                     return false
                 }
             })
+        }
+    }
+
+        private fun loadPreferences() {
+        with(binding) {
+            val preferences = Token().getEncryptedPreferences(requireContext())
+            viewmodel?.member?.value = preferences.getString("MemId","")
+            val myTag = "TAG_${javaClass.simpleName}"
+            Log.d(myTag, "getString: ${preferences.getString("MemId","")?.javaClass?.simpleName}")
         }
     }
 }
