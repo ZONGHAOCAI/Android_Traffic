@@ -7,6 +7,8 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.Navigation
+import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.ui.NavigationUI
 import com.example.android_traffic.databinding.FragmentMainBinding
 
 class MainFragment : Fragment() {
@@ -25,6 +27,7 @@ class MainFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         with(binding) {
+
             if (viewmodel?.memberId == null){
                 Navigation.findNavController(view).navigate(R.id.loginFragment)
             }

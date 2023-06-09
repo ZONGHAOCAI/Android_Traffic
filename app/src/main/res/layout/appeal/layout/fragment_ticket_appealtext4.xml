@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".ticketappealtext.controller.TicketAppealtext4Fragment">
+    <data>
+        <variable
+            name="viewModel"
+            type="com.example.android_traffic.ticketappealtext.viewmodel.TicketAppealtext4ViewModel" />
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/frameLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <ImageView
+            android:id="@+id/imageView15"
+            android:layout_width="0dp"
+            android:layout_height="65dp"
+            android:src="@drawable/no4"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView25"
+            android:layout_width="190dp"
+            android:layout_height="57dp"
+            android:layout_marginTop="10dp"
+            android:text="送出完成"
+            android:textAlignment="center"
+            android:textColor="#000000"
+            android:textSize="34sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView15" />
+
+        <TextView
+            android:id="@+id/textView30"
+            android:layout_width="152dp"
+            android:layout_height="35dp"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="50dp"
+            android:text="申訴案件編號:"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView25" />
+
+        <TextView
+            android:id="@+id/tttanswer"
+            android:layout_width="234dp"
+            android:layout_height="42dp"
+            android:layout_marginTop="50dp"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView25" />
+
+        <Button
+            android:id="@+id/tttover"
+            android:layout_width="192dp"
+            android:layout_height="54dp"
+            android:layout_marginBottom="100dp"
+            android:backgroundTint="#EC8787"
+            android:text="返回罰單頁面"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -56,6 +56,10 @@ class TicketAppealContentFragment : Fragment() {
                 ivTicketAppealContentPicture.setImageDrawable(ivTicketAppealContentThumbnail5.drawable)
                 ivTicketAppealContentPicture.visibility = View.VISIBLE
             }
+            ivTicketAppealContentPicture.setOnLongClickListener {
+                ivTicketAppealContentPicture.visibility = View.GONE
+                true
+            }
         }
     }
 }
