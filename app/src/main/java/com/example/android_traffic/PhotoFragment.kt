@@ -32,8 +32,10 @@ class PhotoFragment : Fragment() {
         return binding.root
     }
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        with(binding){
+
+        }
         arguments?.let {
             it.getSerializable("photo")?.let { file ->
                 Log.e(myTag, "file: ${file}")

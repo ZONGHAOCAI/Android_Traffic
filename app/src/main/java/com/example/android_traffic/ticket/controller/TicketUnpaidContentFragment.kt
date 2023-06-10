@@ -81,6 +81,13 @@ class TicketUnpaidContentFragment : Fragment() {
                 ivTicketUnpaidContentPicture.visibility = View.GONE
                 true
             }
+            btTicketUnpaidContentPayTicket.setOnClickListener {
+                TapPay.getInstance().prepareGooglePay(
+                    requireActivity(),
+                    101101,
+                    1000
+                )
+            }
         }
     }
 }

@@ -54,7 +54,7 @@ class RegisterFragment : Fragment() {
 
                     //確認密碼
                     if (member.value?.password != login.value?.confirmPassword) {     //改member   //確認密碼照舊
-                        edtTxtRegisterConfirmCode.error = "密碼和確認密碼需相同"
+//                        edtTxtRegisterConfirmCode.error = "密碼和確認密碼需相同"
                     }
 
                     //出生年月日
@@ -84,7 +84,7 @@ class RegisterFragment : Fragment() {
 
                     //驗證碼
                     if (login.value?.code!!.isEmpty()) {
-                        edtTxtRegisterConfirmCode.error = "驗證碼不可以空白"
+//                        edtTxtRegisterConfirmCode.error = "驗證碼不可以空白"
                     }
 
                     val respBody = requestTask<JsonObject>(url, "POST", member?.value) //連到DB註冊

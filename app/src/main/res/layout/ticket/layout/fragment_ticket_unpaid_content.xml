@@ -222,9 +222,8 @@
                         android:layout_width="100dp"
                         android:layout_height="100dp"
                         android:layout_weight="1"
+                        android:visibility="@{viewmodel.content.appendix[2] != null ? View.VISIBLE : View.GONE }"
                         tools:srcCompat="@drawable/avatar1" />
-<!--                    android:visibility="@{viewmodel.content.appendix[2] != null ? View.VISIBLE : View.GONE }"-->
-<!--                        app:imageResource="@{viewmodel.content.appendix[2]}"-->
 
                 </LinearLayout>
 
@@ -238,19 +237,16 @@
                         android:layout_width="100dp"
                         android:layout_height="100dp"
                         android:layout_weight="1"
+                        android:visibility="@{viewmodel.content.appendix[3] != null ? View.VISIBLE : View.GONE }"
                         tools:srcCompat="@drawable/avatar1" />
-<!--                        android:visibility="@{viewmodel.content.appendix[3] != null ? View.VISIBLE : View.GONE }"-->
-<!--                        app:imageResource="@{viewmodel.content.appendix[3]}"-->
 
                     <ImageView
                         android:id="@+id/iv_TicketUnpaidContent_Thumbnail5"
                         android:layout_width="100dp"
                         android:layout_height="100dp"
                         android:layout_weight="1"
+                        android:visibility="@{viewmodel.content.appendix[4] != null ? View.VISIBLE : View.GONE }"
                         tools:srcCompat="@drawable/avatar1" />
-<!--                        android:visibility="@{viewmodel.content.appendix[4] != null ? View.VISIBLE : View.GONE }"-->
-<!--                        app:imageResource="@{viewmodel.content.appendix[4]}"-->
-
 
                 </LinearLayout>
 
