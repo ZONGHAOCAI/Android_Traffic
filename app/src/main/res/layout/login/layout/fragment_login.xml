@@ -2,13 +2,13 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".login.LoginFragment">
+    tools:context=".login.controller.LoginFragment">
 
     <data>
 
         <variable
             name="viewModel"
-            type="com.example.android_traffic.login.LoginViewModel" />
+            type="com.example.android_traffic.login.viewModel.LoginViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

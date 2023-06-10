@@ -1,4 +1,4 @@
-package com.example.android_traffic.whistleblowerform
+package com.example.android_traffic.whistleblowerform.viewModel
 
 import androidx.lifecycle.ViewModel
 
