@@ -6,28 +6,41 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.viewModels
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.android_traffic.R
+import com.example.android_traffic.databinding.FragmentRelatedPersonDataVehideDataBinding
+import com.example.android_traffic.membercenter.adapter.RelatedPersonDataVehideDataAdapter
+import com.example.android_traffic.membercenter.adapter.RelatedPersonListAdapter
 import com.example.android_traffic.membercenter.viewmodel.RelatedPersonDataVehideDataViewModel
 
 class RelatedPersonDataVehideDataFragment : Fragment() {
-
-    companion object {
-        fun newInstance() = RelatedPersonDataVehideDataFragment()
-    }
-
-    private lateinit var viewModel: RelatedPersonDataVehideDataViewModel
-
+    private lateinit var binding: FragmentRelatedPersonDataVehideDataBinding
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_related_person_data_vehide_data, container, false)
+        val viewModel: RelatedPersonDataVehideDataViewModel by viewModels()
+        binding = FragmentRelatedPersonDataVehideDataBinding.inflate(inflater, container, false)
+        binding.viewModel = viewModel
+        binding.lifecycleOwner = this
+        return binding.root
     }
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProvider(this).get(RelatedPersonDataVehideDataViewModel::class.java)
-        // TODO: Use the ViewModel
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        with(binding){
+            arguments?.let { bundle ->
+                bundle.getSerializable("ID")?.let { ID ->
+                    viewModel!!.init(ID as Int)
+                }
+            }
+
+            rvMemberDataVehideData.layoutManager = LinearLayoutManager(requireContext())
+            viewModel!!.vehideDataList.observe(viewLifecycleOwner){
+                rvMemberDataVehideData.adapter = RelatedPersonDataVehideDataAdapter(it)
+            }
+        }
     }
+
 
 }

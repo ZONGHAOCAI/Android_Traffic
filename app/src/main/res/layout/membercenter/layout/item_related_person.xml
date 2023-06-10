@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+
         <variable
             name="viewModel"
             type="com.example.android_traffic.membercenter.viewmodel.RelatedPersonDataViewModel" />
@@ -21,14 +22,30 @@
             android:layout_height="match_parent">
 
             <!--關係人頭像-->
-            <ImageView
+<!--            <ImageView-->
+<!--                android:id="@+id/img_RelatedPerson_Avatar"-->
+<!--                android:layout_width="40dp"-->
+<!--                android:layout_height="40dp"-->
+<!--                app:imgBase64="@={viewModel.relatedPerson.avatarBase64}"-->
+<!--                app:layout_constraintBottom_toBottomOf="parent"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintTop_toTopOf="parent" />-->
+            <com.google.android.material.imageview.ShapeableImageView
                 android:id="@+id/img_RelatedPerson_Avatar"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
-                app:imageResource="@{viewModel.relatedPerson.imageId}"
+                android:src="@drawable/pic_whitebackground"
+                app:imgBase64="@={viewModel.relatedPerson.avatarBase64}"
+                android:elevation="4dp"
+                android:padding="8dp"
+                app:shapeAppearanceOverlay="@style/circleImageStyle"
+                app:strokeColor="#FFFFFF"
+                app:strokeWidth="5dp"
+                android:scaleType="centerCrop"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"/>
+
             <!--關係人名子-->
             <TextView
                 android:id="@+id/tv_RelatedPerson_Name"
@@ -40,23 +57,27 @@
                 app:layout_constraintStart_toEndOf="@+id/img_RelatedPerson_Avatar"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="0.476" />
+
             <!--關係人關係-->
             <TextView
                 android:id="@+id/tv_RelatedPerson_RelatedShip"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@{viewModel.relatedPerson.membersRelationship}"
+                android:layout_marginEnd="10dp"
+                android:text="@{viewModel.relatedPerson.memberRelationship}"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
+
             <!--底線-->
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@android:color/black"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:srcCompat="@drawable/membercenter_txt_bottomline" />
+                app:layout_constraintStart_toStartOf="parent" />
+
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.cardview.widget.CardView>

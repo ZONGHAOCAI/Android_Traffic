@@ -20,5 +20,18 @@
             android:layout_height="729dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+
+        <!--右下浮動按鈕-->
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab_MemberCenter_RelatedPerson_add"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:src="@drawable/pic_membercenter_floatbutton_add"
+            android:backgroundTint="@color/pink_style_nodark"
+            app:backgroundTint="@color/pink_style_nodark"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+/>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

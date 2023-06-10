@@ -1,13 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
     tools:context=".membercenter.controller.RelatedPersonDataEditFragment">
 
-    <TextView
+    <data>
+        <variable
+            name="viewModel"
+            type="com.example.android_traffic.membercenter.viewmodel.RelatedPersonDataEditViewModel" />
+    </data>
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="Hello" />
+        android:orientation="vertical">
 
-</FrameLayout>
+    <!--第一個輸入框-->
+    <EditText
+        android:id="@+id/et_RelatedPersonData_Edit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:background="@drawable/shape_memberdata_edit"
+        android:inputType="textPersonName"
+        android:text="@={viewModel.relatedPersonData}"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="16dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"/>
+
+        <!--修改用按鈕-->
+        <Button
+            android:id="@+id/btn_RelatedPersonData_Edit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/txt_MemberData_Bt_Edit"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"/>
+
+    </LinearLayout>
+</layout>

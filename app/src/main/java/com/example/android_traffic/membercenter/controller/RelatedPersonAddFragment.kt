@@ -1,6 +1,5 @@
 package com.example.android_traffic.membercenter.controller
 
-
 import android.app.Activity
 import android.app.AlertDialog
 import android.app.DatePickerDialog
@@ -12,42 +11,39 @@ import android.net.Uri
 import android.os.Build
 import android.os.Bundle
 import android.provider.MediaStore
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.content.FileProvider
 import androidx.fragment.app.viewModels
 import androidx.navigation.Navigation
 import com.example.android_traffic.R
-import com.example.android_traffic.core.model.Member
-
-import com.example.android_traffic.databinding.FragmentRelatedPersonDataBinding
-import com.example.android_traffic.core.model.RelatedPerson
-import com.example.android_traffic.core.service.Server
+import com.example.android_traffic.core.service.Server.Companion.urlFindRelatedperson
 import com.example.android_traffic.core.service.requestTask
 import com.example.android_traffic.core.util.getImgBase64
-import com.example.android_traffic.membercenter.viewmodel.RelatedPersonDataViewModel
+import com.example.android_traffic.databinding.FragmentRelatedPersonAddBinding
+import com.example.android_traffic.membercenter.adapter.RelatedPersonListAdapter
+import com.example.android_traffic.membercenter.viewmodel.RelatedPersonAddViewModel
 import com.google.gson.JsonObject
 import com.yalantis.ucrop.UCrop
 import java.io.File
 import java.util.*
 
-class RelatedPersonDataFragment : Fragment() {
-    private lateinit var binding: FragmentRelatedPersonDataBinding
+class RelatedPersonAddFragment : Fragment() {
+    private lateinit var binding: FragmentRelatedPersonAddBinding
     private lateinit var contentUri: Uri // 拍照用的Uri
-    private val editData: RelatedPerson = RelatedPerson()
+
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // 呈現標題列
-//        (requireActivity() as MainActivity).supportActionBar?.show()
-        val viewModel: RelatedPersonDataViewModel by viewModels()
-        binding = FragmentRelatedPersonDataBinding.inflate(inflater, container, false)
+        val viewModel: RelatedPersonAddViewModel by viewModels()
+        binding = FragmentRelatedPersonAddBinding.inflate(inflater, container, false)
         binding.viewModel = viewModel
         binding.lifecycleOwner = this
         return binding.root
@@ -55,99 +51,90 @@ class RelatedPersonDataFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         with(binding) {
+            activity?.title = "新增關係人"
 
-
-            arguments?.let { bundle ->
-                bundle.getSerializable("relatedPerson")?.let {
-                    binding.viewModel?.relatedPerson?.value = it as RelatedPerson
-                    editData.id = viewModel?.relatedPerson?.value?.id
-
-                }
-            }
-
-            //修改頭像
-            imgRelatedPersonDataAvatar.setOnClickListener {
+            //新增頭像
+            ivMemberDataAvatar.setOnClickListener {
                 alertDialogPicture(requireContext())
             }
 
-            //修改姓名
-            clRelatedPersonDataName.setOnClickListener {
-                viewModel?.relatedPerson?.value?.let { it1 -> sendBundle("Name", it) }
-            }
-
-            //修改關係
-            clRelatedPersonDataRelatedShip.setOnClickListener {
-                viewModel?.relatedPerson?.value?.let { it1 -> sendBundle("Relationship", it) }
-            }
-
-            //修改身分證
-            clRelatedPersonDataIdentityNumber.setOnClickListener {
-                viewModel?.relatedPerson?.value?.let { it1 -> sendBundle("IdentityNumber", it) }
-            }
-
-            //生日 跳出選日期視窗 並轉成民國
-            clRelatedPersonDataBirthday.setOnClickListener {
+            //新增日期
+            ibtnRelatedPersonAddBirthday.setOnClickListener {
                 showDatePickerDialog(it)
-//                editBirthday(it, pickDate)
             }
-            //進車輛資料
-            clRelatedPersonDataVehicleData.setOnClickListener {
-                val bundle = Bundle()
-                bundle.putSerializable("ID", viewModel?.relatedPerson?.value?.id)
-                Navigation.findNavController(it).navigate(R.id.action_relatedPersonDataFragment_to_relatedPersonDataVehideDataFragment, bundle)
+
+            btnRelatedPersonAddRegister.setOnClickListener {
+
+                if (viewModel?.relatedPerson?.value?.name?.isEmpty() == true) {
+                    etRelatedPersonAddName.error = getString(R.string.txt_MemberData_Edit_Error)
+                    return@setOnClickListener
+                }
+                if (viewModel?.relatedPerson?.value?.identityNumber?.isEmpty() == true) {
+                    etRelatedPersonAddIdentityNumber.error =
+                        getString(R.string.txt_MemberData_Edit_Error)
+                    return@setOnClickListener
+                }
+                if (viewModel?.relatedPerson?.value?.memberRelationship?.isEmpty() == true) {
+                    tvRelatedPersonAddBirthday.error =
+                        getString(R.string.txt_MemberData_Edit_Error)
+                    return@setOnClickListener
+                }
+                if (viewModel?.relatedPerson?.value?.birthday?.isEmpty() == true) {
+                    tvRelatedPersonAddBirthday.error =
+                        getString(R.string.txt_MemberData_Edit_Error)
+                    return@setOnClickListener
+                }
+                val respBody = requestTask<JsonObject>(
+                    urlFindRelatedperson, "POST", viewModel?.relatedPerson?.value
+                )
+                respBody?.run {
+                    if (get("successful").asBoolean) {
+                        println("關係人新增成功")
+                        Navigation.findNavController(it).navigate(R.id.relatedPersonFragment)
+                        Toast.makeText(requireContext(), "新增成功", Toast.LENGTH_SHORT ).show()
+                    }
+
+                }
+
+
             }
+
         }
     }
 
-    private fun sendBundle(type: String, view: View) {
-        val bundle = Bundle()
-        bundle.putSerializable("type", type)
-        bundle.putSerializable("relatedPersonData", binding.viewModel?.relatedPerson?.value)
-        Navigation.findNavController(view).navigate(
-            R.id.action_relatedPersonDataFragment_to_relatedPersonDataEditFragment, bundle)
-    }
 
-    private fun editBirthday(pickDate: String) {
-        editData.birthday = pickDate
-        val respBody = requestTask<JsonObject>(Server.urlFindRelatedperson, "PUT", editData)
-        respBody?.run {
-            if (get("successful").asBoolean) {
-            }
-        }
-        editData.birthday = ""
-        binding.tvRelatedPersonDataBirthday.text = pickDate
-    }
     /** 跳出選日期的視窗 */
-    private fun showDatePickerDialog(view: View){
+    private fun showDatePickerDialog(view: View): String {
         val calendar = Calendar.getInstance()
         val year = calendar.get(Calendar.YEAR)
         val month = calendar.get(Calendar.MONTH)
         val day = calendar.get(Calendar.DAY_OF_MONTH)
         var rocDate = ""
-        val datePickerDialog = DatePickerDialog(requireContext(), { _, selectedYear, selectedMonth, selectedDay ->
-            // 西元轉民國
-            val rocYear = selectedYear - 1911
+        val datePickerDialog =
+            DatePickerDialog(requireContext(), { _, selectedYear, selectedMonth, selectedDay ->
+                // 西元轉民國
+                val rocYear = selectedYear - 1911
 //            val formattedRocYear = String.format("%02d", rocYear) // 補足年份的位數
-            var yy = ""
-            if (rocYear < 100) {
-                yy = "0$rocYear"
-            } else yy = rocYear.toString()
+                var yy = ""
+                if (rocYear < 100) {
+                    yy = "0$rocYear"
+                } else yy = rocYear.toString()
 
-            val formattedMonth = String.format("%02d", selectedMonth + 1) // 補足月份的位數
-            val formattedDay = String.format("%02d", selectedDay) // 補足日期的位數
+                val formattedMonth = String.format("%02d", selectedMonth + 1) // 補足月份的位數
+                val formattedDay = String.format("%02d", selectedDay) // 補足日期的位數
 
-            rocDate = "${yy}-${formattedMonth}-${formattedDay}"
-            // 執行相應的操作，如顯示選擇的日期
+                rocDate = "${yy}-${formattedMonth}-${formattedDay}"
+                // 執行相應的操作，如顯示選擇的日期
+                binding.tvRelatedPersonAddBirthday.text = rocDate
+//            binding.viewModel?.relatedPerson?.value?.birthday = rocDate
 
-
-//            binding.viewModel?.member?.value?.birthday = rocDate
-
-            editBirthday(rocDate)
-        }, year, month, day)
+            }, year, month, day)
 
         datePickerDialog.show()
-        binding.viewModel?.relatedPerson?.value?.birthday = rocDate
+        return rocDate
+
     }
+
     private fun alertDialogPicture(context: Context) {
         //alertDialog
         val dialogView = LayoutInflater.from(context)
@@ -240,18 +227,9 @@ class RelatedPersonDataFragment : Fragment() {
                         }
                         // 有圖片即顯示，沒圖片則套用no_image圖片
                         if (bitmap != null) {
-                            binding.imgRelatedPersonDataAvatar.setImageBitmap(bitmap)
+                            binding.ivMemberDataAvatar.setImageBitmap(bitmap)
                             binding.viewModel?.relatedPerson?.value?.avatarBase64 =
-                                binding.imgRelatedPersonDataAvatar.getImgBase64()
-                            editData?.avatarBase64 =
-                                binding.viewModel?.relatedPerson?.value?.avatarBase64
-                            Log.d("hihi", editData.id.toString())
-                            val respBody = requestTask<JsonObject>(Server.urlFindRelatedperson, "PUT", editData)
-                            respBody?.run {
-                                if (get("successful").asBoolean) {
-                                    println("圖片上傳成功")
-                                }
-                            }
+                                binding.ivMemberDataAvatar.getImgBase64()
                         }
                     }
                 }

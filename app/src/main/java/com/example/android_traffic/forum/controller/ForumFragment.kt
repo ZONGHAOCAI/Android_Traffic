@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.android_traffic.R
 import com.example.android_traffic.forum.viewmodel.ForumViewModel
 import com.example.android_traffic.databinding.FragmentForumBinding
 

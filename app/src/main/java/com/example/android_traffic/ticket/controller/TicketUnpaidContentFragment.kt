@@ -8,6 +8,9 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.navigation.Navigation
+import com.example.android_traffic.R
+import com.example.android_traffic.TapPay
 import com.example.android_traffic.core.model.Ticket
 import com.example.android_traffic.databinding.FragmentTicketUnpaidContentBinding
 import com.example.android_traffic.ticket.model.Content
@@ -37,20 +40,20 @@ class TicketUnpaidContentFragment : Fragment() {
                     Log.d(myTag, "recycleview: ${binding.viewmodel?.content?.value}")
                     if (it.appendix != null) {
                         for (i in (it.appendix)!!) {
-                            var a = 0
+                            var count = 0
                             var byteArray = i
                             val options = BitmapFactory.Options()
                             options.inSampleSize = 3 // 将inSampleSize设置为3，表示将图像尺寸缩小为原来的1/3
                             val bitmap =
                                 BitmapFactory.decodeByteArray(byteArray, 0, byteArray.size, options)
-                            when (a) {
+                            when (count) {
                                 0 -> binding.ivTicketUnpaidContentThumbnail1.setImageBitmap(bitmap)
                                 1 -> binding.ivTicketUnpaidContentThumbnail2.setImageBitmap(bitmap)
                                 2 -> binding.ivTicketUnpaidContentThumbnail3.setImageBitmap(bitmap)
                                 3 -> binding.ivTicketUnpaidContentThumbnail4.setImageBitmap(bitmap)
                                 4 -> binding.ivTicketUnpaidContentThumbnail5.setImageBitmap(bitmap)
                             }
-                            a++
+                            count++
                         }
                     }
                 }
@@ -87,6 +90,9 @@ class TicketUnpaidContentFragment : Fragment() {
                     101101,
                     1000
                 )
+            }
+            btTicketUnpaidContentAppeal.setOnClickListener {
+                Navigation.findNavController(it).navigate(R.id.ticketAppealtext2Fragment)
             }
         }
     }
