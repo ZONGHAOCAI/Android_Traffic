@@ -34,7 +34,7 @@
                     android:layout_marginRight="6dp"
                     android:layout_toLeftOf="@id/rl_ChatContent_User"
                     android:hint="time"
-                    android:text="@{viewmodel.chatext.time}" />
+                    android:text="@{viewmodel.chat.sendTime.toString()}" />
 
                 <RelativeLayout
                     android:id="@+id/rl_ChatContent_User"
@@ -53,9 +53,10 @@
                         android:paddingTop="10dp"
                         android:paddingEnd="12dp"
                         android:paddingBottom="10dp"
-                        android:text="@{viewmodel.chatext.chatcon}"
+                        android:text="@{viewmodel.chat.content}"
                         android:textSize="16dp" />
 
+<!--                    app:imageResource="@{viewmodel.chatext.photo}"-->
                     <ImageView
                         android:id="@+id/iv_ChatContent_UserImg"
                         android:layout_width="90dp"
@@ -63,7 +64,7 @@
                         android:layout_marginRight="6dp"
                         android:scaleType="fitCenter"
                         android:visibility="gone"
-                        app:imageResource="@{viewmodel.chatext.photo}"
+
                         tools:srcCompat="@drawable/avatar2" />
                 </RelativeLayout>
 
@@ -95,7 +96,6 @@
                             app:srcCompat="@drawable/avatar3"
                             tools:srcCompat="@drawable/avatar3" />
 
-<!--                        android:text="@{viewmodel.chatext.chatcon}"-->
                         <TextView
                             android:id="@+id/tv_ChatContent_OtherName"
                             android:layout_width="wrap_content"
@@ -103,6 +103,7 @@
                             android:layout_marginLeft="6dp"
                             android:layout_toRightOf="@id/iv_ChatContent_UserAvatar"
                             android:hint="name"
+                            android:text="@{viewmodel.chat.nickname}"
                             android:textStyle="normal|bold" />
 
                         <TextView
@@ -118,11 +119,12 @@
                             android:paddingTop="10dp"
                             android:paddingEnd="12dp"
                             android:paddingBottom="10dp"
-                            android:text="@{viewmodel.chatext.chatcon}"
+                            android:text="@{viewmodel.chat.content}"
                             android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                             android:textSize="16sp"
                             android:visibility="visible" />
 
+<!--                        app:imageResource="@{viewmodel.chatext.photo}"-->
                         <ImageView
                             android:id="@+id/iv_ChatContent_OtherImg"
                             android:layout_width="90dp"
@@ -133,7 +135,6 @@
                             android:layout_toRightOf="@id/iv_ChatContent_UserAvatar"
                             android:scaleType="fitCenter"
                             android:visibility="gone"
-                            app:imageResource="@{viewmodel.chatext.photo}"
                             tools:srcCompat="@drawable/avatar1" />
                     </RelativeLayout>
 
@@ -145,7 +146,7 @@
                         android:layout_marginLeft="5dp"
                         android:gravity="right"
                         android:hint="時間"
-                        android:text="@{viewmodel.chatext.time}" />
+                        android:text="@{viewmodel.chat.sendTime.toString()}" />
                 </LinearLayout>
             </RelativeLayout>
 

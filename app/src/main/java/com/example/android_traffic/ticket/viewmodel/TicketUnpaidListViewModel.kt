@@ -20,7 +20,7 @@ class TicketUnpaidListViewModel : ViewModel() {
 
     private val url = "http://10.0.2.2:8080/javaweb-Traffic/Ticket/FindTicketByMemId"
 
-    val ticket: MutableLiveData<Ticket> by lazy { MutableLiveData<Ticket>() }
+//    val ticket: MutableLiveData<Ticket> by lazy { MutableLiveData<Ticket>() }
     val list: MutableLiveData<List<Ticket>> by lazy { MutableLiveData<List<Ticket>>() }
     val member: MutableLiveData<String> by lazy { MutableLiveData<String>() }
 
@@ -47,7 +47,7 @@ class TicketUnpaidListViewModel : ViewModel() {
                 Log.d("TAG_${javaClass.simpleName}", "oldMessageList: ${oldTicket} ")
                 list.value = oldTicket
                 Log.d("TAG_${javaClass.simpleName}", "list: ${list.value} ")
-                delay(30000)
+                delay(10000)
             }
         }
     }
