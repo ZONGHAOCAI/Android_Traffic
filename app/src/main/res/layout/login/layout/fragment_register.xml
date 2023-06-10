@@ -79,7 +79,7 @@
             android:ems="10"
             android:hint="@string/txtConfrimPassword"
             android:text="@={viewModel.login.confirmPassword}"
-            android:inputType="textPersonName"
+            android:inputType="none|textPassword"
             app:layout_constraintEnd_toEndOf="@+id/tvRegister"
             app:layout_constraintStart_toStartOf="@+id/tvRegister"
             app:layout_constraintTop_toBottomOf="@+id/tvRegister" />

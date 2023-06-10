@@ -103,15 +103,16 @@
                 android:id="@+id/btnWhistleblowerNext"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="60dp"
                 android:layout_marginBottom="50dp"
+                android:layout_marginTop="170dp"
                 android:background="@color/pink_style"
                 android:text="@string/txtSend"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="@+id/edtTxtVehicleNoWhistleblower"
                 app:layout_constraintHorizontal_bias="0.532"
                 app:layout_constraintStart_toStartOf="@+id/edtTxtVehicleNoWhistleblower"
-                app:layout_constraintTop_toBottomOf="@+id/edtTxtVehicleNoWhistleblower" />
+                app:layout_constraintTop_toTopOf="@+id/ivPhotoWhistleblower"
+                app:layout_constraintVertical_bias="1.0" />
 
             <ImageView
                 android:id="@+id/imageView14"
@@ -129,7 +130,7 @@
                 android:layout_width="208dp"
                 android:layout_height="48dp"
                 android:layout_marginTop="124dp"
-                android:hint="違規日期"
+                android:hint="@string/txt_WhistleblowerForm_Date"
                 android:text="@={viewModel.whistleblower.violationsDate}"
                 android:textSize="18sp"
                 app:layout_constraintEnd_toEndOf="@+id/tvWhistleblowerContent"
@@ -141,12 +142,22 @@
                 android:layout_width="208dp"
                 android:layout_height="48dp"
                 android:layout_marginTop="188dp"
-                android:hint="違規時間"
+                android:hint="@string/txt_WhistleblowerForm_Time"
                 android:text="@={viewModel.whistleblower.violationsTime}"
                 android:textSize="18sp"
                 app:layout_constraintEnd_toEndOf="@+id/tvWhistleblowerContent"
                 app:layout_constraintStart_toStartOf="@+id/tvWhistleblowerContent"
                 app:layout_constraintTop_toBottomOf="@+id/tvWhistleblowerContent" />
+
+            <ImageView
+                android:id="@+id/ivPhotoWhistleblower"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="572dp"
+                app:layout_constraintEnd_toEndOf="@+id/edtTxtVehicleNoWhistleblower"
+                app:layout_constraintStart_toStartOf="@+id/edtTxtVehicleNoWhistleblower"
+                app:layout_constraintTop_toBottomOf="@+id/tvWhistleblowerContent"
+                tools:src="@tools:sample/avatars" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>

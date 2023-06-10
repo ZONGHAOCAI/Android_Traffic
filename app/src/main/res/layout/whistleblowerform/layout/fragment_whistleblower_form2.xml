@@ -88,8 +88,8 @@
 
             <TextView
                 android:id="@+id/edtTxtViolationLocationWhistleblower"
-                android:layout_width="239dp"
-                android:layout_height="37dp"
+                android:layout_width="240dp"
+                android:layout_height="48dp"
                 android:layout_marginTop="252dp"
                 android:ems="10"
                 android:hint="@string/txtViolationLocation"
@@ -101,15 +101,15 @@
 
             <TextView
                 android:id="@+id/edtTxtViolationsWhistleblower"
-                android:layout_width="wrap_content"
+                android:layout_width="240dp"
                 android:layout_height="48dp"
                 android:layout_marginTop="308dp"
                 android:ems="10"
                 android:hint="違規種類"
                 android:inputType="textPersonName"
                 android:text='@{"違規種類：" + viewModel.whistleblower.violations}'
-                app:layout_constraintEnd_toEndOf="@+id/tvUploadDocWhistleblower2"
-                app:layout_constraintStart_toStartOf="@+id/tvUploadDocWhistleblower2"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tvUploadDocWhistleblower2" />
 
             <TextView

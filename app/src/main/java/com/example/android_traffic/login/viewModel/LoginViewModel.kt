@@ -14,8 +14,8 @@ class LoginViewModel : ViewModel() {
 
    fun init() {
 //      member.value?.id = requestTask(Server.url, "OPTIONS")
-      member.value?.phoneNo = "922333444"
-      member.value?.password = "abc321"
+//      member.value?.phoneNo = "922333444"
+//      member.value?.password = "abc321"
    }
 
    fun login() :Boolean {
