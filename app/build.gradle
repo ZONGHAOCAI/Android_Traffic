@@ -67,6 +67,7 @@ dependencies {
         }
     }
 
+    implementation 'androidx.security:security-crypto:1.1.0-alpha05'
     implementation 'androidx.core:core-ktx:1.7.0'
     implementation 'androidx.appcompat:appcompat:1.6.1'
     implementation 'com.google.android.material:material:1.9.0'
@@ -86,4 +87,12 @@ dependencies {
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+
+    // tpdirect.aar使用到舊的android.support.v4.content.ContextCompat
+    // gradle.properties檔案需加上android.enableJetifier=true設定
+    implementation files('libs/tpdirect.aar')
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    // 存取手機帳戶資訊支付需要wallet函式庫
+    implementation 'com.google.android.gms:play-services-wallet:19.1.0'
+    implementation 'com.github.yalantis:ucrop:2.2.4'
 }

@@ -4,6 +4,7 @@
 
     <!-- Android 10開始，使用全螢幕的Intent需要加 -->
     <uses-permission android:name="android.permission.USE_FULL_SCREEN_INTENT" />
+    <!-- 不一定要寫，如果應用程式有使用相機的需求，最好要寫，可以對手機沒有相機的用戶進行過濾、限制，使其無法被下載 -->
     <uses-feature android:name="android.hardware.camera" />
 
     <uses-permission android:name="android.permission.INTERNET"/>
@@ -17,6 +18,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Android_Traffic"
         android:usesCleartextTraffic="true"
+        tools:replace="android:allowBackup"
         tools:targetApi="31">
         <provider
             android:name="androidx.core.content.FileProvider"
@@ -27,7 +29,16 @@
                 android:name="android.support.FILE_PROVIDER_PATHS"
                 android:resource="@xml/provider_paths" />
         </provider>
-
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+        <meta-data
+            android:name="com.google.android.gms.wallet.api.enabled"
+            android:value="true" />
+        <!--拍照第三方用-->
+        <activity
+            android:name="com.yalantis.ucrop.UCropActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
             android:name=".MainActivity"
             android:exported="true">

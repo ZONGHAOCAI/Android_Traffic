@@ -37,27 +37,6 @@
                     android:orientation="horizontal">
 
                     <TextView
-                        android:id="@+id/tv_TicketUnpaidContent_ViolationTh"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:paddingLeft="30dp"
-                        android:text="@string/txt_Ticket_Violation"
-                        android:textSize="24sp" />
-
-                    <TextView
-                        android:id="@+id/tv_TicketUnpaidContent_Violation"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="TextView"
-                        android:textSize="24sp" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="horizontal">
-
-                    <TextView
                         android:id="@+id/tv_TicketUnpaidContent_NumberTh"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -69,7 +48,109 @@
                         android:id="@+id/tv_TicketUnpaidContent_Number"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="@{viewmodel.content.number}"
+                        android:text="@{viewmodel.content.ticketNo.toString()}"
+                        android:textSize="24sp" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tv_TicketUnpaidContent_DriverTh"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="30dp"
+                        android:text="行為人    ："
+                        android:textSize="24sp" />
+
+                    <TextView
+                        android:id="@+id/tv_TicketUnpaidContent_Driver"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@{viewmodel.content.driver.toString()}"
+                        android:textSize="24sp" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tv_TicketUnpaidContent_VehicleNoTh"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="30dp"
+                        android:text="車號        ："
+                        android:textSize="24sp"
+                        tools:ignore="DuplicateIds" />
+
+                    <TextView
+                        android:id="@+id/tv_TicketUnpaidContent_VehicleNo"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@{viewmodel.content.vehicleNo.toString()}"
+                        android:textSize="24sp"
+                        tools:ignore="DuplicateIds" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tv_TicketUnpaidContent_VehicleTypeTh"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="30dp"
+                        android:text="車種        ："
+                        android:textSize="24sp" />
+
+                    <TextView
+                        android:id="@+id/tv_TicketUnpaidContent_VehicleType"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@{viewmodel.content.vehicleType.toString()}"
+                        android:textSize="24sp" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tv_TicketUnpaidContent_ViolationsTimeTh"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="30dp"
+                        android:text="違規日期："
+                        android:textSize="24sp" />
+
+                    <TextView
+                        android:id="@+id/tv_TicketUnpaidContent_ViolationsTime"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@{viewmodel.content.violationsTime.toString()}"
+                        android:textSize="24sp" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tv_TicketUnpaidContent_ViolationTh"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="30dp"
+                        android:text="@string/txt_Ticket_Violation"
+                        android:textSize="24sp" />
+
+                    <TextView
+                        android:id="@+id/tv_TicketUnpaidContent_Violation"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@{viewmodel.content.violations}"
                         android:textSize="24sp" />
                 </LinearLayout>
 
@@ -90,23 +171,42 @@
                         android:id="@+id/tv_TicketUnpaidContent_Amount"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="TextView"
+                        android:text="@{viewmodel.content.amount.toString()}"
                         android:textColor="@color/red"
                         android:textSize="24sp" />
                 </LinearLayout>
-
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tv_TicketUnpaidContent_PaymentDueDateTh"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="30dp"
+                        android:text="繳費期限："
+                        android:textSize="24sp" />
+
+                    <TextView
+                        android:id="@+id/tv_TicketUnpaidContent_PaymentDueDate"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@{viewmodel.content.paymentDueDate.toString()}"
+                        android:textSize="24sp" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:visibility="@{viewmodel.content.appendix[0] != null ? View.VISIBLE : View.GONE }">
 
                     <ImageView
                         android:id="@+id/iv_TicketUnpaidContent_Thumbnail1"
                         android:layout_width="100dp"
                         android:layout_height="100dp"
                         android:layout_weight="1"
-                        android:visibility="@{viewmodel.content.photo[0] != null ? View.VISIBLE : View.GONE }"
-                        app:imageResource="@{viewmodel.content.photo[0]}"
+                        android:visibility="@{viewmodel.content.appendix[0] != null ? View.VISIBLE : View.GONE }"
                         tools:srcCompat="@drawable/avatar1" />
 
                     <ImageView
@@ -114,8 +214,7 @@
                         android:layout_width="100dp"
                         android:layout_height="100dp"
                         android:layout_weight="1"
-                        android:visibility="@{viewmodel.content.photo[1] != null ? View.VISIBLE : View.GONE }"
-                        app:imageResource="@{viewmodel.content.photo[1]}"
+                        android:visibility="@{viewmodel.content.appendix[1] != null ? View.VISIBLE : View.GONE }"
                         tools:srcCompat="@drawable/avatar1" />
 
                     <ImageView
@@ -123,9 +222,9 @@
                         android:layout_width="100dp"
                         android:layout_height="100dp"
                         android:layout_weight="1"
-                        android:visibility="@{viewmodel.content.photo[2] != null ? View.VISIBLE : View.GONE }"
-                        app:imageResource="@{viewmodel.content.photo[2]}"
-                        tools:srcCompat="@drawable/avatar1" />                    
+                        android:visibility="@{viewmodel.content.appendix[2] != null ? View.VISIBLE : View.GONE }"
+                        tools:srcCompat="@drawable/avatar1" />
+
                 </LinearLayout>
 
                 <LinearLayout
@@ -138,8 +237,7 @@
                         android:layout_width="100dp"
                         android:layout_height="100dp"
                         android:layout_weight="1"
-                        android:visibility="@{viewmodel.content.photo[3] != null ? View.VISIBLE : View.GONE }"
-                        app:imageResource="@{viewmodel.content.photo[3]}"
+                        android:visibility="@{viewmodel.content.appendix[3] != null ? View.VISIBLE : View.GONE }"
                         tools:srcCompat="@drawable/avatar1" />
 
                     <ImageView
@@ -147,9 +245,8 @@
                         android:layout_width="100dp"
                         android:layout_height="100dp"
                         android:layout_weight="1"
-                        android:visibility="@{viewmodel.content.photo[4] != null ? View.VISIBLE : View.GONE }"
-                        app:imageResource="@{viewmodel.content.photo[4]}"
-                        app:srcCompat="@drawable/avatar1" />
+                        android:visibility="@{viewmodel.content.appendix[4] != null ? View.VISIBLE : View.GONE }"
+                        tools:srcCompat="@drawable/avatar1" />
 
                 </LinearLayout>
 

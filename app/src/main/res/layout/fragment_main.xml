@@ -14,71 +14,108 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <ImageButton
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/imgBtn_Main_AppealHistory"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:background="@color/pink_style"
-            android:src="@drawable/icon_appealhistory"
+            android:layout_width="120dp"
+            android:layout_height="130dp"
+            android:drawableTop="@drawable/icon_appealhistory"
+            android:paddingTop="10dp"
+            android:text="檢舉列表"
+            android:textColor="@color/black"
+            app:backgroundTint="#F8D1D5"
+            app:cornerRadius="20dp"
+            app:iconPadding="4dp"
             app:layout_constraintBottom_toBottomOf="@+id/imgBtn_Main_Photo"
             app:layout_constraintStart_toStartOf="@+id/imgBtn_Main_Ticket" />
 
-        <ImageButton
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/imgBtn_Main_Ticket"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:background="@color/pink_style"
-            android:src="@drawable/icon_ticket"
+            android:layout_width="120dp"
+            android:layout_height="130dp"
+            android:drawableTop="@drawable/icon_ticket"
+            android:paddingTop="10dp"
+            android:text="罰單列表"
+            android:textColor="@color/black"
+            app:backgroundTint="#F8D1D5"
+            app:cornerRadius="20dp"
+            app:iconPadding="4dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toEndOf="@+id/imgBtn_Main_Appeal"
             app:layout_constraintTop_toTopOf="@+id/imgBtn_Main_Appeal" />
 
-        <ImageButton
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/imgBtn_Main_Forum"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:background="@color/pink_style"
-            android:layout_marginTop="50dp"
-            android:src="@drawable/icon_forum"
+            android:layout_width="120dp"
+            android:layout_height="130dp"
+            android:layout_marginTop="45dp"
+            android:drawableTop="@drawable/icon_forum"
+            android:paddingTop="10dp"
+            android:text="論壇"
+            android:textColor="@color/black"
+            app:backgroundTint="#F8D1D5"
+            app:cornerRadius="20dp"
+            app:iconPadding="4dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="@+id/imgBtn_Main_Photo"
             app:layout_constraintTop_toBottomOf="@+id/imgBtn_Main_Photo"
             app:layout_constraintVertical_bias="0.5" />
 
-        <ImageButton
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/imgBtn_Main_Chat"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:background="@color/pink_style"
-            android:src="@drawable/icon_chat"
+            android:layout_width="120dp"
+            android:layout_height="130dp"
+            android:drawableTop="@drawable/icon_chat"
+            android:paddingTop="10dp"
+            android:text="聊天"
+            android:textColor="@color/black"
+            app:backgroundTint="#F8D1D5"
+            app:cornerRadius="20dp"
+            app:iconPadding="4dp"
             app:layout_constraintStart_toStartOf="@+id/imgBtn_Main_AppealHistory"
             app:layout_constraintTop_toTopOf="@+id/imgBtn_Main_Forum" />
 
-        <ImageButton
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/imgBtn_Main_Photo"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:background="@color/pink_style"
-            android:layout_marginTop="50dp"
-            android:src="@drawable/icon_photo"
+            android:layout_width="120dp"
+            android:layout_height="130dp"
+            android:layout_marginTop="45dp"
+            android:drawableTop="@drawable/icon_photo"
+            android:paddingTop="10dp"
+            android:text="攝影檢舉"
+            android:textColor="@color/black"
+            app:backgroundTint="#F8D1D5"
+            app:cornerRadius="20dp"
+            app:iconPadding="4dp"
             app:layout_constraintBottom_toTopOf="@+id/imgBtn_Main_Forum"
             app:layout_constraintStart_toStartOf="@+id/imgBtn_Main_Appeal"
             app:layout_constraintTop_toBottomOf="@+id/imgBtn_Main_Appeal"
             app:layout_constraintVertical_bias="0.5" />
 
-        <ImageButton
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/imgBtn_Main_Appeal"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:background="@color/pink_style"
-            android:src="@drawable/icon_appeal"
+            android:layout_width="120dp"
+            android:layout_height="130dp"
+            android:drawableTop="@drawable/icon_appeal"
+            android:paddingTop="10dp"
+            android:text="檢舉表單"
+            android:textColor="@color/black"
+            app:backgroundTint="#F8D1D5"
+            app:cornerRadius="20dp"
+            app:iconPadding="4dp"
             app:layout_constraintBottom_toTopOf="@+id/imgBtn_Main_Photo"
             app:layout_constraintEnd_toStartOf="@+id/imgBtn_Main_Ticket"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.5" />
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            tools:ignore="MissingConstraints" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

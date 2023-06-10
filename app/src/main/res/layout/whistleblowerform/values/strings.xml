@@ -28,4 +28,6 @@
     <string name="txt_WhistleblowerForm_ViolationCar">違規車號</string>
     <string name="txt_WhistleblowerForm_ViolationLocation">違規地點</string>
     <string name="txt_WhistleblowerForm_Intersection">交叉路口</string>
+    <string name="txt_WhistleblowerForm_Date"><u>違規日期</u></string>
+    <string name="txt_WhistleblowerForm_Time"><u>違規時間</u></string>
 </resources>

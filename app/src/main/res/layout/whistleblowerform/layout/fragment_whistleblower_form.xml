@@ -2,13 +2,13 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".whistleblowerform.WhistleblowerFormFragment">
+    tools:context=".whistleblowerform.controller.WhistleblowerFormFragment">
 
     <data>
 
         <variable
             name="viewModel"
-            type="com.example.android_traffic.whistleblowerform.WhistleblowerFormViewModel" />
+            type="com.example.android_traffic.whistleblowerform.viewModel.WhistleblowerFormViewModel" />
     </data>
 
     <ScrollView
@@ -34,32 +34,6 @@
 
 
             <EditText
-                android:id="@+id/edtTxtViolationTimeWhistleblower"
-                android:layout_width="wrap_content"
-                android:layout_height="48dp"
-                android:layout_marginTop="120dp"
-                android:ems="10"
-                android:hint="@string/txtViolationTime"
-                android:inputType="textPersonName"
-                android:text="@={viewModel.whistleblower.violationTime}"
-                app:layout_constraintEnd_toEndOf="@+id/tvWhistleblowerContent"
-                app:layout_constraintStart_toStartOf="@+id/tvWhistleblowerContent"
-                app:layout_constraintTop_toBottomOf="@+id/tvWhistleblowerContent" />
-
-            <EditText
-                android:id="@+id/edtTxtViolationCarWhistleblower"
-                android:layout_width="wrap_content"
-                android:layout_height="48dp"
-                android:layout_marginTop="188dp"
-                android:ems="10"
-                android:hint="@string/txtViolationCar"
-                android:inputType="textPersonName"
-                android:text="@={viewModel.whistleblower.violationCar}"
-                app:layout_constraintEnd_toEndOf="@+id/tvWhistleblowerContent"
-                app:layout_constraintStart_toStartOf="@+id/tvWhistleblowerContent"
-                app:layout_constraintTop_toBottomOf="@+id/tvWhistleblowerContent" />
-
-            <EditText
                 android:id="@+id/edtTxtViolationLocationWhistleblower"
                 android:layout_width="wrap_content"
                 android:layout_height="48dp"
@@ -67,59 +41,60 @@
                 android:ems="10"
                 android:hint="@string/txtViolationLocation"
                 android:inputType="textPersonName"
-                android:text="@={viewModel.whistleblower.violationLocation}"
+                android:text="@={viewModel.whistleblower.violationsAddress}"
                 app:layout_constraintEnd_toEndOf="@+id/tvWhistleblowerContent"
                 app:layout_constraintStart_toStartOf="@+id/tvWhistleblowerContent"
                 app:layout_constraintTop_toBottomOf="@+id/tvWhistleblowerContent" />
 
             <EditText
-                android:id="@+id/edtTxtIntersectionWhistleblower"
+                android:id="@+id/edtTxtViolationsWhistleblower"
                 android:layout_width="wrap_content"
                 android:layout_height="48dp"
                 android:layout_marginTop="312dp"
                 android:ems="10"
-                android:hint="@string/txtIntersection"
+                android:hint="違規種類"
                 android:inputType="textPersonName"
-                android:text="@={viewModel.whistleblower.violationIntersection}"
+                android:text="@={viewModel.whistleblower.violations}"
                 app:layout_constraintEnd_toEndOf="@+id/tvWhistleblowerContent"
                 app:layout_constraintStart_toStartOf="@+id/tvWhistleblowerContent"
                 app:layout_constraintTop_toBottomOf="@+id/tvWhistleblowerContent" />
 
             <EditText
-                android:id="@+id/edtTxtLocationNoteWhistleblower"
+                android:id="@+id/edtTxtRemarkWhistleblower"
                 android:layout_width="wrap_content"
                 android:layout_height="48dp"
                 android:layout_marginTop="380dp"
                 android:ems="10"
                 android:hint="@string/txtLocationNote"
                 android:inputType="textPersonName"
-                android:text="@={viewModel.whistleblower.violationLocationNote}"
+                android:text="@={viewModel.whistleblower.remark}"
                 app:layout_constraintEnd_toEndOf="@+id/tvWhistleblowerContent"
                 app:layout_constraintStart_toStartOf="@+id/tvWhistleblowerContent"
                 app:layout_constraintTop_toBottomOf="@+id/tvWhistleblowerContent" />
 
             <EditText
-                android:id="@+id/edtTxtViolationFactWhistleblower"
+                android:id="@+id/edtTxtVehicleTypeWhistleblower"
                 android:layout_width="wrap_content"
                 android:layout_height="48dp"
                 android:layout_marginTop="444dp"
                 android:ems="10"
-                android:hint="@string/ViolationFact"
+
+                android:hint="違規車種"
                 android:inputType="textPersonName"
-                android:text="@={viewModel.whistleblower.violationFact}"
+                android:text="@={viewModel.whistleblower.vehicleType}"
                 app:layout_constraintEnd_toEndOf="@+id/tvWhistleblowerContent"
                 app:layout_constraintStart_toStartOf="@+id/tvWhistleblowerContent"
                 app:layout_constraintTop_toBottomOf="@+id/tvWhistleblowerContent" />
 
             <EditText
-                android:id="@+id/edtTxtViolationFactDetailsWhistleblower"
+                android:id="@+id/edtTxtVehicleNoWhistleblower"
                 android:layout_width="wrap_content"
                 android:layout_height="48dp"
                 android:layout_marginTop="508dp"
                 android:ems="10"
-                android:hint="@string/ViolationFactDetails"
+                android:hint="違規車牌"
                 android:inputType="textPersonName"
-                android:text="@={viewModel.whistleblower.violationFactDetails}"
+                android:text="@={viewModel.whistleblower.vehicleNo}"
                 app:layout_constraintEnd_toEndOf="@+id/tvWhistleblowerContent"
                 app:layout_constraintStart_toStartOf="@+id/tvWhistleblowerContent"
                 app:layout_constraintTop_toBottomOf="@+id/tvWhistleblowerContent" />
@@ -128,50 +103,16 @@
                 android:id="@+id/btnWhistleblowerNext"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="28dp"
+                android:layout_marginTop="15dp"
                 android:layout_marginBottom="50dp"
                 android:background="@color/pink_style"
                 android:text="@string/txtSend"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="@+id/tvContentWhistleblower2"
-                app:layout_constraintHorizontal_bias="0.503"
-                app:layout_constraintStart_toStartOf="@+id/tvContentWhistleblower2"
-                app:layout_constraintTop_toBottomOf="@+id/btnUploadDocWhistleblower2" />
-
-            <TextView
-                android:id="@+id/tvWhistleblowerResult"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="850dp"
-                android:hint="測試"
-                android:text="@{viewModel.whistleblowerResult}"
-                app:layout_constraintEnd_toEndOf="@+id/edtTxtViolationFactDetailsWhistleblower"
-                app:layout_constraintStart_toStartOf="@+id/edtTxtViolationFactDetailsWhistleblower"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <TextView
-                android:id="@+id/tvContentWhistleblower2"
-                android:layout_width="235dp"
-                android:layout_height="136dp"
-                android:layout_marginTop="680dp"
-                android:text="@string/txtContent"
-                android:textSize="14sp"
-                app:layout_constraintEnd_toEndOf="@+id/edtTxtViolationFactDetailsWhistleblower"
-                app:layout_constraintHorizontal_bias="0.48"
-                app:layout_constraintStart_toStartOf="@+id/edtTxtViolationFactDetailsWhistleblower"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/btnUploadDocWhistleblower2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="80dp"
-                android:background="@color/pink_style"
-                android:text="@string/txtUploadFile"
-                app:layout_constraintEnd_toEndOf="@+id/tvContentWhistleblower2"
-                app:layout_constraintHorizontal_bias="0.496"
-                app:layout_constraintStart_toStartOf="@+id/tvContentWhistleblower2"
-                app:layout_constraintTop_toBottomOf="@+id/tvContentWhistleblower2" />
+                app:layout_constraintEnd_toEndOf="@+id/edtTxtVehicleNoWhistleblower"
+                app:layout_constraintHorizontal_bias="0.532"
+                app:layout_constraintStart_toStartOf="@+id/edtTxtVehicleNoWhistleblower"
+                app:layout_constraintTop_toBottomOf="@+id/ivPhotoWhistleblower"
+                app:layout_constraintVertical_bias="1.0" />
 
             <ImageView
                 android:id="@+id/imageView14"
@@ -183,6 +124,40 @@
                 app:layout_constraintHorizontal_bias="0.497"
                 app:layout_constraintStart_toStartOf="@+id/tvWhistleblowerContent"
                 app:layout_constraintTop_toBottomOf="@+id/tvWhistleblowerContent" />
+
+            <TextView
+                android:id="@+id/tvWhistleblowerDate"
+                android:layout_width="208dp"
+                android:layout_height="48dp"
+                android:layout_marginTop="124dp"
+                android:hint="@string/txt_WhistleblowerForm_Date"
+                android:text="@={viewModel.whistleblower.violationsDate}"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="@+id/tvWhistleblowerContent"
+                app:layout_constraintStart_toStartOf="@+id/tvWhistleblowerContent"
+                app:layout_constraintTop_toBottomOf="@+id/tvWhistleblowerContent" />
+
+            <TextView
+                android:id="@+id/tvWhistleblowerTime"
+                android:layout_width="208dp"
+                android:layout_height="48dp"
+                android:layout_marginTop="188dp"
+                android:hint="@string/txt_WhistleblowerForm_Time"
+                android:text="@={viewModel.whistleblower.violationsTime}"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="@+id/tvWhistleblowerContent"
+                app:layout_constraintStart_toStartOf="@+id/tvWhistleblowerContent"
+                app:layout_constraintTop_toBottomOf="@+id/tvWhistleblowerContent" />
+
+            <ImageView
+                android:id="@+id/ivPhotoWhistleblower"
+                android:layout_width="300dp"
+                android:layout_height="300dp"
+                android:layout_marginTop="15dp"
+                app:layout_constraintEnd_toEndOf="@+id/edtTxtVehicleNoWhistleblower"
+                app:layout_constraintStart_toStartOf="@+id/edtTxtVehicleNoWhistleblower"
+                app:layout_constraintTop_toBottomOf="@+id/edtTxtVehicleNoWhistleblower"
+                tools:src="@tools:sample/avatars" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
