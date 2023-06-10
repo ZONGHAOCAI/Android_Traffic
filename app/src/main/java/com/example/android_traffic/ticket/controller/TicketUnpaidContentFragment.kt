@@ -8,6 +8,9 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.navigation.Navigation
+import com.example.android_traffic.R
+import com.example.android_traffic.TapPay
 import com.example.android_traffic.core.model.Ticket
 import com.example.android_traffic.databinding.FragmentTicketUnpaidContentBinding
 import com.example.android_traffic.ticket.model.Content
@@ -87,6 +90,9 @@ class TicketUnpaidContentFragment : Fragment() {
                     101101,
                     1000
                 )
+            }
+            btTicketUnpaidContentAppeal.setOnClickListener {
+                Navigation.findNavController(it).navigate(R.id.ticketAppealtext2Fragment)
             }
         }
     }

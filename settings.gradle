@@ -10,6 +10,7 @@ dependencyResolutionManagement {
     repositories {
         google()
         mavenCentral()
+        maven { url "https://jitpack.io" } //拍照的uCrop第三方用
     }
 }
 rootProject.name = "Android_Traffic"

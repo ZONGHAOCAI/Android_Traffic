@@ -31,11 +31,14 @@ class Server {
 
         //以下預定
         const val urlVehide = "http://10.0.2.2:8080/javaweb-Traffic/Vehide" //會員的車輛資料
-        const val urlRelatedpersonVehideData = "http://10.0.2.2:8080/javaweb-Traffic/RelatedpersonVehide" //關係人的車輛資料
+        const val urlRelatedpersonVehideData =
+            "http://10.0.2.2:8080/javaweb-Traffic/RelatedpersonVehide" //關係人的車輛資料
+
+        //        const val urlFindID = "http://10.0.2.2:8080/javaweb-Traffic/FindMemberByID"
 //        const val urlFindID = "http://10.0.2.2:8080/javaweb-Traffic/FindMemberByID"
 //        const val urlFindID = "http://10.0.2.2:8080/javaweb-Traffic/FindMemberByID"
 //        const val urlFindID = "http://10.0.2.2:8080/javaweb-Traffic/FindMemberByID"
-//        const val urlFindID = "http://10.0.2.2:8080/javaweb-Traffic/FindMemberByID"
+        const val urlForumArticle = "http://10.0.2.2:8080/javaweb-Traffic/ForumArticle"
     }
 }
 

@@ -116,6 +116,9 @@
         <action
             android:id="@+id/action_relatedPersonFragment_to_relatedPersonDataFragment"
             app:destination="@id/relatedPersonDataFragment" />
+        <action
+            android:id="@+id/action_relatedPersonFragment_to_relatedPersonAddFragment"
+            app:destination="@id/relatedPersonAddFragment" />
     </fragment>
     <fragment
         android:id="@+id/whistleblowerForm2Fragment"
@@ -471,4 +474,9 @@
         android:name="com.example.android_traffic.login.controller.NewForgetPasswordFragment"
         android:label="fragment_new_forget_password"
         tools:layout="@layout/fragment_new_forget_password" />
+    <fragment
+        android:id="@+id/relatedPersonAddFragment"
+        android:name="com.example.android_traffic.relatedPersonAddFragment"
+        android:label="fragment_related_person_add"
+        tools:layout="@layout/fragment_related_person_add" />
 </navigation>
