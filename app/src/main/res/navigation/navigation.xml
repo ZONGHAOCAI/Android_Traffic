@@ -476,7 +476,7 @@
         tools:layout="@layout/fragment_new_forget_password" />
     <fragment
         android:id="@+id/relatedPersonAddFragment"
-        android:name="com.example.android_traffic.relatedPersonAddFragment"
+        android:name="com.example.android_traffic.membercenter.controller.relatedPersonAddFragment"
         android:label="fragment_related_person_add"
         tools:layout="@layout/fragment_related_person_add" />
 </navigation>
