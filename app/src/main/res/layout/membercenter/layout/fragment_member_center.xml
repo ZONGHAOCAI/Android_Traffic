@@ -23,7 +23,7 @@
             android:layout_marginStart="20dp"
             android:layout_marginTop="36dp"
             android:layout_marginEnd="20dp"
-            android:background="@drawable/membercenter_txt_background"
+            android:background="@drawable/pic_membercenter_background"
             android:text="@string/txt_MemberCenter_MeInfo"
             android:textSize="20sp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -37,25 +37,12 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
-            android:background="@drawable/membercenter_txt_background"
+            android:background="@drawable/pic_membercenter_background"
             android:text="@string/txt_MemberCenter_RelatedPersonInfo"
             android:textSize="20sp"
             app:layout_constraintEnd_toEndOf="@+id/tv_MeInfo"
             app:layout_constraintStart_toStartOf="@+id/tv_MeInfo"
             app:layout_constraintTop_toBottomOf="@+id/tv_MeInfo" />
-
-        <!-- 檢查更新 -->
-        <TextView
-            android:id="@+id/tv_Update"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
-            android:background="@drawable/membercenter_txt_background"
-            android:text="@string/txt_MemberCenter_Update2"
-            android:textSize="20sp"
-            app:layout_constraintEnd_toEndOf="@+id/cl_Language"
-            app:layout_constraintStart_toStartOf="@+id/cl_Language"
-            app:layout_constraintTop_toBottomOf="@+id/cl_Language" />
 
         <!-- 信用卡資料 -->
         <TextView
@@ -63,12 +50,61 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
-            android:background="@drawable/membercenter_txt_background"
+            android:background="@drawable/pic_membercenter_background"
             android:text="@string/txt_MemberCenter_CreditCard"
             android:textSize="20sp"
             app:layout_constraintEnd_toEndOf="@+id/tv_RelatedPersonInfo"
             app:layout_constraintStart_toStartOf="@+id/tv_RelatedPersonInfo"
             app:layout_constraintTop_toBottomOf="@+id/tv_RelatedPersonInfo" />
+
+        <!-- 私訊切換 -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_ChatPermissions"
+            android:layout_width="0dp"
+            android:layout_height="42dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginEnd="20dp"
+            android:background="@drawable/pic_membercenter_background"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_Creditcard">
+
+            <!-- 私訊的標題 -->
+            <TextView
+                android:id="@+id/tv_ChatPermissions"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/txt_MemberCenter_ChangeLanguage"
+                android:textSize="20sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Switch
+                android:id="@+id/sw_MemberCenter_chat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="@={viewModel.chatPermissions}"
+                android:onClick="@{v -> viewModel.chatPerminssionsS()}"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <!-- 檢查更新 -->
+        <TextView
+            android:id="@+id/tv_Update"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/pic_membercenter_background"
+            android:text="@string/txt_MemberCenter_Update2"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="@+id/cl_ChatPermissions"
+            app:layout_constraintStart_toStartOf="@+id/cl_ChatPermissions"
+            app:layout_constraintTop_toBottomOf="@+id/cl_ChatPermissions" />
 
         <!-- 登出 -->
         <TextView
@@ -76,9 +112,10 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
-            android:background="@drawable/membercenter_txt_background"
+            android:background="@drawable/pic_membercenter_background"
             android:text="@string/txt_MemberCenter_Logout2"
             android:textSize="20sp"
+            android:onClick="@{viewModel::logout}"
             app:layout_constraintEnd_toEndOf="@+id/tv_Update"
             app:layout_constraintStart_toStartOf="@+id/tv_Update"
             app:layout_constraintTop_toBottomOf="@+id/tv_Update" />
@@ -94,40 +131,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent" />
 
-        <!-- 語言 -->
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/cl_Language"
-            android:layout_width="0dp"
-            android:layout_height="42dp"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="30dp"
-            android:layout_marginEnd="20dp"
-            android:background="@drawable/membercenter_txt_background"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tv_Creditcard">
 
-            <!-- 語言的標題 -->
-            <TextView
-                android:id="@+id/tv_Language"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:text="@string/txt_MemberCenter_ChangeLanguage"
-                android:textSize="20sp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <!-- 語言 -->
-            <TextView
-                android:id="@+id/tv_lang"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="30dp"
-                android:text="@string/txt_MemberCenter_Language"
-                android:textSize="20sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-        </androidx.constraintlayout.widget.ConstraintLayout>
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

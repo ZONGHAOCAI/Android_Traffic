@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+<!--    好像沒用到-->
+<!--    <solid android:color="#00000000" /> &lt;!&ndash; 圓形背景的顏色，這裡設置為透明 &ndash;&gt;-->
+    <solid android:color="#FFFFFF" /> <!-- 遮罩的顏色，這裡設置為白色 -->
+    <stroke
+        android:color="#FF000000" />
+    <corners android:radius="1000dp" /> <!-- 圓形的半徑，根據您的需要進行調整 -->
+</shape>

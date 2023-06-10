@@ -41,4 +41,7 @@
     <string name="txt_RelatedPersonData_IdentityNumberTitle">Identity</string>
     <string name="txt_RelatedPersonData_Birthday_Title">Birthday</string>
     <string name="txt_RelatedPersonData_Delete">DeleteData</string>
+    <string name="txt_Membercenter_RelatedPerson_Add_Name">Name</string>
+    <string name="txt_Membercenter_RelatedPerson_Add_MembersRelationship">MembersRelationship</string>
+    <string name="txt_Membercenter_RelatedPerson_Add_IdentityNumber">IdentityNumber</string>
 </resources>

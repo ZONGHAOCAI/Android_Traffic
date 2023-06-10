@@ -36,30 +36,27 @@ class MemberCenterFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         activity?.title = getString(R.string.txt_MemberCenter_Title)
         with(binding) {
+            //個人資料
             tvMeInfo.setOnClickListener {
                 Navigation.findNavController(view).navigate(R.id.memberDataFragment)
             }
-
+            //關係人資料
             tvRelatedPersonInfo.setOnClickListener {
                 Navigation.findNavController(view).navigate(R.id.relatedPersonFragment)
             }
-
-            clLanguage.setOnClickListener {
-                //切語系
-            }
-
+            //檢查更新
             tvUpdate.setOnClickListener {
-                //檢查更新
-            }
 
+            }
+            //信用卡
             tvCreditcard.setOnClickListener{
-                //信用卡
-            }
 
+            }
+            //登出
             tvLogout.setOnClickListener {
-                //登出
-            }
 
+            }
+            //刪除帳號
             tvDeleteAccount.setOnClickListener {
                 //刪除帳號
             }

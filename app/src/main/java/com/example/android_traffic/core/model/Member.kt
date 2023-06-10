@@ -29,7 +29,7 @@ data class Member(
     var phoneNo: String = "",
     var address: String = "",
     var email: String = "",
-    var avatar: String? = null,
+    var avatarBase64 : String? = null,
     var forumPermissions: Boolean? = null,
     var chatPermissions: Boolean? = null,
     var createDateTime: Timestamp? = null

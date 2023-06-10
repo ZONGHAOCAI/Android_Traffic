@@ -14,7 +14,7 @@ class MemberDataVehideDataViewModel : ViewModel() {
 
     fun init() {
         val type = object : TypeToken<List<Vehide>>() {}.type
-        vehideDataList.value = requestTask<List<Vehide>>("$urlVehide/1", respBodyType = type)
+        vehideDataList.value = requestTask<List<Vehide>>("$urlVehide/0", respBodyType = type)
 
     }
 

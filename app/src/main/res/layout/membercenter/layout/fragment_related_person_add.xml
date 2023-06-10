@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".membercenter.controller.RelatedPersonAddFragment">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.example.android_traffic.membercenter.viewmodel.RelatedPersonAddViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+>
+
+        <!--頭像用-->
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/iv_MemberData_Avatar"
+            android:layout_width="170dp"
+            android:layout_height="170dp"
+            android:layout_marginTop="20dp"
+            android:elevation="4dp"
+            android:padding="8dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/pic_membercenter_memberdata_avatar"
+            app:imgBase64="@={viewModel.relatedPerson.avatarBase64}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:shapeAppearanceOverlay="@style/circleImageStyle"
+            app:strokeColor="#FFFFFF"
+            app:strokeWidth="5dp" />
+
+        <!--姓名-->
+        <EditText
+            android:id="@+id/et_RelatedPerson_Add_Name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="20dp"
+            android:background="@drawable/shape_memberdata_edit"
+            android:ems="10"
+            android:hint="@string/txt_Membercenter_RelatedPerson_Add_Name"
+            android:text="@={viewModel.relatedPerson.name}"
+            android:inputType="textPersonName"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/iv_MemberData_Avatar" />
+
+        <!--關係-->
+        <EditText
+            android:id="@+id/et_RelatedPerson_Add_MemberRelationShip"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/shape_memberdata_edit"
+            android:ems="10"
+            android:hint="@string/txt_Membercenter_RelatedPerson_Add_MembersRelationship"
+            android:text="@={viewModel.relatedPerson.memberRelationship}"
+            android:inputType="textPersonName"
+            app:layout_constraintEnd_toEndOf="@+id/et_RelatedPerson_Add_Name"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/et_RelatedPerson_Add_Name"
+            app:layout_constraintTop_toBottomOf="@+id/et_RelatedPerson_Add_Name" />
+
+        <!--身分證-->
+        <EditText
+            android:id="@+id/et_RelatedPerson_Add_IdentityNumber"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/shape_memberdata_edit"
+            android:ems="10"
+            android:hint="@string/txt_Membercenter_RelatedPerson_Add_IdentityNumber"
+            android:maxLength="10"
+            android:text="@={viewModel.relatedPerson.identityNumber}"
+            android:inputType="textPersonName"
+            app:layout_constraintEnd_toEndOf="@+id/et_RelatedPerson_Add_MemberRelationShip"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="@+id/et_RelatedPerson_Add_MemberRelationShip"
+            app:layout_constraintTop_toBottomOf="@+id/et_RelatedPerson_Add_MemberRelationShip" />
+
+        <!--生日-->
+        <TextView
+            android:id="@+id/tv_RelatedPerson_Add_Birthday"
+            android:layout_width="220dp"
+            android:layout_height="51dp"
+            android:ems="10"
+            android:gravity="center_vertical|left"
+            android:text="@={viewModel.relatedPerson.birthday}"
+            android:hint="@string/txt_Membercenter_RelatedPerson_Add_Birthday"
+            android:includeFontPadding="false"
+            android:paddingLeft="20dp"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="@+id/et_RelatedPerson_Add_IdentityNumber"
+            app:layout_constraintTop_toTopOf="@+id/ibtn_RelatedPerson_Add_Birthday" />
+
+        <!--底線 無作用-->
+        <View
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:background="#000000"
+            app:layout_constraintEnd_toEndOf="@+id/tv_RelatedPerson_Add_Birthday"
+            app:layout_constraintStart_toStartOf="@+id/tv_RelatedPerson_Add_Birthday"
+            app:layout_constraintTop_toBottomOf="@+id/tv_RelatedPerson_Add_Birthday" />
+
+        <!--挑選生日的按鈕-->
+        <ImageButton
+            android:id="@+id/ibtn_RelatedPerson_Add_Birthday"
+            android:layout_width="64dp"
+            android:layout_height="59dp"
+            android:layout_marginTop="20dp"
+            android:elevation="4dp"
+            android:text=""
+            android:src="@drawable/pic_membercenter_calendar"
+            tools:ignore="SpeakableTextPresentCheck"
+            app:layout_constraintEnd_toEndOf="@+id/et_RelatedPerson_Add_IdentityNumber"
+            app:layout_constraintTop_toBottomOf="@+id/et_RelatedPerson_Add_IdentityNumber" />
+
+        <!--新增按鈕-->
+        <Button
+            android:id="@+id/btn_RelatedPerson_Add_register"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="新增"
+            app:layout_constraintEnd_toEndOf="@+id/ibtn_RelatedPerson_Add_Birthday"
+            app:layout_constraintStart_toStartOf="@+id/tv_RelatedPerson_Add_Birthday"
+            app:layout_constraintTop_toBottomOf="@+id/ibtn_RelatedPerson_Add_Birthday" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

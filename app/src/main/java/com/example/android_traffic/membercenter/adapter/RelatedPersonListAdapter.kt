@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.android_traffic.R
 import com.example.android_traffic.databinding.ItemRelatedPersonBinding
 import com.example.android_traffic.core.model.RelatedPerson
+import com.example.android_traffic.core.util.setImgBase64
 import com.example.android_traffic.membercenter.viewmodel.RelatedPersonDataViewModel
 
 /**
@@ -49,12 +50,18 @@ class RelatedPersonListAdapter(private var relatedPerson: List<RelatedPerson>) :
         with(holder) {
             // 將欲顯示的關係人物件指派給LiveData，就會自動更新layout檔案的view顯示
             itemViewBinding.viewModel?.relatedPerson?.value = relatedPerson
+            println("\n\n" + itemViewBinding.viewModel?.relatedPerson?.value?.id)
+            if (itemViewBinding.viewModel?.relatedPerson?.value?.avatarBase64 != null) {
+                itemViewBinding.imgRelatedPersonAvatar.setImgBase64(itemViewBinding.viewModel?.relatedPerson?.value?.avatarBase64)
+            }
+
             val bundle = Bundle()
             bundle.putSerializable("relatedPerson", relatedPerson)
             itemView.setOnClickListener {
                 Navigation.findNavController(it)
                     .navigate(
-                        R.id.action_relatedPersonFragment_to_relatedPersonDataFragment, bundle)
+                        R.id.action_relatedPersonFragment_to_relatedPersonDataFragment, bundle
+                    )
             }
         }
     }

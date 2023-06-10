@@ -2,7 +2,7 @@
 <resources>
     <string name="txt_MemberCenter_MeInfo">個人資料</string>
     <string name="txt_MemberCenter_RelatedPersonInfo">關係人資料</string>
-    <string name="txt_MemberCenter_ChangeLanguage">語言</string>
+    <string name="txt_MemberCenter_ChangeLanguage">私訊</string>
     <string name="txt_MemberCenter_Update2">檢查更新</string>
     <string name="txt_MemberCenter_CreditCard">信用卡資料</string>
     <string name="txt_MemberCenter_Logout2">登出</string>
@@ -17,7 +17,7 @@
     <string name="txt_MemberData_Edit_NewPassword">請輸入新密碼</string>
     <string name="txt_MemberData_Edit_CNewPassword">再輸入一次新密碼</string>
     <string name="txt_MemberData_Edit_Avatar">頭像</string>
-    <string name="txt_MemberData_Edit_Name">名子</string>
+    <string name="txt_MemberData_Edit_Name">姓名</string>
     <string name="txt_MemberData_Edit_Nickname">暱稱</string>
     <string name="txt_MemberData_Edit_IdentityNumber">身分證</string>
     <string name="txt_MemberData_Edit_Birthday">生日</string>
@@ -41,5 +41,9 @@
     <string name="txt_RelatedPersonData_IdentityNumberTitle">身分證</string>
     <string name="txt_RelatedPersonData_Birthday_Title">生日</string>
     <string name="txt_RelatedPersonData_Delete">刪除資料</string>
+    <string name="txt_Membercenter_RelatedPerson_Add_Name">請輸入姓名</string>
+    <string name="txt_Membercenter_RelatedPerson_Add_MembersRelationship">請輸入關係</string>
+    <string name="txt_Membercenter_RelatedPerson_Add_IdentityNumber">請輸入身分證</string>
+    <string name="txt_Membercenter_RelatedPerson_Add_Birthday" translatable="false">點擊右邊按鈕新增生日</string>
 
 </resources>
