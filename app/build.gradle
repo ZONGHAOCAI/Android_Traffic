@@ -3,7 +3,7 @@ plugins {
     id 'org.jetbrains.kotlin.android'
     id 'kotlin-android' // 圖片用
     id 'kotlin-kapt'
-//    id 'com.google.gms.google-services'   //becky
+    id 'com.google.gms.google-services'   //becky
 }
 
 android {
@@ -49,6 +49,7 @@ android {
                             'src/main/res/layout/ticket',
                             'src/main/res/layout/payticket',
                             'src/main/res/layout/forum',
+                            'src/main/res/layout/appeal',
                             'src/main/res/layout',
                             'src/main/res'
                     ]
@@ -66,6 +67,7 @@ dependencies {
         }
     }
 
+    implementation 'androidx.security:security-crypto:1.1.0-alpha05'
     implementation 'androidx.core:core-ktx:1.7.0'
     implementation 'androidx.appcompat:appcompat:1.6.1'
     implementation 'com.google.android.material:material:1.9.0'
@@ -76,9 +78,21 @@ dependencies {
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.6.1'
     implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.1'
-//    implementation platform('com.google.firebase:firebase-bom:31.2.0')  //becky
-//    implementation 'com.google.firebase:firebase-auth-ktx'   //becky
+
+    implementation 'com.google.firebase:firebase-storage-ktx'
+    implementation 'com.google.firebase:firebase-firestore-ktx'
+    implementation platform('com.google.firebase:firebase-bom:31.2.0') //becky
+    implementation 'com.google.firebase:firebase-auth-ktx'   //becky
+
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+
+    // tpdirect.aar使用到舊的android.support.v4.content.ContextCompat
+    // gradle.properties檔案需加上android.enableJetifier=true設定
+    implementation files('libs/tpdirect.aar')
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    // 存取手機帳戶資訊支付需要wallet函式庫
+    implementation 'com.google.android.gms:play-services-wallet:19.1.0'
+    implementation 'com.github.yalantis:ucrop:2.2.4'
 }

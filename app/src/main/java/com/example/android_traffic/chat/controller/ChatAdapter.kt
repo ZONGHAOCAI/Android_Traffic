@@ -15,9 +15,16 @@ import com.example.android_traffic.databinding.ChatContentBinding
 
 class ChatAdapter(private var content: List<ChatContent>) :
     RecyclerView.Adapter<ChatAdapter.Holder>() {
+//    class ChatAdapter(private var content: MutableList<ChatMessage>) :
+//        RecyclerView.Adapter<ChatAdapter.Holder>() {
+//    fun updateChatContentList(chatcontent: MutableList<ChatMessage>) {
+//        this.content = chatcontent
+//        notifyDataSetChanged() // 更新資料內容
+//    }
+
     fun updateChatContentList(chatcontent: List<ChatContent>) {
         this.content = chatcontent
-        notifyDataSetChanged()
+        notifyDataSetChanged() // 更新資料內容
     }
 
     class Holder(val chatContentBinding: ChatContentBinding) :
@@ -37,10 +44,14 @@ class ChatAdapter(private var content: List<ChatContent>) :
     }
 
     override fun onBindViewHolder(holder: Holder, position: Int) {
+        val message = content[position]
         with(holder) {
-            chatContentBinding.viewmodel?.chatext?.value = content[position]
-
-            val itemview = content[position]
+            with(chatContentBinding){
+//                 將欲顯示的message物件指派給LiveData，就會自動更新layout檔案的view顯示
+                viewmodel?.chatext?.value = message
+//                viewmodel?.message?.value = message
+            }
+            val itemview = message
             val memberid = itemview.MemberID
             val photo = itemview.photo
 
@@ -54,8 +65,7 @@ class ChatAdapter(private var content: List<ChatContent>) :
             if (memberid == 2) {
                 Right.visibility = View.GONE
                 Left.visibility = View.VISIBLE
-            }
-            else{
+            }else{
                 Right.visibility = View.VISIBLE
                 Left.visibility = View.GONE
             }

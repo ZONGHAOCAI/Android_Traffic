@@ -4,6 +4,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.android_traffic.R
 import com.example.android_traffic.chat.model.ChatPartner
+import com.example.android_traffic.ticket.model.Content
 
 class ChatRoomViewModel : ViewModel() {
     private var chatlist = mutableListOf<ChatPartner>()
@@ -11,6 +12,20 @@ class ChatRoomViewModel : ViewModel() {
 
     init {
         loadChatList()
+    }
+
+    fun search(newText: String?) {
+        if (newText == null || newText.isEmpty()) {
+            content.value = chatlist
+        } else {
+            val searchChatList = mutableListOf<ChatPartner>()
+            chatlist.forEach { chatpartner ->
+                if (chatpartner.nickname.contains(newText, true)) {
+                    searchChatList.add(chatpartner)
+                }
+            }
+            content.value = searchChatList
+        }
     }
 
     private fun loadChatList() {

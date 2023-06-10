@@ -14,17 +14,17 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-
         <SearchView
             android:id="@+id/sv_ChatRoom_Search"
-            android:layout_width="0dp"
-            android:layout_height="56dp"
-            android:queryHint="可查詢暱稱"
+            android:layout_width="409dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:iconifiedByDefault="false"
+            android:queryHint="請輸入欲查詢的暱稱"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:ignore="MissingConstraints" />
-
+            app:layout_constraintTop_toTopOf="parent" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rv_ChatRoom_Chat"

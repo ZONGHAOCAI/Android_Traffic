@@ -52,17 +52,31 @@
                 android:background="@android:color/transparent"
                 android:src="@android:drawable/ic_menu_gallery" />
 
-            <TextView
-                android:id="@+id/tv_Chat_Text"
+            <LinearLayout
                 android:layout_width="265dp"
-                android:layout_height="50dp"
+                android:layout_height="match_parent"
                 android:background="@color/pink_style"
-                android:gravity="center_vertical"
-                android:hint="輸入訊息"
-                android:inputType="textPersonName"
-                android:paddingLeft="10dp"
-                android:text="@{viewmodel.avatar.nickname}"
-                android:textSize="16dp" />
+                android:orientation="vertical">
+
+                <EditText
+                    android:id="@+id/tv_Chat_Text"
+                    android:layout_width="265dp"
+                    android:layout_height="50dp"
+                    android:background="@color/pink_style"
+                    android:gravity="center_vertical"
+                    android:hint="輸入訊息"
+                    android:inputType="textPersonName"
+                    android:paddingLeft="10dp"
+                    android:textSize="16dp" />
+
+                <ImageView
+                    android:id="@+id/iv_Chat_Appendix"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:visibility="gone"
+                    android:layout_gravity="right" />
+
+            </LinearLayout>
 
             <ImageButton
                 android:id="@+id/imgBtn_Chat_Send"

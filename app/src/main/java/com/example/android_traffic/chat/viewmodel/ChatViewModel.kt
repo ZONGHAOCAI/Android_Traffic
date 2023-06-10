@@ -28,7 +28,14 @@ class ChatViewModel : ViewModel() {
         chatcontentlist.add(ChatContent(1, "幾點集合？", "05/12", "03:42", null))
         chatcontentlist.add(ChatContent(1, null, "05/12", "03:43", R.drawable.avatar1))
         chatcontentlist.add(ChatContent(2, "11111111111111111111111111111111111222222222222222222222", "05/12", "03:44", null))
+        chatcontentlist.add(ChatContent(2, null, "05/12", "03:50", R.drawable.avatar3))
         this.chatcontentlist = chatcontentlist
         this.chatcontent.value = this.chatcontentlist
     }
+
+//    fun AddText() {
+//        if (chatcontentlist.) {
+//
+//        }
+//    }
 }

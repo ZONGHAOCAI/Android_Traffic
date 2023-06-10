@@ -1,20 +1,21 @@
 package com.example.android_traffic.ticket.controller
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.lifecycle.findViewTreeLifecycleOwner
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
 import com.example.android_traffic.R
+import com.example.android_traffic.core.model.Ticket
 import com.example.android_traffic.databinding.FragmentTicketUnpaidBinding
 import com.example.android_traffic.ticket.model.Content
-import com.example.android_traffic.ticket.viewmodel.TicketContentViewModel
 import com.example.android_traffic.ticket.viewmodel.TicketUnpaidContentViewModel
 
-class TicketUnpaidAdapter (private var unpaidcontent: List<Content>) :
+class TicketUnpaidAdapter(var unpaidcontent: List<Ticket>) :
     RecyclerView.Adapter<TicketUnpaidAdapter.Holder>() {
-    fun updateTicketUnpaidList(content: List<Content>) {
+    fun updateTicketUnpaidList(content: List<Ticket>) {
         this.unpaidcontent = content
         notifyDataSetChanged()
     }
@@ -27,6 +28,9 @@ class TicketUnpaidAdapter (private var unpaidcontent: List<Content>) :
             FragmentTicketUnpaidBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         TicketUnpaidFragmentBinding.viewmodel = TicketUnpaidContentViewModel()
         // 設定lifecycleOwner方能監控LiveData資料變化，layout檔案的view才會更新顯示
+        val myTag = "TAG_${javaClass.simpleName}"
+//        Log.d(myTag, "parent: ${parent}")
+//        Log.d(myTag, "findViewTreeLifecycleOwner: ${parent.findViewTreeLifecycleOwner()}")
         TicketUnpaidFragmentBinding.lifecycleOwner = parent.findViewTreeLifecycleOwner()
         return Holder(TicketUnpaidFragmentBinding)
     }
@@ -38,6 +42,8 @@ class TicketUnpaidAdapter (private var unpaidcontent: List<Content>) :
     override fun onBindViewHolder(holder: Holder, position: Int) {
         with(holder) {
             ticketFragmentBinding.viewmodel?.content?.value = unpaidcontent[position]
+            val myTag = "TAG_${javaClass.simpleName}"
+            Log.d(myTag, "cardvalue: ${ticketFragmentBinding.viewmodel?.content?.value}")
             val bundle = Bundle()
             bundle.putSerializable("number", unpaidcontent[position])
             itemView.setOnClickListener {
