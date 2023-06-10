@@ -1,19 +1,17 @@
 package com.example.android_traffic.chat.controller
 
-import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.SearchView
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.android_traffic.R
 import com.example.android_traffic.chat.viewmodel.ChatRoomViewModel
 import com.example.android_traffic.databinding.FragmentChatRoomBinding
 
 class ChatRoomFragment : Fragment() {
-
     private lateinit var binding: FragmentChatRoomBinding
 
     override fun onCreateView(
@@ -31,13 +29,26 @@ class ChatRoomFragment : Fragment() {
         with(binding) {
             rvChatRoomChat.layoutManager = LinearLayoutManager(requireContext())
             viewmodel?.content?.observe(viewLifecycleOwner) {
-
                 if (rvChatRoomChat.adapter == null) {
-                    rvChatRoomChat.adapter = ChatAdapter(it)
+                    rvChatRoomChat.adapter = ChatRoomAdapter(it)
                 } else {
-                    (rvChatRoomChat.adapter as ChatAdapter).updateChatList(it)
+                    (rvChatRoomChat.adapter as ChatRoomAdapter).updateChatList(it)
                 }
             }
+
+            svChatRoomSearch.setOnQueryTextListener(object :
+                // 輸入的文字改變時呼叫
+                SearchView.OnQueryTextListener {
+                override fun onQueryTextChange(newText: String?): Boolean {
+                    viewmodel?.search(newText)
+                    return true
+                }
+
+                // 點擊虛擬鍵盤上的提交鈕時呼叫
+                override fun onQueryTextSubmit(text: String): Boolean {
+                    return false
+                }
+            })
         }
     }
 }

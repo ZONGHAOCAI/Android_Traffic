@@ -52,6 +52,10 @@ class TicketHistoryContentFragment : Fragment() {
                 ivTicketHistoryContentPicture.setImageDrawable(ivTicketHistoryContentThumbnail5.drawable)
                 ivTicketHistoryContentPicture.visibility = View.VISIBLE
             }
+            ivTicketHistoryContentPicture.setOnLongClickListener {
+                ivTicketHistoryContentPicture.visibility = View.GONE
+                true
+            }
         }
     }
 }

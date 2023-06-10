@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".creditcard.controller.CardNo2Fragment">
+
+    <data>
+<variable
+    name="viewModel"
+    type="com.example.android_traffic.creditcard.viewmodel.CardNo2ViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+         >
+
+        <Button
+            android:id="@+id/add"
+            android:layout_width="0dp"
+            android:layout_height="58dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:backgroundTint="#ED3966"
+            android:text="@string/butt"
+            android:textColor="#151313"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/over" />
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_marginStart="150dp"
+            android:layout_marginTop="50dp"
+            android:src="@drawable/visa"
+            app:layout_constraintEnd_toStartOf="@+id/imageView"
+            app:layout_constraintStart_toEndOf="@+id/UUU"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_marginStart="200dp"
+            android:layout_marginTop="50dp"
+            android:src="@drawable/mastercard"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/UUU"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/over"
+            android:layout_width="266dp"
+            android:layout_height="97dp"
+            android:layout_marginTop="40dp"
+            android:hint="@string/etover"
+            android:text="@={viewModel.card.text}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.496"
+
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/etsafe" />
+
+
+
+        <EditText
+            android:id="@+id/etsafe"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:ems="10"
+            android:hint="@string/etsafe"
+            android:inputType="numberSigned"
+            android:text="@={viewModel.card.save}"
+            app:layout_constraintEnd_toEndOf="@+id/etdata"
+            app:layout_constraintStart_toStartOf="@+id/etdata"
+            app:layout_constraintTop_toBottomOf="@+id/etdata" />
+
+        <EditText
+            android:id="@+id/etdata"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="150dp"
+            android:digits="0123456789/"
+            android:ems="10"
+            android:hint="@string/etdata"
+            android:inputType="number"
+            android:text="@={viewModel.card.data}"
+            app:layout_constraintEnd_toEndOf="@+id/etuid"
+            app:layout_constraintStart_toStartOf="@+id/etuid"
+            app:layout_constraintTop_toBottomOf="@+id/etuid" />
+
+        <EditText
+            android:id="@+id/etuid"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="100dp"
+            android:ems="10"
+            android:hint="@string/txtuid"
+            android:inputType="numberSigned"
+            android:text="@={viewModel.card.uid}"
+            android:textColorHighlight="@color/white"
+
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/UUU"
+            android:layout_width="101dp"
+            android:layout_height="49dp"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="50dp"
+            android:layout_marginEnd="300dp"
+            android:text="@string/UUU"
+            android:textColor="@color/black"
+            android:textColorLink="@color/black"
+            android:textSize="24sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
+

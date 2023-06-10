@@ -48,7 +48,7 @@
                         android:id="@+id/tv_TicketUnpaidContent_Violation"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="TextView"
+                        android:text="@{viewmodel.content.violations}"
                         android:textSize="24sp" />
                 </LinearLayout>
 
@@ -69,7 +69,7 @@
                         android:id="@+id/tv_TicketUnpaidContent_Number"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="@{viewmodel.content.number}"
+                        android:text="@{viewmodel.content.memID.toString()}"
                         android:textSize="24sp" />
                 </LinearLayout>
 
@@ -105,27 +105,30 @@
                         android:layout_width="100dp"
                         android:layout_height="100dp"
                         android:layout_weight="1"
-                        android:visibility="@{viewmodel.content.photo[0] != null ? View.VISIBLE : View.GONE }"
-                        app:imageResource="@{viewmodel.content.photo[0]}"
                         tools:srcCompat="@drawable/avatar1" />
+<!--                        android:visibility="@{viewmodel.content.appendix[0] != null ? View.VISIBLE : View.GONE }"-->
+<!--                        app:imageResource="@{viewmodel.content.appendix[0]}"-->
+
 
                     <ImageView
                         android:id="@+id/iv_TicketUnpaidContent_Thumbnail2"
                         android:layout_width="100dp"
                         android:layout_height="100dp"
                         android:layout_weight="1"
-                        android:visibility="@{viewmodel.content.photo[1] != null ? View.VISIBLE : View.GONE }"
-                        app:imageResource="@{viewmodel.content.photo[1]}"
                         tools:srcCompat="@drawable/avatar1" />
+<!--                        android:visibility="@{viewmodel.content.appendix[1] != null ? View.VISIBLE : View.GONE }"-->
+<!--                        app:imageResource="@{viewmodel.content.appendix[1]}"-->
+
 
                     <ImageView
                         android:id="@+id/iv_TicketUnpaidContent_Thumbnail3"
                         android:layout_width="100dp"
                         android:layout_height="100dp"
                         android:layout_weight="1"
-                        android:visibility="@{viewmodel.content.photo[2] != null ? View.VISIBLE : View.GONE }"
-                        app:imageResource="@{viewmodel.content.photo[2]}"
-                        tools:srcCompat="@drawable/avatar1" />                    
+                        tools:srcCompat="@drawable/avatar1" />
+<!--                    android:visibility="@{viewmodel.content.appendix[2] != null ? View.VISIBLE : View.GONE }"-->
+<!--                        app:imageResource="@{viewmodel.content.appendix[2]}"-->
+
                 </LinearLayout>
 
                 <LinearLayout
@@ -138,18 +141,19 @@
                         android:layout_width="100dp"
                         android:layout_height="100dp"
                         android:layout_weight="1"
-                        android:visibility="@{viewmodel.content.photo[3] != null ? View.VISIBLE : View.GONE }"
-                        app:imageResource="@{viewmodel.content.photo[3]}"
-                        tools:srcCompat="@drawable/avatar1" />
+                        app:srcCompat="@drawable/avatar1" />
+<!--                        android:visibility="@{viewmodel.content.appendix[3] != null ? View.VISIBLE : View.GONE }"-->
+<!--                        app:imageResource="@{viewmodel.content.appendix[3]}"-->
 
                     <ImageView
                         android:id="@+id/iv_TicketUnpaidContent_Thumbnail5"
                         android:layout_width="100dp"
                         android:layout_height="100dp"
                         android:layout_weight="1"
-                        android:visibility="@{viewmodel.content.photo[4] != null ? View.VISIBLE : View.GONE }"
-                        app:imageResource="@{viewmodel.content.photo[4]}"
                         app:srcCompat="@drawable/avatar1" />
+<!--                        android:visibility="@{viewmodel.content.appendix[4] != null ? View.VISIBLE : View.GONE }"-->
+<!--                        app:imageResource="@{viewmodel.content.appendix[4]}"-->
+
 
                 </LinearLayout>
 

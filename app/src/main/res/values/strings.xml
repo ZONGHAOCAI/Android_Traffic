@@ -49,5 +49,11 @@
     <string name="txtRegisterSendConfirmCode">送出驗證碼</string>
     <string name="txtLoginAdministrator">我是管理員</string>
     <string name="txtRegisterResult">註冊資料錯誤提示</string>
+    <string-array name="txtArray">
+        <item>在交岔路口十公尺內臨時停車</item>
+        <item>轉彎或變換車道不依標誌、標線、號誌指示</item>
+        <item>汽車駕駛人未依規定使用方向燈</item>
+        <item>併排臨時停車</item>
 
+    </string-array>
 </resources>
