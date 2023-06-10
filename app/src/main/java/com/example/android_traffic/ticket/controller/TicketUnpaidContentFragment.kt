@@ -6,33 +6,46 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.Navigation
+import androidx.navigation.fragment.findNavController
+import com.example.android_traffic.MainActivityViewModel
 import com.example.android_traffic.R
 import com.example.android_traffic.TapPay
 import com.example.android_traffic.core.model.Ticket
 import com.example.android_traffic.databinding.FragmentTicketUnpaidContentBinding
-import com.example.android_traffic.ticket.model.Content
 import com.example.android_traffic.ticket.viewmodel.TicketUnpaidContentViewModel
 
 class TicketUnpaidContentFragment : Fragment() {
 
     private lateinit var binding: FragmentTicketUnpaidContentBinding
+    private lateinit var activityViewModel: MainActivityViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         val viewmodel: TicketUnpaidContentViewModel by viewModels()
         binding = FragmentTicketUnpaidContentBinding.inflate(inflater, container, false)
         binding.viewmodel = viewmodel
         binding.lifecycleOwner = this
+        //綁定activity的viewModel
+        activityViewModel = ViewModelProvider(requireActivity())[MainActivityViewModel::class.java]
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         with(binding) {
+            activityViewModel.resultLiveData.observe(viewLifecycleOwner) {
+                if (it) {
+                    Toast.makeText(context, "繳納成功", Toast.LENGTH_SHORT).show()
+                    findNavController().popBackStack(R.id.mainFragment, false)
+                }
+
+            }
             arguments?.let {
                 it.getSerializable("number")?.let {
                     binding.viewmodel?.content?.value = it as Ticket
@@ -88,7 +101,9 @@ class TicketUnpaidContentFragment : Fragment() {
                 TapPay.getInstance().prepareGooglePay(
                     requireActivity(),
                     101101,
-                    1000
+                    binding.viewmodel?.content?.value?.amount!!,
+                    binding.viewmodel?.content?.value?.phoneNo!!,
+                    binding.viewmodel?.content?.value?.vehicleNo!!
                 )
             }
             btTicketUnpaidContentAppeal.setOnClickListener {

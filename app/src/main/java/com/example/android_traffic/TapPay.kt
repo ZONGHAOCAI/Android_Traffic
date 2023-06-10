@@ -11,7 +11,7 @@ import com.google.gson.JsonObject
 import kotlinx.coroutines.runBlocking
 import tech.cherri.tpdirect.api.*
 
-interface GetPrimeCallback {
+interface GetPrimeCallback { //
     fun onGetPrimeResult(result: Boolean)
 }
 
@@ -20,6 +20,8 @@ class TapPay {
     private lateinit var tpdGooglePay: TPDGooglePay
     private var id = 0
     private var price = 0
+    private var phone = ""
+    private var vehicleNo = ""
 
     // 測試環境網址
     private val sandbox = "https://sandbox.tappaysdk.com/"
@@ -47,9 +49,11 @@ class TapPay {
         }
     }
 
-    fun prepareGooglePay(context: Context, id: Int, price: Int) {
+    fun prepareGooglePay(context: Context, id: Int, price: Int,phone:String,vehicleNo:String) {
         this.id = id
         this.price = price
+        this.phone = phone
+        this.vehicleNo = vehicleNo
         TPDSetup.initInstance(
             context,
             context.getString(R.string.TapPay_AppID).toInt(),
@@ -132,7 +136,7 @@ class TapPay {
         paymentJO.addProperty("amount", this.price)
         paymentJO.addProperty("currency", "TWD")
         paymentJO.addProperty("order_number", "$id")
-        paymentJO.addProperty("details", "茶葉蛋1顆")
+        paymentJO.addProperty("details", "繳納罰緩")
         val cardHolderJO = JsonObject()
         cardHolderJO.addProperty("name", "Ron")
         cardHolderJO.addProperty("phone_number", "+886912345678")
