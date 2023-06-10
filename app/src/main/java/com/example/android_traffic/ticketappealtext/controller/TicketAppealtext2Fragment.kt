@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import androidx.navigation.Navigation
+import com.example.android_traffic.MainActivity
 import com.example.android_traffic.R
 import com.example.android_traffic.databinding.FragmentTicketAppealtext2Binding
 import com.example.android_traffic.ticketappealtext.viewmodel.TicketAppealtext2ViewModel
@@ -30,8 +31,9 @@ class TicketAppealtext2Fragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         with(binding) {
+
             tttbutton1.setOnClickListener {
-                Navigation.findNavController(it).navigate(R.id.ticketAppealtextassetsFragment)
+                Navigation.findNavController(it).navigate(R.id.ticketAppealtextassetsFragment2)
             }
             tttbutton2.setOnClickListener {
                 Navigation.findNavController(it).navigate(R.id.ticketAppealtextassets2Fragment)
@@ -46,6 +48,7 @@ class TicketAppealtext2Fragment : Fragment() {
                 }
 
             }
+
         }
     }
 }

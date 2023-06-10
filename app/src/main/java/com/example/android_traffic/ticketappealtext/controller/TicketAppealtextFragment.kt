@@ -1,19 +1,30 @@
 package com.example.android_traffic.ticketappealtext.controller
 
+import android.app.Activity
+import android.content.Intent
+import android.net.Uri
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
+import android.provider.MediaStore
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.WindowManager
+import android.widget.AdapterView
 import android.widget.Spinner
+import android.widget.Toast
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.fragment.app.viewModels
 import androidx.navigation.Navigation
 import androidx.navigation.fragment.findNavController
 import com.example.android_traffic.R
+import com.example.android_traffic.core.service.Server.Companion.urlFindappeal
+import com.example.android_traffic.core.service.requestTask
 import com.example.android_traffic.databinding.FragmentTicketAppealtextBinding
 
 import com.example.android_traffic.ticketappealtext.viewmodel.TicketAppealtextViewModel
+import com.google.gson.JsonObject
 
 class TicketAppealtextFragment : Fragment() {
 
@@ -29,42 +40,39 @@ class TicketAppealtextFragment : Fragment() {
         binding.viewModel = viewModel
         binding.lifecycleOwner = this
         return binding.root
+
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         with(binding) {
-            goback.setOnClickListener {
-                findNavController().popBackStack()
+        arguments?.let {bundle ->
+            bundle.getSerializable("ticketNo")?.let {
+                viewModel?.appeal?.value?.ticketNo = it as String //接收前面傳的罰單編號
             }
+        }
             gonext.setOnClickListener {
-                if (!inputValid()) {
-                    return@setOnClickListener
-                }
-                val bundle = Bundle()
-                val spinner = binding.tttmenu
-                val select = spinner.selectedItem.toString()
-                val con = viewModel!!.con.value
-                val contwo = viewModel?.contwo?.value
-                bundle.putString("select", select)
-                bundle.putString("con", con)
-                bundle.putString("contwo", contwo)
 
-               Navigation.findNavController(it).navigate(R.id.ticketAppealtext3Fragment,bundle)
+                viewModel?.appeal?.value?.reason = "================下拉內容"
+
+                val respBody = requestTask<JsonObject>(
+                    urlFindappeal, "POST", viewModel?.appeal?.value
+                )
+                respBody?.run {
+                    if (get("successful").asBoolean){
+                        Navigation.findNavController(it).navigate(R.id.ticketContentFragment)
+                        Toast.makeText(requireContext(), "申訴成功", Toast.LENGTH_SHORT).show()
+                    }
+                }
+
             }
         }
     }
-
 
     private fun inputValid(): Boolean {
         var valid = true
         with(binding) {
 
-            val con = viewModel?.con?.value?.trim()
-            val contwo = viewModel?.contwo?.value?.trim()
-            if (con == null || con.isEmpty()) {
-                tttcon.error = "內容不可空白"
-                valid = false
-            }
+
         }
         return valid
     }

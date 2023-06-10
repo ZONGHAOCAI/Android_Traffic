@@ -28,31 +28,18 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tttbutton1" />
 
-        <ImageView
-            android:id="@+id/imageView13"
-            android:layout_width="0dp"
-            android:layout_height="65dp"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="20dp"
-            android:src="@drawable/number1"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
         <TextView
             android:id="@+id/ttthand"
             android:layout_width="313dp"
             android:layout_height="52dp"
-            android:layout_marginTop="15dp"
-            android:hint="@string/ttthend"
+            android:hint="@string/txt_appeal_ttthend"
             android:textAlignment="center"
             android:textColor="#000000"
             android:textColorHint="#000000"
             android:textSize="34sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView13" />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/textView24"
@@ -69,22 +56,22 @@
 
         <Button
             android:id="@+id/tttbutton1"
-            android:layout_width="220dp"
-            android:layout_height="45dp"
+            android:layout_width="211dp"
+            android:layout_height="50dp"
             android:backgroundTint="#EC8787"
-            android:text="@string/tttbutton"
-            android:textColor="#151313"
+            android:text="@string/txt_appeal_tttbutton"
+            android:textColor="#FFFFFF"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView24" />
 
         <Button
             android:id="@+id/tttbutton2"
-            android:layout_width="220dp"
-            android:layout_height="45dp"
+            android:layout_width="203dp"
+            android:layout_height="53dp"
             android:backgroundTint="#EC8787"
-            android:text="@string/tttbutton"
-            android:textColor="#151313"
+            android:text="@string/txt_appeal_tttbutton"
+            android:textColor="#FFFFFF"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.502"
             app:layout_constraintStart_toStartOf="parent"
@@ -104,8 +91,9 @@
 
         <CheckBox
             android:id="@+id/tttyes"
-            android:layout_width="299dp"
-            android:layout_height="30dp"
+            android:layout_width="302dp"
+            android:layout_height="51dp"
+            android:layout_marginTop="20dp"
             android:text="我已閱讀網路服務條款與個資隱私條款"
             android:textAlignment="center"
             app:layout_constraintEnd_toEndOf="parent"
@@ -114,10 +102,10 @@
 
         <Button
             android:id="@+id/tttido"
-            android:layout_width="220dp"
+            android:layout_width="219dp"
             android:layout_height="60dp"
 
-            android:layout_marginTop="40dp"
+            android:layout_marginTop="30dp"
             android:backgroundTint="#EC8787"
             android:text="同意"
             android:textSize="20sp"
@@ -128,14 +116,15 @@
         <Button
             android:id="@+id/tttnot"
             android:layout_width="220dp"
-            android:layout_height="75dp"
+            android:layout_height="60dp"
             android:backgroundTint="#EA8888"
             android:text="不同意"
             android:textSize="20sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.502"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tttido" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
