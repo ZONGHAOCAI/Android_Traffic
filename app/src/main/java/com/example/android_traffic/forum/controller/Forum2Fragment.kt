@@ -1,13 +1,14 @@
-package com.example.android_traffic
+package com.example.android_traffic.forum.controller
 
-import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
+import com.example.android_traffic.forum.model.ArticleContent
 import com.example.android_traffic.databinding.FragmentForum2Binding
+import com.example.android_traffic.forum.viewmodel.Forum2ViewModel
 
 class Forum2Fragment : Fragment() {
 

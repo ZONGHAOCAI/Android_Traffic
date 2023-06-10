@@ -6,13 +6,13 @@
     <data>
 <variable
     name="viewModel"
-    type="com.example.android_traffic.ForumViewModel" />
+    type="com.example.android_traffic.forum.viewmodel.ForumViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".ForumFragment">
+        tools:context=".forum.controller.ForumFragment">
 
 
         <androidx.recyclerview.widget.RecyclerView

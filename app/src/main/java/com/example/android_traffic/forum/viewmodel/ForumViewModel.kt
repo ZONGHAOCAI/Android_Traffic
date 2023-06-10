@@ -1,7 +1,8 @@
-package com.example.android_traffic
+package com.example.android_traffic.forum.viewmodel
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.example.android_traffic.forum.model.ArticleContent
 
 class ForumViewModel : ViewModel() {
     var articleList = mutableListOf<ArticleContent>()

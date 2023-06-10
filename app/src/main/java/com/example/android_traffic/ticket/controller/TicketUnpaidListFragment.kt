@@ -42,15 +42,14 @@ class TicketUnpaidListFragment : Fragment() {
             rvTicketUnpaidListTicket.layoutManager = LinearLayoutManager(requireContext())
             viewmodel?.init()
             viewmodel?.list?.observe(viewLifecycleOwner) {
-                rvTicketUnpaidListTicket.adapter = TicketUnpaidAdapter(it)
+//                rvTicketUnpaidListTicket.adapter = TicketUnpaidAdapter(it)
                 // adapter為null要建立新的adapter
-//                if (rvTicketUnpaidListTicket.adapter == null) {
-//                    rvTicketUnpaidListTicket.adapter = TicketUnpaidAdapter(it)
-//                } else {
-//                    (rvTicketUnpaidListTicket.adapter as TicketUnpaidAdapter).updateTicketUnpaidList(it)
-//                }
+                if (rvTicketUnpaidListTicket.adapter == null) {
+                    rvTicketUnpaidListTicket.adapter = TicketUnpaidAdapter(it)
+                } else {
+                    (rvTicketUnpaidListTicket.adapter as TicketUnpaidAdapter).updateTicketUnpaidList(it)
+                }
             }
-
 
             svTicketUnpaidListSearch.setOnQueryTextListener(object :
                 SearchView.OnQueryTextListener {
@@ -65,6 +64,7 @@ class TicketUnpaidListFragment : Fragment() {
                     return false
                 }
             })
+            viewmodel?.getNewTicket()
         }
     }
 

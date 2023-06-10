@@ -42,5 +42,5 @@ data class Ticket(
     var unit: String? = null,
     var status: Int? = null,
     var paymentTime: Timestamp? = null,
-    var appendix: List<String>? = null
+    var appendix: List<ByteArray>? = null
 ) : Serializable

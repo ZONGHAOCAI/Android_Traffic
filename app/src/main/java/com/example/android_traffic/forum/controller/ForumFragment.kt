@@ -1,6 +1,5 @@
-package com.example.android_traffic
+package com.example.android_traffic.forum.controller
 
-import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -8,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.android_traffic.forum.viewmodel.ForumViewModel
 import com.example.android_traffic.databinding.FragmentForumBinding
 
 class ForumFragment : Fragment() {

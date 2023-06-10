@@ -7,10 +7,8 @@ import androidx.lifecycle.findViewTreeLifecycleOwner
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
 import com.example.android_traffic.R
-import com.example.android_traffic.databinding.FragmentTicketAppealBinding
 import com.example.android_traffic.databinding.FragmentTicketHistoryBinding
 import com.example.android_traffic.ticket.model.Content
-import com.example.android_traffic.ticket.viewmodel.TicketContentViewModel
 import com.example.android_traffic.ticket.viewmodel.TicketHistoryContentViewModel
 
 class TicketHistoryAdapter (private var historycontent: List<Content>) :

@@ -30,7 +30,7 @@ class TicketAppealtext4Fragment : Fragment() {
 override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         with(binding){
        tttover.setOnClickListener {
-           Navigation.findNavController(it).navigate(R.id.ticketContentFragment)
+           Navigation.findNavController(it).navigate(R.id.ticketUnpaidContentFragment)
 
        }
         }

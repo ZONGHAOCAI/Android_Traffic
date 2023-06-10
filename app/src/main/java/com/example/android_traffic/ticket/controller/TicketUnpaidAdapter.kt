@@ -15,10 +15,10 @@ import com.example.android_traffic.ticket.viewmodel.TicketUnpaidContentViewModel
 
 class TicketUnpaidAdapter(var unpaidcontent: List<Ticket>) :
     RecyclerView.Adapter<TicketUnpaidAdapter.Holder>() {
-//    fun updateTicketUnpaidList(content: List<Ticket>) {
-//        this.unpaidcontent = content
-//        notifyDataSetChanged()
-//    }
+    fun updateTicketUnpaidList(content: List<Ticket>) {
+        this.unpaidcontent = content
+        notifyDataSetChanged()
+    }
 
     class Holder(val ticketFragmentBinding: FragmentTicketUnpaidBinding) :
         RecyclerView.ViewHolder(ticketFragmentBinding.root)

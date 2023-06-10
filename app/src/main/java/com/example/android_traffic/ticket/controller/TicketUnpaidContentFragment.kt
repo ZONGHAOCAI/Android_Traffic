@@ -1,5 +1,6 @@
 package com.example.android_traffic.ticket.controller
 
+import android.graphics.BitmapFactory
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -34,9 +35,28 @@ class TicketUnpaidContentFragment : Fragment() {
                     binding.viewmodel?.content?.value = it as Ticket
                     val myTag = "TAG_${javaClass.simpleName}"
                     Log.d(myTag, "recycleview: ${binding.viewmodel?.content?.value}")
-
+                    if (it.appendix != null) {
+                        for (i in (it.appendix)!!) {
+                            var a = 0
+                            var byteArray = i
+                            val options = BitmapFactory.Options()
+                            options.inSampleSize = 3 // 将inSampleSize设置为3，表示将图像尺寸缩小为原来的1/3
+                            val bitmap =
+                                BitmapFactory.decodeByteArray(byteArray, 0, byteArray.size, options)
+                            when (a) {
+                                0 -> binding.ivTicketUnpaidContentThumbnail1.setImageBitmap(bitmap)
+                                1 -> binding.ivTicketUnpaidContentThumbnail2.setImageBitmap(bitmap)
+                                2 -> binding.ivTicketUnpaidContentThumbnail3.setImageBitmap(bitmap)
+                                3 -> binding.ivTicketUnpaidContentThumbnail4.setImageBitmap(bitmap)
+                                4 -> binding.ivTicketUnpaidContentThumbnail5.setImageBitmap(bitmap)
+                            }
+                            a++
+                        }
+                    }
                 }
             }
+
+
             ivTicketUnpaidContentThumbnail1.setOnClickListener {
                 ivTicketUnpaidContentPicture.setImageDrawable(ivTicketUnpaidContentThumbnail1.drawable)
                 ivTicketUnpaidContentPicture.visibility = View.VISIBLE

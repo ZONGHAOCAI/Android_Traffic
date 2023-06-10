@@ -1,13 +1,15 @@
-package com.example.android_traffic
+package com.example.android_traffic.forum.controller
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import androidx.appcompat.view.menu.MenuView.ItemView
 import androidx.lifecycle.findViewTreeLifecycleOwner
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
+import com.example.android_traffic.forum.model.ArticleContent
+import com.example.android_traffic.R
 import com.example.android_traffic.databinding.ItemForumArticleBinding
+import com.example.android_traffic.forum.viewmodel.Forum2ViewModel
 
 class ForumAdapter(private val articleContent : List<ArticleContent>):RecyclerView.Adapter<ForumAdapter.Holder>() {
     class Holder(val articleBinding : ItemForumArticleBinding) : RecyclerView.ViewHolder(articleBinding.root)
