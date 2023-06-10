@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.viewModels
 import androidx.navigation.Navigation
 import com.example.android_traffic.R
@@ -18,6 +19,7 @@ class ResetPasswordFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
+        requireActivity().title = getString(R.string.txtResetPassword)
         binding = FragmentResetPasswordBinding.inflate(inflater, container, false)
         val viewModel : ResetPasswordViewModel by viewModels()
         binding.viewModel = viewModel
@@ -46,6 +48,7 @@ class ResetPasswordFragment : Fragment() {
                     }
                     viewModel?.resetPassword()
                     Navigation.findNavController(it).navigate(R.id.loginFragment)
+                    Toast.makeText(requireContext(), "密碼修改成功,請使用新密碼登入", Toast.LENGTH_LONG).show()
                 }
 
             }

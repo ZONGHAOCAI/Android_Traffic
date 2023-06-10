@@ -2,11 +2,13 @@ package com.example.android_traffic.login.controller
 
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
+import android.os.CountDownTimer
 import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.viewModels
 import androidx.navigation.Navigation.findNavController
 import androidx.navigation.fragment.findNavController
@@ -21,7 +23,7 @@ import com.google.firebase.auth.PhoneAuthProvider.OnVerificationStateChangedCall
 import java.util.concurrent.TimeUnit
 
 class NewForgetPasswordFragment : Fragment() {
-
+    private lateinit var countDownTimer: CountDownTimer
     private val myTag = "TAG_${javaClass.simpleName}"
     private lateinit var binding: FragmentNewForgetPasswordBinding
     private lateinit var auth: FirebaseAuth
@@ -37,6 +39,7 @@ class NewForgetPasswordFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
+        requireActivity().title = getString(R.string.txtForgetPassword)
 
 
         binding = FragmentNewForgetPasswordBinding.inflate(inflater, container,false)
@@ -68,7 +71,9 @@ class NewForgetPasswordFragment : Fragment() {
             btResend.setOnClickListener {
                 if (mobileValid()) {
                     resendVerificationCode("+886${viewModel?.mobile?.value}", resendToken)
+                    startCountDown()
                 }
+
             }
         }
     }
@@ -216,6 +221,29 @@ class NewForgetPasswordFragment : Fragment() {
 //        auth.currentUser?.let {
 //            findNavController().navigate(R.id.resetPasswordFragment)   //todo 看是否可以每次按忘記密碼都轉跳到輸入驗證碼畫面
 //        }
+    }
+
+
+    //按下去按鈕會計時
+    private fun startCountDown() {
+        // 總時長60秒，間隔1秒
+        val totalSeconds = 60
+        val intervalSeconds = 1
+
+        countDownTimer = object : CountDownTimer(
+            (totalSeconds * 1000).toLong(), (intervalSeconds * 1000).toLong()
+        ) {
+            override fun onTick(millisUntilFinished: Long) {
+                val secondsRemaining = (millisUntilFinished / 1000).toInt()
+                binding.btResend.text = secondsRemaining.toString()
+            }
+
+            override fun onFinish() {
+                binding.btResend.isEnabled = true
+                binding.btResend.text = "再次發送驗證信"
+            }
+        }
+        countDownTimer.start()
     }
 
 }

@@ -2,7 +2,11 @@ package com.example.android_traffic.login.viewModel
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.example.android_traffic.core.model.Member
+import com.example.android_traffic.core.service.Server.Companion.url
+import com.example.android_traffic.core.service.requestTask
 import com.example.android_traffic.login.model.Login
+import com.google.gson.JsonObject
 
 class RegisterViewModel : ViewModel() {
     val login: MutableLiveData<Login> by lazy { MutableLiveData<Login>(Login()) }
@@ -12,6 +16,12 @@ class RegisterViewModel : ViewModel() {
     val address: MutableLiveData<String> by lazy { MutableLiveData<String>() }
     val email: MutableLiveData<String> by lazy { MutableLiveData<String>() }
     val result: MutableLiveData<String> by lazy { MutableLiveData<String>() }
+    val member: MutableLiveData<Member> by lazy { MutableLiveData(Member()) }
+
+
+//    fun register() :Boolean{
+//        val respBody = requestTask<JsonObject>(url, "POST", member?.value) //連到DB註冊
+//    }
 
 
 //    fun register() {

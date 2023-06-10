@@ -1,5 +1,6 @@
 package com.example.android_traffic.login.controller
 
+import android.app.AlertDialog
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -19,6 +20,7 @@ class LoginFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
+        requireActivity().title = getString(R.string.txtLogin)
         binding = FragmentLoginBinding.inflate(inflater, container, false)
         val viewModel: LoginViewModel by viewModels()
         binding.viewModel = viewModel
@@ -59,22 +61,39 @@ class LoginFragment : Fragment() {
                 }
 
             }
+
+            //註冊按鈕
             btnLoginRegister.setOnClickListener {
                 Navigation.findNavController(it).navigate(R.id.registerFragment)
             }
-
+            //忘記密碼按鈕
             tvLoginForgetPassword.setOnClickListener {
                 Navigation.findNavController(it).navigate(R.id.newForgetPasswordFragment)
             }
 
             tvLoginAdministrator.setOnClickListener {
+                showAlertDialog()
 
                 //TODO navigate destination location (wait for fragment to build)
-                Navigation.findNavController(it).navigate(R.id.mainFragment)
+//                Navigation.findNavController(it).navigate(R.id.mainFragment)
             }
 
         }
 
+    }
+
+
+    private fun showAlertDialog() {
+        val builder = AlertDialog.Builder(requireContext())
+        builder.setTitle("哈囉")
+            .setMessage("管理員服務正在籌備中,我們會盡快為您服務!")
+            .setPositiveButton("確定") { dialog, id ->
+                // 點擊確定按鈕後的處理邏輯
+            }
+            .setNegativeButton("取消") { dialog, id ->
+                // 點擊取消按鈕後的處理邏輯
+            }
+            .show()
     }
 
 }

@@ -30,6 +30,7 @@ class ForgetPasswordFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
+        requireActivity().title = getString(R.string.txtForgetPassword)
         binding = FragmentForgetPasswordBinding.inflate(inflater, container, false)
         val viewModel: ForgetPasswordViewModel by viewModels()
         binding.viewModel = viewModel
