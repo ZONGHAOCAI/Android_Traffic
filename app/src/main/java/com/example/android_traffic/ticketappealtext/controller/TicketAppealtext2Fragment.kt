@@ -33,7 +33,7 @@ class TicketAppealtext2Fragment : Fragment() {
         with(binding) {
 
             tttbutton1.setOnClickListener {
-                Navigation.findNavController(it).navigate(R.id.ticketAppealtextassetsFragment2)
+                Navigation.findNavController(it).navigate(R.id.ticketAppealtextassetsFragment)
             }
             tttbutton2.setOnClickListener {
                 Navigation.findNavController(it).navigate(R.id.ticketAppealtextassets2Fragment)

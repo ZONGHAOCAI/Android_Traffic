@@ -30,7 +30,7 @@
                 android:layout_width="309dp"
                 android:layout_height="40dp"
                 android:layout_marginTop="20dp"
-                android:hint="@string/cccnumber"
+                android:hint="@string/txt_appeal_cccnumber"
                 android:textColor="#000000"
                 android:textSize="24sp"
                 app:layout_constraintBottom_toBottomOf="parent"

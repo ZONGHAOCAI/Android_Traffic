@@ -19,7 +19,7 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.Navigation
 import androidx.navigation.fragment.findNavController
 import com.example.android_traffic.R
-import com.example.android_traffic.core.service.Server.Companion.urlFindappeal
+import com.example.android_traffic.core.service.Server.Companion.urlFineAppeal
 import com.example.android_traffic.core.service.requestTask
 import com.example.android_traffic.databinding.FragmentTicketAppealtextBinding
 
@@ -55,11 +55,11 @@ class TicketAppealtextFragment : Fragment() {
                 viewModel?.appeal?.value?.reason = "================下拉內容"
 
                 val respBody = requestTask<JsonObject>(
-                    urlFindappeal, "POST", viewModel?.appeal?.value
+                    urlFineAppeal, "POST", viewModel?.appeal?.value
                 )
                 respBody?.run {
                     if (get("successful").asBoolean){
-                        Navigation.findNavController(it).navigate(R.id.ticketContentFragment)
+                        Navigation.findNavController(it).navigate(R.id.ticketAppealContentFragment)
                         Toast.makeText(requireContext(), "申訴成功", Toast.LENGTH_SHORT).show()
                     }
                 }

@@ -24,7 +24,7 @@
     <string name="txt_appeal_uid">請輸入卡片號碼</string>
     <string name="txt_appeal_etsafe">安全驗證碼</string>
     <string name="txt_appeal_etname">持卡人姓名</string>
-    <string name="txt_appeal_etover" />
+
     <string name="txt_appeal_add">add</string>
     <string name="txt_appeal_goodcard">信用卡新增成功</string>
     <string name="txt_appeal_over">結果</string>
@@ -42,12 +42,12 @@
     <string name="txt_appeal_txttoolbar">申訴表單</string>
     <string name="txt_appeal_butt">新增</string>
     <string name="view">送出</string>
-    <string-array name="txtArray">
-        <item>在交岔路口十公尺內臨時停車</item>
-        <item>轉彎或變換車道不依標誌、標線、號誌指示</item>
-        <item>汽車駕駛人未依規定使用方向燈</item>
-        <item>併排臨時停車</item>
-        <item>汽車駕駛人行車速度，超過規定之最高時速或低於規定之最低時速</item>
+<!--    <string-array name="txtArray">-->
+<!--        <item>在交岔路口十公尺內臨時停車</item>-->
+<!--        <item>轉彎或變換車道不依標誌、標線、號誌指示</item>-->
+<!--        <item>汽車駕駛人未依規定使用方向燈</item>-->
+<!--        <item>併排臨時停車</item>-->
+<!--        <item>汽車駕駛人行車速度，超過規定之最高時速或低於規定之最低時速</item>-->
 
-    </string-array>
+<!--    </string-array>-->
 </resources>
