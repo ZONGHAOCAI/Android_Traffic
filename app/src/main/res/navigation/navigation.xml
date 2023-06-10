@@ -461,11 +461,6 @@
         android:name="com.example.android_traffic.TicketAppealtextassetsFragment"
         android:label="TicketAppealtextassetsFragment" />
     <fragment
-        android:id="@+id/photoFragment"
-        android:name="com.example.android_traffic.PhotoFragment"
-        android:label="fragment_photo"
-        tools:layout="@layout/fragment_photo" />
-    <fragment
         android:id="@+id/resetPasswordFragment2"
         android:name="com.example.android_traffic.login.controller.ResetPasswordFragment"
         android:label="ResetPasswordFragment" />

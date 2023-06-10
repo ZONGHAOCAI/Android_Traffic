@@ -28,7 +28,7 @@ class TicketUnpaidAdapter(var unpaidcontent: List<Ticket>) :
             FragmentTicketUnpaidBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         TicketUnpaidFragmentBinding.viewmodel = TicketUnpaidContentViewModel()
         // 設定lifecycleOwner方能監控LiveData資料變化，layout檔案的view才會更新顯示
-        val myTag = "TAG_${javaClass.simpleName}"
+//        val myTag = "TAG_${javaClass.simpleName}"
 //        Log.d(myTag, "parent: ${parent}")
 //        Log.d(myTag, "findViewTreeLifecycleOwner: ${parent.findViewTreeLifecycleOwner()}")
         TicketUnpaidFragmentBinding.lifecycleOwner = parent.findViewTreeLifecycleOwner()
