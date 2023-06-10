@@ -67,7 +67,7 @@ class MainFragment : Fragment() {
                 Log.d(myTag, "bundle: ${bundle}")
                 takePictureLargeLauncher.launch(intent)
 
-                Navigation.findNavController(view).navigate(R.id.photoFragment, bundle)
+                Navigation.findNavController(view).navigate(R.id.whistleblowerFormFragment, bundle)
             }
             imgBtnMainAppealHistory.setOnClickListener {
                 findNavController().navigate(R.id.memberCenterFragment)

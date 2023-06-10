@@ -38,7 +38,6 @@ class TicketUnpaidListViewModel : ViewModel() {
             while (isActive) {
                 val type = object : TypeToken<List<Ticket>>() {}.type
                 val ticket = requestTask<List<Ticket>>("$url/${member.value!!}/0", respBodyType = type)
-                val aaa = ticket?.get(0)
                 val oldTicket = mutableListOf<Ticket>()
                 if (ticket != null) {
                     for (i in ticket) {
