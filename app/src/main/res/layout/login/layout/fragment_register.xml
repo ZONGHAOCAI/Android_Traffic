@@ -2,13 +2,13 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".login.RegisterFragment">
+    tools:context=".login.controller.RegisterFragment">
 
     <data>
 
         <variable
             name="viewModel"
-            type="com.example.android_traffic.login.RegisterViewModel" />
+            type="com.example.android_traffic.login.viewModel.RegisterViewModel" />
     </data>
     <ScrollView
 
@@ -39,7 +39,7 @@
             android:layout_marginTop="48dp"
             android:ems="10"
             android:hint="@string/txtName"
-            android:text="@={viewModel.name}"
+            android:text="@={viewModel.member.name}"
             android:inputType="textPersonName"
             app:layout_constraintEnd_toEndOf="@+id/tvRegister"
             app:layout_constraintStart_toStartOf="@+id/tvRegister"
@@ -52,7 +52,7 @@
             android:layout_marginTop="124dp"
             android:ems="10"
             android:hint="@string/txtID"
-            android:text="@={viewModel.login.username}"
+            android:text="@={viewModel.member.identityNumber}"
             android:inputType="textPersonName"
             app:layout_constraintEnd_toEndOf="@+id/tvRegister"
             app:layout_constraintStart_toStartOf="@+id/tvRegister"
@@ -65,7 +65,7 @@
             android:layout_marginTop="200dp"
             android:ems="10"
             android:hint="@string/txtPassword"
-            android:text="@={viewModel.login.password}"
+            android:text="@={viewModel.member.password}"
             android:inputType="none|textPassword"
             app:layout_constraintEnd_toEndOf="@+id/tvRegister"
             app:layout_constraintStart_toStartOf="@+id/tvRegister"
@@ -91,7 +91,7 @@
             android:layout_marginTop="360dp"
             android:ems="10"
             android:hint="@string/txtBirthday"
-            android:text="@={viewModel.birthday}"
+            android:text="@={viewModel.member.birthday}"
             android:inputType="textPersonName"
             app:layout_constraintEnd_toEndOf="@+id/tvRegister"
             app:layout_constraintStart_toStartOf="@+id/tvRegister"
@@ -104,7 +104,7 @@
                 android:layout_marginTop="440dp"
                 android:ems="10"
                 android:hint="@string/txtNickname"
-                android:text="@={viewModel.nickname}"
+                android:text="@={viewModel.member.nickname}"
                 android:inputType="textPersonName"
                 app:layout_constraintEnd_toEndOf="@+id/tvRegister"
                 app:layout_constraintStart_toStartOf="@+id/tvRegister"
@@ -114,10 +114,10 @@
                 android:id="@+id/edtTxtRegisterAddress"
                 android:layout_width="wrap_content"
                 android:layout_height="48dp"
-                android:layout_marginTop="512dp"
+                android:layout_marginTop="515dp"
                 android:ems="10"
                 android:hint="@string/txtRegisterAddress"
-                android:text="@={viewModel.address}"
+                android:text="@={viewModel.member.address}"
                 android:inputType="textPersonName"
                 app:layout_constraintEnd_toEndOf="@+id/tvRegister"
                 app:layout_constraintStart_toStartOf="@+id/tvRegister"
@@ -130,7 +130,7 @@
                 android:layout_marginTop="600dp"
                 android:ems="10"
                 android:hint="@string/txtRegisterEmail"
-                android:text="@={viewModel.email}"
+                android:text="@={viewModel.member.email}"
                 android:inputType="textPersonName"
                 app:layout_constraintEnd_toEndOf="@+id/tvRegister"
                 app:layout_constraintStart_toStartOf="@+id/tvRegister"
@@ -143,71 +143,26 @@
                 android:layout_marginTop="680dp"
                 android:ems="10"
                 android:hint="@string/txtRegisterPhone"
-                android:text="@={viewModel.login.phone}"
+                android:text="@={viewModel.member.phoneNo}"
                 android:inputType="textPersonName"
                 app:layout_constraintEnd_toEndOf="@+id/tvRegister"
                 app:layout_constraintStart_toStartOf="@+id/tvRegister"
                 app:layout_constraintTop_toBottomOf="@+id/tvRegister" />
-
-            <EditText
-                android:id="@+id/edtTxtRegisterConfirmCode"
-                android:layout_width="wrap_content"
-                android:layout_height="48dp"
-                android:layout_marginTop="780dp"
-                android:ems="10"
-                android:hint="@string/txtRegisterConfirmCode"
-                android:text="@={viewModel.login.code}"
-                android:inputType="textPersonName"
-                app:layout_constraintEnd_toEndOf="@+id/tvRegister"
-                app:layout_constraintStart_toStartOf="@+id/tvRegister"
-                app:layout_constraintTop_toBottomOf="@+id/tvRegister" />
-
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/btRegisterConfirmMsg"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@color/sub_style"
-                android:text="@string/txtRegisterConfirmMsg"
-                app:layout_constraintEnd_toEndOf="@+id/edtTxtRegisterPhone"
-                app:layout_constraintHorizontal_bias="1.0"
-                app:layout_constraintStart_toStartOf="@+id/edtTxtRegisterPhone"
-                app:layout_constraintTop_toBottomOf="@+id/edtTxtRegisterPhone" />
-
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/btRegisterSendConfirmCode"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@color/sub_style"
-                android:text="@string/txtRegisterSendConfirmCode"
-                app:layout_constraintEnd_toEndOf="@+id/edtTxtRegisterConfirmCode"
-                app:layout_constraintHorizontal_bias="1.0"
-                app:layout_constraintStart_toStartOf="@+id/edtTxtRegisterConfirmCode"
-                app:layout_constraintTop_toBottomOf="@+id/edtTxtRegisterConfirmCode" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btRegisterSend"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="1000dp"
+                android:layout_marginTop="780dp"
                 android:layout_marginBottom="50dp"
                 android:background="@color/sub_style"
                 android:text="@string/txtSend"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="@+id/tvRegister"
-                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="@+id/tvRegister"
-                app:layout_constraintTop_toBottomOf="@+id/tvRegister" />
-
-            <TextView
-                android:id="@+id/tvRegisterResult"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="900dp"
-                android:text="@{viewModel.result}"
-                android:hint="@string/txtRegisterResult"
-                app:layout_constraintEnd_toEndOf="@+id/tvRegister"
-                app:layout_constraintStart_toStartOf="@+id/tvRegister"
-                app:layout_constraintTop_toBottomOf="@+id/tvRegister" />
+                app:layout_constraintTop_toBottomOf="@+id/tvRegister"
+                app:layout_constraintVertical_bias="0.0" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>

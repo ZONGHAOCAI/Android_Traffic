@@ -10,7 +10,6 @@ import com.example.android_traffic.R
 import com.example.android_traffic.databinding.FragmentTicketAppealBinding
 import com.example.android_traffic.ticket.model.Content
 import com.example.android_traffic.ticket.viewmodel.TicketAppealContentViewModel
-import com.example.android_traffic.ticket.viewmodel.TicketContentViewModel
 
 class TicketAppealAdapter (private var appealcontent: List<Content>) :
     RecyclerView.Adapter<TicketAppealAdapter.Holder>() {

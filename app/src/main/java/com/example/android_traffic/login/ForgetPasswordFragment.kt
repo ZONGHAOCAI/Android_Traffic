@@ -1,15 +1,15 @@
 package com.example.android_traffic.login
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.Navigation
-import com.example.android_traffic.ForgetPasswordViewModel
 import com.example.android_traffic.R
 import com.example.android_traffic.databinding.FragmentForgetPasswordBinding
+import com.example.android_traffic.login.viewModel.ForgetPasswordViewModel
 
 
 class ForgetPasswordFragment : Fragment() {
@@ -34,7 +34,7 @@ class ForgetPasswordFragment : Fragment() {
                     //帳號
 
                     if (login.value!!.username.isEmpty()) {
-                        edtTxtForgetUsername.error = getString(R.string.errUsernameEmpty)
+//                        editTxtForgetUsername.error = getString(R.string.errUsernameEmpty)
                         return@run
                     }
 //                    if (login.value!!.username.isNotEmpty()) {
