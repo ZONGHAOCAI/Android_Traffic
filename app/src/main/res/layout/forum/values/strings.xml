@@ -10,4 +10,18 @@
     <string name="txt_Forum_Next">發布</string>
     <string name="txt_Forum_ContentAdd">新增文章內容</string>
     <string name="txt_Forum_Comment">留言...</string>
+    <string name="txt_Forum_EditTime">2023/06/10</string>
+    <!-- 填上TapPay Portal上註冊的資料 -->
+    <!-- 開發人員內容 / 應用程式 -->
+    <string name="TapPay_AppID">132408</string>
+    <string name="TapPay_AppKey">app_ckUJnS7fzYeNNJ87hZNrF4uIZSnPXRQDr6BW5FW1cwsSpvTKMH9epqKyduaK</string>
+
+    <!-- 公司資訊 / 帳號金鑰 -->
+    <string name="TapPay_PartnerKey">partner_y1fVkrYrkd6CtnoP9PZOaiof0F5iIAAIh9pc43ZZdZeG9CrnqT9CmNa4</string>
+
+    <!-- 商家管理 / 商家設置 / 收單銀行 -->
+    <string name="TapPay_MerchantName">TW_TAISHIN</string>
+    <!-- 商家管理 / 商家設置 / Merchant ID -->
+    <string name="TapPay_MerchantID">eric123_TAISHIN</string>
+
 </resources>

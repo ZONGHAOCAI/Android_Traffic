@@ -26,7 +26,7 @@
 
         <ScrollView
             android:layout_width="363dp"
-            android:layout_height="590dp"
+            android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
             android:layout_marginEnd="20dp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -43,6 +43,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ems="10"
+                    android:text="@{viewModel.article.title}"
                     android:hint="@string/txt_Forum_ArtcleTitle"
                     android:inputType="textPersonName" />
 
@@ -50,7 +51,9 @@
                     android:id="@+id/etArticleContent"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
                     android:ems="10"
+                    android:text="@{viewModel.article.content}"
                     android:gravity="start|top"
                     android:inputType="textMultiLine"
                     android:lines="20" />

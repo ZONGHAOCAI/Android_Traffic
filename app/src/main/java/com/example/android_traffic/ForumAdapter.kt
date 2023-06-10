@@ -30,6 +30,7 @@ class ForumAdapter(private val articleContent : List<ArticleContent>):RecyclerVi
         bundle.putSerializable("article",articleContent)
 
         holder.itemView.setOnClickListener {
+            //判斷，如果ID與memberID相同 文章顯示可以編輯 FIXME
             Navigation.findNavController(it).navigate(R.id.action_forumFragment_to_forum2Fragment,bundle)
         }
 
