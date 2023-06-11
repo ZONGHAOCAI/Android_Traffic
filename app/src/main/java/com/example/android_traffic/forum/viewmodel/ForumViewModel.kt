@@ -2,32 +2,56 @@ package com.example.android_traffic.forum.viewmodel
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
+import com.example.android_traffic.core.model.ForumArticle
+import com.example.android_traffic.core.model.Ticket
+import com.example.android_traffic.core.service.Server
+import com.example.android_traffic.core.service.Server.Companion.urlForumArticle
+import com.example.android_traffic.core.service.requestTask
 import com.example.android_traffic.forum.model.ArticleContent
+import com.google.gson.JsonObject
+import com.google.gson.reflect.TypeToken
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.isActive
+import kotlinx.coroutines.launch
 
 class ForumViewModel : ViewModel() {
-    var articleList = mutableListOf<ArticleContent>()
+    var articleList = mutableListOf<ForumArticle>()
     //live data wrapper
-    val rvArticleList : MutableLiveData<List<ArticleContent>> by lazy { MutableLiveData<List<ArticleContent>>() }
+    val rvArticleList : MutableLiveData<List<ForumArticle>> by lazy { MutableLiveData<List<ForumArticle>>() }
+    val forumArticle : MutableLiveData<ForumArticle> by lazy { MutableLiveData() }
 
-    init {
-        loadArticle()
+
+    fun init() {
+        val type = object : TypeToken<List<ForumArticle>>() {}.type
+
+        rvArticleList.value =
+            requestTask<List<ForumArticle>>(urlForumArticle,"GET", respBodyType = type)
+        articleList = rvArticleList.value!!.toMutableList()
+//        val myTag = "TAG_${javaClass.simpleName}"
+//        Log.d(myTag, "id: ${member.value!!}")
+//        Log.d(myTag, "url: $url/${member.value!!}/0")
     }
 
-    fun loadArticle(){
-        val list = mutableListOf<ArticleContent>()
-        list.add(ArticleContent("天氣真好","123"))
-        list.add(ArticleContent("做不完根本做不完","好累喔"))
-        list.add(ArticleContent("眼睛閉閉，快樂元氣","我是廢文"))
-        list.add(ArticleContent("RecyclerView","456"))
-        list.add(ArticleContent("Layout提升術","趕進度"))
-        list.add(ArticleContent("10天速成Kotlin","我是廢文RR"))
-        list.add(ArticleContent("報名下一班","789"))
-        list.add(ArticleContent("雙眼開開，準備投胎","好累喔"))
-        list.add(ArticleContent("眼睛閉閉，快樂元氣","我是廢文"))
-        list.add(ArticleContent("天氣真好","012"))
-        list.add(ArticleContent("做不完根本做不完","趕進度"))
-        list.add(ArticleContent("眼睛閉閉，快樂元氣","我是廢文RR"))
-        this.articleList = list
-        this.rvArticleList.value = this.articleList
+    fun getNewTicket() {//reFresh
+        viewModelScope.launch {
+            while (isActive) {
+                val type = object : TypeToken<List<ForumArticle>>() {}.type
+                val article =
+                    requestTask<List<ForumArticle>>(urlForumArticle,"GET", respBodyType = type)
+                val oldTicket = mutableListOf<ForumArticle>()
+                if (article != null) {
+                    for (i in article) {
+                        oldTicket.add(i)
+                    }
+                }
+//                Log.d("TAG_${javaClass.simpleName}", "oldMessageList: ${oldTicket} ")
+                rvArticleList.value = oldTicket
+//                Log.d("TAG_${javaClass.simpleName}", "list: ${list.value} ")
+                delay(30000)
+            }
+        }
     }
+
+
 }

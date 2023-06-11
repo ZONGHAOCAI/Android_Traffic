@@ -17,6 +17,6 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:layout_marginStart="20dp"
-            android:text="@{viewModel.articleContent.articleTitle}" />
+            android:text="@{viewModel.articleContent.title}" />
     </androidx.cardview.widget.CardView>
 </layout>
