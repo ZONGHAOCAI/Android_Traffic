@@ -1,5 +1,6 @@
 package com.example.android_traffic.chat.controller
 
+import android.graphics.BitmapFactory
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -7,14 +8,17 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.SearchView
+import androidx.activity.result.registerForActivityResult
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.android_traffic.chat.viewmodel.ChatRoomViewModel
+import com.example.android_traffic.databinding.ChatNameBinding
 import com.example.android_traffic.databinding.FragmentChatRoomBinding
 import com.example.android_traffic.ticket.model.Token
 
 class ChatRoomFragment : Fragment() {
     private lateinit var binding: FragmentChatRoomBinding
+//    val myTag = "TAG_${javaClass.simpleName}"
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -55,10 +59,6 @@ class ChatRoomFragment : Fragment() {
                 }
             })
             viewmodel?.getNewChatRoom()
-
-//            if () {
-//
-//            }
         }
     }
 
@@ -66,8 +66,7 @@ class ChatRoomFragment : Fragment() {
         with(binding) {
             val preferences = Token().getEncryptedPreferences(requireContext())
             viewmodel?.member?.value = preferences.getString("MemId", "")
-            val myTag = "TAG_${javaClass.simpleName}"
-            Log.d(myTag, "getString: ${preferences.getString("MemId", "")?.javaClass?.simpleName}")
+//            Log.d(myTag, "getString: ${preferences.getString("MemId", "")?.javaClass?.simpleName}")
         }
     }
 }

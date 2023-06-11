@@ -421,44 +421,31 @@
         android:id="@+id/resetPasswordFragment"
         android:name="com.example.android_traffic.login.controller.ResetPasswordFragment"
         android:label="ResetPasswordFragment" />
-    <fragment
-        android:id="@+id/cardNo1Fragment"
-        android:name="com.example.android_traffic.CardNo1Fragment"
-        android:label="fragment_card_no1"
-        tools:layout="@layout/fragment_card_no1" />
-    <fragment
-        android:id="@+id/cardNo2Fragment"
-        android:name="com.example.android_traffic.CardNo2Fragment"
-        android:label="fragment_card_no2"
-        tools:layout="@layout/fragment_card_no2" />
+
     <fragment
         android:id="@+id/ticketAppealtextassets2Fragment"
-        android:name="com.example.android_traffic.TicketAppealtextassets2Fragment"
+        android:name="com.example.android_traffic.ticketappealtext.controller.TicketAppealtextassets2Fragment"
         android:label="fragment_ticket_appealtextassets2"
         tools:layout="@layout/fragment_ticket_appealtextassets2" />
     <fragment
         android:id="@+id/ticketAppealtext4Fragment"
-        android:name="com.example.android_traffic.TicketAppealtext4Fragment"
+        android:name="com.example.android_traffic.ticketappealtext.controller.TicketAppealtext4Fragment"
         android:label="fragment_ticket_appealtext4"
         tools:layout="@layout/fragment_ticket_appealtext4" />
-    <fragment
-        android:id="@+id/ticketAppealtext3Fragment"
-        android:name="com.example.android_traffic.TicketAppealtext3Fragment"
-        android:label="fragment_ticket_appealtext3"
-        tools:layout="@layout/fragment_ticket_appealtext3" />
+
     <fragment
         android:id="@+id/ticketAppealtext2Fragment"
-        android:name="com.example.android_traffic.TicketAppealtext2Fragment"
+        android:name="com.example.android_traffic.ticketappealtext.controller.TicketAppealtext2Fragment"
         android:label="fragment_ticket_appealtext2"
         tools:layout="@layout/fragment_ticket_appealtext2" />
     <fragment
         android:id="@+id/ticketAppealtextFragment"
-        android:name="com.example.android_traffic.TicketAppealtextFragment"
+        android:name="com.example.android_traffic.ticketappealtext.controller.TicketAppealtextFragment"
         android:label="fragment_ticket_appealtext"
         tools:layout="@layout/fragment_ticket_appealtext" />
     <fragment
         android:id="@+id/ticketAppealtextassetsFragment"
-        android:name="com.example.android_traffic.TicketAppealtextassetsFragment"
+        android:name="com.example.android_traffic.ticketappealtext.controller.TicketAppealtextassetsFragment"
         android:label="TicketAppealtextassetsFragment" />
     <fragment
         android:id="@+id/resetPasswordFragment2"

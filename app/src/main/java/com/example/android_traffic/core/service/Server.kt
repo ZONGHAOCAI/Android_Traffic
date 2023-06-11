@@ -36,6 +36,9 @@ class Server {
         const val urlForumArticle = "http://10.0.2.2:8080/javaweb-Traffic/ForumArticl"
         const val urlForumComment = "http://10.0.2.2:8080/javaweb-Traffic/ForumComment"
         const val urlFineAppeal = "http://10.0.2.2:8080/javaweb-Traffic/FineAppeal"
+
+        const val urlChatRoom = "http://10.0.2.2:8080/javaweb-Traffic/Chat/ChatRoomController"
+        const val urlChat = "http://10.0.2.2:8080/javaweb-Traffic/Chat/ChatController"
     }
 }
 

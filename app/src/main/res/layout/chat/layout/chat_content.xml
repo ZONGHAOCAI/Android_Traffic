@@ -48,7 +48,6 @@
                         android:layout_height="wrap_content"
                         android:layout_marginRight="6dp"
                         android:background="@drawable/msg_right_layout"
-                        android:hint="123測試"
                         android:paddingStart="12dp"
                         android:paddingTop="10dp"
                         android:paddingEnd="12dp"
@@ -56,7 +55,6 @@
                         android:text="@{viewmodel.chat.content}"
                         android:textSize="16dp" />
 
-<!--                    app:imageResource="@{viewmodel.chatext.photo}"-->
                     <ImageView
                         android:id="@+id/iv_ChatContent_UserImg"
                         android:layout_width="90dp"
@@ -88,7 +86,6 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content">
 
-<!--                        app:imageResource="@drawable/avatar3"-->
                         <ImageView
                             android:id="@+id/iv_ChatContent_UserAvatar"
                             android:layout_width="45dp"
@@ -102,7 +99,6 @@
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="6dp"
                             android:layout_toRightOf="@id/iv_ChatContent_UserAvatar"
-                            android:hint="name"
                             android:text="@{viewmodel.chat.nickname}"
                             android:textStyle="normal|bold" />
 
@@ -124,7 +120,6 @@
                             android:textSize="16sp"
                             android:visibility="visible" />
 
-<!--                        app:imageResource="@{viewmodel.chatext.photo}"-->
                         <ImageView
                             android:id="@+id/iv_ChatContent_OtherImg"
                             android:layout_width="90dp"

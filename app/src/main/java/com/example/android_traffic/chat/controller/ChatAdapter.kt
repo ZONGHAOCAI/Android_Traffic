@@ -1,6 +1,7 @@
 package com.example.android_traffic.chat.controller
 
 import android.content.SharedPreferences
+import android.graphics.BitmapFactory
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -15,7 +16,7 @@ import com.example.android_traffic.core.model.Chat
 import com.example.android_traffic.databinding.ChatContentBinding
 
 class ChatAdapter(private var content: List<Chat>) :
-    RecyclerView.Adapter<ChatAdapter.Holder>() {
+    RecyclerView.Adapter<ChatAdapter.ChatHolder>() {
     //    private lateinit var content: List<Chat>
     private val myTag = "TAG_${javaClass.simpleName}"
 
@@ -28,25 +29,46 @@ class ChatAdapter(private var content: List<Chat>) :
         notifyDataSetChanged() // 更新資料內容
     }
 
-    class Holder(val chatcontentBinding: ChatContentBinding) :
+    class ChatHolder(val chatcontentBinding: ChatContentBinding) :
         RecyclerView.ViewHolder(chatcontentBinding.root)
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): Holder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ChatHolder {
         val chatcontentBinding =
             ChatContentBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         chatcontentBinding.viewmodel = ChatViewModel()
         // 設定lifecycleOwner方能監控LiveData資料變化，layout檔案的view才會更新顯示
         chatcontentBinding.lifecycleOwner = parent.findViewTreeLifecycleOwner()
-        return Holder(chatcontentBinding)
+        return ChatHolder(chatcontentBinding)
     }
 
     override fun getItemCount(): Int {
         return content.size
     }
 
-    override fun onBindViewHolder(holder: Holder, position: Int) {
+    override fun onBindViewHolder(holder: ChatHolder, position: Int) {
         with(holder) {
             chatcontentBinding.viewmodel?.chat?.value = content[position]
+            if (chatcontentBinding.viewmodel?.chat?.value?.avatar != null) {
+                val byteArray = chatcontentBinding.viewmodel?.chat?.value?.avatar
+                val options = BitmapFactory.Options()
+                options.inSampleSize = 3 // 將inSampleSize設置為3 = 圖片尺寸縮小為1/3
+                val bitmap =
+                    byteArray?.let { BitmapFactory.decodeByteArray(byteArray, 0, it.size, options) }
+                chatcontentBinding.ivChatContentUserAvatar.setImageBitmap(bitmap)
+            } else {
+                val defaultImageResId = R.drawable.noimg // 預設圖片
+                chatcontentBinding.ivChatContentUserAvatar.setImageResource(defaultImageResId) // 設置預設圖片
+            }
+
+            if (chatcontentBinding.viewmodel?.chat?.value?.appendix != null) {
+                val byteArray = chatcontentBinding.viewmodel!!.chat!!.value!!.appendix
+                val options = BitmapFactory.Options()
+                options.inSampleSize = 3 // 將inSampleSize設置為3 = 圖片尺寸縮小為1/3
+                val bitmap =
+                    byteArray?.let { BitmapFactory.decodeByteArray(byteArray, 0, it.size, options) }
+                chatcontentBinding.ivChatContentOtherImg.setImageBitmap(bitmap)
+                chatcontentBinding.ivChatContentUserImg.setImageBitmap(bitmap)
+            }
 
             val itemview = content[position]
             val memberid = itemview.senderID
