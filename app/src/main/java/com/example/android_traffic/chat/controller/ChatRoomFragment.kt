@@ -34,6 +34,7 @@ class ChatRoomFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         with(binding) {
+            activity?.title ="聊天室"
             loadPreferences()
             rvChatRoomChat.layoutManager = LinearLayoutManager(requireContext())
             viewmodel?.init()

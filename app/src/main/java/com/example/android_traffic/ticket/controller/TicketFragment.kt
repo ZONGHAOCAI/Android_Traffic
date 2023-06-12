@@ -29,6 +29,7 @@ class TicketFragment : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        activity?.title = "罰單列表"
         handleViews()
     }
 
