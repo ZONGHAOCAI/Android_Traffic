@@ -22,6 +22,7 @@ import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.NavigationUI
 import com.example.android_traffic.databinding.FragmentMainBinding
 import com.example.android_traffic.ticket.model.Token
+import com.google.android.material.color.MaterialColors.getColor
 import java.io.File
 import java.io.IOException
 
@@ -43,7 +44,7 @@ class MainFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         with(binding) {
-
+            activity?.title = "首頁"
             if (viewmodel?.memberId == null){
                 Navigation.findNavController(view).navigate(R.id.loginFragment)
             }

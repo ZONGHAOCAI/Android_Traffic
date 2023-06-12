@@ -34,6 +34,7 @@ class ForumFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         with(binding){
+            activity?.title = "論壇"
             viewModel?.init()
             viewModel?.getNewTicket()
             rvForumArticleList.layoutManager = LinearLayoutManager(requireContext())
