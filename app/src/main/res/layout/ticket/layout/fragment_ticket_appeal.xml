@@ -39,6 +39,7 @@
                     android:text="@{viewmodel.content.ticketNo}"
                     android:textSize="24sp" />
 
+<!--                android:text="@{viewmodel.content.status.toString()}"-->
                 <TextView
                     android:id="@+id/tv_TicketAppeal_Status"
                     android:layout_width="wrap_content"
@@ -46,7 +47,7 @@
                     android:layout_weight="1"
                     android:gravity="right|center_vertical"
                     android:paddingRight="10dp"
-                    android:text="@{viewmodel.content.status.toString()}"
+                    android:text="申訴中"
                     android:textSize="24sp" />
             </LinearLayout>
         </androidx.cardview.widget.CardView>

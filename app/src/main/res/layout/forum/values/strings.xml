@@ -10,7 +10,7 @@
     <string name="txt_Forum_Next">發布</string>
     <string name="txt_Forum_ContentAdd">新增文章內容</string>
     <string name="txt_Forum_Comment">留言...</string>
-    <string name="txt_Forum_EditTime">2023/06/10</string>
+    <string name="txt_Forum_EditTime">2023/06/12</string>
     <!-- 填上TapPay Portal上註冊的資料 -->
     <!-- 開發人員內容 / 應用程式 -->
     <string name="TapPay_AppID">132408</string>

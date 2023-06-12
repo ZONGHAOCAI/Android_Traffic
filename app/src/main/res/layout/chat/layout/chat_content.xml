@@ -34,7 +34,7 @@
                     android:layout_marginRight="6dp"
                     android:layout_toLeftOf="@id/rl_ChatContent_User"
                     android:hint="time"
-                    android:text="@{viewmodel.chat.sendTime.toString()}" />
+                    android:text="@{viewmodel.chat.sendTime.toString().substring(5,16)}" />
 
                 <RelativeLayout
                     android:id="@+id/rl_ChatContent_User"
@@ -141,7 +141,7 @@
                         android:layout_marginLeft="5dp"
                         android:gravity="right"
                         android:hint="時間"
-                        android:text="@{viewmodel.chat.sendTime.toString()}" />
+                        android:text="@{viewmodel.chat.sendTime.toString().substring(5,16)}" />
                 </LinearLayout>
             </RelativeLayout>
 

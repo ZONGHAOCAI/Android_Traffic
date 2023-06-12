@@ -47,7 +47,7 @@
                     android:layout_weight="1"
                     android:gravity="right|center_vertical"
                     android:paddingRight="10dp"
-                    android:text="@{viewmodel.content.status.toString()}"
+                    android:text="@{viewmodel.content.status == 1 ? `已繳納` : `申訴成功` }"
                     android:textSize="24sp" />
             </LinearLayout>
         </androidx.cardview.widget.CardView>
