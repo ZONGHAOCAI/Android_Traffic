@@ -39,6 +39,8 @@ class Server {
 
         const val urlChatRoom = "http://10.0.2.2:8080/javaweb-Traffic/Chat/ChatRoomController"
         const val urlChat = "http://10.0.2.2:8080/javaweb-Traffic/Chat/ChatController"
+        const val urlTicket = "http://10.0.2.2:8080/javaweb-Traffic/Ticket/FindTicketByMemId"
+        const val urlHistoryTicket = "http://10.0.2.2:8080/javaweb-Traffic/Ticket/FindHistoryTicketByMemId"
     }
 }
 

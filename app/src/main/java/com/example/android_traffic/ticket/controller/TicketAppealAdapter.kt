@@ -7,13 +7,14 @@ import androidx.lifecycle.findViewTreeLifecycleOwner
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
 import com.example.android_traffic.R
+import com.example.android_traffic.core.model.Ticket
 import com.example.android_traffic.databinding.FragmentTicketAppealBinding
 import com.example.android_traffic.ticket.model.Content
 import com.example.android_traffic.ticket.viewmodel.TicketAppealContentViewModel
 
-class TicketAppealAdapter (private var appealcontent: List<Content>) :
+class TicketAppealAdapter (var appealcontent: List<Ticket>) :
     RecyclerView.Adapter<TicketAppealAdapter.Holder>() {
-    fun updateTicketAppealList(content: List<Content>) {
+    fun updateTicketAppealList(content: List<Ticket>) {
         this.appealcontent = content
         notifyDataSetChanged()
     }
@@ -42,7 +43,6 @@ class TicketAppealAdapter (private var appealcontent: List<Content>) :
             itemView.setOnClickListener {
                 Navigation.findNavController(it)
                     .navigate(R.id.action_ticketFragment_to_ticketAppealContentFragment, bundle)
-//                    .navigate(R.id.action_TicketAppealListFragment_to_ticketContentFragment, bundle)
             }
         }
     }

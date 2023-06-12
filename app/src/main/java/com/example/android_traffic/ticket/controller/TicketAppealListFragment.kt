@@ -9,6 +9,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.android_traffic.databinding.FragmentTicketAppealListBinding
+import com.example.android_traffic.ticket.model.Token
 import com.example.android_traffic.ticket.viewmodel.TicketAppealListViewModel
 
 class TicketAppealListFragment : Fragment() {
@@ -26,14 +27,19 @@ class TicketAppealListFragment : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
         with(binding) {
+            loadPreferences()
             rvTicketAppealListTicket.layoutManager = LinearLayoutManager(requireContext())
-            viewmodel?.content?.observe(viewLifecycleOwner) {
+            viewmodel?.init()
+            viewmodel?.list?.observe(viewLifecycleOwner) {
                 // adapter為null要建立新的adapter
                 if (rvTicketAppealListTicket.adapter == null) {
                     rvTicketAppealListTicket.adapter = TicketAppealAdapter(it)
                 } else {
-                    (rvTicketAppealListTicket.adapter as TicketAppealAdapter).updateTicketAppealList(it)
+                    (rvTicketAppealListTicket.adapter as TicketAppealAdapter).updateTicketAppealList(
+                        it
+                    )
                 }
             }
 
@@ -50,6 +56,14 @@ class TicketAppealListFragment : Fragment() {
                     return false
                 }
             })
+            //            viewmodel?.getNewTicket()
+        }
+    }
+
+    private fun loadPreferences() {
+        with(binding) {
+            val preferences = Token().getEncryptedPreferences(requireContext())
+            viewmodel?.member?.value = preferences.getString("MemId", "")
         }
     }
 }

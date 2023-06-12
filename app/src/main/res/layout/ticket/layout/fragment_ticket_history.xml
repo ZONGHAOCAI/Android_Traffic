@@ -37,7 +37,7 @@
                     android:layout_weight="1"
                     android:gravity="center_vertical"
                     android:paddingLeft="10dp"
-                    android:text="@{viewmodel.content.number}"
+                    android:text="@{viewmodel.content.ticketNo}"
                     android:textSize="24sp" />
 
                 <TextView
@@ -47,7 +47,7 @@
                     android:layout_weight="1"
                     android:gravity="right|center_vertical"
                     android:paddingRight="10dp"
-                    android:text="@{viewmodel.content.status}"
+                    android:text="@{viewmodel.content.status.toString()}"
                     android:textSize="24sp" />
             </LinearLayout>
         </androidx.cardview.widget.CardView>

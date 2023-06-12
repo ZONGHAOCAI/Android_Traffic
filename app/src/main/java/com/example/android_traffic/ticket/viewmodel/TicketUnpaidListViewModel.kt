@@ -4,12 +4,9 @@ import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.android_traffic.MainViewModel
-import com.example.android_traffic.R
-import com.example.android_traffic.core.model.Member
 import com.example.android_traffic.core.model.Ticket
+import com.example.android_traffic.core.service.Server.Companion.urlTicket
 import com.example.android_traffic.core.service.requestTask
-import com.example.android_traffic.ticket.model.Content
 import com.google.gson.reflect.TypeToken
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.isActive
@@ -17,8 +14,6 @@ import kotlinx.coroutines.launch
 
 class TicketUnpaidListViewModel : ViewModel() {
     private var unpaidlist = mutableListOf<Ticket>()
-
-    private val url = "http://10.0.2.2:8080/javaweb-Traffic/Ticket/FindTicketByMemId"
 
     //    val ticket: MutableLiveData<Ticket> by lazy { MutableLiveData<Ticket>() }
     val list: MutableLiveData<List<Ticket>> by lazy { MutableLiveData<List<Ticket>>() }
@@ -28,11 +23,11 @@ class TicketUnpaidListViewModel : ViewModel() {
         val type = object : TypeToken<List<Ticket>>() {}.type
 
         list.value =
-            requestTask<List<Ticket>>("$url/${member.value!!}/0", respBodyType = type)
+            requestTask<List<Ticket>>("$urlTicket/${member.value!!}/0", respBodyType = type)
         unpaidlist = list.value!!.toMutableList()
 //        val myTag = "TAG_${javaClass.simpleName}"
 //        Log.d(myTag, "id: ${member.value!!}")
-//        Log.d(myTag, "url: $url/${member.value!!}/0")
+//        Log.d(myTag, "url: $urlTicket/${member.value!!}/0")
     }
 
     fun getNewTicket() {
@@ -40,7 +35,7 @@ class TicketUnpaidListViewModel : ViewModel() {
             while (isActive) {
                 val type = object : TypeToken<List<Ticket>>() {}.type
                 val ticket =
-                    requestTask<List<Ticket>>("$url/${member.value!!}/0", respBodyType = type)
+                    requestTask<List<Ticket>>("$urlTicket/${member.value!!}/0", respBodyType = type)
                 val oldTicket = mutableListOf<Ticket>()
                 if (ticket != null) {
                     for (i in ticket) {

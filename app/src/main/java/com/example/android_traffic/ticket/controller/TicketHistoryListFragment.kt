@@ -13,6 +13,7 @@ import com.example.android_traffic.R
 import com.example.android_traffic.databinding.FragmentTicketHistoryBinding
 import com.example.android_traffic.databinding.FragmentTicketHistoryListBinding
 import com.example.android_traffic.databinding.FragmentTicketUnpaidListBinding
+import com.example.android_traffic.ticket.model.Token
 import com.example.android_traffic.ticket.viewmodel.TicketHistoryListViewModel
 import com.example.android_traffic.ticket.viewmodel.TicketUnpaidListViewModel
 
@@ -37,11 +38,12 @@ class TicketHistoryListFragment : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
         with(binding) {
-//            (requireActivity() as MainActivity).setSupportActionBar(toolbar)
-//            toolbar.setTitle("未繳費")
+            loadPreferences()
             rvTicketHistoryListTicket.layoutManager = LinearLayoutManager(requireContext())
-            viewmodel?.content?.observe(viewLifecycleOwner) {
+            viewmodel?.init()
+            viewmodel?.list?.observe(viewLifecycleOwner) {
                 // adapter為null要建立新的adapter
                 if (rvTicketHistoryListTicket.adapter == null) {
                     rvTicketHistoryListTicket.adapter = TicketHistoryAdapter(it)
@@ -63,6 +65,14 @@ class TicketHistoryListFragment : Fragment() {
                     return false
                 }
             })
+            //            viewmodel?.getNewTicket()
+        }
+    }
+
+    private fun loadPreferences() {
+        with(binding) {
+            val preferences = Token().getEncryptedPreferences(requireContext())
+            viewmodel?.member?.value = preferences.getString("MemId","")
         }
     }
 }

@@ -26,10 +26,8 @@ class ChatViewModel : ViewModel() {
     val chat: MutableLiveData<Chat> by lazy { MutableLiveData<Chat>() }
     val myTag = "TAG_${javaClass.simpleName}"
 
-    //    private var chatlist = mutableListOf<Chat>()
     val list: MutableLiveData<List<Chat>> by lazy { MutableLiveData<List<Chat>>() }
     val member: MutableLiveData<String> by lazy { MutableLiveData<String>() }
-//    val chatext: MutableLiveData<ChatContent> by lazy { MutableLiveData<ChatContent>() }
 
     fun init() {
         val type = object : TypeToken<List<Chat>>() {}.type
@@ -63,19 +61,4 @@ class ChatViewModel : ViewModel() {
             }
         }
     }
-
-//    private fun loadChatContentList() {
-//        var chatcontentlist = mutableListOf<ChatContent>()
-//        chatcontentlist.add(ChatContent(1, "我跟你說", "05/12", "03:12", null))
-//        chatcontentlist.add(ChatContent(1, "今天天氣那麼好", "05/12", "03:13", null))
-//        chatcontentlist.add(ChatContent(1, "要不要出去玩", "05/12", "03:14", null))
-//        chatcontentlist.add(ChatContent(2, null, "05/12", "03:20", R.drawable.avatar3))
-//        chatcontentlist.add(ChatContent(2, "好啊", "05/12", "03:23", null))
-//        chatcontentlist.add(ChatContent(1, "幾點集合？", "05/12", "03:42", null))
-//        chatcontentlist.add(ChatContent(1, null, "05/12", "03:43", R.drawable.avatar1))
-//        chatcontentlist.add(ChatContent(2, "11111111111111111111111111111111111222222222222222222222", "05/12", "03:44", null))
-//        chatcontentlist.add(ChatContent(2, null, "05/12", "03:50", R.drawable.avatar3))
-//        this.chatcontentlist = chatcontentlist
-//        this.chatcontent.value = this.chatcontentlist
-//    }
 }

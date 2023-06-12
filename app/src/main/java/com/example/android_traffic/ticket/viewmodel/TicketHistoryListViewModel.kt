@@ -2,48 +2,61 @@ package com.example.android_traffic.ticket.viewmodel
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.example.android_traffic.R
-import com.example.android_traffic.ticket.model.Content
+import androidx.lifecycle.viewModelScope
+import com.example.android_traffic.core.model.Ticket
+import com.example.android_traffic.core.service.Server
+import com.example.android_traffic.core.service.Server.Companion.urlHistoryTicket
+import com.example.android_traffic.core.service.requestTask
+import com.google.gson.reflect.TypeToken
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.isActive
+import kotlinx.coroutines.launch
 
 class TicketHistoryListViewModel : ViewModel() {
-    private var historylist = mutableListOf<Content>()
-    val content: MutableLiveData<List<Content>> by lazy { MutableLiveData<List<Content>>() }
+    private var historylist = mutableListOf<Ticket>()
 
-    init {
-        loadTicketList()
+    val list: MutableLiveData<List<Ticket>> by lazy { MutableLiveData<List<Ticket>>() }
+    val member: MutableLiveData<String> by lazy { MutableLiveData<String>() }
+
+    fun init() {
+        val type = object : TypeToken<List<Ticket>>() {}.type
+        list.value =
+            requestTask<List<Ticket>>("${urlHistoryTicket}/${member.value!!}", respBodyType = type)
+        historylist = list.value!!.toMutableList()
+    }
+
+    fun getNewTicket() {
+        viewModelScope.launch {
+            while (isActive) {
+                val type = object : TypeToken<List<Ticket>>() {}.type
+                val ticket =
+                    requestTask<List<Ticket>>(
+                        "${Server.urlHistoryTicket}/${member.value!!}",
+                        respBodyType = type
+                    )
+                val oldTicket = mutableListOf<Ticket>()
+                if (ticket != null) {
+                    for (i in ticket) {
+                        oldTicket.add(i)
+                    }
+                }
+                list.value = oldTicket
+                delay(30000)
+            }
+        }
     }
 
     fun search(newText: String?) {
         if (newText == null || newText.isEmpty()) {
-            content.value = historylist
+            list.value = historylist
         } else {
-            val searchTicketList = mutableListOf<Content>()
+            val searchTicketList = mutableListOf<Ticket>()
             historylist.forEach { ticket ->
-                if (ticket.number.contains(newText, true)) {
+                if (ticket.ticketNo?.contains(newText, true) == true) {
                     searchTicketList.add(ticket)
                 }
             }
-            content.value = searchTicketList
+            list.value = searchTicketList
         }
-    }
-
-    fun loadTicketList(): MutableList<Content> {
-        var historylist = mutableListOf<Content>()
-        historylist.add(Content("H123","已繳納", listOf(R.drawable.avatar2)))
-        historylist.add(Content("H143","申訴成功", null))
-        historylist.add(Content("H133","已繳納", listOf(R.drawable.avatar2)))
-        historylist.add(Content("H163","申訴成功", null))
-        historylist.add(Content("H173","已繳納", null))
-        historylist.add(Content("H183","已繳納", null))
-        historylist.add(Content("H193","已繳納", null))
-        historylist.add(Content("H103","已繳納", null))
-        historylist.add(Content("H263","已繳納", null))
-        historylist.add(Content("H273","已繳納", null))
-        historylist.add(Content("H283","已繳納", null))
-        historylist.add(Content("H293","已繳納", null))
-        historylist.add(Content("H303","已繳納", null))
-        this.historylist = historylist
-        this.content.value = this.historylist
-        return historylist
     }
 }
