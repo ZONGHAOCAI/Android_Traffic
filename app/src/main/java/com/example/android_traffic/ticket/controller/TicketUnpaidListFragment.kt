@@ -48,7 +48,9 @@ class TicketUnpaidListFragment : Fragment() {
                 if (rvTicketUnpaidListTicket.adapter == null) {
                     rvTicketUnpaidListTicket.adapter = TicketUnpaidAdapter(it)
                 } else {
-                    (rvTicketUnpaidListTicket.adapter as TicketUnpaidAdapter).updateTicketUnpaidList(it)
+                    (rvTicketUnpaidListTicket.adapter as TicketUnpaidAdapter).updateTicketUnpaidList(
+                        it
+                    )
                 }
             }
 
@@ -69,10 +71,10 @@ class TicketUnpaidListFragment : Fragment() {
         }
     }
 
-        private fun loadPreferences() {
+    private fun loadPreferences() {
         with(binding) {
             val preferences = Token().getEncryptedPreferences(requireContext())
-            viewmodel?.member?.value = preferences.getString("MemId","")
+            viewmodel?.member?.value = preferences.getString("MemId", "")
 //            Log.d(myTag, "getString: ${preferences.getString("MemId","")?.javaClass?.simpleName}")
         }
     }

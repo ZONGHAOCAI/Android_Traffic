@@ -48,10 +48,10 @@ class TicketUnpaidContentFragment : Fragment() {
             arguments?.let {
                 it.getSerializable("number")?.let {
                     binding.viewmodel?.content?.value = it as Ticket
-//                    Log.d(myTag, "recycleview: ${binding.viewmodel?.content?.value}")
+                    Log.d(myTag, "recycleview: ${binding.viewmodel?.content?.value}")
                     if (it.appendix != null) {
+                        var count = 0
                         for (i in (it.appendix)!!) {
-                            var count = 0
                             var byteArray = i
                             val options = BitmapFactory.Options()
                             options.inSampleSize = 3 // 将inSampleSize设置为3，表示将图像尺寸缩小为原来的1/3

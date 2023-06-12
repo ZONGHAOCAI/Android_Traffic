@@ -7,13 +7,14 @@ import androidx.lifecycle.findViewTreeLifecycleOwner
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
 import com.example.android_traffic.R
+import com.example.android_traffic.core.model.Ticket
 import com.example.android_traffic.databinding.FragmentTicketHistoryBinding
 import com.example.android_traffic.ticket.model.Content
 import com.example.android_traffic.ticket.viewmodel.TicketHistoryContentViewModel
 
-class TicketHistoryAdapter (private var historycontent: List<Content>) :
+class TicketHistoryAdapter (private var historycontent: List<Ticket>) :
     RecyclerView.Adapter<TicketHistoryAdapter.Holder>() {
-    fun updateTicketHistoryList(content: List<Content>) {
+    fun updateTicketHistoryList(content: List<Ticket>) {
         this.historycontent = content
         notifyDataSetChanged()
     }
@@ -41,7 +42,6 @@ class TicketHistoryAdapter (private var historycontent: List<Content>) :
             bundle.putSerializable("number", historycontent[position])
             itemView.setOnClickListener {
                 Navigation.findNavController(it)
-//                    .navigate(R.id.action_ticketFragment_to_ticketAppealListFragment, bundle)
                     .navigate(R.id.action_ticketFragment_to_ticketHistoryContentFragment, bundle)
             }
         }

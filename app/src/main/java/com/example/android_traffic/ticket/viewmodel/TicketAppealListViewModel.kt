@@ -2,47 +2,67 @@ package com.example.android_traffic.ticket.viewmodel
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
 import com.example.android_traffic.R
+import com.example.android_traffic.core.model.Ticket
+import com.example.android_traffic.core.service.Server
+import com.example.android_traffic.core.service.requestTask
 import com.example.android_traffic.ticket.model.Content
+import com.google.gson.reflect.TypeToken
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.isActive
+import kotlinx.coroutines.launch
 
 class TicketAppealListViewModel : ViewModel() {
-    private var appeallist = mutableListOf<Content>()
-    val content: MutableLiveData<List<Content>> by lazy { MutableLiveData<List<Content>>() }
+    private var appeallist = mutableListOf<Ticket>()
 
-    init {
-        loadTicketList()
+    //    val ticket: MutableLiveData<Ticket> by lazy { MutableLiveData<Ticket>() }
+    val list: MutableLiveData<List<Ticket>> by lazy { MutableLiveData<List<Ticket>>() }
+    val member: MutableLiveData<String> by lazy { MutableLiveData<String>() }
+
+    fun init() {
+        val type = object : TypeToken<List<Ticket>>() {}.type
+
+        list.value =
+            requestTask<List<Ticket>>(
+                "${Server.urlTicket}/${member.value!!}/2",
+                respBodyType = type
+            )
+        appeallist = list.value!!.toMutableList()
+    }
+
+    fun getNewTicket() {
+        viewModelScope.launch {
+            while (isActive) {
+                val type = object : TypeToken<List<Ticket>>() {}.type
+                val ticket =
+                    requestTask<List<Ticket>>(
+                        "${Server.urlHistoryTicket}/${member.value!!}/2",
+                        respBodyType = type
+                    )
+                val oldTicket = mutableListOf<Ticket>()
+                if (ticket != null) {
+                    for (i in ticket) {
+                        oldTicket.add(i)
+                    }
+                }
+                list.value = oldTicket
+                delay(30000)
+            }
+        }
     }
 
     fun search(newText: String?) {
         if (newText == null || newText.isEmpty()) {
-            content.value = appeallist
+            list.value = appeallist
         } else {
-            val searchTicketList = mutableListOf<Content>()
+            val searchTicketList = mutableListOf<Ticket>()
             appeallist.forEach { ticket ->
-                if (ticket.number.contains(newText, true)) {
+                if (ticket.ticketNo?.contains(newText, true) == true) {
                     searchTicketList.add(ticket)
                 }
             }
-            content.value = searchTicketList
+            list.value = searchTicketList
         }
-    }
-
-    private fun loadTicketList() {
-        var appeallist = mutableListOf<Content>()
-        appeallist.add(Content("C123","申訴中", listOf(R.drawable.avatar3)))
-        appeallist.add(Content("C143","申訴中", null))
-        appeallist.add(Content("C133","申訴中", null))
-        appeallist.add(Content("C163","申訴中", null))
-        appeallist.add(Content("C173","申訴中", null))
-        appeallist.add(Content("C183","申訴中", null))
-        appeallist.add(Content("C193","申訴中", null))
-        appeallist.add(Content("C103","申訴中", null))
-        appeallist.add(Content("C263","申訴中", null))
-        appeallist.add(Content("C273","申訴中", null))
-        appeallist.add(Content("C283","申訴中", null))
-        appeallist.add(Content("C293","申訴中", null))
-        appeallist.add(Content("C303","申訴中", null))
-        this.appeallist = appeallist
-        this.content.value = this.appeallist
     }
 }
