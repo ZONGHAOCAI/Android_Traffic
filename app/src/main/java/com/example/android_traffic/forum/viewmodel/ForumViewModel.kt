@@ -16,6 +16,7 @@ import kotlinx.coroutines.isActive
 import kotlinx.coroutines.launch
 
 class ForumViewModel : ViewModel() {
+    val myTag = "TAG_${javaClass.simpleName}"
     var articleList = mutableListOf<ForumArticle>()
     //live data wrapper
     val rvArticleList : MutableLiveData<List<ForumArticle>> by lazy { MutableLiveData<List<ForumArticle>>() }
@@ -28,9 +29,7 @@ class ForumViewModel : ViewModel() {
         rvArticleList.value =
             requestTask<List<ForumArticle>>(urlForumArticle,"GET", respBodyType = type)
         articleList = rvArticleList.value!!.toMutableList()
-//        val myTag = "TAG_${javaClass.simpleName}"
-//        Log.d(myTag, "id: ${member.value!!}")
-//        Log.d(myTag, "url: $url/${member.value!!}/0")
+
     }
 
     fun getNewTicket() {//reFresh
@@ -45,9 +44,9 @@ class ForumViewModel : ViewModel() {
                         oldTicket.add(i)
                     }
                 }
-//                Log.d("TAG_${javaClass.simpleName}", "oldMessageList: ${oldTicket} ")
+//                Log.d(myTag, "oldMessageList: ${oldTicket} ")
                 rvArticleList.value = oldTicket
-//                Log.d("TAG_${javaClass.simpleName}", "list: ${list.value} ")
+//                Log.d(myTag, "rvArticleList: ${rvArticleList.value} ")
                 delay(30000)
             }
         }
