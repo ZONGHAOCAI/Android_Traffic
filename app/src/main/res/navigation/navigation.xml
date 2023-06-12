@@ -276,7 +276,7 @@
     </fragment>
     <fragment
         android:id="@+id/addArticleFragment"
-        android:name="com.example.android_traffic.AddArticleFragment"
+        android:name="com.example.android_traffic.forum.controller.AddArticleFragment"
         android:label="fragment_add_article"
         tools:layout="@layout/fragment_add_article" />
     <fragment

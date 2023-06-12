@@ -73,7 +73,7 @@
                     android:id="@+id/tvDetailArtcleTitle"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@{viewModel.articleContent.articleTitle}"
+                    android:text="@{viewModel.articleContent.title}"
                     android:textSize="20sp" />
 
                 <TextView
@@ -88,7 +88,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="20dp"
-                    android:text="@{viewModel.articleContent.articleContent}" />
+                    android:text="@{viewModel.articleContent.content}" />
             </LinearLayout>
         </ScrollView>
 

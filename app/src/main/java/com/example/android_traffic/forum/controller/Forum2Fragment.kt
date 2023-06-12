@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
+import com.example.android_traffic.core.model.ForumArticle
 import com.example.android_traffic.forum.model.ArticleContent
 import com.example.android_traffic.databinding.FragmentForum2Binding
 import com.example.android_traffic.forum.viewmodel.Forum2ViewModel
@@ -29,7 +30,7 @@ class Forum2Fragment : Fragment() {
         with(binding){
             arguments?.let {
                 it.getSerializable("article")?.let {
-                    viewModel?.articleContent?.value = it as ArticleContent
+                    viewModel?.articleContent?.value = it as ForumArticle
                 }
             }
         }

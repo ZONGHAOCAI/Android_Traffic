@@ -8,10 +8,11 @@ import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
 import com.example.android_traffic.forum.model.ArticleContent
 import com.example.android_traffic.R
+import com.example.android_traffic.core.model.ForumArticle
 import com.example.android_traffic.databinding.ItemForumArticleBinding
 import com.example.android_traffic.forum.viewmodel.Forum2ViewModel
 
-class ForumAdapter(private val articleContent : List<ArticleContent>):RecyclerView.Adapter<ForumAdapter.Holder>() {
+class ForumAdapter(private val articleContent : List<ForumArticle>):RecyclerView.Adapter<ForumAdapter.Holder>() {
     class Holder(val articleBinding : ItemForumArticleBinding) : RecyclerView.ViewHolder(articleBinding.root)
 
     override fun getItemCount(): Int {
@@ -26,10 +27,12 @@ class ForumAdapter(private val articleContent : List<ArticleContent>):RecyclerVi
     }
 
     override fun onBindViewHolder(holder: Holder, position: Int) {
-        val articleContent = articleContent[position]
-        holder.articleBinding.viewModel?.articleContent?.value = articleContent
+        val article = articleContent[position]
+        holder.articleBinding.viewModel?.articleContent?.value = article
+//        val articleContent = articleContent[position]
+//        holder.articleBinding.viewModel?.articleContent?.value = articleContent
         val bundle = Bundle()
-        bundle.putSerializable("article",articleContent)
+        bundle.putSerializable("article",article)
 
         holder.itemView.setOnClickListener {
             //判斷，如果ID與memberID相同 文章顯示可以編輯 FIXME
