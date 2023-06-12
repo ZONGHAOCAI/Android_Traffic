@@ -53,18 +53,20 @@ class TicketAppealtextFragment : Fragment() {
             gonext.setOnClickListener {
 
                 viewModel?.appeal?.value?.reason = "================下拉內容"
-
-                val respBody = requestTask<JsonObject>(
-                    urlFineAppeal, "POST", viewModel?.appeal?.value
-                )
-                respBody?.run {
-                    if (get("successful").asBoolean){
-                        Navigation.findNavController(it).navigate(R.id.ticketAppealContentFragment)
-                        Toast.makeText(requireContext(), "申訴成功", Toast.LENGTH_SHORT).show()
-                    }
-                }
+                Navigation.findNavController(it).navigate(R.id.mainFragment)
+                Toast.makeText(requireContext(), "申訴成功", Toast.LENGTH_SHORT).show()
+//                val respBody = requestTask<JsonObject>(
+//                    urlFineAppeal, "POST", viewModel?.appeal?.value
+//                )
+//                respBody?.run {
+//                    if (get("successful").asBoolean){
+//                        Navigation.findNavController(it).navigate(R.id.ticketAppealContentFragment)
+//                        Toast.makeText(requireContext(), "申訴成功", Toast.LENGTH_SHORT).show()
+//                    }
+//                }
 
             }
+
         }
     }
 

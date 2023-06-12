@@ -48,6 +48,9 @@ class TicketAppealtext2Fragment : Fragment() {
                 }
 
             }
+            tttnot.setOnClickListener {
+                Navigation.findNavController(it).navigate(R.id.ticketFragment)
+            }
 
         }
     }

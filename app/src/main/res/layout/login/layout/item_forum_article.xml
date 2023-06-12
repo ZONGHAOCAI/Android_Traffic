@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
 <variable
@@ -7,16 +8,36 @@
     type="com.example.android_traffic.forum.viewmodel.Forum2ViewModel" />
     </data>
 
+<!--    <androidx.cardview.widget.CardView-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="100dp">-->
+
+<!--        <TextView-->
+<!--            android:id="@+id/tvArticleTitle"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_gravity="center_vertical"-->
+<!--            android:layout_marginStart="20dp"-->
+<!--            android:text="@{viewModel.articleContent.title}" />-->
+<!--    </androidx.cardview.widget.CardView>-->
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="100dp">
+        android:layout_height="wrap_content"
+        android:layout_margin="4dp"
+        android:foreground="?selectableItemBackground"
+        app:cardBackgroundColor="#DDDDDD"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="6dp">
 
-        <TextView
-            android:id="@+id/tvArticleTitle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:layout_marginStart="20dp"
-            android:text="@{viewModel.articleContent.title}" />
+            <TextView
+                android:id="@+id/tvArticleTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="60dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="6dp"
+                android:text="@{viewModel.articleContent.title}"
+                android:textColor="#0000FF"
+                android:textSize="22sp" />
+
     </androidx.cardview.widget.CardView>
 </layout>

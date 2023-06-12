@@ -41,6 +41,7 @@
     <string name="txt_appeal_txtchoose">設定付款方式</string>
     <string name="txt_appeal_txttoolbar">申訴表單</string>
     <string name="txt_appeal_butt">新增</string>
+    <string name="txt_appeal_appealmeun">請輸入欲申訴內容</string>
     <string name="view">送出</string>
 <!--    <string-array name="txtArray">-->
 <!--        <item>在交岔路口十公尺內臨時停車</item>-->
