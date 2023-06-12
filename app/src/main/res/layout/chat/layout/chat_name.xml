@@ -5,7 +5,6 @@
     android:layout_marginRight="10dp">
 
     <data>
-
         <variable
             name="viewmodel"
             type="com.example.android_traffic.chat.viewmodel.ChatViewModel" />
@@ -37,7 +36,6 @@
                     android:layout_height="72dp"
                     android:layout_marginLeft="15dp"
                     android:layout_marginRight="10dp"
-                    app:imageResource="@{viewmodel.avatar.avatar}"
                     tools:srcCompat="@drawable/avatar1" />
 
                 <TextView
@@ -47,7 +45,7 @@
                     android:layout_gravity="center_vertical"
                     android:layout_marginRight="10dp"
                     android:gravity="center_vertical"
-                    android:text="@{viewmodel.avatar.nickname}"
+                    android:text="@{viewmodel.chatroom.nickname}"
                     android:textSize="24sp" />
             </LinearLayout>
         </androidx.cardview.widget.CardView>

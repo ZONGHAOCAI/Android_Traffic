@@ -16,6 +16,7 @@ import com.example.android_traffic.ticket.viewmodel.TicketUnpaidListViewModel
 class TicketUnpaidListFragment : Fragment() {
 
     private lateinit var binding: FragmentTicketUnpaidListBinding
+//    val myTag = "TAG_${javaClass.simpleName}"
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -64,7 +65,7 @@ class TicketUnpaidListFragment : Fragment() {
                     return false
                 }
             })
-            viewmodel?.getNewTicket()
+//            viewmodel?.getNewTicket()
         }
     }
 
@@ -72,8 +73,7 @@ class TicketUnpaidListFragment : Fragment() {
         with(binding) {
             val preferences = Token().getEncryptedPreferences(requireContext())
             viewmodel?.member?.value = preferences.getString("MemId","")
-            val myTag = "TAG_${javaClass.simpleName}"
-            Log.d(myTag, "getString: ${preferences.getString("MemId","")?.javaClass?.simpleName}")
+//            Log.d(myTag, "getString: ${preferences.getString("MemId","")?.javaClass?.simpleName}")
         }
     }
 }

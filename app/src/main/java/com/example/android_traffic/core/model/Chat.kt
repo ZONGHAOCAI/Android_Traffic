@@ -11,7 +11,7 @@ data class Chat(
     var appendix: ByteArray? = null, // 附件
     var appendixBase64: String? = null,
     var sendTime: Timestamp? = null, // 傳送時間
-    var readStatus: Int? = null, // 已讀狀態
+    var readStatus: Boolean = false, // 已讀狀態
     var memId1: Int? = null,
     var memId2: Int? = null,
     var nickname: String? = null, // 另外一個使用者的暱稱

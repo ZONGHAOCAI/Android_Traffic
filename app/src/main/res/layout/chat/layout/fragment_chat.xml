@@ -23,7 +23,6 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
-
         </androidx.recyclerview.widget.RecyclerView>
 
         <LinearLayout
@@ -66,6 +65,7 @@
                     android:gravity="center_vertical"
                     android:hint="輸入訊息"
                     android:inputType="textPersonName"
+                    android:text="@={viewmodel.chat.content}"
                     android:paddingLeft="10dp"
                     android:textSize="16dp" />
 

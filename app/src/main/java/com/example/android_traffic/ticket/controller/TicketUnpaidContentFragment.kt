@@ -20,9 +20,9 @@ import com.example.android_traffic.databinding.FragmentTicketUnpaidContentBindin
 import com.example.android_traffic.ticket.viewmodel.TicketUnpaidContentViewModel
 
 class TicketUnpaidContentFragment : Fragment() {
-
     private lateinit var binding: FragmentTicketUnpaidContentBinding
     private lateinit var activityViewModel: MainActivityViewModel
+    val myTag = "TAG_${javaClass.simpleName}"
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -44,13 +44,11 @@ class TicketUnpaidContentFragment : Fragment() {
                     Toast.makeText(context, "繳納成功", Toast.LENGTH_SHORT).show()
                     findNavController().popBackStack(R.id.mainFragment, false)
                 }
-
             }
             arguments?.let {
                 it.getSerializable("number")?.let {
                     binding.viewmodel?.content?.value = it as Ticket
-                    val myTag = "TAG_${javaClass.simpleName}"
-                    Log.d(myTag, "recycleview: ${binding.viewmodel?.content?.value}")
+//                    Log.d(myTag, "recycleview: ${binding.viewmodel?.content?.value}")
                     if (it.appendix != null) {
                         for (i in (it.appendix)!!) {
                             var count = 0
@@ -71,7 +69,6 @@ class TicketUnpaidContentFragment : Fragment() {
                     }
                 }
             }
-
 
             ivTicketUnpaidContentThumbnail1.setOnClickListener {
                 ivTicketUnpaidContentPicture.setImageDrawable(ivTicketUnpaidContentThumbnail1.drawable)
