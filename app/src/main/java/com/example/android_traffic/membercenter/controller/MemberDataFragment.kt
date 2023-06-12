@@ -54,10 +54,7 @@ class MemberDataFragment : Fragment() {
         with(binding) {
             viewModel?.init()
             activity?.title = getString(R.string.txt_MemberData_Title)
-            viewModel?.member?.observe(viewLifecycleOwner){member ->
 
-
-            }
             //修改頭像
             ivMemberDataAvatar.setOnClickListener {
                 alertDialogPicture(requireContext())
@@ -113,11 +110,9 @@ class MemberDataFragment : Fragment() {
 //            binding.viewModel?.member?.value?.birthday = rocDate
 
             editBirthday(view, rocDate)
-            binding.tvMemberDataBirthday.text = rocDate
         }, year, month, day)
 
         datePickerDialog.show()
-//        binding.tvMemberDataBirthday.text = rocDate
         binding.viewModel?.member?.value?.birthday = rocDate
     }
         private fun alertDialogPicture(context: Context) {

@@ -7,7 +7,7 @@
     <data>
         <variable
             name="viewModel"
-            type="com.example.android_traffic.membercenter.viewmodel.RelatedPersonViewModel" />
+            type="com.example.android_traffic.membercenter.viewmodel.RelatedPersonAddViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -25,7 +25,7 @@
             android:padding="8dp"
             android:scaleType="centerCrop"
             android:src="@drawable/pic_membercenter_memberdata_avatar"
-            app:imgBase64="@={viewModel.relatedPersonN.avatarBase64}"
+            app:imgBase64="@={viewModel.relatedPerson.avatarBase64}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.497"
             app:layout_constraintStart_toStartOf="parent"
@@ -45,7 +45,7 @@
             android:background="@drawable/shape_memberdata_edit"
             android:ems="10"
             android:hint="@string/txt_Membercenter_RelatedPerson_Add_Name"
-            android:text="@={viewModel.relatedPersonN.name}"
+            android:text="@={viewModel.relatedPerson.name}"
             android:inputType="textPersonName"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
@@ -61,7 +61,7 @@
             android:background="@drawable/shape_memberdata_edit"
             android:ems="10"
             android:hint="@string/txt_Membercenter_RelatedPerson_Add_MembersRelationship"
-            android:text="@={viewModel.relatedPersonN.memberRelationship}"
+            android:text="@={viewModel.relatedPerson.memberRelationship}"
             android:inputType="textPersonName"
             app:layout_constraintEnd_toEndOf="@+id/et_RelatedPerson_Add_Name"
             app:layout_constraintHorizontal_bias="0.0"
@@ -78,7 +78,7 @@
             android:ems="10"
             android:hint="@string/txt_Membercenter_RelatedPerson_Add_IdentityNumber"
             android:maxLength="10"
-            android:text="@={viewModel.relatedPersonN.identityNumber}"
+            android:text="@={viewModel.relatedPerson.identityNumber}"
             android:inputType="textPersonName"
             app:layout_constraintEnd_toEndOf="@+id/et_RelatedPerson_Add_MemberRelationShip"
             app:layout_constraintHorizontal_bias="1.0"
@@ -92,7 +92,7 @@
             android:layout_height="51dp"
             android:ems="10"
             android:gravity="center_vertical|left"
-            android:text="@={viewModel.relatedPersonN.birthday}"
+            android:text="@={viewModel.relatedPerson.birthday}"
             android:hint="@string/txt_Membercenter_RelatedPerson_Add_Birthday"
             android:includeFontPadding="false"
             android:paddingLeft="20dp"
