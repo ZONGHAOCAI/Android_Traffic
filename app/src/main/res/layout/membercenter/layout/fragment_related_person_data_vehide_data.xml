@@ -17,12 +17,59 @@
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rv_MemberData_VehideData"
-            android:layout_width="410dp"
-            android:layout_height="595dp"
+            android:layout_width="match_parent"
+            android:layout_height="490dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintStart_toStartOf="parent" />
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="wrap_content"
+                android:layout_height="62dp"
+                android:layout_marginTop="20dp"
+                android:layout_weight="1"
+                app:layout_constraintEnd_toEndOf="@+id/cl_Avatar"
+                app:layout_constraintStart_toStartOf="@+id/cl_Avatar"
+                app:layout_constraintTop_toBottomOf="@+id/cl_Avatar">
+
+                <TextView
+                    android:id="@+id/tv_MemberData_VehideType_Title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/txt_MemberCenter_VehideType_Title"
+                    android:textSize="20sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="wrap_content"
+                android:layout_height="62dp"
+                android:layout_marginTop="20dp"
+                android:layout_weight="1"
+                app:layout_constraintEnd_toEndOf="@+id/cl_Avatar"
+                app:layout_constraintStart_toStartOf="@+id/cl_Avatar"
+                app:layout_constraintTop_toBottomOf="@+id/cl_Avatar">
+
+                <TextView
+                    android:id="@+id/tv_MemberData_VehideNumber_Title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/txt_MemberCenter_VehideData_Title"
+                    android:textSize="20sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </LinearLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
