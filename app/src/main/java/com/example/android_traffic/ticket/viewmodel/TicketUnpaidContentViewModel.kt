@@ -6,6 +6,5 @@ import com.example.android_traffic.core.model.Ticket
 import com.example.android_traffic.ticket.model.Content
 
 class TicketUnpaidContentViewModel : ViewModel() {
-    val content : MutableLiveData<Ticket> by lazy { MutableLiveData<Ticket>() }
-    
+    val content: MutableLiveData<Ticket> by lazy { MutableLiveData<Ticket>() }
 }
