@@ -17,6 +17,7 @@
         android:layout_height="match_parent"
         android:textAlignment="center">
 
+
         <Button
             android:id="@+id/gonext"
             android:layout_width="153dp"
@@ -24,7 +25,9 @@
             android:layout_marginBottom="10dp"
             android:layout_weight="1"
             android:backgroundTint="#EC8787"
-            android:text="@string/view"
+            android:text="送出"
+            android:textColor="#FFFFFF"
+            android:textColorHint="#FFFFFF"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
@@ -87,6 +90,7 @@
             android:layout_height="329dp"
             android:ems="10"
             android:gravity="start|top"
+            android:hint="@string/txt_appeal_appealmeun"
             android:inputType="textMultiLine"
             android:paddingStart="30dp"
             android:paddingEnd="30dp"
