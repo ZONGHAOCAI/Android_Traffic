@@ -22,6 +22,7 @@
             android:layout_marginBottom="30dp"
             android:backgroundTint="#EC8787"
             android:text="返回"
+            android:textColor="#FFFFFF"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
