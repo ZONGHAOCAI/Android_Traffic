@@ -44,22 +44,22 @@ class MemberCenterFragment : Fragment() {
             tvRelatedPersonInfo.setOnClickListener {
                 Navigation.findNavController(view).navigate(R.id.relatedPersonFragment)
             }
-            //檢查更新
-            tvUpdate.setOnClickListener {
-
-            }
-            //信用卡
-            tvCreditcard.setOnClickListener{
-
-            }
+//            //檢查更新
+//            tvUpdate.setOnClickListener {
+//
+//            }
+//            //信用卡
+//            tvCreditcard.setOnClickListener{
+//
+//            }
             //登出
             tvLogout.setOnClickListener {
 
             }
             //刪除帳號
-            tvDeleteAccount.setOnClickListener {
-                //刪除帳號
-            }
+//            tvDeleteAccount.setOnClickListener {
+//                //刪除帳號
+//            }
 
 
         }
