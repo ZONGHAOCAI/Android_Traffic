@@ -26,8 +26,9 @@
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/cl_MemberData_VehideType"
                 android:layout_width="wrap_content"
-                android:layout_height="62dp"
-                android:layout_marginTop="20dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
                 android:layout_weight="1"
                 app:layout_constraintEnd_toEndOf="@+id/cl_Avatar"
                 app:layout_constraintStart_toStartOf="@+id/cl_Avatar"
@@ -49,8 +50,9 @@
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/cl_MemberData_VehideNumber"
                 android:layout_width="wrap_content"
-                android:layout_height="62dp"
-                android:layout_marginTop="20dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
                 android:layout_weight="1"
                 app:layout_constraintEnd_toEndOf="@+id/cl_Avatar"
                 app:layout_constraintStart_toStartOf="@+id/cl_Avatar"
