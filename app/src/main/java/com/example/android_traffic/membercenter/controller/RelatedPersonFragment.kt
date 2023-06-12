@@ -31,7 +31,7 @@ class RelatedPersonFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         with(binding){
-
+            activity?.title = "關係人資料"
 //          recyclerView一定要設定 LinearLayoutManager 不然不會顯示東西
             recyclerView.layoutManager = LinearLayoutManager(requireContext())
             viewModel?.relatedPerson?.observe(viewLifecycleOwner) { relatedPerson ->
