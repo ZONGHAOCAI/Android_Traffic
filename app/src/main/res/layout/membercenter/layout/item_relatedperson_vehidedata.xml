@@ -19,14 +19,15 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="horizontal">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/cl_RelatedPersonData_VehideType"
                 android:layout_width="wrap_content"
-                android:layout_height="62dp"
-                android:layout_marginTop="20dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
                 android:layout_weight="1"
                 app:layout_constraintEnd_toEndOf="@+id/cl_Avatar"
                 app:layout_constraintStart_toStartOf="@+id/cl_Avatar"
@@ -48,8 +49,9 @@
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/cl_RelatedPersonData_VehideNumber"
                 android:layout_width="wrap_content"
-                android:layout_height="62dp"
-                android:layout_marginTop="20dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
                 android:layout_weight="1"
                 app:layout_constraintEnd_toEndOf="@+id/cl_Avatar"
                 app:layout_constraintStart_toStartOf="@+id/cl_Avatar"
