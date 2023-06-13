@@ -138,9 +138,9 @@ class TapPay {
         paymentJO.addProperty("order_number", "$id")
         paymentJO.addProperty("details", "繳納罰緩")
         val cardHolderJO = JsonObject()
-        cardHolderJO.addProperty("name", "Ron")
-        cardHolderJO.addProperty("phone_number", "+886912345678")
-        cardHolderJO.addProperty("email", "ron@email.com")
+        cardHolderJO.addProperty("name", "陳展")
+        cardHolderJO.addProperty("phone_number", "+8860927782072")
+        cardHolderJO.addProperty("email", "749ka@gmail.com")
         paymentJO.add("cardholder", cardHolderJO)
 
         // TapPay測試區網址
