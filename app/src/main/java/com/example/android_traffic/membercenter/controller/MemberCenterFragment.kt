@@ -1,5 +1,6 @@
 package com.example.android_traffic.membercenter.controller
 
+import android.content.Context
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -36,6 +37,11 @@ class MemberCenterFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         activity?.title = getString(R.string.txt_MemberCenter_Title)
         with(binding) {
+            val sharedPreferences = requireContext().getSharedPreferences("my_prefs", Context.MODE_PRIVATE)
+            val editor = sharedPreferences.edit()
+            editor.clear()
+            editor.apply()
+
             //個人資料
             tvMeInfo.setOnClickListener {
                 Navigation.findNavController(view).navigate(R.id.memberDataFragment)

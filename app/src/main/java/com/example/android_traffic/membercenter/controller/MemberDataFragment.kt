@@ -4,6 +4,7 @@ import android.app.Activity
 import android.app.AlertDialog
 import android.app.DatePickerDialog
 import android.content.Context
+import android.content.DialogInterface
 import android.content.Intent
 import android.graphics.BitmapFactory
 import android.graphics.ImageDecoder
@@ -18,6 +19,7 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.annotation.RequiresApi
+import androidx.core.content.ContextCompat
 import androidx.core.content.FileProvider
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
@@ -110,9 +112,12 @@ class MemberDataFragment : Fragment() {
 //            binding.viewModel?.member?.value?.birthday = rocDate
 
             editBirthday(view, rocDate)
+            binding.tvMemberDataBirthday.text = rocDate
         }, year, month, day)
 
         datePickerDialog.show()
+        datePickerDialog.getButton(DialogInterface.BUTTON_POSITIVE)?.setTextColor(ContextCompat.getColor(requireContext(), R.color.black))
+        datePickerDialog.getButton(DialogInterface.BUTTON_NEGATIVE)?.setTextColor(ContextCompat.getColor(requireContext(), R.color.black))
         binding.viewModel?.member?.value?.birthday = rocDate
     }
         private fun alertDialogPicture(context: Context) {

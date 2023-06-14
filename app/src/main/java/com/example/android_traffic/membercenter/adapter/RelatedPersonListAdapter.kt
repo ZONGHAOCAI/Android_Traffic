@@ -50,7 +50,6 @@ class RelatedPersonListAdapter(private var relatedPerson: List<RelatedPerson>) :
         with(holder) {
             // 將欲顯示的關係人物件指派給LiveData，就會自動更新layout檔案的view顯示
             itemViewBinding.viewModel?.relatedPerson?.value = relatedPerson
-            println("\n\n" + itemViewBinding.viewModel?.relatedPerson?.value?.id)
             if (itemViewBinding.viewModel?.relatedPerson?.value?.avatarBase64 != null) {
                 itemViewBinding.imgRelatedPersonAvatar.setImgBase64(itemViewBinding.viewModel?.relatedPerson?.value?.avatarBase64)
             }

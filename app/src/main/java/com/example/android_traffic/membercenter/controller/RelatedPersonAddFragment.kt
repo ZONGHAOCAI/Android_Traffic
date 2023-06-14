@@ -28,8 +28,8 @@ import com.example.android_traffic.core.service.Server.Companion.urlFindRelatedp
 import com.example.android_traffic.core.service.requestTask
 import com.example.android_traffic.core.util.getImgBase64
 import com.example.android_traffic.databinding.FragmentRelatedPersonAddBinding
-import com.example.android_traffic.membercenter.adapter.RelatedPersonListAdapter
-import com.example.android_traffic.membercenter.viewmodel.RelatedPersonAddViewModel
+import com.example.android_traffic.membercenter.viewmodel.RelatedPersonViewModel
+import com.google.gson.Gson
 import com.google.gson.JsonObject
 import com.yalantis.ucrop.UCrop
 import java.io.File
@@ -44,7 +44,7 @@ class RelatedPersonAddFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val viewModel: RelatedPersonAddViewModel by viewModels()
+        val viewModel: RelatedPersonViewModel by viewModels()
         binding = FragmentRelatedPersonAddBinding.inflate(inflater, container, false)
         binding.viewModel = viewModel
         binding.lifecycleOwner = this
@@ -67,28 +67,41 @@ class RelatedPersonAddFragment : Fragment() {
 
             btnRelatedPersonAddRegister.setOnClickListener {
 
-                if (viewModel?.relatedPerson?.value?.name?.isEmpty() == true) {
+                if (viewModel?.relatedPersonN?.value?.name?.isEmpty() == true) {
                     etRelatedPersonAddName.error = getString(R.string.txt_MemberData_Edit_Error)
                     return@setOnClickListener
                 }
-                if (viewModel?.relatedPerson?.value?.identityNumber?.isEmpty() == true) {
+                if (viewModel?.relatedPersonN?.value?.identityNumber?.isEmpty() == true) {
                     etRelatedPersonAddIdentityNumber.error =
                         getString(R.string.txt_MemberData_Edit_Error)
                     return@setOnClickListener
                 }
-                if (viewModel?.relatedPerson?.value?.memberRelationship?.isEmpty() == true) {
+                if (viewModel?.relatedPersonN?.value?.memberRelationship?.isEmpty() == true) {
                     tvRelatedPersonAddBirthday.error =
                         getString(R.string.txt_MemberData_Edit_Error)
                     return@setOnClickListener
                 }
-                if (viewModel?.relatedPerson?.value?.birthday?.isEmpty() == true) {
+                if (viewModel?.relatedPersonN?.value?.birthday?.isEmpty() == true) {
                     tvRelatedPersonAddBirthday.error =
                         getString(R.string.txt_MemberData_Edit_Error)
                     return@setOnClickListener
                 }
+
                 val respBody = requestTask<JsonObject>(
-                    urlFindRelatedperson, "POST", viewModel?.relatedPerson?.value
+                    urlFindRelatedperson, "POST", viewModel?.relatedPersonN?.value
                 )
+                val gson = Gson()
+                val jsonString = gson.toJson(viewModel?.relatedPersonN?.value)
+
+                val sharedPreferences = requireContext().getSharedPreferences("my_prefs", Context.MODE_PRIVATE)
+                val editor = sharedPreferences.edit()
+                editor.putString("relatedPersonJson", jsonString)
+                editor.apply()
+
+//                println("\n\n\n\n")
+//                viewModel?.change(viewModel?.relatedPersonN?.value)
+
+
                 respBody?.run {
                     if (get("successful").asBoolean) {
                         println("關係人新增成功")
@@ -233,7 +246,7 @@ class RelatedPersonAddFragment : Fragment() {
                         // 有圖片即顯示，沒圖片則套用no_image圖片
                         if (bitmap != null) {
                             binding.ivMemberDataAvatar.setImageBitmap(bitmap)
-                            binding.viewModel?.relatedPerson?.value?.avatarBase64 =
+                            binding.viewModel?.relatedPersonN?.value?.avatarBase64 =
                                 binding.ivMemberDataAvatar.getImgBase64()
                         }
                     }

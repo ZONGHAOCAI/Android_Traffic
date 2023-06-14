@@ -57,55 +57,6 @@
 <!--            app:layout_constraintStart_toStartOf="@+id/tv_RelatedPersonInfo"-->
 <!--            app:layout_constraintTop_toBottomOf="@+id/tv_RelatedPersonInfo" />-->
 
-        <!-- 私訊切換 -->
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/cl_ChatPermissions"
-            android:layout_width="0dp"
-            android:layout_height="42dp"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="30dp"
-            android:layout_marginEnd="20dp"
-            android:background="@drawable/pic_membercenter_background"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tv_RelatedPersonInfo">
-
-            <!-- 私訊的標題 -->
-            <TextView
-                android:id="@+id/tv_ChatPermissions"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:text="@string/txt_MemberCenter_ChangeLanguage"
-                android:textSize="20sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <Switch
-                android:id="@+id/sw_MemberCenter_chat"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:checked="@={viewModel.chatPermissions}"
-                android:onClick="@{v -> viewModel.chatPerminssionsS()}"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-<!--        &lt;!&ndash; 檢查更新 &ndash;&gt;-->
-<!--        <TextView-->
-<!--            android:id="@+id/tv_Update"-->
-<!--            android:layout_width="0dp"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_marginTop="30dp"-->
-<!--            android:background="@drawable/pic_membercenter_background"-->
-<!--            android:text="@string/txt_MemberCenter_Update2"-->
-<!--            android:textSize="20sp"-->
-<!--            app:layout_constraintEnd_toEndOf="@+id/cl_ChatPermissions"-->
-<!--            app:layout_constraintStart_toStartOf="@+id/cl_ChatPermissions"-->
-<!--            app:layout_constraintTop_toBottomOf="@+id/cl_ChatPermissions" />-->
 
         <!-- 登出 -->
 
@@ -119,9 +70,9 @@
             android:onClick="@{viewModel::logout}"
             android:text="@string/txt_MemberCenter_Logout2"
             android:textSize="20sp"
-            app:layout_constraintEnd_toEndOf="@+id/cl_ChatPermissions"
-            app:layout_constraintStart_toStartOf="@+id/cl_ChatPermissions"
-            app:layout_constraintTop_toBottomOf="@+id/cl_ChatPermissions" />
+            app:layout_constraintEnd_toEndOf="@+id/tv_RelatedPersonInfo"
+            app:layout_constraintStart_toStartOf="@+id/tv_RelatedPersonInfo"
+            app:layout_constraintTop_toBottomOf="@+id/tv_RelatedPersonInfo" />
         <!-- 刪除帳號 -->
 <!--        <TextView-->
 <!--            android:id="@+id/tv_DeleteAccount"-->
