@@ -36,7 +36,7 @@ class ForumFragment : Fragment() {
         with(binding){
             activity?.title = "論壇"
             viewModel?.init()
-            viewModel?.getNewTicket()
+            viewModel?.refreshArticle()
             rvForumArticleList.layoutManager = LinearLayoutManager(requireContext())
             viewModel?.rvArticleList?.observe(viewLifecycleOwner){
                 if (rvForumArticleList.adapter == null)
@@ -45,7 +45,7 @@ class ForumFragment : Fragment() {
             fabAddArticle.setOnClickListener {
                 findNavController().navigate(R.id.action_forumFragment_to_addArticleFragment)
             }
-            viewModel?.getNewTicket()
+            viewModel?.refreshArticle()
         }
     }
 }

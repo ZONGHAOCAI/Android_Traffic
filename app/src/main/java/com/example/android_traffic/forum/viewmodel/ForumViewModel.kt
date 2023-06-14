@@ -32,7 +32,7 @@ class ForumViewModel : ViewModel() {
 
     }
 
-    fun getNewTicket() {//reFresh
+    fun refreshArticle() {//reFresh
         viewModelScope.launch {
             while (isActive) {
                 val type = object : TypeToken<List<ForumArticle>>() {}.type
