@@ -57,7 +57,7 @@ class ChatViewModel : ViewModel() {
 //                Log.d("TAG_${javaClass.simpleName}", "oldList: ${oldchat} ")
                 list.value = oldchat
 //                Log.d("TAG_${javaClass.simpleName}", "list: ${list.value} ")
-                delay(10000)
+                delay(30000)
             }
         }
     }

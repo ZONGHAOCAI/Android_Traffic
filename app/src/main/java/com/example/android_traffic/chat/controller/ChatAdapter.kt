@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
+import android.widget.ListAdapter
 import android.widget.RelativeLayout
 import android.widget.TextView
 import androidx.lifecycle.findViewTreeLifecycleOwner
@@ -95,6 +96,11 @@ class ChatAdapter(private var content: List<Chat>) :
                 TextViewRight.visibility = View.GONE
                 imageViewLeft.visibility = View.VISIBLE
                 imageViewRight.visibility = View.VISIBLE
+            }else{
+                TextViewLeft.visibility = View.VISIBLE
+                TextViewRight.visibility = View.VISIBLE
+                imageViewLeft.visibility = View.GONE
+                imageViewRight.visibility = View.GONE
             }
         }
     }

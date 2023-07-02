@@ -8,5 +8,6 @@ data class ChatRoom(
     var memID2: Int? = null, // 會員ID_2
     var nickname: String? = null, // 另外一個使用者的暱稱
     var avatar: ByteArray? = null, // 另外一個使用者的頭貼
-    var avatarBase64: String? = null
+    var avatarBase64: String? = null,
+    var unread: Int? = null // 未讀數量
 ) : Serializable

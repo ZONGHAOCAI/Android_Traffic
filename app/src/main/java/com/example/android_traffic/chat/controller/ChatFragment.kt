@@ -58,11 +58,10 @@ class ChatFragment : Fragment() {
             with(binding) {
                 val preferences = Token().getEncryptedPreferences(requireContext())
                 viewmodel?.member?.value = preferences.getString("MemId", "")
-                val myTag = "TAG_${javaClass.simpleName}"
-                Log.d(
-                    myTag,
-                    "getString: ${preferences.getString("MemId", "")?.javaClass?.simpleName}"
-                )
+//                Log.d(
+//                    myTag,
+//                    "getString: ${preferences.getString("MemId", "")?.javaClass?.simpleName}"
+//                )
             }
         }
         with(binding) {
@@ -107,15 +106,15 @@ class ChatFragment : Fragment() {
                 )
                 // 拍照前指定存檔路徑就可取得原圖而非縮圖
                 intent.putExtra(MediaStore.EXTRA_OUTPUT, contentUri)
-                Log.d(
-                    "myTag_${javaClass.simpleName}",
-                    "included2.tvalbumChat.setOnClickListener"
-                )
+//                Log.d(
+//                    "myTag_${javaClass.simpleName}",
+//                    "included2.tvalbumChat.setOnClickListener"
+//                )
                 takePictureLargeLauncher.launch(intent)
-                Log.d(
-                    "myTag_ ${javaClass.simpleName}",
-                    " takePictureLargeLauncher.launch(intent)"
-                )
+//                Log.d(
+//                    "myTag_ ${javaClass.simpleName}",
+//                    " takePictureLargeLauncher.launch(intent)"
+//                )
 //                tvChatText.visibility = View.GONE
 //                ivChatAppendix.visibility = View.VISIBLE
             }
@@ -125,12 +124,12 @@ class ChatFragment : Fragment() {
                     Intent.ACTION_PICK,
                     MediaStore.Images.Media.EXTERNAL_CONTENT_URI
                 )
-                Log.d(
-                    "myTag_${javaClass.simpleName}",
-                    "included2.tvalbumChat.setOnClickListener"
-                )
+//                Log.d(
+//                    "myTag_${javaClass.simpleName}",
+//                    "included2.tvalbumChat.setOnClickListener"
+//                )
                 pickPictureLauncher.launch(intent)
-                Log.d("myTag_${javaClass.simpleName}", "pickPictureLauncher.launch(intent)")
+//                Log.d("myTag_${javaClass.simpleName}", "pickPictureLauncher.launch(intent)")
 
 //                tvChatText.visibility = View.GONE
 //                ivChatAppendix.visibility = View.VISIBLE

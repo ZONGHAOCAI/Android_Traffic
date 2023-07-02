@@ -5,6 +5,7 @@
     android:layout_marginRight="10dp">
 
     <data>
+        <import type="android.view.View"/>
         <variable
             name="viewmodel"
             type="com.example.android_traffic.chat.viewmodel.ChatViewModel" />
@@ -38,15 +39,40 @@
                     android:layout_marginRight="10dp"
                     tools:srcCompat="@drawable/avatar1" />
 
-                <TextView
-                    android:id="@+id/tv_ChatName_Nickname"
-                    android:layout_width="wrap_content"
+                <LinearLayout
+                    android:layout_width="275dp"
                     android:layout_height="match_parent"
-                    android:layout_gravity="center_vertical"
-                    android:layout_marginRight="10dp"
-                    android:gravity="center_vertical"
-                    android:text="@{viewmodel.chatroom.nickname}"
-                    android:textSize="24sp" />
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tv_ChatName_Nickname"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginRight="10dp"
+                        android:gravity="center_vertical"
+                        android:text="@{viewmodel.chatroom.nickname}"
+                        android:textSize="24sp"
+                        tools:text="n" />
+
+                    <TextView
+                        android:id="@+id/textView21"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="TextView" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/tv_ChatName_Unread"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_gravity="right|center_vertical"
+                    android:background="@drawable/unread"
+                    android:gravity="center"
+                    android:hint="0"
+                    android:visibility="@{viewmodel.chatroom.unread == 0 ? View.GONE : View.VISIBLE}"
+                    android:text="@{viewmodel.chatroom.unread.toString()}"
+                    android:textColor="@color/white" />
             </LinearLayout>
         </androidx.cardview.widget.CardView>
     </androidx.constraintlayout.widget.ConstraintLayout>

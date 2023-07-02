@@ -39,11 +39,11 @@ class ChatRoomFragment : Fragment() {
             rvChatRoomChat.layoutManager = LinearLayoutManager(requireContext())
             viewmodel?.init()
             viewmodel?.list?.observe(viewLifecycleOwner) {
-                if (rvChatRoomChat.adapter == null) {
+//                if (rvChatRoomChat.adapter == null) {
                     rvChatRoomChat.adapter = ChatRoomAdapter(it)
-                } else {
-                    (rvChatRoomChat.adapter as ChatRoomAdapter).updateChatList(it)
-                }
+//                } else {
+//                    (rvChatRoomChat.adapter as ChatRoomAdapter).updateChatList(it)
+//                }
             }
 
             svChatRoomSearch.setOnQueryTextListener(object :

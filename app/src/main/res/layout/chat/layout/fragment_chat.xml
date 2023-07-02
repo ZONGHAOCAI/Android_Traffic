@@ -70,7 +70,14 @@
                     android:textSize="16dp" />
 
                 <ImageView
-                    android:id="@+id/iv_Chat_Appendix"
+                    android:id="@+id/iv_Chat_AlbumAppendix"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:visibility="gone"
+                    android:layout_gravity="right" />
+
+                <ImageView
+                    android:id="@+id/iv_Chat_CameraAppendix"
                     android:layout_width="50dp"
                     android:layout_height="50dp"
                     android:visibility="gone"
